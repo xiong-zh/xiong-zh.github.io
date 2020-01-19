@@ -1,222 +1,131 @@
+<!DOCTYPE html>
 <html>
+       <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <title>书籍 | 张雄</title>
+        <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    书籍 | 张雄
-</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579419145244">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://xiong-zh.github.io">
-                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579419145244" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    张雄
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
+    </head>
+    <body>
+          <header class="header mdui-m-b-5">      
+            <div class="container  ">
+                <div class="index-title animated fadeInDown mdui-text-center mdui-text-color-white mdui-m-b-2" style="animation-delay: 0.2s"><a href="https://xiong-zh.github.io">张雄</a></div>
+                <div class="mdui-text-color-white animated fadeInDown mdui-text-center  mdui-m-b-3" style="animation-delay: 0.4s">凡心所向,素履所往。生如逆旅，一苇以航。</div>
+           
+            <nav id="nav" class="mdui-text-center animated fadeInDown" style="animation-delay: 0.6s">
+                   
+                            <li><a href="/">回到首页</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/" class="menu">
-                                    回到首页
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/archives">历史归档</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/archives" class="menu">
-                                    历史归档
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/tags">所有标签</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/tags" class="menu">
-                                    所有标签
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/documents/">后端图谱</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                        <li>
-                            <a href="/documents/" class="menu" target="_blank">
-                                后端图谱
-                            </a>
-                        </li>
-                        
-                                
+                            <li><a href="/post/about">关于｜友链</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于｜友链
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-    <div class="i-card">
-        <b>标签：#
-        书籍</b>
-    </div>
-    
-        
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/豆瓣评分前500书籍分享">
-                        豆瓣评分前500书籍分享
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-10-25</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/myAeoJ-TNY" class="post-tag i-tag
-                            i-tag-other_2">
-            #书籍
-        </a>
-                        
+                  </nav>
                 </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <h3 id="关于链接">关于链接</h3>
+        </header>
+        <div class="mdui-container ">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 mdui-m-t-1">
+                                                         
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2019-10-25 18:53:27">2019-10-25</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/豆瓣评分前500书籍分享">豆瓣评分前500书籍分享</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><h3 id="关于链接">关于链接</h3>
 <p>链接多为百度网盘，部分书籍由于版权原因链接替换为腾讯微云或城际网盘，部分链接由于时间关系可能会出现失效或找不到文件，请联系管理员进行处理，或留言，会尽快处理。</p>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/豆瓣评分前500书籍分享">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://xiong-zh.github.io/images/avatar.png?v=1579419145244)">
-        </div>
-        <h1 class="id_card-title">
-            张雄
-        </h1>
-        <h2 class="id_card-description">
-            凡心所向,素履所往。生如逆旅，一苇以航。
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/xiong-zh" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                        <a href="https://twitter.com/imzhangxiong" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-twitter"></i></a>
-                        
-                            <!-- weibo -->
-                            
-                                <a href="https://weibo.com/zhangxiongblog" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-weibo"></i></a>
-                                
-                                    <!-- facebook -->
-                                    
-                                        <a href="https://www.facebook.com/xiong.zh.397" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-facebook"></i></a>
-                                        
-
-        </div>
-    </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-    <div class="notice-card i-card ">
-        <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">
-            凡心所向,素履所往。生如逆旅，一苇以航。
-        </div>
-    </div>
-    
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
 </div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/豆瓣评分前500书籍分享">Read More</a></div>
+                                </article>
+                                
+                                                            <nav class="mdui-m-t-5">
+                                
+                                
+                                </nav>     
 
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-</body>
-
+                        </div>
+                      </div>
+              </div>
+                <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://twitter.com/imzhangxiong" target="_blank"><i class="iconfont icon-twitter"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://github.com/xiong-zh" target="_blank"><i class="iconfont icon-github"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="iconfont icon-zhihu"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="iconfont icon-facebook"></i></a></li>
+                          
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="iconfont icon-instagram"></i></a></li>
+                          
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
+                          
+                           
+                      
+                           
+                      </ul>
+                    </nav>
+                    <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> <br/> Theme <a href="https://github.com/alterfang/gridea-theme-song/" target="_blank"  title="宋"  >Song</a> by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >shanbufun</a> </p>
+                  </div>
+                  
+              </footer>
+    </body>
 </html>

@@ -1,133 +1,71 @@
+<!DOCTYPE html>
 <html>
+        <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <title>Python开发环境配置 | 张雄</title>
+        <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    Python开发环境配置 | 张雄
-</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579419145244">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
-
+    </head>
+    <body>
+              <header class="header mdui-m-b-5">      
+            <div class="container  ">
+                <div class="index-title animated fadeInDown mdui-text-center mdui-text-color-white mdui-m-b-2" style="animation-delay: 0.2s"><a href="https://xiong-zh.github.io">张雄</a></div>
+                <div class="mdui-text-color-white animated fadeInDown mdui-text-center  mdui-m-b-3" style="animation-delay: 0.4s">凡心所向,素履所往。生如逆旅，一苇以航。</div>
+           
+            <nav id="nav" class="mdui-text-center animated fadeInDown" style="animation-delay: 0.6s">
+                   
+                            <li><a href="/">回到首页</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://xiong-zh.github.io">
-                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579419145244" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    张雄
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
+                            <li><a href="/archives">历史归档</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/" class="menu">
-                                    回到首页
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/tags">所有标签</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/archives" class="menu">
-                                    历史归档
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/documents/">后端图谱</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/tags" class="menu">
-                                    所有标签
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/post/about">关于｜友链</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                        <li>
-                            <a href="/documents/" class="menu" target="_blank">
-                                后端图谱
-                            </a>
-                        </li>
-                        
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于｜友链
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            Python开发环境配置
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2020-01-10</time>
-                            
-                                <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" class="post-tag i-tag
-                            i-tag-other_2">
-                            #Flask
-                        </a>
-                                
-                        </div>
-                        
-                                <div class="post-content">
-                                    <p>Python 2和Python 3之间存在着较大的差异，并且，由于各种原因导致了Python 2和Python 3的长期共存。在实际工作过程中，我们可能会同时用到Python 2和Python 3，因此，也需要经常在Python 2和Python 3之间进行来回切换。这就需要对python的版本进行管理，除此之外还需要对不同的软件包进行管理。大部分情况下，对于开源的库我们使用最新版本即可。但是，有时候可能需要对相同的Python版本，在不同的项目中使用不同版本的软件包。</p>
+                  </nav>
+                </div>
+        </header>
+        <div class="mdui-container ">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                                <article class="mdui-p-a-2 post animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="post-title  mdui-m-b-1">Python开发环境配置</div>
+                                    <div class="mdui-typo-body-2 mdui-m-b-2" datetime="2020-01-10 22:29:03">2020-01-10 / 10 min read</div>
+                                    <div class="mdui-m-b-2 mdui-typo post-neirong"><p>Python 2和Python 3之间存在着较大的差异，并且，由于各种原因导致了Python 2和Python 3的长期共存。在实际工作过程中，我们可能会同时用到Python 2和Python 3，因此，也需要经常在Python 2和Python 3之间进行来回切换。这就需要对python的版本进行管理，除此之外还需要对不同的软件包进行管理。大部分情况下，对于开源的库我们使用最新版本即可。但是，有时候可能需要对相同的Python版本，在不同的项目中使用不同版本的软件包。</p>
 <p>在这里，我们要使用两个工具：pyenv和virtualenv。前者用于管理不同的Python版本，后者用于管理不同的工作环境。有了这两个工具，Python相关的版本问题将不再是问题。</p>
 <!-- more -->
 <h2 id="python开发环境配置">python开发环境配置</h2>
@@ -345,134 +283,124 @@ Source is changed to douban.
 <p>#3 使用pip下载库</p>
 <pre><code class="language-shell">(bbs36) python@ubuntu:/myproject/blog$ pip install pymysql
 </code></pre>
-
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">
-                                <h3 class="post-title">
-                                    Python用list实现堆栈和队列
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#python%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">python开发环境配置</a>
-<ul>
-<li><a href="#51-pyenv">5.1 pyenv</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#3-%E6%9B%B4%E6%96%B0%E4%B8%80%E4%B8%8B">3 更新一下</a></li>
-<li><a href="#1%E6%9F%A5%E7%9C%8Bpyenv%E5%BD%93%E5%89%8D%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9Bpython%E7%89%88%E6%9C%AC-%E6%94%AF%E6%8C%81%E7%AE%A1%E7%90%86%E5%93%AA%E4%BA%9Bpython%E7%89%88%E6%9C%AC">1.查看pyenv当前支持哪些Python版本  支持管理哪些python版本</a></li>
-<li><a href="#2%E5%88%97%E5%87%BApyenv%E4%B8%AD%E6%89%80%E6%9C%89%E5%8F%AF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">2.列出pyenv中所有可用的python版本</a></li>
-<li><a href="#1%E5%9C%A8%E5%AE%89%E8%A3%85python%E4%B9%8B%E5%89%8D%E6%88%91%E4%BB%AC%E5%BF%85%E9%A1%BB%E8%A6%81%E5%AE%89%E8%A3%85python%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E4%BE%9D%E8%B5%96%E5%8C%85%E8%BF%99%E4%B8%AA%E5%BF%85%E9%A1%BB%E8%A6%81%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85%E4%BC%9A%E5%A4%B1%E8%B4%A5%E7%9A%84">1.在安装python之前，我们必须要安装python所需要的依赖包，这个必须要安装，安装会失败的：</a></li>
-<li><a href="#2-%E5%AE%89%E8%A3%85python">2. 安装python</a></li>
-<li><a href="#%E5%9B%A0%E4%B8%BApyenv%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%88%B0github%E4%B8%8A%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E8%B6%85%E6%85%A2%E6%89%80%E4%BB%A5%E4%B8%80%E8%88%AC%E4%BC%9A%E9%80%89%E6%8B%A9%E4%BD%BF%E7%94%A8curl%E6%88%96%E8%80%85wget%E4%B8%8B%E8%BD%BD%E5%88%B0~pyenvcache%E4%B8%8B%E7%84%B6%E5%90%8E%E5%86%8D%E7%94%A8pyenv%E5%AE%89%E8%A3%85%E4%B8%8B%E9%9D%A2%E6%98%AF%E5%8F%AF%E9%80%89%E7%9A%84%E5%AE%89%E8%A3%85%E6%A8%A1%E5%BC%8F">因为pyenv会自动到github上下载，速度超慢，所以一般会选择使用curl或者wget下载到~/.pyenv/cache下，然后再用pyenv安装，下面是可选的安装模式</a><br>
-*
-<ul>
-<li><a href="#52-virtualenv479740129">5.2 virtualenv47.97.40.129</a></li>
-</ul>
-</li>
-<li><a href="#2%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">2.创建项目的虚拟环境</a></li>
-<li><a href="#%E7%94%A8%E6%B3%95pyenv-virtualenv-python%E7%89%88%E6%9C%AC%E5%8F%B7-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%90%8D">用法：pyenv virtualenv python版本号 虚拟环境名</a></li>
-<li><a href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90">查看当前的镜像源</a></li>
-<li><a href="#2%E9%80%89%E6%8B%A9%E6%8C%87%E5%AE%9A%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90">2.选择指定的镜像源</a></li>
-</ul>
-
-        </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
-    </div>
-    
-                            
-
-                </div>
-
-
-
-
-            </div>
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
 </div>
+                                    <div class="mdui-divider mdui-m-b-2"></div>
+                                    <div class="mdui-row-xs-2 post-fenye">
+                                       
+                                        <div class="mdui-col"> <div class="mdui-text-left"><a href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">Flask对时间、邮件、文件上传下载、视图函数的处理</a></div></div>
+                                        
+
+                                        
+                                        <div class="mdui-col"><div class="mdui-text-right "><a href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">Python用list实现堆栈和队列</a></div> </div>
+                                       
+                                      </div>
+                                   
+                                    <div class="mdui-divider mdui-m-t-2 mdui-m-b-2"></div>
+                                    
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
 
 <script>
-  hljs.initHighlightingOnLoad()
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
 </script>
 
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
+          
+          
         
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: '7691fdf5a3780e9bb3a4',
-            clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-            repo: 'xiong-zh.github.io',
-            owner: 'xiong-zh',
-            admin: ['xiong-zh'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
+                                     <script src="https://xiong-zh.github.io/media/scripts/Valine.min.js"></script>
+ <div class="comment"></div>
 
-        gitalk.render('gitalk-container')
+<script>
+      new Valine({
+            el: '.comment',
+
+
+
+            path: window.location.pathname,
+            pageSize: 30,
+            avatar:'mm', 
+       })
+    </script> 
+<script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
     }
 </script>
+                                </article>
+
+                                    
+                        </div>
+                      </div>
+    
                 
 
-                    
-                                
-</body>
-
+              </div>
+                    <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://twitter.com/imzhangxiong" target="_blank"><i class="iconfont icon-twitter"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://github.com/xiong-zh" target="_blank"><i class="iconfont icon-github"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="iconfont icon-zhihu"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="iconfont icon-facebook"></i></a></li>
+                          
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="iconfont icon-instagram"></i></a></li>
+                          
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
+                          
+                           
+                      
+                           
+                      </ul>
+                    </nav>
+                    <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> <br/> Theme <a href="https://github.com/alterfang/gridea-theme-song/" target="_blank"  title="宋"  >Song</a> by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >shanbufun</a> </p>
+                  </div>
+                  
+              </footer>
+    </body>
 </html>

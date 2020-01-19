@@ -1,138 +1,71 @@
+<!DOCTYPE html>
 <html>
+        <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <title>SHA256加密测试 | 张雄</title>
+        <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    SHA256加密测试 | 张雄
-</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579419145244">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
-
+    </head>
+    <body>
+              <header class="header mdui-m-b-5">      
+            <div class="container  ">
+                <div class="index-title animated fadeInDown mdui-text-center mdui-text-color-white mdui-m-b-2" style="animation-delay: 0.2s"><a href="https://xiong-zh.github.io">张雄</a></div>
+                <div class="mdui-text-color-white animated fadeInDown mdui-text-center  mdui-m-b-3" style="animation-delay: 0.4s">凡心所向,素履所往。生如逆旅，一苇以航。</div>
+           
+            <nav id="nav" class="mdui-text-center animated fadeInDown" style="animation-delay: 0.6s">
+                   
+                            <li><a href="/">回到首页</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://xiong-zh.github.io">
-                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579419145244" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    张雄
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
+                            <li><a href="/archives">历史归档</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/" class="menu">
-                                    回到首页
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/tags">所有标签</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/archives" class="menu">
-                                    历史归档
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/documents/">后端图谱</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/tags" class="menu">
-                                    所有标签
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/post/about">关于｜友链</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                        <li>
-                            <a href="/documents/" class="menu" target="_blank">
-                                后端图谱
-                            </a>
-                        </li>
-                        
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于｜友链
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            SHA256加密测试
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2019-03-05</time>
-                            
-                                <a href="https://xiong-zh.github.io/tag/L-mexE1Ckv" class="post-tag i-tag
-                            i-tag-info">
-                            #算法
-                        </a>
-                                
-                                <a href="https://xiong-zh.github.io/tag/oB69LmlOTC6" class="post-tag i-tag
-                            i-tag-primary">
-                            #加密
-                        </a>
-                                
-                        </div>
-                        
-                                <div class="post-content">
-                                    <h4 id="消息摘要和加密算法及其实现">消息摘要和加密算法及其实现</h4>
+                  </nav>
+                </div>
+        </header>
+        <div class="mdui-container ">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                                <article class="mdui-p-a-2 post animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="post-title  mdui-m-b-1">SHA256加密测试</div>
+                                    <div class="mdui-typo-body-2 mdui-m-b-2" datetime="2019-03-05 14:40:53">2019-03-05 / 22 min read</div>
+                                    <div class="mdui-m-b-2 mdui-typo post-neirong"><h4 id="消息摘要和加密算法及其实现">消息摘要和加密算法及其实现</h4>
 <p>主要对消息摘要算法和加密算法做了整理，包括MD5、SHA、DES、AES、RSA等，并且提供了相应算法的Java实现和测试。</p>
 <!-- more -->
 <p>主要对消息摘要算法和加密算法做了整理，包括MD5、SHA、DES、AES、RSA等，并且提供了相应算法的Java实现和测试。</p>
@@ -921,169 +854,124 @@ true
 [B@71e7a66b
 
 </code></pre>
-
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://xiong-zh.github.io/post/2019在读书单">
-                                <h3 class="post-title">
-                                    2019在读书单（1）
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81%E5%92%8C%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0">消息摘要和加密算法及其实现</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E4%B8%80-%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95">一  消息摘要算法</a>
-<ul>
-<li><a href="#1-%E7%AE%80%E4%BB%8B"><strong>1. 简介：</strong></a></li>
-<li><a href="#2-%E7%89%B9%E7%82%B9"><strong>2. 特点：</strong></a></li>
-<li><a href="#3-%E5%BA%94%E7%94%A8"><strong>3. 应用：</strong></a></li>
-<li><a href="#4-%E4%BD%95%E8%B0%93%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><strong>4. 何谓数字签名：</strong></a></li>
-<li><a href="#5-%E5%B8%B8%E8%A7%81%E6%B6%88%E6%81%AF%E6%95%B0%E5%AD%97%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95"><strong>5. 常见消息/数字摘要算法：</strong></a><br>
-*
-<ul>
-<li><a href="#%E7%AE%80%E4%BB%8B">简介：</a></li>
-<li><a href="#%E7%89%B9%E7%82%B9">特点：</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现：</a></li>
-<li><a href="#%E4%B8%8D%E5%88%A9%E7%94%A8java%E6%8F%90%E4%BE%9B%E7%9A%84javasecuritymessagedigest%E7%B1%BB%E5%AE%9E%E7%8E%B0md5%E7%AE%97%E6%B3%95">不利用Java提供的java.security.MessageDigest类实现MD5算法：</a></li>
-<li>
-<ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2">代码实现：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C-%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95">二 加密算法</a>
-<ul>
-<li><a href="#1-%E7%AE%80%E4%BB%8B-2"><strong>1. 简介：</strong></a></li>
-<li><a href="#2-%E5%88%86%E7%B1%BB"><strong>2. 分类：</strong></a></li>
-<li><a href="#3-%E5%BA%94%E7%94%A8-2"><strong>3. 应用：</strong></a></li>
-<li><a href="#4-%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><strong>4. 对称加密：</strong></a><br>
-*
-<ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-3">代码实现：</a></li>
-<li>
-<ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-4">代码实现：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#5-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><strong>5. 非对称加密：</strong></a><br>
-*
-<ul>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-5">代码实现：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
-    </div>
-    
-                            
-
-                </div>
-
-
-
-
-            </div>
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
 </div>
+                                    <div class="mdui-divider mdui-m-b-2"></div>
+                                    <div class="mdui-row-xs-2 post-fenye">
+                                       
+                                        <div class="mdui-col"> <div class="mdui-text-left"><a href="https://xiong-zh.github.io/post/音乐-小雨と君-荒木毬菜">音乐分享-小雨と君</a></div></div>
+                                        
+
+                                        
+                                        <div class="mdui-col"><div class="mdui-text-right "><a href="https://xiong-zh.github.io/post/2019在读书单">2019在读书单（1）</a></div> </div>
+                                       
+                                      </div>
+                                   
+                                    <div class="mdui-divider mdui-m-t-2 mdui-m-b-2"></div>
+                                    
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
 
 <script>
-  hljs.initHighlightingOnLoad()
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
 </script>
 
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
+          
+          
         
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: '7691fdf5a3780e9bb3a4',
-            clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-            repo: 'xiong-zh.github.io',
-            owner: 'xiong-zh',
-            admin: ['xiong-zh'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
+                                     <script src="https://xiong-zh.github.io/media/scripts/Valine.min.js"></script>
+ <div class="comment"></div>
 
-        gitalk.render('gitalk-container')
+<script>
+      new Valine({
+            el: '.comment',
+
+
+
+            path: window.location.pathname,
+            pageSize: 30,
+            avatar:'mm', 
+       })
+    </script> 
+<script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
     }
 </script>
+                                </article>
+
+                                    
+                        </div>
+                      </div>
+    
                 
 
-                    
-                                
-</body>
-
+              </div>
+                    <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://twitter.com/imzhangxiong" target="_blank"><i class="iconfont icon-twitter"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://github.com/xiong-zh" target="_blank"><i class="iconfont icon-github"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="iconfont icon-zhihu"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="iconfont icon-facebook"></i></a></li>
+                          
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="iconfont icon-instagram"></i></a></li>
+                          
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
+                          
+                           
+                      
+                           
+                      </ul>
+                    </nav>
+                    <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> <br/> Theme <a href="https://github.com/alterfang/gridea-theme-song/" target="_blank"  title="宋"  >Song</a> by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >shanbufun</a> </p>
+                  </div>
+                  
+              </footer>
+    </body>
 </html>

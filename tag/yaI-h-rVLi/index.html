@@ -1,139 +1,72 @@
+<!DOCTYPE html>
 <html>
+       <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <title>Python | 张雄</title>
+        <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    Python | 张雄
-</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579419145244">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://xiong-zh.github.io">
-                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579419145244" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    张雄
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
+    </head>
+    <body>
+          <header class="header mdui-m-b-5">      
+            <div class="container  ">
+                <div class="index-title animated fadeInDown mdui-text-center mdui-text-color-white mdui-m-b-2" style="animation-delay: 0.2s"><a href="https://xiong-zh.github.io">张雄</a></div>
+                <div class="mdui-text-color-white animated fadeInDown mdui-text-center  mdui-m-b-3" style="animation-delay: 0.4s">凡心所向,素履所往。生如逆旅，一苇以航。</div>
+           
+            <nav id="nav" class="mdui-text-center animated fadeInDown" style="animation-delay: 0.6s">
+                   
+                            <li><a href="/">回到首页</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/" class="menu">
-                                    回到首页
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/archives">历史归档</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/archives" class="menu">
-                                    历史归档
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/tags">所有标签</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/tags" class="menu">
-                                    所有标签
-                                </a>
-                            </li>
-                            
-                                
+                            <li><a href="/documents/">后端图谱</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                        <li>
-                            <a href="/documents/" class="menu" target="_blank">
-                                后端图谱
-                            </a>
-                        </li>
-                        
-                                
+                            <li><a href="/post/about">关于｜友链</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
                     
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于｜友链
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-    <div class="i-card">
-        <b>标签：#
-        Python</b>
-    </div>
-    
-        
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Python语法速查">
-                        Python语法速查
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-18</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-">
-            #Python
-        </a>
-                        
+                  </nav>
                 </div>
-                <div class="post-article">
-                    
-                        <a href="https://xiong-zh.github.io/post/Python语法速查" class="post-feature-image" style="background-image:url(https://xiong-zh.github.io/post-images/Python语法速查.jpg) ">
-                        </a>
-                        
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <p>Python 是一门独特的语言，快速浏览一下他的要点：</p>
+        </header>
+        <div class="mdui-container ">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 mdui-m-t-1">
+                                                         
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-18 12:04:14">2020-01-18</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Python语法速查">Python语法速查</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>Python 是一门独特的语言，快速浏览一下他的要点：</p>
 <ul>
 <li>面向对象：每一个变量都是一个类，有其自己的属性（attribute）与方法（method）。</li>
 <li>语法块：用缩进（四个空格）而不是分号、花括号等符号来标记。因此，行首的空格不能随意书写。</li>
@@ -141,79 +74,27 @@
 <li>续行：行尾输入一个反斜杠加一个空格（’\ ‘），再换行。如果行尾语法明显未完成（比如以逗号结尾），可以直接续行。</li>
 <li>打印与输入： 函数 print() 与 input()，注意 print() 的 sep 与 end 参数。</li>
 </ul>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python语法速查">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-                        Python爬取不确定页数网页
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-15</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-banana">
-            #Python
-        </a>
-                        
-                        <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF" class="post-tag i-tag
-                            i-tag-other_4">
-            #Scrapy
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Python语法速查">Read More</a></div>
+                                </article>
                                 
-                                    <div class="post-content-abstract">
-                                        <p>我们通常遇到的网站页数展现形式有这么几种：</p>
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-15 12:12:53">2020-01-15</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">Python爬取不确定页数网页</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>我们通常遇到的网站页数展现形式有这么几种：</p>
 <ul>
 <li>第一种是直观地显示所有页数，显示在页面上。</li>
 <li>第二种是不直观显示网页总页数，需要抓包才可以看到，一般来说会有一个 <code>totalPage</code> 参数。</li>
 <li><strong>第三种是不知道具体有多少页的网页。</strong></li>
 </ul>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
-                        Scrapy框架的使用之Item Pipeline用法
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-15</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-success">
-            #Python
-        </a>
-                        
-                        <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF" class="post-tag i-tag
-                            i-tag-other_4">
-            #Scrapy
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">Read More</a></div>
+                                </article>
                                 
-                                    <div class="post-content-abstract">
-                                        <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-15 12:09:15">2020-01-15</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">Scrapy框架的使用之Item Pipeline用法</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
 Item Pipeline 的主要功能有如下 4 点。</p>
 <ul>
 <li>清理 HTML 数据。</li>
@@ -221,243 +102,108 @@ Item Pipeline 的主要功能有如下 4 点。</p>
 <li>查重并丢弃重复内容。</li>
 <li>将爬取结果保存到数据库。</li>
 </ul>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Python为什么现在这么火">
-                        Python为什么现在这么火
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-15</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-success">
-            #Python
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">Read More</a></div>
+                                </article>
                                 
-                                    <div class="post-content-abstract">
-                                        <p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python为什么现在这么火">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Python基础知识总结">
-                        Python基础知识总结
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-15</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-">
-            #Python
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                        <a href="https://xiong-zh.github.io/post/Python基础知识总结" class="post-feature-image" style="background-image:url(https://xiong-zh.github.io/post-images/Python基础知识总结.jpg) ">
-                        </a>
-                        
-                            <div class="post-content">
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-15 11:56:05">2020-01-15</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Python为什么现在这么火">Python为什么现在这么火</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Python为什么现在这么火">Read More</a></div>
+                                </article>
                                 
-                                    <div class="post-content-abstract">
-                                        <p>Python 的火热度怕是大家已经早已感受到了，很多程序员将 Python 作为了他的第二语言，如果你至今还未接触任何和 Python 相关的知识，那么今天我带给你的这篇文章可以让你快速了解 Python 语法，上手做东西了。</p>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python基础知识总结">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">
-                        Python用list实现堆栈和队列
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-10</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-info">
-            #Python
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-15 11:50:31">2020-01-15</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Python基础知识总结">Python基础知识总结</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>Python 的火热度怕是大家已经早已感受到了，很多程序员将 Python 作为了他的第二语言，如果你至今还未接触任何和 Python 相关的知识，那么今天我带给你的这篇文章可以让你快速了解 Python 语法，上手做东西了。</p>
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Python基础知识总结">Read More</a></div>
+                                </article>
                                 
-                                    <div class="post-content-abstract">
-                                        <p>Python 中可以用 list 来模拟栈和队列：</p>
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-10 12:04:14">2020-01-10</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">Python用list实现堆栈和队列</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>Python 中可以用 list 来模拟栈和队列：</p>
 <ul>
 <li><strong>栈（stack）</strong>: 只能在一端进行数据操作，遵循后进先出（LIFO）原则</li>
 <li><strong>队列（queue）</strong>: 可以在两端进行数据操作，遵循先进先出（FIFO）原则，出队列的一端称为队首，入队列的一端称为队尾</li>
 </ul>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/列表元组字典集合的区别">
-                        列表元组字典集合的区别
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2020-01-08</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-error">
-            #Python
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <p>列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平</p>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/列表元组字典集合的区别">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/Python基础梳理-2">
-                        Python基础梳理-2
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-07</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
-                            i-tag-other_3">
-            #Python
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <h1 id="python语言特性">Python语言特性</h1>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python基础梳理-2">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://xiong-zh.github.io/images/avatar.png?v=1579419145244)">
-        </div>
-        <h1 class="id_card-title">
-            张雄
-        </h1>
-        <h2 class="id_card-description">
-            凡心所向,素履所往。生如逆旅，一苇以航。
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/xiong-zh" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                        <a href="https://twitter.com/imzhangxiong" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-twitter"></i></a>
-                        
-                            <!-- weibo -->
-                            
-                                <a href="https://weibo.com/zhangxiongblog" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-weibo"></i></a>
-                                
-                                    <!-- facebook -->
-                                    
-                                        <a href="https://www.facebook.com/xiong.zh.397" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-facebook"></i></a>
-                                        
-
-        </div>
-    </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-    <div class="notice-card i-card ">
-        <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">
-            凡心所向,素履所往。生如逆旅，一苇以航。
-        </div>
-    </div>
-    
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
 </div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">Read More</a></div>
+                                </article>
+                                
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2020-01-08 13:14:59">2020-01-08</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/列表元组字典集合的区别">列表元组字典集合的区别</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><p>列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平</p>
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/列表元组字典集合的区别">Read More</a></div>
+                                </article>
+                                
+                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2019-08-07 14:43:14">2019-08-07</div>
+                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Python基础梳理-2">Python基础梳理-2</a></div>
+                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><h1 id="python语言特性">Python语言特性</h1>
+</div>
+                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Python基础梳理-2">Read More</a></div>
+                                </article>
+                                
+                                                            <nav class="mdui-m-t-5">
+                                
+                                
+                                </nav>     
 
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-</body>
-
+                        </div>
+                      </div>
+              </div>
+                <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://twitter.com/imzhangxiong" target="_blank"><i class="iconfont icon-twitter"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://github.com/xiong-zh" target="_blank"><i class="iconfont icon-github"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="iconfont icon-zhihu"></i></a></li>
+                          
+                           
+                      	
+                        <li class="social-link"><a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="iconfont icon-facebook"></i></a></li>
+                          
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="iconfont icon-instagram"></i></a></li>
+                          
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
+                          
+                           
+                      
+                           
+                      </ul>
+                    </nav>
+                    <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> <br/> Theme <a href="https://github.com/alterfang/gridea-theme-song/" target="_blank"  title="宋"  >Song</a> by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >shanbufun</a> </p>
+                  </div>
+                  
+              </footer>
+    </body>
 </html>
