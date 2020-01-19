@@ -1,213 +1,242 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>关于遗憾 | 张雄</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413213477">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    关于遗憾 | 张雄
+</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
 
-  
+                    
+                            
+</head>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="生活总是充满了这样那样的遗憾，这个暑假结束，遗憾又会多了一个。是念念不忘，是欲求不满。
-一代宗师里说，人生如棋，落子无悔，其实人生无悔，那都是赌气的话，只不过选择了总会有个结果，或好或坏，庸人自扰。
-遗憾也总还是会有，未来也没有我们想象的那..." />
-    <meta name="keywords" content="感悟" />
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413213477" class="site-logo">
-        <h1 class="site-title">张雄</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://xiong-zh.github.io">
+                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    张雄
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    回到首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    历史归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    所有标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                        <li>
+                            <a href="/documents/" class="menu" target="_blank">
+                                后端图谱
+                            </a>
+                        </li>
+                        
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于博主
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于博主
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">关于遗憾</h2>
-            <div class="post-date">2019-08-29</div>
-            
-            <div class="post-content" v-pre>
-              <p>生活总是充满了这样那样的遗憾，这个暑假结束，遗憾又会多了一个。是念念不忘，是欲求不满。</p>
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            关于遗憾
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-08-29</time>
+                            
+                                <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="post-tag i-tag
+                            i-tag-info">
+                            #感悟
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <p>生活总是充满了这样那样的遗憾，这个暑假结束，遗憾又会多了一个。是念念不忘，是欲求不满。</p>
 <p>一代宗师里说，人生如棋，落子无悔，其实人生无悔，那都是赌气的话，只不过选择了总会有个结果，或好或坏，庸人自扰。</p>
 <p>遗憾也总还是会有，未来也没有我们想象的那么美好。只希望，此生尽兴，往前走吧。</p>
 
-            </div>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://xiong-zh.github.io/post/音乐-光辉岁月-国语版">
+                                <h3 class="post-title">
+                                    音乐-光辉岁月(国语版)
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://xiong-zh.github.io/images/avatar.png?v=1579414666430)">
+        </div>
+        <h1 class="id_card-title">
+            张雄
+        </h1>
+        <h2 class="id_card-description">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
             
-              <div class="tag-container">
+                <a href="https://github.com/xiong-zh" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
                 
-                  <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="tag">
-                    感悟
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://xiong-zh.github.io/post/音乐-光辉岁月-国语版">
-                  <h3 class="post-title">
-                    音乐-光辉岁月(国语版)
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
+                    <!-- twitter -->
+                    
+                        <a href="https://twitter.com/imzhangxiong" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-twitter"></i></a>
+                        
+                            <!-- weibo -->
+                            
+                                <a href="https://weibo.com/zhangxiongblog" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-weibo"></i></a>
+                                
+                                    <!-- facebook -->
+                                    
+                                        <a href="https://www.facebook.com/xiong.zh.397" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-facebook"></i></a>
+                                        
 
         </div>
-      </div>
     </div>
+    
+                                    
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+                </div>
 
-AOS.init();
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    </div>
     <script>
-
-      var gitalk = new Gitalk({
-        clientID: '7691fdf5a3780e9bb3a4',
-        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-        repo: 'xiong-zh.github.io',
-        owner: 'xiong-zh',
-        admin: ['xiong-zh'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
     </script>
-  
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: '7691fdf5a3780e9bb3a4',
+            clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+            repo: 'xiong-zh.github.io',
+            owner: 'xiong-zh',
+            admin: ['xiong-zh'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
 
-  
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
 
+                    
+                                
+</body>
 
-
-
-  </body>
 </html>

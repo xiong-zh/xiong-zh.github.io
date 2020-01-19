@@ -1,131 +1,131 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>张雄</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413213477">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    张雄
+</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
+</head>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413213477" class="site-logo">
-        <h1 class="site-title">张雄</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://xiong-zh.github.io">
+                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    张雄
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    回到首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    历史归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    所有标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                        <li>
+                            <a href="/documents/" class="menu" target="_blank">
+                                后端图谱
+                            </a>
+                        </li>
+                        
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于博主
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于博主
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/sublime使用总结">
-                  <h2 class="post-title">sublime使用总结</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-16
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/sublime使用总结">
+                        sublime使用总结
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-16</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-" class="post-tag i-tag
+                            i-tag-other_2">
+            #sublime
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <h2 id="快捷键">快捷键</h2>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h2 id="快捷键">快捷键</h2>
 <h3 id="新建文件">新建文件</h3>
 <blockquote>
 <ol>
@@ -135,58 +135,102 @@
 </ol>
 </blockquote>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/sublime使用总结">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Git常用命令">
-                  <h2 class="post-title">Git常用命令</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Git常用命令">
+                        Git常用命令
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-15</time>
+                    
                 </div>
-                <div class="post-abstract">
-                  <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Git常用命令">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-                  <h2 class="post-title">Python爬取不确定页数网页</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
+                        Python爬取不确定页数网页
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-15</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
+                            i-tag-info">
+            #Python
+        </a>
+                        
+                        <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF" class="post-tag i-tag
+                            i-tag-error">
+            #Scrapy
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>我们通常遇到的网站页数展现形式有这么几种：</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>我们通常遇到的网站页数展现形式有这么几种：</p>
 <ul>
 <li>第一种是直观地显示所有页数，显示在页面上。</li>
 <li>第二种是不直观显示网页总页数，需要抓包才可以看到，一般来说会有一个 <code>totalPage</code> 参数。</li>
 <li><strong>第三种是不知道具体有多少页的网页。</strong></li>
 </ul>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
-                  <h2 class="post-title">Scrapy框架的使用之Item Pipeline用法</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
+                        Scrapy框架的使用之Item Pipeline用法
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-15</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
+                            i-tag-other_2">
+            #Python
+        </a>
+                        
+                        <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF" class="post-tag i-tag
+                            i-tag-warning">
+            #Scrapy
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
 Item Pipeline 的主要功能有如下 4 点。</p>
 <ul>
 <li>清理 HTML 数据。</li>
@@ -195,140 +239,269 @@ Item Pipeline 的主要功能有如下 4 点。</p>
 <li>将爬取结果保存到数据库。</li>
 </ul>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python为什么现在这么火">
-                  <h2 class="post-title">Python为什么现在这么火</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python为什么现在这么火">
+                        Python为什么现在这么火
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-15</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
+                            i-tag-other_1">
+            #Python
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python为什么现在这么火">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python基础知识总结">
-                  <h2 class="post-title">Python基础知识总结</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python基础知识总结">
+                        Python基础知识总结
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-15</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
+                            i-tag-warning">
+            #Python
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>Python 的火热度怕是大家已经早已感受到了，很多程序员将 Python 作为了他的第二语言，如果你至今还未接触任何和 Python 相关的知识，那么今天我带给你的这篇文章可以让你快速了解 Python 语法，上手做东西了。</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>Python 的火热度怕是大家已经早已感受到了，很多程序员将 Python 作为了他的第二语言，如果你至今还未接触任何和 Python 相关的知识，那么今天我带给你的这篇文章可以让你快速了解 Python 语法，上手做东西了。</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python基础知识总结">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/常用Linux命令">
-                  <h2 class="post-title">常用Linux命令</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-14
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/常用Linux命令">
+                        常用Linux命令
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-14</time>
+                    
                 </div>
-                <div class="post-abstract">
-                  <p>超全整理！Linux shell及常用36类命令汇总</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>超全整理！Linux shell及常用36类命令汇总</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/常用Linux命令">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/推荐一些Flask资源">
-                  <h2 class="post-title">推荐一些Flask资源</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-14
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/推荐一些Flask资源">
+                        推荐一些Flask资源
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-14</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" class="post-tag i-tag
+                            i-tag-success">
+            #Flask
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，给大家安利几个 Flask 学习资源.</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，给大家安利几个 Flask 学习资源.</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/推荐一些Flask资源">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">
-                  <h2 class="post-title">Flask对时间、邮件、文件上传下载、视图函数的处理</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-11
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">
+                        Flask对时间、邮件、文件上传下载、视图函数的处理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-11</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" class="post-tag i-tag
+                            i-tag-">
+            #Flask
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>Flask对时间、邮件、文件上传下载、视图函数的处理</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>Flask对时间、邮件、文件上传下载、视图函数的处理</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python开发环境配置">
-                  <h2 class="post-title">Python开发环境配置</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-10
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python开发环境配置">
+                        Python开发环境配置
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-01-10</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" class="post-tag i-tag
+                            i-tag-primary">
+            #Flask
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <p>Python 2和Python 3之间存在着较大的差异，并且，由于各种原因导致了Python 2和Python 3的长期共存。在实际工作过程中，我们可能会同时用到Python 2和Python 3，因此，也需要经常在Python 2和Python 3之间进行来回切换。这就需要对python的版本进行管理，除此之外还需要对不同的软件包进行管理。大部分情况下，对于开源的库我们使用最新版本即可。但是，有时候可能需要对相同的Python版本，在不同的项目中使用不同版本的软件包。</p>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>Python 2和Python 3之间存在着较大的差异，并且，由于各种原因导致了Python 2和Python 3的长期共存。在实际工作过程中，我们可能会同时用到Python 2和Python 3，因此，也需要经常在Python 2和Python 3之间进行来回切换。这就需要对python的版本进行管理，除此之外还需要对不同的软件包进行管理。大部分情况下，对于开源的库我们使用最新版本即可。但是，有时候可能需要对相同的Python版本，在不同的项目中使用不同版本的软件包。</p>
 <p>在这里，我们要使用两个工具：pyenv和virtualenv。前者用于管理不同的Python版本，后者用于管理不同的工作环境。有了这两个工具，Python相关的版本问题将不再是问题。</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python开发环境配置">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
+            
+                <!-- 翻页 -->
+                
+    <div class="pagination-container">
+        
+            <a href="https://xiong-zh.github.io/" class="page-btn btn">上一页</a>
+            
+                
+                    <a href="https://xiong-zh.github.io/page/3/" class="page-btn btn">下一页</a>
+                    
+    </div>
+    
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
-          <div class="pagination-container">
-  
-    <a href="https://xiong-zh.github.io/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
-  
-  
-    <a href="https://xiong-zh.github.io/page/3/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://xiong-zh.github.io/images/avatar.png?v=1579414666430)">
+        </div>
+        <h1 class="id_card-title">
+            张雄
+        </h1>
+        <h2 class="id_card-description">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/xiong-zh" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                        <a href="https://twitter.com/imzhangxiong" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-twitter"></i></a>
+                        
+                            <!-- weibo -->
+                            
+                                <a href="https://weibo.com/zhangxiongblog" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-weibo"></i></a>
+                                
+                                    <!-- facebook -->
+                                    
+                                        <a href="https://www.facebook.com/xiong.zh.397" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-facebook"></i></a>
+                                        
 
         </div>
-      </div>
     </div>
+    
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+                        <!-- 公告栏 -->
+                        
+    <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+        </div>
+    </div>
+    
 
-AOS.init();
+                </div>
+            </div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+</body>
 
-
-
-
-
-  </body>
 </html>

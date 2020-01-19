@@ -1,319 +1,706 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>张雄</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413213477">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    张雄
+</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
+</head>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413213477" class="site-logo">
-        <h1 class="site-title">张雄</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://xiong-zh.github.io">
+                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    张雄
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    回到首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    历史归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    所有标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                        <li>
+                            <a href="/documents/" class="menu" target="_blank">
+                                后端图谱
+                            </a>
+                        </li>
+                        
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于博主
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于博主
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Linux 基础知识">
-                  <h2 class="post-title">Linux 基础知识</h2>
-                </a>
-                <div class="post-date">
-                  2019-08-09
-                </div>
-                <div class="post-abstract">
-                  <p>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件.</p>
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
 
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Linux 基础知识">
+                        Linux 基础知识
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-09</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/Gah7pxU-rM" class="post-tag i-tag
+                            i-tag-primary">
+            #Linux
+        </a>
+                        
                 </div>
-              </div>
-              
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件.</p>
+
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Linux 基础知识">Read More ~</a>
+                            </div>
+                </div>
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python基础梳理-2">
-                  <h2 class="post-title">Python基础梳理-2</h2>
-                </a>
-                <div class="post-date">
-                  2019-08-07
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python基础梳理-2">
+                        Python基础梳理-2
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-07</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="post-tag i-tag
+                            i-tag-other_1">
+            #Python
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <h1 id="python语言特性">Python语言特性</h1>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h1 id="python语言特性">Python语言特性</h1>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python基础梳理-2">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python基础梳理-1">
-                  <h2 class="post-title">Python基础梳理</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-29
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python基础梳理-1">
+                        Python基础梳理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-29</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/ejxnkFenzC" class="post-tag i-tag
+                            i-tag-banana">
+            #书籍推荐
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <blockquote>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <blockquote>
 <p>注释：该篇文章来自网络，非原创，版权归原作者所有，侵删。</p>
 </blockquote>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python基础梳理-1">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python参考书籍">
-                  <h2 class="post-title">Python参考书籍</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-02
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/Python参考书籍">
+                        Python参考书籍
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-02</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/ejxnkFenzC" class="post-tag i-tag
+                            i-tag-other_1">
+            #书籍推荐
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <h3 id="python学习完基础语法知识后如何进一步提高">Python学习完基础语法知识后，如何进一步提高？</h3>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h3 id="python学习完基础语法知识后如何进一步提高">Python学习完基础语法知识后，如何进一步提高？</h3>
 <p><a href="https://github.com/jackfrued/Python-100-Days/blob/master/%E7%9F%A5%E4%B9%8E%E9%97%AE%E9%A2%98%E5%9B%9E%E7%AD%94.md">文章来源</a></p>
 <p>如果已经完成了Python基础语法的学习，想要知道接下来如何提高，那么你得先问问自己你要用Python来做什么？目前学习Python后可能的就业方向包括以下几个领域，我把每个领域需要的技术作为了一个简单的关键词摘要。</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/Python参考书籍">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/人生如程序">
-                  <h2 class="post-title">人生如程序</h2>
-                </a>
-                <div class="post-date">
-                  2019-06-27
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/人生如程序">
+                        人生如程序
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-06-27</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="post-tag i-tag
+                            i-tag-success">
+            #感悟
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/毕业快乐">
-                  <h2 class="post-title">毕业快乐</h2>
-                </a>
-                <div class="post-date">
-                  2019-06-27
-                </div>
-                <div class="post-abstract">
-                  <h2 id="从此海阔凭鱼跃天高任你飞">从此海阔凭鱼跃，天高任你飞</h2>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+人生就像是一段程序
+而不同的人生经历，便是我们不断优化自身算法，不断添加函数的过程。
+我们刚出生那一刻，上天只给了我们一个程序的入口----主函数，
+同时为我们定义了哭（），以及活着（）这两个方法。
+而有的人却因为缺少程序入口而夭折。
+小时候我们不断的使用哭这一方法，返回值却是var型，
+因为我们的哭，会给我们带来各种各样的结果，
+每个结果，都会对我们产生不同的影响。
+每个人都有自己的生活轨迹，每个人，也都有自己独特的方法，
+有时候，我们会去ctrl+c别人的生活方式，再 ctrl+v 到自己的主体中来，
+却发现，在别人那运行好好的代码，来到自己身上却存在n个bug，
+也难怪，对象都不同，变量又怎么能通用呢。        
+我们不断往自己的主体中添加各种各样的方法，却从不管自身的稳定性，
+有时候，并不是知道越多越好，相反，拥有得越少，人生运行得反而更快。
+程序存在这很多种分支，正如人生有很多十字路口，小学时 
+if（you are clever）{
+获得老师赞赏，同学亲近
+}else{缺少朋友}  
+高考时刻，if（得到好的成绩）{
+上大学
+} else{
+去打工
+}
+当然了，并不是说就一定去打工，只不过这里讨论的是大多数而已，
+时间一年一年流逝，程序一行一行执行，期间必然会遇到各种各样的问题，
+有的人，走偏了，还能回来，
+而有的人，却进入了个无限递归的死循环，
+最终以爆栈结束了整个程序，也结束了整个人生。
+每个人都有自己的计划，人们用广搜决定了自己的人生，
+再用深搜去过着每一天，但并不是每个人都是算法高手，
+有的人深搜能回来，有的人却没能定义好自己的回溯条件。
+生活不像ICPC并不是每道题都能AC，返回了WA对你的人生也并不是一件坏事。
+面对考试，我们为自己定义了一系列封装好的类，
+里面有考试作弊技巧，或者是自己的所有复习知识点等等，
+遇到考试时，便直接调用。
+遇到面试，我们已将面试官要问的各种问题都AI式的准备好了关键词自动回答。
+我们生活的每一天，仿佛都是在for循环过一天()这样的方法而已，
+日服一日，年复一年，永远不知道循环什么时候结束，也永远不知道程序什么时候崩溃。
+大部分人都认为程序员很难找到对象，却不知道我们每天都得花十几个小时在某个对象身上，
+毕竟自己new出来的对象，跪着也要把bug找出来。        
+我们就这样一直生活着，
+直到某一天我们遇到了另一段程序，
+彼此间互相调用其内部的方法，不分彼此。
+为对方提供着自己的interface，但并不是每个interface都是稳定的，
+或许她会看上别的object，最终离你而去。
+并不是每个函数都会抛出exception，
+也并不是你的每一个决定都会有人提示你是好是坏，
+最终的结果，也只有你最后执行完毕才会知道。
+我们人生不断的运行着，好似每天的任务都规定死了，
+学生就是:吃饭，睡觉，
+学习工作者就是:吃饭,睡觉，工作，
+吃饭和睡觉这两大方法，我们从我们祖先那继承得倒是挺不错的，
+不仅仅继承了，还扩展了各式各样的吃法，以及各式各样的睡法。
+有少部分人想要强行入侵别人的主体，于是乎，便衍生了犯罪。        
+人人都想自己的程序稳定运行，因为这个程序，只有你自己才能好好调试，
+别人的代码，永远只是适合来参考。
+我们的吃喝拉撒都是循环着进行的，若某天的突发状况，不正是中断处理程序吗，
+有时候，同一时间段，你会进行着各式各样的工作，
+多个线程的运行，会让你不堪重负，
+你想删掉其中某个，却发现它们之间有着千丝万缕的关系。
+但你却不知道，有时候放弃，也是一直用收获。
+自己的程序是由自己一步一歩调试运维而来的，
+自己设计的算法，需要自己的不断剪枝与修改来完善的，
+适当的回溯，才不会让你陷入死循环，重新回到自己的主体，做回自己。
+随着时间的推移，我们越来越少的调用哭泣这一方法，
+更多的，我们擅长于伪装，谎言，以及猜测。
+这也许也是人生多姿多彩的地方吧。        
+若人生只是一段程序，我们更应该自己完善好自己。
+若人生只是一段程序，我们则要时时警醒自己，防止病毒的入侵，以及深搜的无止境。
 
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/如去年一样伤悲">
-                  <h2 class="post-title">如去年一样伤悲</h2>
-                </a>
-                <div class="post-date">
-                  2019-04-07
-                </div>
-                <div class="post-abstract">
-                  <h2 id="没了烟火气人生就像一段孤独的旅行">没了烟火气，人生就像一段孤独的旅行。</h2>
 
+
+引用来源
+
+
+下文为老院长最后一课所授内容：
+
+
+如果把人生不同的阶段看成函数。
+
+那么头文件就是我学习的榜样。
+
+不忘初心，牢记梦想，毕其一生，必得一端。
+
+人生的主函数，国家，社会，家庭，就是所有程序的全局变量。
+
+找到人生函数中的bug,
+
+浅规划思考，准备各种出现问题的可能，
+
+方能使程序健壮平稳运行，
+
+人生难免bug常在，但debug让人生更加丰富多彩。
+
+不断的找到解决问题的办法，就能慢慢的，写出理想人生。
+
+每一次的编程都是生活难得的一次经验.
+
+每个人一定要有一套适合自己的操作系统,
+
+以应对生活当中的，忙和盲。
+
+不手忙脚乱随意书写，不盲目随机调用，
+
+合适的时间做合适的事情，
+
+操作系统最主要的功能是分配协调
+
+所以学会交流，沟通和共享
+
+要经常向心宕机，身体是革命的本钱，锻炼身心，快乐工作。
+
+多给cpu一些空闲时间吧
+
+我们每个人说出一个个属于自己的，令人惊叹的程序结果
+
+信息工程学院是你们最可靠的守护进程。
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/人生如程序">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/算法入门">
-                  <h2 class="post-title">算法入门(01)</h2>
-                </a>
-                <div class="post-date">
-                  2019-03-30
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/毕业快乐">
+                        毕业快乐
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-06-27</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="post-tag i-tag
+                            i-tag-warning">
+            #感悟
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <blockquote>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h2 id="从此海阔凭鱼跃天高任你飞">从此海阔凭鱼跃，天高任你飞</h2>
+
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/毕业快乐">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/如去年一样伤悲">
+                        如去年一样伤悲
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-04-07</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
+                            i-tag-error">
+            #音乐分享
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h2 id="没了烟火气人生就像一段孤独的旅行">没了烟火气，人生就像一段孤独的旅行。</h2>
+
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/如去年一样伤悲">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/算法入门">
+                        算法入门(01)
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-03-30</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/aJT3P20zaN" class="post-tag i-tag
+                            i-tag-other_3">
+            #C
+        </a>
+                        
+                        <a href="https://xiong-zh.github.io/tag/L-mexE1Ckv" class="post-tag i-tag
+                            i-tag-other_1">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <blockquote>
 <p>有非常多的算法，比如递推法，穷举法，贪心算法，分治法，动态规划法，迭代法，分支界限法，回溯法.</p>
 </blockquote>
 <p><a href="https://github.com/xiong-zh/C/tree/master/Fundamentals%20of%20Algorithmics">仓库地址</a></p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/算法入门">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/你来人间一趟 你要看看太阳">
-                  <h2 class="post-title">你来人间一趟 你要看看太阳</h2>
-                </a>
-                <div class="post-date">
-                  2019-03-26
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/你来人间一趟 你要看看太阳">
+                        你来人间一趟 你要看看太阳
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-03-26</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="post-tag i-tag
+                            i-tag-primary">
+            #感悟
+        </a>
+                        
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
+                            i-tag-error">
+            #音乐分享
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+
+
+搬运几首我喜欢的他的诗
+想起你 我今夜跑尽这空无一人的街道
+明天，明天起来后我要重新做人
+我要成为宇宙的孩子 世纪的孩子
+挥霍我自己的青春
+然后放弃爱情的王位
+去做铁石心肠的船长
+——眺望北方
+
+夏天的太阳
+夏天
+如果这条街没有鞋匠
+
+我就打着赤脚
+站在太阳下看太阳
+
+我想到在白天出生的孩子
+一定是出于故意
+
+你来人间一趟
+你要看看太阳
+
+和你的心上人
+一起走在街上
+
+
+明天醒来我会在哪一只鞋子里
+我不声不响的
+带来自己这个包袱
+尽管我不喜爱自己
+但我还是悄悄打开
+
+我以前睡在黑暗的壳里
+我的脑袋就是我的边疆
+
+我的呼吸
+一直在证明
+树叶飘飘
+
+活在这珍贵的人间
+活在这珍贵的人间
+太阳强烈
+水波温柔
+一层层白云覆盖着
+我
+踩在青草上
+感到自己是彻底干净的黑土块
+
+活在这珍贵的人间
+泥土高溅
+扑打面颊
+活在这珍贵的人间
+人类和植物一样幸福
+爱情和雨水一样幸福
+
+极致热爱的结果是极致的死亡
+引自知乎作者-废名
+“生命的极致在于生命的狂喜。”
+
+写下这句话的人，在吗啡的海市蜃楼中放逐了自己的生命。
+“春暖花开，喂马劈柴。”“以梦为马，太阳是我的名字。&amp;quot;
+
+写下这种诗的人在天梯上被隆隆轰鸣碾成碎片，告别草木人间。
+“生活永远不可能像你想像得那么好，但是也不会像你想像得那么糟。”
+
+写下这个句子的人，用一席矮纸割开了咽喉。
+“黑夜给了我黑色的眼睛，我却用它去寻找光明。”
+
+写这句诗的人最后举起了嗜血的斧头，挥霍着自己理想国。
+“一个人可以被毁灭，但不可被打败。”
+
+写下这个句子的人，用一粒钢铁饮弹自尽，完成了对意志的最后通牒。
+“凌晨四点钟看到海棠花未眠。”
+
+写下隽永至美句子的人，最后不留绝笔，吞咽下滚滚煤气。
+“有朝一日，我将赢得整个世界。我将把血肉做成黄金，做成粮食。”
+
+写下这句话的人，把自己的棺椁安置在沧浪之水。
+极致热爱的结果是极致的死亡。极致的死亡是不想看到极致热爱的想象毁灭。关于海子，我一直在想，如果他活到现在，有两种可能。一种可能，他是盛誉天下的掮客，高屋建瓴的学者，为尊者讳，为长者讳，对着领导搞汇报，对着媒体吹牛逼，宣告河清海晏，高歌盛世升平，人生得意，笑靥如花。
+还有一种可能，他是胡子拉碴的大叔，落魄的精神贵族，会写狗血的三流剧本打牙祭，然后用自己的剧本垫桌角打麻将；也会抽劣质烟喝燕京鲜啤，然后发福恬着啤酒肚；也会沉湎于红灯绿酒，然后出轨有夫之妇。
+无论哪一种可能，我好象都看见他扶着厚眼镜踽踽而行，走过面朝南海的高楼，走过千禧年，走过零八奥运会，走过芸芸的人潮和车海，走过叠叠房贷，走过无数的魔幻元年，走过无数的绝望失望与期望，走过公知熬的心灵鸡汤和屁民洒的狗血鸡血。
+矫情文青对他的诗帖念念不忘，欲自杀者将他作为崇拜图腾，路人潜吟他的诗附庸风雅。有了他，世界好像更加浓墨重彩，但没有他，地球日复一日照样转，不免流俗的日子照样过。他就是个才华横溢而敏感脆弱的平凡的人，面对崩塌的梦想顾影自怜，面对变化的世界无力转圜。不想妥协的完美主义者，或许毁灭自我才是最好的选择。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/你来人间一趟 你要看看太阳">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/C语言，看这篇就够了">
-                  <h2 class="post-title">入门C语言，看这篇就够了</h2>
-                </a>
-                <div class="post-date">
-                  2019-03-22
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://xiong-zh.github.io/post/C语言，看这篇就够了">
+                        入门C语言，看这篇就够了
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-03-22</time>
+                    
+                        <a href="https://xiong-zh.github.io/tag/t4RszL3qg0" class="post-tag i-tag
+                            i-tag-primary">
+            #C语言
+        </a>
+                        
                 </div>
-                <div class="post-abstract">
-                  <h3 id="c语言中的基础概念">C语言中的基础概念</h3>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h3 id="c语言中的基础概念">C语言中的基础概念</h3>
 <p>该文章将会把C语言基础语法梳理一遍,主要记录帮助理解相关知识点的代码示例和重要或容易忽略的面试知识,将会陆续发布系类文章.</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/C语言，看这篇就够了">Read More ~</a>
+                            </div>
                 </div>
-              </div>
-              
             </article>
-          
+            
+                <!-- 翻页 -->
+                
+    <div class="pagination-container">
+        
+            <a href="https://xiong-zh.github.io/page/3/" class="page-btn btn">上一页</a>
+            
+                
+                    <a href="https://xiong-zh.github.io/page/5/" class="page-btn btn">下一页</a>
+                    
+    </div>
+    
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
-          <div class="pagination-container">
-  
-    <a href="https://xiong-zh.github.io/page/3/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
-  
-  
-    <a href="https://xiong-zh.github.io/page/5/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://xiong-zh.github.io/images/avatar.png?v=1579414666430)">
+        </div>
+        <h1 class="id_card-title">
+            张雄
+        </h1>
+        <h2 class="id_card-description">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/xiong-zh" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                        <a href="https://twitter.com/imzhangxiong" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-twitter"></i></a>
+                        
+                            <!-- weibo -->
+                            
+                                <a href="https://weibo.com/zhangxiongblog" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-weibo"></i></a>
+                                
+                                    <!-- facebook -->
+                                    
+                                        <a href="https://www.facebook.com/xiong.zh.397" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-facebook"></i></a>
+                                        
 
         </div>
-      </div>
     </div>
+    
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+                        <!-- 公告栏 -->
+                        
+    <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+        </div>
+    </div>
+    
 
-AOS.init();
+                </div>
+            </div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+</body>
 
-
-
-
-
-  </body>
 </html>

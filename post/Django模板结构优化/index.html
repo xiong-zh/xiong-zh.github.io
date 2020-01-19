@@ -1,147 +1,135 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>Django模板结构优化 | 张雄</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413213477">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    Django模板结构优化 | 张雄
+</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
 
-  
+                    
+                            
+</head>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="Django模板结构优化
-
-DTL 模板结构优化
-一、引入模板
-include 标签的使用
-
-
-新建 templates/header.html
-&lt;header&gt;头部&lt;/header&gt;
-
-
-
-新建 templates..." />
-    <meta name="keywords" content="Django" />
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413213477" class="site-logo">
-        <h1 class="site-title">张雄</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://xiong-zh.github.io">
+                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    张雄
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    回到首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    历史归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    所有标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                        <li>
+                            <a href="/documents/" class="menu" target="_blank">
+                                后端图谱
+                            </a>
+                        </li>
+                        
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于博主
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于博主
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Django模板结构优化</h2>
-            <div class="post-date">2020-01-18</div>
-            
-              <div class="feature-container" style="background-image: url('https://xiong-zh.github.io/post-images/Django模板结构优化.jpg')">
-              </div>
-            
-            <div class="post-content" v-pre>
-              <p>Django模板结构优化</p>
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            Django模板结构优化
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2020-01-18</time>
+                            
+                                <a href="https://xiong-zh.github.io/tag/opJrPL36c" class="post-tag i-tag
+                            i-tag-primary">
+                            #Django
+                        </a>
+                                
+                        </div>
+                        
+                            <div class="post-feature-image" style="background-image: url('https://xiong-zh.github.io/post-images/Django模板结构优化.jpg')"></div>
+                            
+                                <div class="post-content">
+                                    <p>Django模板结构优化</p>
 <!-- more -->
 <h1 id="dtl-模板结构优化"><code>DTL</code> 模板结构优化</h1>
 <h2 id="一-引入模板">一、引入模板</h2>
@@ -231,82 +219,121 @@ include 标签的使用
     {% endblock %}
 </code></pre>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://xiong-zh.github.io/tag/opJrPL36c" class="tag">
-                    Django
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://xiong-zh.github.io/post/Django自定义模板过滤器">
-                  <h3 class="post-title">
-                    Django自定义模板过滤器
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://xiong-zh.github.io/post/Django自定义模板过滤器">
+                                <h3 class="post-title">
+                                    Django自定义模板过滤器
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#dtl-%E6%A8%A1%E6%9D%BF%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><code>DTL</code> 模板结构优化</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%BC%95%E5%85%A5%E6%A8%A1%E6%9D%BF">一、引入模板</a>
+<ul>
+<li><a href="#include-%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%BF%E7%94%A8"><code>include</code> 标签的使用</a></li>
+<li><a href="#include-%E6%A0%87%E7%AD%BE%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%9F%A5%E6%89%BE%E8%B7%AF%E5%BE%84"><code>include</code> 标签中的模板查找路径</a></li>
+<li><a href="#include-%E6%A0%87%E7%AD%BE%E5%BC%95%E5%85%A5%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%8F%AF%E4%BB%A5%E5%BC%95%E7%94%A8%E5%BD%93%E5%89%8D%E6%A8%A1%E6%9D%BF%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F"><code>include</code> 标签引入的模板可以引用当前模板中的变量</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF">二、模板继承</a></li>
+</ul>
+</li>
+</ul>
 
         </div>
-      </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
+    
+                            
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+                </div>
 
-AOS.init();
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    </div>
     <script>
-
-      var gitalk = new Gitalk({
-        clientID: '7691fdf5a3780e9bb3a4',
-        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-        repo: 'xiong-zh.github.io',
-        owner: 'xiong-zh',
-        admin: ['xiong-zh'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
     </script>
-  
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: '7691fdf5a3780e9bb3a4',
+            clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+            repo: 'xiong-zh.github.io',
+            owner: 'xiong-zh',
+            admin: ['xiong-zh'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
 
-  
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
 
+                    
+                                
+</body>
 
-
-
-  </body>
 </html>

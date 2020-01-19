@@ -1,142 +1,133 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>音乐分享-小雨と君 | 张雄</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413213477">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    音乐分享-小雨と君 | 张雄
+</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
 
-  
+                    
+                            
+</head>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="
-“请不要出现在我的梦里，我已负担不起再一次失落的早晨。”
-
- 
-有哪个妹子为我唱这首歌我就娶她！酥了，好好听。
-小雨と君- 荒木毬菜
-
-
-> “请不要出现在我的梦里，我已负担不起再一次失落的早晨。”
-中日歌词对照如下：
-桜の色に 染められ..." />
-    <meta name="keywords" content="音乐分享" />
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413213477" class="site-logo">
-        <h1 class="site-title">张雄</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://xiong-zh.github.io">
+                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    张雄
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    回到首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    历史归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    所有标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                        <li>
+                            <a href="/documents/" class="menu" target="_blank">
+                                后端图谱
+                            </a>
+                        </li>
+                        
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于博主
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于博主
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">音乐分享-小雨と君</h2>
-            <div class="post-date">2019-03-08</div>
-            
-            <div class="post-content" v-pre>
-              <blockquote>
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            音乐分享-小雨と君
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-03-08</time>
+                            
+                                <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
+                            i-tag-">
+                            #音乐分享
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <blockquote>
 <p>“请不要出现在我的梦里，我已负担不起再一次失落的早晨。”</p>
 </blockquote>
  <!--more-->
@@ -333,82 +324,125 @@
 </blockquote>
 <p>喜欢可以点击<a href="http://m10.music.126.net/20190308194949/9566ff9eef9812a56c937ce50208fe98/ymusic/1f63/a00b/74d8/7dc588219747bb91540948174fdc4836.mp3">这里</a>下载哦!</p>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="tag">
-                    音乐分享
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://xiong-zh.github.io/post/sha256加密测试">
-                  <h3 class="post-title">
-                    SHA256加密测试
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://xiong-zh.github.io/post/sha256加密测试">
+                                <h3 class="post-title">
+                                    SHA256加密测试
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%B8%AA%E5%A6%B9%E5%AD%90%E4%B8%BA%E6%88%91%E5%94%B1%E8%BF%99%E9%A6%96%E6%AD%8C%E6%88%91%E5%B0%B1%E5%A8%B6%E5%A5%B9%E9%85%A5%E4%BA%86%E5%A5%BD%E5%A5%BD%E5%90%AC">有哪个妹子为我唱这首歌我就娶她！酥了，好好听。</a></li>
+<li><a href="#%E5%B0%8F%E9%9B%A8%E3%81%A8%E5%90%9B-%E8%8D%92%E6%9C%A8%E6%AF%AC%E8%8F%9C">小雨と君- 荒木毬菜</a></li>
+<li><a href="#%E4%BA%BA%E7%94%9F%E5%A6%82%E9%80%86%E6%97%85%E6%88%91%E4%BA%A6%E6%98%AF%E8%A1%8C%E4%BA%BA%E4%BD%86%E6%84%BF%E5%88%9D%E7%9B%B8%E9%81%87%E4%B8%8D%E8%B4%9F%E6%9C%89%E5%BF%83%E4%BA%BA">人生如逆旅，我亦是行人，但愿初相遇，不负有心人.</a></li>
+<li><a href="#%E6%B5%81%E3%82%8C%E6%98%9F%E5%B0%8F%E5%B9%B8%E8%BF%90%E6%97%A5%E6%96%87%E7%89%88-misia%E5%B0%8F%E9%9B%A8">流れ星（《小幸运》日文版）- Misia小雨</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
         </div>
-      </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
+    
+                            
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+                </div>
 
-AOS.init();
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    </div>
     <script>
-
-      var gitalk = new Gitalk({
-        clientID: '7691fdf5a3780e9bb3a4',
-        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-        repo: 'xiong-zh.github.io',
-        owner: 'xiong-zh',
-        admin: ['xiong-zh'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
     </script>
-  
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: '7691fdf5a3780e9bb3a4',
+            clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+            repo: 'xiong-zh.github.io',
+            owner: 'xiong-zh',
+            admin: ['xiong-zh'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
 
-  
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
 
+                    
+                                
+</body>
 
-
-
-  </body>
 </html>
