@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>推荐一些Flask资源 | 张雄</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413177369">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，给大家安利几个 Flask 学习资源.
+
+Flask 是 Python 中最流行的 Web 框架之一，..." />
+    <meta name="keywords" content="Flask" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413177369" class="site-logo">
+        <h1 class="site-title">张雄</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
+        
+      
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于博主
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">推荐一些Flask资源</h2>
+            <div class="post-date">2020-01-14</div>
+            
+            <div class="post-content" v-pre>
+              <p>Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，给大家安利几个 Flask 学习资源.</p>
+<!-- more -->
+<p>Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，如果你不喜欢关系型数据库，ok，没问题，切换成本非常低，而 Django 呢？你能遇到的问题它都帮你想好并且提供了对应解决方案，你自己就不要去重复造轮子了，比如模版引擎，ORM，不爽想替换？这个有点难。</p>
+<p>给大家安利几个 Flask 学习资源</p>
+<h3 id="1-the-flask-mega-tutorial-教程">1、The Flask Mega-Tutorial 教程</h3>
+<p>这个教程是《Flask Web开发：基于Python的Web应用开发实战》作者 Miguel Grinberg 写的 2017版 Flask 教程，也是我强烈推荐给大家的 Flask 教程，英语阅读水平过得去的话，建议直接读原文，英语渣也有福音，国内已有网友把它翻译成了中文。</p>
+<p>英文地址：https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world</p>
+<p>中文地址：https://github.com/luhuisicnu/The-Flask-Mega-Tutorial-zh</p>
+<h3 id="2-flask之旅">2、Flask之旅</h3>
+<p>如果你已经入门了Flask，肯定希望有一个 Flask 最佳实践指南，让你的 Flask 项目看起来更加 professional，而本书涉及的主题就是Flask的最佳编程实践和模式。尽量避免啰嗦官方文档中提到的内容，同时也会再次强调一些概念来加深印象。</p>
+<p>英文地址： http://exploreflask.com/en/latest/</p>
+<p>中文地址：https://spacewander.github.io/explore-flask-zh/index.html</p>
+<h3 id="3-flask-源码解析">3、Flask 源码解析</h3>
+<p>如果你已经熟练掌握了 Flask 框架，是不是惊叹于 Flask 框架背后的设计精髓，一个精悍的Web框架究竟是如何实现的？了解它最好的办法就是窥探它的源码，还好，这件事已经有人帮你做了。</p>
+<p>地址：http://cizixs.com/2017/01/13/flask-insight-context</p>
+<h3 id="4-awesome-flask">4、Awesome Flask</h3>
+<p>最后强烈推荐的是这个 Awesome 系列的 Flask 资源大集合，涵盖了 Flask 的各方各面，包括第三方扩展插件以及教程、书籍和视频、PPT还有项目结构等等。</p>
+<p>地址：https://github.com/humiaozuzu/awesome-flask</p>
+<h3 id="5-flask-for-fun-and-profit">5、Flask for Fun and Profit</h3>
+<p>Flask 作者 Armin Ronacher 在PyBay2016上的一个视频分享，手把手教你如何构建一个大型复杂的易于测试的API服务。同时还有在开发Flask的过程的一些设计思想。</p>
+<p>视频地址：https://www.youtube.com/watch?v=1ByQhAM5c1I</p>
+<p>PPT：https://speakerdeck.com/player/94a53afb6a524ad88f301f62166a27e4?#</p>
+<p>再补充一些其它资源：</p>
+<p>Flask Web 开发入门</p>
+<p>https://funhacks.gitbooks.io/head-first-flask/content/chapter02/section2.03.html</p>
+<p>Flask入门系列教程</p>
+<p>http://www.bjhee.com/flask-1.html</p>
+<p>Flask进阶系列教程</p>
+<p>http://www.bjhee.com/flask-ad1.html</p>
+<p>Full Stack Web Development with Flask (视频教程，需要翻土啬)</p>
+<p>https://github.com/realpython/discover-flask</p>
+<p>Full Stack Python</p>
+<p>https://www.fullstackpython.com/flask.html</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" class="tag">
+                    Flask
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">
+                  <h3 class="post-title">
+                    Flask对时间、邮件、文件上传下载、视图函数的处理
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

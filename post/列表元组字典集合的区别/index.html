@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>列表元组字典集合的区别 | 张雄</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413177369">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平
+
+列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平
+（..." />
+    <meta name="keywords" content="Python" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413177369" class="site-logo">
+        <h1 class="site-title">张雄</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
+        
+      
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于博主
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">列表元组字典集合的区别</h2>
+            <div class="post-date">2020-01-08</div>
+            
+            <div class="post-content" v-pre>
+              <p>列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平</p>
+<!-- more -->
+<p>列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平<br>
+（1）列表<br>
+什么是列表呢？我觉得列表就是我们日常生活中经常见到的清单。比如，统计过去一周我们买过的东西，把这些东西列出来，就是清单。由于我们买一种东西可能不止一次，所以清单中是允许有重复项的。如果我们扩大清单的范围，统计我们过去一周所有的花费情况，那么这也是一个清单，但这个清单里会有类别不同的项，比如我们买东西是一种花费，交水电费也是一种花费，这些项的类型是可以使不同的。python的列表个跟清单的道理是一样的，特点就是：可重复，类型可不同。类型不同也是跟数组最本质的区别了。python里的列表用“[]”表示：</p>
+<pre><code>lst = ['arwen',123]
+　　print lst[0] 
+　　print lst[1]
+　　lst[0] = 'weiwen'
+</code></pre>
+<p>2）元组</p>
+<p>元组和列表在结构上没有什么区别，唯一的差异在于元组是只读的，不能修改。元组用“()”表示，如：</p>
+<pre><code>	tup = ('arwen',123)
+　　print tup[0]
+　　print tup[1]
+</code></pre>
+<p>（3）集合就是我们数学学的集合，没有什么特殊的定义。集合最好的应用是去重。集合没有特殊的表示方法，而是通过一个set函数转换成集合，如：</p>
+<pre><code>lst = [ 1, 1, 0]
+　　lst_set = set( lst )  #lst_set 为1 , 0
+　　tup = (2, 2, 1)
+　　tup_set = set( tup) # tup_set为2 , 1
+　　for item in lst_set:
+　　　　print item
+
+</code></pre>
+<p>（4）最后一个是字典。字典存储键值对数据，如</p>
+<pre><code>	1:a,2:b,3:c
+　　　　print字典最外面用大括号，每一组用冒号连起来，然后各组用逗号隔开。
+　　　　print字典最外面用大括号，每一组用冒号连起来，然后各组用逗号隔开。字典最大的价值是查询，通过键，查找值。
+</code></pre>
+<p>下面是一些小例子：<br>
+1、列表元组转其他</p>
+<pre><code># 列表转集合(去重)
+list1 = [6, 7, 7, 8, 8, 9]
+set(list1)
+# {6, 7, 8, 9}
+
+#两个列表转字典
+list1 = ['key1','key2','key3']
+list2 = ['1','2','3']
+dict(zip(list1,list2))
+# {'key1': '1', 'key2': '2', 'key3': '3'}
+
+#嵌套列表转字典
+list3 = [['key1','value1'],['key2','value2'],['key3','value3']]
+dict(list3)
+# {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+# 列表、元组转字符串
+list2 = ['a', 'a', 'b']
+''.join(list2)
+# 'aab'
+
+tup1 = ('a', 'a', 'b')
+''.join(tup1)
+# 'aab
+</code></pre>
+<p>2、字典转其他</p>
+<pre><code># 字典转换为字符串
+dic1 = {'a':1,'b':2}
+str(dic1)
+# &quot;{'a': 1, 'b': 2}&quot;
+
+# 字典key和value互转
+dic2 = {'a': 1, 'b': 2, 'c': 3}
+{value:key for key, value in a_dict.items()}
+# {1: 'a', 2: 'b', 3: 'c'}
+</code></pre>
+<p>3、字符串转其他</p>
+<pre><code># 字符串转列表
+s = 'aabbcc'
+list(s)
+# ['a', 'a', 'b', 'b', 'c', 'c']
+
+# 字符串转元组
+tuple(s)
+# ('a', 'a', 'b', 'b', 'c', 'c')
+
+# 字符串转集合
+set(s)
+# {'a', 'b', 'c'}
+
+# 字符串转字典
+dic2 = eval(&quot;{'name':'ljq', 'age':24}&quot;)
+
+# 切分字符串
+a = 'a b c'
+a.split(' ')
+# ['a', 'b', 'c']
+</code></pre>
+<p>二、字典的分割、合并</p>
+<pre><code class="language-python">分割：
+base = {'A':1, 'B':2, 'C':3, 'D':4, 'E':5}
+subkey = ['C', 'E']
+subdict=dict([(key, base[key]) for key in subkey])
+print(subdict)——{'C': 3, 'E': 5}
+</code></pre>
+<p>合并：<br>
+方式一：</p>
+<pre><code class="language-python">d1={'user':'root','pwd':'1234'}
+d2={'ip':'127.0.0.1','port':8080}
+d3=dict(d1, **d2)
+print(d3)
+</code></pre>
+<p>方式二：</p>
+<pre><code class="language-python">d1={'user':'root','pwd':'1234'}
+d2={'ip':'127.0.0.1','port':8080}
+d3={}
+for k,v in d1.items():
+    d3[k] = v
+for k,v in d2.items():
+    d3[k] = v
+print(d3)
+</code></pre>
+<p>三、list分割、合并</p>
+<pre><code class="language-python">a=[1,2,3,4,5,6]
+b=['a','b','c','d']
+print(a+b)
+
+a=[1,2,3,4,5,6]
+b=['a','b','c','d']
+a+=b
+print(a)
+
+a=[1,2,3,4,5,6]
+b=['a','b','c','d']
+a.extend(b)
+print(a)
+
+a=[1,2,3,4,5,6]
+b=['a','b','c','d']
+a[0:0]=b
+print(a)
+
+li = ['a','b','c']
+res1=';'.join(li)
+res2=''.join(res1).split(';')
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="tag">
+                    Python
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/以梦为马">
+                  <h3 class="post-title">
+                    以梦为马
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Python为什么现在这么火 | 张雄</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413177369">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="几年前 Python 在国内还只是一门小众语言，但从 2011 开始到现在，Python 的百度搜索指数翻了 10 倍，从下图看得出 Python 在国内的流行度已经直逼 Java，大有赶超之势。
+
+Python 国内的发展概况
+几年前 P..." />
+    <meta name="keywords" content="Python" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413177369" class="site-logo">
+        <h1 class="site-title">张雄</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
+        
+      
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于博主
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Python为什么现在这么火</h2>
+            <div class="post-date">2020-01-15</div>
+            
+            <div class="post-content" v-pre>
+              <p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
+<!--more-->
+<h2 id="python-国内的发展概况">Python 国内的发展概况</h2>
+<p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
+<p><a href="https://dp2px.com/post/python-hot/image1.webp"><img src="https://dp2px.com/post/python-hot/image1.webp" alt="2017年的百度指数趋势图" loading="lazy"></a>2017年的百度指数趋势图</p>
+<p>上图是 2017 年的百度指数趋势图，最近我又比较了Python, Java, PHP 和 JavaScript 发现 Python 几乎是其他的 2 到 3 倍甚至 4 倍还多。难道现在很多公司都在用 python 吗？还是说这个指数只是说明关注和学习的人多了。</p>
+<p><a href="https://dp2px.com/post/python-hot/image1.png"><img src="https://dp2px.com/post/python-hot/image1.png" alt="2017年到2019年的百度指数趋势图" loading="lazy"></a>2017年到2019年的百度指数趋势图</p>
+<p>一个行业火不火，就看有多少(自)媒体、培训机构涌入进来为之疯狂，用百度搜关键字 <code>python</code> 就有 5 条是培训广告，而 Ruby、PHP、Go 等语言一条都没有，显然还是 Python 的生意更好做。现在很多的培训机构都瞄准了python语言，很多培训人工智能的基本上是python开头的，宣传的力度大了许多，导致很多人觉得不学习这门语言不像是入门编程一样，现在培训机构比较喜欢培训的几种编程方向，前端，php，python这三个，选择这三个的原因是短平快，入门比较简单，让初学者在很短的时间内就能获得很大的成就感，学习的周期短能很快的换下一波，当然最主要的一个点，就是当前市场需求量比较大。大概在 2010 年的时候国内除了豆瓣、搜狐在用 Python 之外，很难看到有体量的公司用 Python，而在美国，Python 其实一直都很流行，像 Google、Instagram、Dropbox、Youtube、Reddit、Quora 这些明星网站都在用 Python 做核心业务。从 Google Trands 看得出它一直处于平稳的趋势，这两年上升趋势比较明显，显然主要贡献来自于中国。</p>
+<p><a href="https://dp2px.com/post/python-hot/image2.webp"><img src="https://dp2px.com/post/python-hot/image2.webp" alt="Python 热度随时间变化的趋势" loading="lazy"></a>Python 热度随时间变化的趋势</p>
+<p>那么国内这几年 <code>Python</code> 怎么突然就火起来了？</p>
+<h2 id="python火热的原因分析">Python火热的原因分析</h2>
+<p><a href="https://dp2px.com/post/python-hot/image3.webp"><img src="https://dp2px.com/post/python-hot/image3.webp" alt="Python 在各个国家的火热程度比较" loading="lazy"></a>Python 在各个国家的火热程度比较</p>
+<p>究其原因，大概可以从分 3 个阶段来分析。</p>
+<ul>
+<li><code>12~14年</code> 是云计算最火的几年，大批创业公司和巨头挤破头地进军云计算领域，大家都在做 IAAS，最著名的云计算开源平台 OpenStack 就是基于 Python 开发的，为此催生出不少 Python 岗位</li>
+<li><code>14~15年</code> 是「大众创新，万众创业」口号喊得最响两年，北京大街小巷似乎人人都是创业者，O2O、P2P 产品如雨后春笋般冒出，什么语言最适合快速搭建原型？当然是 Python，Python 的开发速度一个顶三。</li>
+<li><code>16~17年</code> 人工智能火遍大江南北，AlphaGO 的出现让业界为之兴奋，人工智能不再是概念，而人工智能、机器学习的首选语言就是 Python。</li>
+<li><code>17~19年</code> 社区和各个培训机构的大力推动，将 Python 语言作为培训的首选语言，因为这些推动更多的开发人员认识到这门语言的简单便捷性，开始作为第二语言实现自己的小工具。</li>
+</ul>
+<p>这两年特别是网络爬虫火得一塌糊涂，10 个写爬虫的 9 个在用 Python，曾经有一段时间知乎的 Python 话题全部被爬虫相关的帖子刷屏，为什么爬虫这么火，这个还是跟大数据有关，因为数据挖掘、分析、机器学习、人工智能都需要大数据的支撑，而真正有大数据的厂商没几个，所以小厂不得不通过爬虫去获取数据。</p>
+<p>为什么偏偏就 Python 火了，其它语言没有？</p>
+<p>Ruby on Rails 最火的那几年，有人问 Python 之父吉多·范罗苏姆怎么看，他说：<strong>Python 不需要杀手级应用，因为如果是这样的话，Python 在其它方面的作用就被忽略了。</strong> Python 在网络爬虫、数据分析、AI、机器学习、Web开发、金融、运维、测试等多个领域都有不俗的表现，从来没有哪一种语言可以同时在这么多领域扎根</p>
+<p><a href="https://dp2px.com/post/python-hot/image4.webp"><img src="https://dp2px.com/post/python-hot/image4.webp" alt="Google Search 中的 Python 所占的比例示意图" loading="lazy"></a>Google Search 中的 Python 所占的比例示意图</p>
+<p>Python 是一门兼具简单与功能强大的编程语言，它专注于如何解决问题、自由开放的社区环境以及丰富的第三方库，无需浪费时间去造轮子，各种 Web 框架、爬虫框架、数据分析框架、机器学习框架应有尽有，拿来即用，如果你不知道去哪找第三库，可以看看 awesome-python</p>
+<p>尽管后起之秀 Go 语言为并发编程而生，效率高，但物理硬件性能已经显著提升的情况下，编程语言带来的性能影响已经不那么重要的，开发速度才是人们首要关注的问题，即使真遇到的性能问题，那么也可以用 C 语言无缝对接。</p>
+<p>当然缺乏文档与支持的程序语言绝对不好用。Python 则恰恰没有这些问题，因为它恰到好处的年纪，所以累积了充足的文档、指南、教程等。另外, Python 开发者社区也是相当活跃的，这意味着任何人在任何需要帮助的时候，他们可以得到及时的支持。</p>
+<p>无论你是菜鸟码农，还是老司机，你都能通过一个活跃的社区，获得自己想要的支持和帮助，没有人可以掌握一切，无论是初学者或者专家。成熟的开发人员更加懂得在紧急情况遇到问题的时候获得的支持通常决定着你的成败。</p>
+<p>关于 Python 我在搭建本博客网站的时候做了一些有用的小工具，你可以去这这些页面查看 <a href="https://dp2px.com/2019/09/02/baidu-submit/">《Python脚本实现的百度熊掌号链接提交》</a>，<a href="https://dp2px.com/2019/03/26/python-compress/">《Python实现的图片压缩处理工具》</a>，<a href="https://dp2px.com/2018/10/22/python-tkinter/">《Python图形界面Tkinter的使用详解》</a></p>
+<h2 id="结论">结论</h2>
+<p>虽说 Java 是老大哥，江湖地位无人能撼动，但体型过于臃肿、冗长的语法被越来越多的开发者所诟病，这也是为什么 Google 决定把 Kotlin 作为 Android 官方支持语言的主要原因 Python 的发展完全是由社区自我驱动的，喜欢 Python 的原因很简单，因为它确确实实给开发者带来了愉悦的编程体验</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" class="tag">
+                    Python
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/Python基础知识总结">
+                  <h3 class="post-title">
+                    Python基础知识总结
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

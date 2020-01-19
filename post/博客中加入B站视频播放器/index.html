@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>博客中加入B站视频播放器 | 张雄</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413177369">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="写博文的时候经常有在文章段落中加视频的需求。
+由于hexo博客搭建在github上，githubpage的限制，以及其他一些动态博客网站服务器带宽的限制，往往添加的都是其他视频网站的外链播放器。
+
+第一步：去B站获取视频外链
+写博文的时候经..." />
+    <meta name="keywords" content="视频" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413177369" class="site-logo">
+        <h1 class="site-title">张雄</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
+        
+      
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于博主
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">博客中加入B站视频播放器</h2>
+            <div class="post-date">2019-03-13</div>
+            
+            <div class="post-content" v-pre>
+              <p>写博文的时候经常有在文章段落中加视频的需求。<br>
+由于hexo博客搭建在github上，githubpage的限制，以及其他一些动态博客网站服务器带宽的限制，往往添加的都是其他视频网站的外链播放器。</p>
+<!-- more -->
+<h2 id="第一步去b站获取视频外链">第一步：去B站获取视频外链</h2>
+<p>写博文的时候经常有在文章段落中加视频的需求。由于hexo博客搭建在github上，githubpage的限制，以及其他一些动态博客网站服务器带宽的限制，往往添加的都是其他视频网站的外链播放器。</p>
+<figure data-type="image" tabindex="1"><img src="https://fp1.fghrsh.net/2019/02/06/e61c2a163b78815c706cc976f0d44a12.png" alt="李子柒.png" loading="lazy"></figure>
+<h2 id="第二步在文章中插入视频外链">第二步:在文章中插入视频外链</h2>
+<p>我们知道在md中可以直接插入html代码，但是为了防止一些其他因素的干扰，hexo给我们特意准备了一个raw标签来插入html代码。<br>
+这里我们就使用raw来插入视频外链。</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=42713537&cid=74896452&page=1" 
+    scrolling="no" border="0" 
+    frameborder="no" framespacing="0" 
+    allowfullscreen="true" 
+<pre><code>style=&quot;position: absolute; 
+width: 100%; 
+height: 100%; 
+left: 0; 
+top: 0;&quot;&gt;
+</code></pre>
+</iframe>
+</div>
+<p>看上去是不是效果好些了呢。</p>
+<p>YouTuBe视频：</p>
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/hQBGbgqQLsc" 
+        frameborder="0" 
+        allow="accelerometer; 
+        autoplay; 
+        encrypted-media; 
+        gyroscope; 
+        picture-in-picture" 
+        allowfullscreen>
+</iframe>
+### 魔戒三部曲
+<p>《指环王》（The Lord Of The Rings）又称《魔戒》，是由彼得·杰克逊执导，伊利亚·伍德、伊恩·麦克莱恩、维戈·莫特森等主演的奇幻系列电影。系列电影包括三部：《指环王：护戒使者》（2001年12月19日在美国上映）、《指环王：双塔奇兵》（2002年12月18日在美国上映）和《指环王：国王归来》（2003年12月17日在美国上映）。<br>
+该系列电影讲述了黑暗魔君索伦在数千年前铸造了一枚具有无上权力的至尊魔戒，后来这枚魔戒辗转落到了天真无邪的男孩弗罗多的手里，弗罗多抵御住了魔戒的诱惑，在朋友们的帮助下最终前往末日山脉销毁了魔戒的故事。[1]<br>
+该系列电影共获国际奖项351项，提名284项，包括17项奥斯卡金像奖。其中《指环王：国王归来》以获11项金像奖的成绩与《宾虚》及《泰坦尼克号》并列成为了奥斯卡影史上获奖最多的影片.<br>
+<img src="https://pic4.zhimg.com/80/f1b70e20666bb2c2a467ac67f3312a17_hd.jpg" alt="夏尔" loading="lazy"><br>
+<img src="https://pic4.zhimg.com/80/d74435edac4108940b704f6a60a1a517_hd.jpg" alt="壮美" loading="lazy"><br>
+<img src="https://pic2.zhimg.com/80/30a69d77d9b972972726160d87b3a7b9_hd.jpg" alt="护戒远征队" loading="lazy"></p>
+<div style="position: relative; 
+    width: 100%; 
+    height: 0; 
+    padding-bottom: 75%;">
+	<iframe src="//player.bilibili.com/player.html?aid=48882824&cid=85605834&page=1" 
+	scrolling="no" 
+	border="0" 
+	frameborder="no" 
+	framespacing="0" 
+	allowfullscreen="true" 
+<pre><code>style=&quot;position: absolute; 
+width: 100%; 
+height: 100%; 
+left: 0; 
+top: 0;&quot;&gt;
+</code></pre>
+</iframe>
+</div>
+<h2 id="youtube-侣行">Youtube 侣行</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dNGB3P7nJJI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<figure data-type="image" tabindex="2"><img src="https://pic3.zhimg.com/80/ca7874472610cce634d3563b9fa5612e_hd.jpg" alt="可做壁纸" loading="lazy"></figure>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/QRVGLCofGMp" class="tag">
+                    视频
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/音乐-小雨と君-荒木毬菜">
+                  <h3 class="post-title">
+                    音乐分享-小雨と君
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

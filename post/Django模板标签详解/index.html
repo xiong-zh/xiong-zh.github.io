@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Django 模板标签详解 | 张雄</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413177369">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Django 模板标签详解
+
+DTL 模板标签详解
+
+接着上一篇 urls与视图详解 继续往下讲
+
+一、模板查找路径
+mysite/setting.py： 模板查找的优先级最高为如下配置
+TEMPLATES = [
+    {
+      ..." />
+    <meta name="keywords" content="Django" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413177369" class="site-logo">
+        <h1 class="site-title">张雄</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
+        
+      
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于博主
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Django 模板标签详解</h2>
+            <div class="post-date">2020-01-18</div>
+            
+            <div class="post-content" v-pre>
+              <p>Django 模板标签详解</p>
+<!-- more -->
+<h1 id="dtl-模板标签详解"><code>DTL</code> 模板标签详解</h1>
+<blockquote>
+<p>接着上一篇 <a href="https://zhb333.github.io/readme-blog/Python/Django/urls.html" title="urls与视图详解">urls与视图详解</a> 继续往下讲</p>
+</blockquote>
+<h2 id="一-模板查找路径">一、模板查找路径</h2>
+<p><code>mysite/setting.py</code>： 模板查找的优先级最高为如下配置</p>
+<pre><code>TEMPLATES = [
+    {
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    },
+]
+</code></pre>
+<p>其次是，在各自的 <code>app</code> 中， 注意， 需要在 <code>INSTALLED_APPS</code> 中注册后才能起作用：</p>
+<pre><code>INSTALLED_APPS = [
+    'front',
+]
+
+TEMPLATES = [
+    {
+        'APP_DIRS': True,
+    },
+]
+</code></pre>
+<p>最后如果在当前 <code>app</code> 中还找不到模板，会到其它已安装的 <code>app</code> 中查找， 如果还找不到就会报错了！</p>
+<h2 id="二-render_to_string">二、<code>render_to_string</code></h2>
+<ul>
+<li>
+<p>在根目录新建 <code>templates</code> 文件夹</p>
+</li>
+<li>
+<p>创建 <code>templates/index.html</code></p>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            color: #f00;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+佛曰： 我执， 是痛苦的根源！
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>修改 <code>front/urls.py</code></li>
+</ul>
+<pre><code> path('', views.index, name='index'),
+</code></pre>
+<ul>
+<li>修改 <code>front/views.py</code></li>
+</ul>
+<pre><code>from django.template.loader import render_to_string
+from django.http import HttpResponse
+
+
+def index(request):
+    # 在 mysite/settings.py 配置了项目模板路径
+    html = render_to_string(&quot;index.html&quot;)
+    return HttpResponse(html)
+</code></pre>
+<h2 id="三-render">三、<code>render</code></h2>
+<blockquote>
+<p><code>render_to_string</code> 与 <code>HttpResponse</code> 组合的快捷方式， 可 <code>pycharm</code> 查看 <code>render</code> 的实现如下：</p>
+</blockquote>
+<pre><code>def render(request, template_name, context=None, content_type=None, status=None, using=None):
+    content = loader.render_to_string(template_name, context, request, using=using)
+    return HttpResponse(content, content_type, status)
+</code></pre>
+<p>修改 <code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+
+
+def index(request):
+    return render(request, 'index.html')
+</code></pre>
+<h2 id="四-模板变量">四、模板变量</h2>
+<blockquote>
+<p>可以通过<code>render</code> 函数的 <code>context</code> 参数，给模板传递数据</p>
+</blockquote>
+<p><strong>模板中，不支持中括号语法，只能通过 <code>.</code> 语法获取</strong></p>
+<ul>
+<li>
+<p>传递字符串</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>def index(request):
+    context = {'username': 'zhb333'}
+    return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>修改 `templates/index.html`
+</code></pre>
+<pre><code>    &lt;body&gt;
+    {{ username }}
+    &lt;/body&gt;
+</code></pre>
+<pre><code>访问：`http://localhost:8000/`, 页面显示： **zhb333**
+</code></pre>
+<ul>
+<li>
+<p>传递一个对象</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>class Person:
+   def __init__(self, username):
+        self.username = username
+
+
+   def index(request):
+        context = {'person': Person('理想三旬')}
+        return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>修改 `templates/index.html`
+</code></pre>
+<pre><code>  {{ person.username }}
+</code></pre>
+<ul>
+<li>
+<p>传递的数据是一个字典时， 字典中不要出现关键字，这样会造成歧义</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    def index(request):
+        context = {'person': {'username': '我要你'}}
+        return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>   {{ person.keys }}
+</code></pre>
+<pre><code>浏览器显示： **dict_keys(['username'])**  
+
+修改 `front/views.py`
+</code></pre>
+<pre><code>def index(request):
+     context = {'person': {'username': '我要你', 'keys': '夜空中最亮的星'}}
+     return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>浏览器显示： **夜空中最亮的星**
+</code></pre>
+<ul>
+<li>
+<p>传递列表或元组</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>   # context = {'persons': ['那些花儿', '她们都老了吧', '她们在哪里呀']}
+   context = {'persons': ('那些花儿', '她们都老了吧', '她们在哪里呀')}
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>   {{ persons.0 }} &lt;br&gt;
+   {{ persons.1 }} &lt;br&gt;
+   {{ persons.2 }} &lt;br&gt;
+</code></pre>
+<h2 id="五-常用的模板标签">五 常用的模板标签</h2>
+<p><strong>所有标签都需要用 <code>{%%}</code> 进行包裹</strong></p>
+<ul>
+<li><code>if</code> 标签
+<blockquote>
+<p><code>if</code> 标签中可以使用： <code>==</code>、<code>!=</code>、<code>&lt;</code>、<code>&lt;=</code>、<code>&gt;</code>、<code>&gt;=</code>、<code>in</code>、<code>not in</code>、<code>is</code>、<code>is not</code> 等判断运算符</p>
+</blockquote>
+<ul>
+<li>
+<p><code>if...else</code> 运算符举例</p>
+<p>修改 <code>templates/index.html</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>        {% if '那些花儿' in persons %}
+            &lt;p style=&quot;color: hotpink&quot;&gt;可爱的花儿&lt;/p&gt;
+        {% else %}
+            &lt;p style=&quot;color: darkgray&quot;&gt;可伶的花儿&lt;/p&gt;
+        {% endif %}
+</code></pre>
+<pre><code>* `if...elif...else` 举例
+ 修改 `templates/index.html`
+</code></pre>
+<pre><code>      {% if age &lt; 18 %}
+            &lt;p&gt;乳臭未干的小子&lt;/p&gt;
+      {% elif age == 18 %}
+            &lt;p&gt;恰逢少年时&lt;/p&gt;
+      {% else %}
+            &lt;p&gt;老男人&lt;/p&gt;
+      {% endif %}
+</code></pre>
+<ul>
+<li>
+<p><code>for...in</code> 循环列表</p>
+<ul>
+<li>
+<p>循环列表</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    context = {
+            'books': ['深入理解ES6', 'JavaScript权威指南', 'JavaScript语言精粹']
+         }
+</code></pre>
+<pre><code>    修改 `templates/index.html`  
+</code></pre>
+<pre><code>    &lt;ul&gt;
+       {% for book in books %}
+             &lt;li&gt;{{ book }}&lt;/li&gt;
+       {% endfor %}
+    &lt;/ul&gt;
+</code></pre>
+<pre><code>* 反向循环列表  `reversed`
+
+    修改 `templates/index.html`  
+</code></pre>
+<pre><code>     {% for book in books reversed %}
+        &lt;li&gt;{{ book }}&lt;/li&gt;
+     {% endfor %}
+</code></pre>
+<ul>
+<li>
+<p><code>for...in</code> 循环中， <code>DTL</code> 提供了一些可用的模板变量：</p>
+<ul>
+<li>
+<p>列表的下标 <code>forloop.counter</code> 从 <code>1</code> 开始</p>
+<p>修改 <code>templates/index.html</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>   {% for book in books %}
+      &lt;li&gt;{{ forloop.counter }} -- {{ book }}&lt;/li&gt;
+   {% endfor %}
+</code></pre>
+<pre><code>* 列表的下标 `forloop.counter0` 从 `0` 开始
+
+    修改 `templates/index.html`  
+</code></pre>
+<pre><code>        {% for book in books %}
+            &lt;li&gt;{{ forloop.counter0 }} -- {{ book }}&lt;/li&gt;
+        {% endfor %}
+</code></pre>
+<pre><code>* 列表的反向下标 `forloop.revcounter` 从 `1` 开始
+</code></pre>
+<pre><code>        {% for book in books reversed %}
+            &lt;li&gt;{{ forloop.revcounter }} -- {{ book }}&lt;/li&gt;
+        {% endfor %}
+</code></pre>
+<pre><code>* 列表的反向下标 `forloop.revcounter0` 从 `0` 开始
+</code></pre>
+<pre><code>        {% for book in books reversed %}
+            &lt;li&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+        {% endfor %}
+</code></pre>
+<pre><code>* 是否是第一次遍历 `forloop.first`
+</code></pre>
+<pre><code>        {% for book in books %}
+            {% if forloop.first %}
+                &lt;li style=&quot;color: green;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% else %}
+                &lt;li style=&quot;color: red;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% endif %}
+        {% endfor %}
+</code></pre>
+<pre><code>* 是否是最后一次次遍历 `forloop.last`
+</code></pre>
+<pre><code>        {% for book in books %}
+            {% if forloop.last %}
+                &lt;li style=&quot;color: green;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% else %}
+                &lt;li style=&quot;color: red;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% endif %}
+        {% endfor %}
+</code></pre>
+<pre><code>* 调用上一级循环的 `forloop` 模板变量  `forloop.parentloop`  
+    修改 `front/views.py` 
+</code></pre>
+<pre><code>    context = {
+      'family': [{'father': '大头爸爸', 'children': ['小头孩儿', '小头女儿']}]
+      }
+</code></pre>
+<pre><code>     修改 `templates/index.html`  
+</code></pre>
+<pre><code>        {% for who in family %}
+            &lt;p&gt;this is &lt;strong style=&quot;color: green&quot;&gt;{{ who.father }}&lt;/strong&gt;&lt;/p&gt;
+            {% for child in who.children %}
+                &lt;p&gt;{{ child }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.first }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.last }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.counter }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.revcounter }}&lt;/p&gt;
+            {% endfor %}
+        {% endfor %}
+</code></pre>
+<ul>
+<li>
+<p><code>for...in</code> 循环字典</p>
+<ul>
+<li>循环字典 <code>keys</code><br>
+修改 <code>front/views.py</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>           context = {'student': {
+                'name': '道明寺',
+                'girl': '杉菜',
+                'age': '18',
+            }}
+</code></pre>
+<pre><code>    修改 `templates/index.html`  
+
+    ```
+    &lt;ul&gt;
+        {% for key in student.keys %}
+            &lt;li&gt;{{ key }}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+    ```      
+    
+* 循环字典 `values`    
+
+    修改 `templates/index.html`  
+
+    ```
+    {% for value in student.values %}
+        &lt;li&gt;{{ value }}&lt;/li&gt;
+    {% endfor %}
+    ```   
+
+* 循环字典 `items`    
+
+    修改 `templates/index.html`  
+
+    ```
+    {% for key,value in student.items %}
+        &lt;li&gt;{{ key }}--{{ value }}&lt;/li&gt;
+    {% endfor %}
+    ```   
+</code></pre>
+<ul>
+<li>
+<p><code>for...in...empty...</code></p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    context = {
+    'comments': []
+    }
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>    {% for comment in comments %}
+        {{ comment }}
+    {% empty %}
+        还没有任何评论
+    {% endfor %}
+</code></pre>
+<ul>
+<li>
+<p><code>with</code> 标签 （在模板中定义变量）</p>
+<p><strong>通过 <code>with</code> 标签定义的变量只能在， 只能在 <code>with</code> 标签包裹的语句块中使用</strong></p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    context = {
+        'students': ['孙悟空', '猪八戒', '沙和尚']
+    }
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>    {% with students.0 as monkey %}
+        {{ monkey }}
+    {% endwith %}
+
+    {% with pig=students.1 %}
+        {{ pig }}
+    {% endwith %}
+</code></pre>
+<ul>
+<li>
+<p><code>url</code> 标签</p>
+<p><strong>通过 <code>url</code> 标签 可以把 <code>urls.py</code> 中， 对应的 <code>path</code> 或 <code>re_path</code> 的命名，转换化为浏览器可识别的链接</strong></p>
+<p>修改 <code>front/urls.py</code></p>
+</li>
+</ul>
+<pre><code>    from django.urls import path
+    from . import views
+
+    app_name = 'front'
+
+    urlpatterns = [
+        path('', views.index, name='index'),
+        path('book/&lt;book_id&gt;/', views.book, name='book'),
+        path('movie/', views.movie, name='movie'),
+        path('story/&lt;story_id&gt;/&lt;category&gt;/', views.story, name='story'),
+    ]
+</code></pre>
+<pre><code>修改 `front/views.py`
+</code></pre>
+<pre><code>    from django.http import HttpResponse
+    from django.template.loader import render_to_string
+
+
+    def index(request):
+        return HttpResponse(render_to_string('index.html'))
+
+
+    def book(request, book_id):
+        return HttpResponse('书籍, %s' % book_id)
+
+
+    def movie(request):
+        movie_id = request.GET.get('movie_id')
+        return HttpResponse('电影, %s' % movie_id)
+
+
+    def story(request, story_id, category):
+        _type = request.GET.get('type')
+        return HttpResponse('故事id: %s, 分类： %s, 类型： %s' % (story_id, category, _type))
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>    &lt;p&gt;&lt;a href=&quot;{% url 'front:index' %}&quot;&gt;首页&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;{% url 'front:book' book_id=1 %}&quot;&gt;书籍&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;{% url 'front:movie' %}?movie_id=2&quot;&gt;电影&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;{% url 'front:story' story_id=3 category='冒险' %}?type=未知&quot;&gt;故事&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+<ul>
+<li>
+<p><code>spaceless</code> 标签 （去除html代码中的空白字符）</p>
+<p><strong>下面的 <code>html</code> 模板代码存在很多空白字符，可以通过 <code>spaceless</code> 标签去除</strong></p>
+</li>
+</ul>
+<pre><code>    {% spaceless %}
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;https://www.baidu.com&quot;&gt;
+                    百度
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    {% endspaceless %}
+</code></pre>
+<ul>
+<li>
+<p><code>autoescape</code>标签 （默认开启了特殊字符自动转义）</p>
+<p><strong>可以通过设置 <code>autoescape</code> 标签的自动转义 为 <code>off</code>, 关闭自动转义</strong><br>
+修改 <code>front/urls.py</code></p>
+</li>
+</ul>
+<pre><code>    urlpatterns = [
+        path('', views.index, name='index'),
+    ]
+</code></pre>
+<pre><code>修改 `front/views.py`
+</code></pre>
+<pre><code>    from django.shortcuts import render
+
+
+    def index(request):
+        return render(request, 'index.html', context={'link': '&lt;p&gt;&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;&lt;/p&gt;'})
+</code></pre>
+<pre><code>修改 `templates/index.html`
+</code></pre>
+<pre><code>    &lt;body&gt;
+    {{ link }}
+    {% autoescape off %}
+        {{ link }}
+    {% endautoescape %}
+    &lt;/body&gt;
+</code></pre>
+<ul>
+<li><code>verbatim</code> 标签<br>
+<strong>当不想要<code>DTL</code>编译 {{}} 或 {%%} 时， 可以通过 <code>verbatim</code> 标签包裹</strong></li>
+</ul>
+<pre><code>    {% verbatim %}
+        {{ 哈哈 }}
+        {% 呵呵 %}
+    {% endverbatim %}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/opJrPL36c" class="tag">
+                    Django
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/Django-ORM常用Field详解">
+                  <h3 class="post-title">
+                    Django ORM常用Field详解
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

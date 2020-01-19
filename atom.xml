@@ -1,45 +1,4034 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-01-19T02:15:58.466Z</updated>
+    <title>张雄</title>
+    <updated>2020-01-19T05:53:22.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>凡心所向,素履所往。生如逆旅，一苇以航。</subtitle>
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, 张雄</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://xiong-zh.github.io/post/hello-gridea</id>
-        <link href="https://xiong-zh.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[Django urls与视图详解]]></title>
+        <id>https://xiong-zh.github.io/post/Django-urls与视图详解</id>
+        <link href="https://xiong-zh.github.io/post/Django-urls与视图详解">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2020-01-18T13:12:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django urls与视图详解</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <content type="html"><![CDATA[<p>Django urls与视图详解</p>
 <!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<h1 id="urls与视图详解"><code>urls</code>与视图详解</h1>
+<blockquote>
+<p>环境 <code>Windows10</code></p>
+</blockquote>
+<h2 id="一-准备工作">一、准备工作</h2>
+<ul>
+<li>
+<p>使用 <code>virtualenvwrapper</code> 创建并进入虚拟环境</p>
+<pre><code>mkvirtualenv myenv
+</code></pre>
+</li>
+<li>
+<p>安装 <code>Django2.0</code></p>
+<pre><code>pip install django==2.0
+</code></pre>
+</li>
+<li>
+<p>查看是否安装成功</p>
+<pre><code>pip list
+</code></pre>
+</li>
+<li>
+<p>创建一个名为 <code>mysite</code> 的 <code>django</code> 项目</p>
+<pre><code>django-admin startproject mysite
+</code></pre>
+</li>
+<li>
+<p>进入虚拟环境所在目录</p>
+<pre><code>cdvirtualenv
+</code></pre>
+</li>
+<li>
+<p>打开当前目录</p>
+<pre><code>start %cd%
+</code></pre>
+</li>
+<li>
+<p>将 <code>mysite</code> 目录拖到 <code>pycharm</code> 打开</p>
+</li>
+<li>
+<p>设置 <code>pycharm</code> 的 <code>python</code> 环境</p>
+</li>
+</ul>
+<h2 id="二-项目结构分析">二、项目结构分析</h2>
+<ul>
+<li>
+<p><code>manange.py</code> 项目的管理与交互都基于这个文件， 如启动项目：</p>
+<pre><code>python manange.py runserver
+</code></pre>
+</li>
+<li>
+<p><code>__init__.py</code> 表示这是一个 <code>python</code> 模块</p>
+</li>
+<li>
+<p><code>setting.py</code> 保存项目的所有配置信息</p>
+</li>
+<li>
+<p><code>urls.py</code> 编写路由与视图的映射规则</p>
+</li>
+<li>
+<p><code>wsig.py</code> 项目部署文件</p>
+</li>
+</ul>
+<h2 id="三-debug-模式-与-allowed_hosts">三、<code>DEBUG</code> 模式  与 <code>ALLOWED_HOSTS</code></h2>
+<ul>
+<li>在 <code>mysite/settings.py</code> 中 默认是开启了 <code>DEBUG</code> 模式的</li>
+</ul>
+<pre><code>DEBUG = True
+</code></pre>
+<ul>
+<li>
+<p><code>DEBUG</code> 模式的作用</p>
+<ul>
+<li>修改后自动重启项目</li>
+<li>详细的报错详细</li>
+</ul>
+</li>
+<li>
+<p>关闭了 <code>DEBUG</code> 模式，必须设置 <code>ALLOWED_HOSTS</code>, 否则项目起不来</p>
+</li>
+</ul>
+<pre><code>ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.108']
+</code></pre>
+<ul>
+<li>
+<p><code>DEBUG</code> 模式, 默认是以 <code>IP</code> <code>0.0.0.0</code> 启动服务的， 但只要设置了 <code>ALLOWED_HOSTS</code>， 就只能通过<code>ALLOWED_HOSTS</code> 中的 <code>IP</code> 或 域名进行访问</p>
+</li>
+<li>
+<p>开发阶段，开启 <code>DEBUG</code>, 线上环境必须关闭 <code>DEBUG</code> 模式</p>
+</li>
+</ul>
+<h2 id="四-root_urlconf-设置-urls-匹配的入口文件">四、<code>ROOT_URLCONF</code> 设置 <code>urls</code> 匹配的入口文件</h2>
+<pre><code>ROOT_URLCONF = 'mysite.urls'
+</code></pre>
+<h2 id="五-初识视图函数">五、初识视图函数</h2>
+<ul>
+<li>视图函数的第一个参数永远是 <code>HttpRequest</code> 对象</li>
+<li>视图函数只能返回 <code>HttpResponseBase</code>的子类对象</li>
+</ul>
+<pre><code>from django.http import HttpResponse
+def index(request):
+    return HttpResponse('cms首页')
+</code></pre>
+<h2 id="六-urls-分层模块化">六、<code>urls</code> 分层模块化</h2>
+<ul>
+<li>
+<p>每个独立的模块对应 <code>Django</code> 的一个 <code>app</code></p>
+</li>
+<li>
+<p>创建两个 <code>app</code> : <code>front</code> 和 <code>cms</code></p>
+</li>
+</ul>
+<pre><code>  # 创建前台模块
+  python manange.py startapp front
+
+  # 创建后台cms模块
+  python manange.py startapp cms
+</code></pre>
+<ul>
+<li>编写 <code>front/views.py</code></li>
+</ul>
+<pre><code class="language-python"># from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+def index(request):
+   return HttpResponse('前台首页')
+</code></pre>
+<ul>
+<li>编写 <code>cms/views.py</code></li>
+</ul>
+<pre><code class="language-python">  # from django.shortcuts import render
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse('cms首页')
+</code></pre>
+<ul>
+<li>创建 <code>front/urls.py</code></li>
+</ul>
+<pre><code class="language-python">from django.urls import path
+from . import views
+app_name = 'front'
+urlpatterns = [
+      path('', views.index, name='index')
+  ]
+</code></pre>
+<ul>
+<li>创建 <code>cms/urls.py</code></li>
+</ul>
+<pre><code class="language-python">from django.urls import path
+from . import views
+app_name = 'cms'
+urlpatterns = [
+      path('', views.index, name='index')
+  ]
+</code></pre>
+<ul>
+<li>编写 <code>mysite/urls.py</code></li>
+</ul>
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include
+urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('', include('front.urls')),
+      path('cms/', include('cms.urls')),
+  ]
+</code></pre>
+<ul>
+<li>启动项目</li>
+</ul>
+<pre><code class="language-shell"> python manange.py runserver
+</code></pre>
+<ul>
+<li>
+<p>访问 <code>front</code> 应用： <code>http://127.0.0.1:8000</code></p>
+</li>
+<li>
+<p>访问 <code>cms</code> 应用： <code>http://127.0.0.1:8000/cms/</code></p>
+</li>
+</ul>
+<h2 id="七-url中的参数传递">七、<code>url</code>中的参数传递</h2>
+<ul>
+<li>通过 <code>path</code> 传递</li>
+<li>编写视图函数 <code>front/views.py</code></li>
+</ul>
+<pre><code class="language-python">def detail(request, article_id):
+    return HttpResponse('当前文章id: %s' % article_id)
+</code></pre>
+<ul>
+<li>编写urls <code>front/urls.py</code></li>
+</ul>
+<pre><code class="language-python">path('detail/&lt;article_id&gt;', views.detail, name='detail'),
+</code></pre>
+<ul>
+<li>
+<p>访问方式： <code>http://localhost:8000/detail/1</code></p>
+</li>
+<li>
+<p>通过 查询字符串 传递</p>
+</li>
+<li>
+<p>编写视图函数 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code class="language-python">def article_list(request):
+    author = request.GET.get('author')
+    return HttpResponse('%s 相关的文章' % author)
+</code></pre>
+<ul>
+<li>
+<p>编写urls <code>front/urls.py</code></p>
+<pre><code class="language-python">path('list/', views.article_list, name='list'),
+</code></pre>
+</li>
+<li>
+<p>访问方式： <code>http://localhost:8000/list/?author=%E6%9D%8E%E7%99%BD</code></p>
+</li>
+</ul>
+<h2 id="八-内置的-path-转换器">八、 内置的 <code>path</code> 转换器</h2>
+<ul>
+<li><code>int</code> 类型：
+<ul>
+<li>
+<p>实现原理如下</p>
+<pre><code class="language-python">class IntConverter:
+  regex = '[0-9]+'
+
+  def to_python(self, value):
+      return int(value)
+
+  def to_url(self, value):
+      return str(value)
+</code></pre>
+</li>
+<li>
+<p>改写 <code>front/urls.py</code></p>
+<pre><code class="language-python">path('detail/&lt;int:article_id&gt;', views.detail, name='detail'),
+</code></pre>
+</li>
+<li>
+<p>改写  <code>front/views.py</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">def detail(request, article_id):
+    print(type(article_id))
+    return HttpResponse('当前文章id: %s' % article_id)
+</code></pre>
+<ul>
+<li>
+<p>访问： <strong>http://localhost:8000/detail/1</strong></p>
+</li>
+<li>
+<p>控制台输出 <code>&lt;class 'int'&gt;</code></p>
+</li>
+<li>
+<p><code>str</code> 类型， 默认不指定类型，就是 <code>str</code> 类型</p>
+<ul>
+<li>原理：</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">class StringConverter:
+    regex = '[^/]+'
+    def to_python(self, value):
+        return value
+    def to_url(self, value):
+        return value
+</code></pre>
+<ul>
+<li><code>uuid</code> 类型，通用唯一识别码
+<ul>
+<li>原理：</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">class UUIDConverter:
+    regex = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+    def to_python(self, value):
+        return uuid.UUID(value)
+    def to_url(self, value):
+        return str(value)
+</code></pre>
+<ul>
+<li>
+<p>生成一个<code>uuid</code> 如： <code>b8f12562-7006-4e21-9aeb-c3426d9dcbd3</code></p>
+<pre><code class="language-shell">python
+
+import uuid
+
+uuid.uuid4()
+</code></pre>
+</li>
+<li>
+<p>改写 <code>front/urls.py</code></p>
+<pre><code class="language-python">path('detail/&lt;uuid:article_id&gt;', views.detail, name='detail'),
+</code></pre>
+</li>
+<li>
+<p>访问： <code>http://localhost:8000/detail/b8f12562-7006-4e21-9aeb-c3426d9dcbd3</code></p>
+</li>
+<li>
+<p><code>slug</code> 类型</p>
+<ul>
+<li>原理：</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">regex = '[-a-zA-Z0-9_]+'
+</code></pre>
+<ul>
+<li><code>path</code> 类型</li>
+<li>原理：</li>
+</ul>
+<pre><code class="language-python">regex = '.+'
+</code></pre>
+<h2 id="九-自定义-path-转换器">九、自定义 <code>path</code> 转换器</h2>
+<p><strong>这里，我们实现一个规则为： python+django+flask 的 <code>url</code> 参数， <code>python</code> 代码接收到的是通过 <code>+</code> 拆分后的列表, 转换器接收的参数也必须是一个列表； 比较抽象，还是看代码吧！</strong></p>
+<ul>
+<li>创建 <code>front/converters.py</code></li>
+</ul>
+<pre><code>from django.urls import register_converter
+class CateConverter:
+      regex = r'\w+|(\w+\+\w+)+'
+      def to_python(self, value):
+          return value.split('+')
+      def to_url(self, value):
+          if isinstance(value, list):
+              return '+'.join(value)
+          else:
+              raise RuntimeError('分类参数必须为 list 类型')
+# 注册 path 转换器
+    register_converter(CateConverter, 'cate')
+</code></pre>
+<ul>
+<li>修改 <code>front/__init__.py</code></li>
+</ul>
+<pre><code class="language-python"># 运行我们自定义的转换器
+from . import converters
+</code></pre>
+<ul>
+<li>修改 <code>front/urls.py</code></li>
+</ul>
+<pre><code class="language-python">path('category/&lt;cate:category&gt;/', views.index_category, name='category'),
+</code></pre>
+<ul>
+<li>修改 <code>front/views.py</code></li>
+</ul>
+<pre><code>def index_category(request, category):
+    pathname = reverse('front:category', kwargs={'category': category})
+    return HttpResponse('分类列表为： %s, url 的 pathname 部分为： %s' % (category, pathname))
+</code></pre>
+<ul>
+<li>访问： <code>http://localhost:8000/category/python+django/</code>, 浏览器显示如下：</li>
+</ul>
+<p><code>分类列表为： ['python', 'django'], url 的 pathname 部分为： /category/python+django/</code></p>
+<h2 id="十-重定向-与-url-命名反转">十、重定向 与 <code>url</code> 命名反转</h2>
+<blockquote>
+<p>通过模拟 <code>cms</code> 后台登录进行讲解</p>
+</blockquote>
+<ul>
+<li>修改 <code>cms/urls.py</code></li>
+</ul>
+<pre><code class="language-python">path('login/', views.login, name='login'),
+</code></pre>
+<ul>
+<li>修改 <code>cms/views.py</code></li>
+</ul>
+<pre><code>  # from django.shortcuts import render
+  from django.http import HttpResponse
+  from django.shortcuts import redirect, reverse
+
+  # Create your views here.
+
+
+  def index(request):
+      username = request.GET.get('username')
+      if username:
+          return HttpResponse('cms首页')
+      else:
+          # 重定向登录页面
+          return redirect(reverse('cms:login'))  # url 命名反转
+
+
+  def login(request):
+      return HttpResponse('登录页面')
+
+</code></pre>
+<ul>
+<li>
+<p>访问： <code>http://localhost:8000/cms/</code> 会自动跳转到登录页面</p>
+</li>
+<li>
+<p>访问： <code>http://localhost:8000/cms/?username=zhb33</code> 才能访问 <code>cms</code> 后台首页</p>
+</li>
+<li>
+<p><code>url</code> 命名反转时的参数传递</p>
+<blockquote>
+<p>如果反转时，<code>url</code> 需要接收参数， 可通过关键字参数传递， 如果传递的查询字符串， 需要手动进行拼接</p>
+</blockquote>
+<ul>
+<li>修改 <code>cms/urls.py</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>  path('login/&lt;location&gt;', views.login, name='login'),
+</code></pre>
+<ul>
+<li>修改 <code>cms/views.py</code></li>
+</ul>
+<pre><code>  def index(request):
+    username = request.GET.get('username')
+    if username:
+        return HttpResponse('cms首页')
+    else:
+        # 重定向登录页面
+        login_url = reverse('cms:login', kwargs={'location': '深圳'})  # url传参
+        login_url += '?next=/'  # 查询字符串
+        return redirect(login_url)  # url 命名反转
+
+
+  def login(request, location):
+      return HttpResponse('登录页面, 登录地点是 %s' % location)
+</code></pre>
+<ul>
+<li><code>http://localhost:8000/cms/</code> 跳转到 <code>http://localhost:8000/cms/login/深圳?next=/</code></li>
+</ul>
+<h2 id="十一-urls的-应用命名空间-与-实例命名空间">十一、 <code>urls</code>的 应用命名空间 与 实例命名空间</h2>
+<ul>
+<li>应用命名空间
+<ul>
+<li>可以在每个应用的 <code>urls.py</code> 通过 <code>app_name</code> 进行设置 (一般使用这种方式设置)</li>
+</ul>
+</li>
+</ul>
+<pre><code>app_name = 'cms'
+</code></pre>
+<ul>
+<li>也可以在 <code>ROOT_URLCONF</code> 指定的 <code>urls.py</code> 中使用 <code>include</code> 时进行设置(不常用)</li>
+</ul>
+<pre><code>    # mysite/urls.py
+    path('cms/', include(('cms.urls', 'cms'))),  # 引入 cms 模块的 urls.py 并设置应用命名空间 为 cms
+</code></pre>
+<ul>
+<li>
+<p>作用： 如上面的 <code>url</code> 命名反转时 <code>reverse('cms:login')</code>, 可以防止与其它应用的 <code>url</code> 命名冲突</p>
+</li>
+<li>
+<p>实例命名空间</p>
+<ul>
+<li>在通过 <code>include</code> 引用时，进行设置</li>
+</ul>
+</li>
+</ul>
+<pre><code>    # 设置实例命名空间
+    path('cms/', include('cms.urls', namespace='cms')),
+
+    # 同时设置 应用命名空间 和 实例命名空间
+    path('cms/', include(('cms.urls', 'cms'), namespace='cms')),
+</code></pre>
+<ul>
+<li>
+<p>作用： 当多个不同 <code>url</code> 指向同一个应用时， 防止 <code>url</code> 冲突</p>
+<p><strong>不使用实例命名空间的情况</strong></p>
+<ul>
+<li>修改<code>mysite/urls.py</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>      path('cms1/', include('cms.urls')),  # 不同的 url 指向同一个 应用
+      path('cms2/', include('cms.urls')),
+</code></pre>
+<pre><code>* 访问 `http://localhost:8000/cms1/` 跳转到 `http://localhost:8000/cms1/login/深圳?next=/`  
+* 访问 `http://localhost:8000/cms2/` 也跳转到 `http://localhost:8000/cms1/login/深圳?next=/`  
+
+**冲突了吧！**
+
+**使用实例命名空间**
+
+* 修改`mysite/urls.py`
+</code></pre>
+<pre><code>    path('cms1/', include('cms.urls', namespace='cms1')),
+    path('cms2/', include('cms.urls', namespace='cms2')),
+</code></pre>
+<pre><code>* 修改`mysite/views.py`
+</code></pre>
+<pre><code>def index(request):
+      username = request.GET.get('username')
+      if username:
+          return HttpResponse('cms首页')
+      else:
+          # 重定向登录页面
+          current_namespace = request.resolver_match.namespace
+          login_url = reverse('%s:login' % current_namespace, kwargs={'location': '深圳'})  # url传参
+          login_url += '?next=/'  # 查询字符串
+          return redirect(login_url)  # url 命名反转
+</code></pre>
+<pre><code>* 访问 `http://localhost:8000/cms1/` 跳转到 `http://localhost:8000/cms1/login/深圳?next=/`  
+* 访问 `http://localhost:8000/cms2/` 跳转到 `http://localhost:8000/cms2/login/深圳?next=/`
+</code></pre>
+<h2 id="十二-re_path-函数">十二、 <code>re_path</code> 函数</h2>
+<blockquote>
+<p>通过正则进行匹配参数</p>
+</blockquote>
+<p><strong>匹配生日</strong></p>
+<ul>
+<li>修改 <code>front/urls.py</code></li>
+</ul>
+<pre><code>  from django.urls import path, re_path
+  from . import views
+
+  app_name = 'front'
+
+  urlpatterns = [
+      path('', views.index, name='index'),
+      # ?P&lt;birthday&gt; 表示参数为 birthday 匹配 \d{4}-\d{2}-\d{2}
+      re_path(r'^birthday/(?P&lt;birthday&gt;\d{4}-\d{2}-\d{2})/$', views.index_birthday, name='birthday')
+  ]
+</code></pre>
+<ul>
+<li>修改 <code>front/views.py</code></li>
+</ul>
+<pre><code>  def index_birthday(request, birthday):
+    return HttpResponse('生日快乐 %s' % birthday)
+</code></pre>
+<ul>
+<li>
+<p>访问： <code>http://localhost:8000/birthday/1992-12-28/</code></p>
+</li>
+<li>
+<p>能用 <code>path</code> 解决的问题， 尽量不要用 <code>re_path</code> 因为 <code>re_path</code> 可读性差</p>
+</li>
+</ul>
+<h2 id="十三-默认参数">十三、默认参数</h2>
+<p><strong>要实现默认参数，需要两条 <code>url</code> 的配合</strong></p>
+<ul>
+<li>修改 <code>front/urls.py</code></li>
+</ul>
+<pre><code> from django.urls import path, re_path
+ from . import views
+
+ app_name = 'front'
+
+ urlpatterns = [
+     path('', views.index_list, name='index'),
+     path('list/&lt;int:category_id&gt;', views.index_list, name='list'),
+ ]
+</code></pre>
+<ul>
+<li>修改 <code>front/views.py</code></li>
+</ul>
+<pre><code class="language-python">from django.http import HttpResponse
+category = ['python', 'django', 'flask']
+
+def index_list(request, category_id=0):
+      return HttpResponse(category[category_id])
+</code></pre>
+<ul>
+<li>
+<p>访问： <code>http://localhost:8000</code>, 显示:<br>
+<code>python</code></p>
+</li>
+<li>
+<p>访问： <code>http://localhost:8000/list/2</code>, 显示：<br>
+<code>flask</code></p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django模板中加载静态文件]]></title>
+        <id>https://xiong-zh.github.io/post/Django模板中加载静态文件</id>
+        <link href="https://xiong-zh.github.io/post/Django模板中加载静态文件">
+        </link>
+        <updated>2020-01-18T13:11:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django模板中加载静态文件</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django模板中加载静态文件</p>
+<!-- more -->
+<h1 id="模板中加载静态文件">模板中加载静态文件</h1>
+<blockquote>
+<p>接着 <a href="https://zhb333.github.io/readme-blog/Python/Django/templates_4.html">模板结构优化</a> 往下讲</p>
+</blockquote>
+<ul>
+<li>
+<p>确保<code>mysite/setting.py</code> 中 <code>INSTALLED_APPS</code> 已经安装了 <code>django.contrib.staticfiles</code></p>
+</li>
+<li>
+<p>确保 <code>mysite/setting.py</code> 中设置了 <code>STATIC_URL</code></p>
+</li>
+<li>
+<p>在已经安装的 <code>app</code> 下创建 <code>static</code> 文件夹，并将该应用的静态资源存放在里面 : <code>front/static/suolong.jpg</code></p>
+<p><code>templates/index.html</code></p>
+</li>
+</ul>
+<pre><code class="language-html">  {% block content %}
+      &lt;img src=&quot;/static/suolong.jpg&quot; alt=&quot;suolong&quot;&gt;
+  {% endblock %}
+</code></pre>
+<ul>
+<li>
+<p><code>mysite/setting.py</code> 中 <code>STATIC_URL</code> 值是可变的，这样以后引用静态资源的路径都要根据 <code>STATIC_URL</code> 是新值去修改，因此我们需要使用 <code>{% load static %}</code></p>
+<p><code>templates/index.html</code></p>
+</li>
+</ul>
+<pre><code>  {% extends 'base.html' %}
+  {% load static %}
+
+  {% block content %}
+      &lt;img src=&quot;{% static 'suolong.jpg' %}&quot; alt=&quot;suolong&quot;&gt;
+  {% endblock %}
+</code></pre>
+<ul>
+<li>
+<p>公共资源路径</p>
+<p>在更目录下创建 <code>static</code> 文件夹</p>
+<p><code>static/style.css</code></p>
+</li>
+</ul>
+<pre><code>  body {
+      background-color: #abcdef;
+  }
+</code></pre>
+<p><code>mysite/setting.py</code></p>
+<pre><code>  STATICFILES_DIRS = (
+      os.path.join(BASE_DIR, 'static'),
+  )
+</code></pre>
+<p><code>mysite/base.html</code></p>
+<pre><code>  {% load static %}
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;title&gt;Title&lt;/title&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'style.css' %}&quot;&gt;
+  &lt;/head&gt;
+</code></pre>
+<ul>
+<li>
+<p>在每个需要加载静态资源文件的模板中都要写 <code>{% load static %}</code>, 为了不在每个模板中都写，我们可以吧 <code>static</code> 变为 <code>DTL</code> 模板标签</p>
+<p><code>mysite/setting.py</code></p>
+</li>
+</ul>
+<pre><code>  TEMPLATES = [
+      {
+        'OPTIONS': {
+            'builtins': [
+                'django.templatetags.static'
+            ]
+        },
+      },
+  ]
+</code></pre>
+<p><strong>这样就不用在每个页面中引入<code>{% load static %}</code></strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django模板结构优化]]></title>
+        <id>https://xiong-zh.github.io/post/Django模板结构优化</id>
+        <link href="https://xiong-zh.github.io/post/Django模板结构优化">
+        </link>
+        <updated>2020-01-18T13:09:55.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django模板结构优化</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django模板结构优化</p>
+<!-- more -->
+<h1 id="dtl-模板结构优化"><code>DTL</code> 模板结构优化</h1>
+<h2 id="一-引入模板">一、引入模板</h2>
+<h3 id="include-标签的使用"><code>include</code> 标签的使用</h3>
+<ul>
+<li>
+<p>新建 <code>templates/header.html</code></p>
+<pre><code>&lt;header&gt;头部&lt;/header&gt;
+</code></pre>
+</li>
+<li>
+<p>新建 <code>templates/footer.html</code></p>
+<pre><code>&lt;footer&gt;尾部&lt;/footer&gt;
+</code></pre>
+</li>
+<li>
+<p>修改 <code>templates/index.html</code></p>
+</li>
+</ul>
+<pre><code>    &lt;body&gt;
+    {% include 'header.html' %}
+    &lt;div&gt;内容&lt;/div&gt;
+    {% include 'footer.html' %}
+    &lt;/body&gt;
+</code></pre>
+<h3 id="include-标签中的模板查找路径"><code>include</code> 标签中的模板查找路径</h3>
+<p><strong>参照 <a href="http://localhost:8080/readme-blog/Python/Django/templates_1.html#%E4%B8%80%E3%80%81%E6%A8%A1%E6%9D%BF%E6%9F%A5%E6%89%BE%E8%B7%AF%E5%BE%84">render_to_string的模板查找路径</a></strong></p>
+<h3 id="include-标签引入的模板可以引用当前模板中的变量"><code>include</code> 标签引入的模板可以引用当前模板中的变量</h3>
+<ul>
+<li>修改 <code>front/views.py</code></li>
+</ul>
+<pre><code>    def index(request):
+        context = {
+            'title': 'Django'
+        }
+        return render(request, 'index.html', context=context)
+</code></pre>
+<ul>
+<li>
+<p>修改 <code>templates/header.html</code></p>
+<pre><code>{#头部 Django#}
+&lt;header&gt;头部 {{ title }}&lt;/header&gt;
+</code></pre>
+</li>
+<li>
+<p>但为了所有引用 <code>templates/header.html</code> 的模板都能使用 <code>title</code> 变量， 可以在 <code>include</code> 标签中传递该变量</p>
+<p>修改 <code>templates/index.html</code></p>
+<pre><code>{#头部 Young and Beautiful#}
+{% include 'header.html' with title='Young and Beautiful' %}
+</code></pre>
+</li>
+</ul>
+<h2 id="二-模板继承">二、模板继承</h2>
+<ul>
+<li>新建 <code>templates/base.html</code>：</li>
+</ul>
+<pre><code>    &lt;body&gt;
+    {% include 'header.html' with title='Young and Beautiful' %}
+    &lt;div&gt;
+        {% block content %}
+            默认内容
+        {% endblock %}
+    &lt;/div&gt;
+    {% include 'footer.html' %}
+    &lt;/body&gt;
+</code></pre>
+<ul>
+<li>修改 <code>templates/index.html</code>:</li>
+</ul>
+<pre><code>    {% extends 'base.html' %}
+
+    {% block content %}
+    首页中的内容
+    {% endblock %}
+</code></pre>
+<ul>
+<li>
+<p>访问 <code>block</code> 标签被覆盖的内容：</p>
+<p><code>templates/index.html</code>:</p>
+</li>
+</ul>
+<pre><code>    {% extends 'base.html' %}
+
+    {% block content %}
+    首页中的内容
+    &lt;p&gt;{{ block.super }}&lt;/p&gt;
+    {% endblock %}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django自定义模板过滤器]]></title>
+        <id>https://xiong-zh.github.io/post/Django自定义模板过滤器</id>
+        <link href="https://xiong-zh.github.io/post/Django自定义模板过滤器">
+        </link>
+        <updated>2020-01-18T13:08:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django自定义模板过滤器</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django自定义模板过滤器</p>
+<!-- more -->
+<h1 id="dtl-自定义模板过滤器"><code>DTL</code> 自定义模板过滤器</h1>
+<h2 id="一-模板过滤器的定义">一、模板过滤器的定义</h2>
+<ul>
+<li>
+<p>在应用的目录下，如 <code>front</code> 下， 新建一个名为： <code>templatetags</code> 的 <code>python</code> 包</p>
+</li>
+<li>
+<p>新建 <code>front/templatetags/custom_filter.py</code>, 并定义两个模板过滤器如下：</p>
+</li>
+</ul>
+<pre><code>  from django import template
+
+  register = template.Library()
+
+
+  def my_add(value, arg):
+      try:
+          return value + arg
+      except (Exception,):
+          return ''
+
+
+  def my_upper(value):
+      try:
+          return value.upper()
+      except (Exception,):
+          return value
+
+
+  register.filter('my_add', my_add)
+  register.filter('my_upper', my_upper)
+</code></pre>
+<ul>
+<li>
+<p>需要使用 <code>{% load custom_filter %}</code>, 把应用下定义模板过滤器的文件导入模板</p>
+</li>
+<li>
+<p><code>templates/index.html</code> 代码修改如下：</p>
+</li>
+</ul>
+<pre><code>  {% load custom_filter %}
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;title&gt;Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  {#abcdef#}
+  {{ &quot;abc&quot;|my_add:&quot;def&quot; }} &lt;br&gt;
+  {#HELLO#}
+  {{ &quot;hello&quot;|my_upper }}
+  &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<ul>
+<li>*<em>注意，<code>front</code> 应用必须在 <code>mysite/settings.py</code> 进行注册，在 <code>front</code> 下定义的模板过滤器才能起作用</em></li>
+</ul>
+<pre><code>  INSTALLED_APPS = [
+      'front',
+  ]
+</code></pre>
+<h2 id="二-实战-自定义时间计算过滤器">二、实战--自定义时间计算过滤器</h2>
+<p><code>front/templatetags/custom_filter.py</code></p>
+<pre><code>from django import template
+from datetime import datetime
+
+register = template.Library()
+
+
+@register.filter
+def time_since(value):
+    &quot;&quot;&quot;
+    time距离现在的时间间隔
+    1 如果时间间隔小于1分钟，那么显示 刚刚
+    2 如果时间间隔大于1分钟小于1小时， 那么显示 xx 分钟前
+    3 如果是大于1小时小于24小时，那么显示 xx 小时前
+    4 如果大于24小时，小于30天， 那么显示 xx 天前
+    5 否则显示具体时间， 2018/12/10 23:05
+    &quot;&quot;&quot;
+    if not isinstance(value, datetime):
+        return value
+    now = datetime.now()
+    timestamp = (now - value).total_seconds()
+    if timestamp &lt; 60:
+        return '刚刚'
+    elif 60 &lt;= timestamp &lt; 60 * 60:
+        minutes = int(timestamp/60)
+        return '%s分钟前' % minutes
+    elif 60 * 60 &lt;= timestamp &lt; 60 * 60 * 24:
+        hour = int(timestamp / (60 * 60))
+        return '%s 小时前' % hour
+    elif 60 * 60 * 24 &lt;= timestamp &lt; 60 * 60 * 24 * 30:
+        days = int(timestamp / (60 * 60 * 24))
+        return '%s 天前' % days
+    else:
+        return value.strftime(&quot;%Y/%m/%d %H:%M&quot;)
+</code></pre>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+from datetime import datetime
+
+
+def index(request):
+    context = {
+        'my_time_1': datetime.now(),
+        'my_time_2': datetime(year=2018, month=12, day=10, hour=23, minute=18),
+        'my_time_3': datetime(year=2018, month=12, day=10, hour=18, minute=18),
+        'my_time_4': datetime(year=2018, month=12, day=1, hour=22, minute=18),
+        'my_time_5': datetime(year=2017, month=12, day=10, hour=23, minute=18),
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{% load custom_filter %}
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+{#刚刚 #}
+{{ my_time_1|time_since }} &lt;br&gt;
+{#7分钟前 #}
+{{ my_time_2|time_since }} &lt;br&gt;
+{#5 小时前 #}
+{{ my_time_3|time_since }} &lt;br&gt;
+{#9 天前 #}
+{{ my_time_4|time_since }} &lt;br&gt;
+{#2017/12/10 23:18#}
+{{ my_time_5|time_since }}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django模板过滤器详解]]></title>
+        <id>https://xiong-zh.github.io/post/Django模板过滤器详解</id>
+        <link href="https://xiong-zh.github.io/post/Django模板过滤器详解">
+        </link>
+        <updated>2020-01-18T13:06:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django模板过滤器详解</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django模板过滤器详解</p>
+<!-- more -->
+<h1 id="dtl-模板过滤器"><code>DTL</code> 模板过滤器</h1>
+<h2 id="add"><code>add</code></h2>
+<ul>
+<li>原理：</li>
+</ul>
+<pre><code>  def add(value, arg):
+    &quot;&quot;&quot;Add the arg to the value&quot;&quot;&quot;
+    try:
+      return int(value) + int(arg)
+    except (ValueError, TypeError):
+      try:
+        return value + arg
+      except Exception:
+        return ''
+</code></pre>
+<ul>
+<li>使用<br>
+<code>front/views.py</code></li>
+</ul>
+<pre><code>  def index(request):
+    context = {
+        &quot;number&quot;: 1,
+        &quot;persons&quot;: ['baby', 'dear'],
+        &quot;girls&quot;: ['宝宝', '亲爱的']
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{#数字相加#}
+{{ number|add:&quot;2&quot; }} &lt;br&gt;
+{#字符串拼接#}
+{{ number|add:'abc' }} &lt;br&gt;
+{#列表拼接#}
+{{ persons|add:girls }}
+</code></pre>
+<h2 id="cut"><code>cut</code></h2>
+<ul>
+<li>
+<p>原理：</p>
+<pre><code>def cut(vaule, arg):
+  &quot;&quot;&quot;Remove all values of arg from the given string&quot;&quot;&quot;
+  safe = isinstance(value, SafeData)
+  value = value.replace(arg, '')
+  if safe and arg != ';':
+    return mark_safe(value)
+  return value
+</code></pre>
+</li>
+<li>
+<p>使用<br>
+<code>templates/index.html</code></p>
+<pre><code>{# 去除字符串中空格 #}
+{{ &quot;This is ten percent luck, twenty percent skill&quot;|cut:&quot; &quot; }}
+</code></pre>
+</li>
+</ul>
+<h2 id="date"><code>date</code></h2>
+<ul>
+<li>
+<p>所有格式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">格式字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">'a.m.' 或 'p.m.' （请注意，这与PHP输出略有不同，因为这包括与Associated Press样式匹配的句点。）</td>
+<td style="text-align:center">'a.m.'</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">'AM' 或 'PM'。</td>
+<td style="text-align:center">'a.m.'</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">月，文字，3个字母，小写。</td>
+<td style="text-align:center">'jan'</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">未实现。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">ISO 8601格式。 （注意：与其他格式化程序，如“Z”，“O”或“r”不同，如果值是一个天真的datetime（见 datetime.tzinfo），“c”格式化程序不会添加时区偏移。</td>
+<td style="text-align:center">2008-01-02T10:30:00.000123+02:00 或 2008-01-02T10:30:00.000123 （如果datetime是天真的）</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">月的日期，带前导零的2位数字。</td>
+<td style="text-align:center">'01' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">星期几，文字，3个字母。</td>
+<td style="text-align:center">'Fri'</td>
+</tr>
+<tr>
+<td style="text-align:center">e</td>
+<td style="text-align:center">时区名称。可以是任何格式，或可能返回一个空字符串，具体取决于datetime。</td>
+<td style="text-align:center">''，'GMT'，'-500'，'US/Eastern' 等。</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">月，特定于语言环境的替代表示，通常用于长日期表示。</td>
+<td style="text-align:center">'listopada' （对于波兰语区域，而不是 'Listopad'）</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">时间，12小时小时和分钟，如果他们为零，分钟将关闭。专有扩展。</td>
+<td style="text-align:center">'1'，'1:30'</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">月，文字，长。</td>
+<td style="text-align:center">'January'</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">小时，12小时格式，不含前导零。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">小时，24小时格式，无前导零。</td>
+<td style="text-align:center">'0' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">小时，12小时格式。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">小时，24小时格式。</td>
+<td style="text-align:center">'00' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">分钟。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+<tr>
+<td style="text-align:center">I</td>
+<td style="text-align:center">夏令时，无论是否生效。</td>
+<td style="text-align:center">'1' 或 '0'</td>
+</tr>
+<tr>
+<td style="text-align:center">j</td>
+<td style="text-align:center">没有前导零的月份日。</td>
+<td style="text-align:center">'1' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">星期几，文字，长。</td>
+<td style="text-align:center">'Friday'</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">是否为闰年的布尔值。</td>
+<td style="text-align:center">True 或 False</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">月，2位数字，前导零。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">月，文字，3个字母。</td>
+<td style="text-align:center">'Jan'</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">没有前导零的月。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">月缩写在Associated Press风格。专有扩展。</td>
+<td style="text-align:center">'Jan.'，'Feb.'，'March'，'May'</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">ISO-8601周编号年，对应于使用闰年的ISO-8601周编号（W）。更常见的年份格式见Y。</td>
+<td style="text-align:center">'1999'</td>
+</tr>
+<tr>
+<td style="text-align:center">O</td>
+<td style="text-align:center">与格林威治时间的差值（以小时为单位）。</td>
+<td style="text-align:center">'+0200'</td>
+</tr>
+<tr>
+<td style="text-align:center">P</td>
+<td style="text-align:center">时间，12小时制，分钟和’a.m。’/’p.m。’，如果它们为零，分钟将关闭，如果合适，分钟将保留特殊字符串’午夜’和’中午’。专</td>
+<td style="text-align:center">有扩展。 '1 a.m.'，'1:30 p.m.'，'midnight'，'noon'，'12:30 p.m.'</td>
+</tr>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">RFC 5322 格式的日期。</td>
+<td style="text-align:center">'Thu, 21 Dec 2000 16:01:07 +0200'</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">秒，带前导零的2位数。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">每月日期的英文序数后缀，2个字符。</td>
+<td style="text-align:center">'st'，'nd'，'rd' 或 'th'</td>
+</tr>
+<tr>
+<td style="text-align:center">t</td>
+<td style="text-align:center">指定月份的天数。</td>
+<td style="text-align:center">28 到 31</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">本机的时区。</td>
+<td style="text-align:center">'EST'，'MDT'</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">微秒。</td>
+<td style="text-align:center">000000 到 999999</td>
+</tr>
+<tr>
+<td style="text-align:center">U</td>
+<td style="text-align:center">自Unix时代以来的秒数（1970年1月1日00:00:00 UTC）。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">星期几，没有前导零的数字。</td>
+<td style="text-align:center">'0' （星期日）至 '6' （星六）</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">ISO-8601年的周数，周从星期一开始。</td>
+<td style="text-align:center">1，53</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:center">年，2位数。</td>
+<td style="text-align:center">'99'</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">年，4位数。</td>
+<td style="text-align:center">'1999'</td>
+</tr>
+<tr>
+<td style="text-align:center">z</td>
+<td style="text-align:center">一年中的一天。</td>
+<td style="text-align:center">0 到 365</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">时区偏移（以秒为单位）。 UTC之前的时区的偏移总是负的，并且对于UTC的东部的偏移总是正的。</td>
+<td style="text-align:center">-43200 到 43200</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>常用格式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">格式字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">年，4位数。</td>
+<td style="text-align:center">'1999'</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">月，2位数字，前导零。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">没有前导零的月。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">月的日期，带前导零的2位数字。</td>
+<td style="text-align:center">'01' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">j</td>
+<td style="text-align:center">没有前导零的月份日。</td>
+<td style="text-align:center">'1' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">小时，12小时格式，不含前导零。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">小时，12小时格式。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">小时，24小时格式，无前导零。</td>
+<td style="text-align:center">'0' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">小时，24小时格式。</td>
+<td style="text-align:center">'00' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">分钟。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">秒，带前导零的2位数。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+from datetime import datetime
+
+
+def index(request):
+    context = {
+        &quot;today&quot;: datetime.now()
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 2018/12/09 #}
+{{ today|date:&quot;Y/m/d&quot; }}
+</code></pre>
+<h2 id="default"><code>default</code></h2>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+
+
+def index(request):
+    context = {
+        'list': [],
+        'dict': {},
+        'str': '',
+        'none': None,
+        'number': 0,
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 空列表 #}
+{{ list|default:'空列表' }}
+{#空字典#}
+{{ dict|default:'空字典' }}
+{#空字符串#}
+{{ str|default:'空字符串' }}
+{#数字0#}
+{{ number|default:'数字0' }}
+{#None#}
+{{ none|default:'None' }}
+</code></pre>
+<h2 id="default-if-none"><code>default-if-none</code></h2>
+<p><strong>只有值为<code>None</code>才会起作用</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{#[]#}
+{{ list|default_if_none:'空字典' }}
+{{ str|default_if_none:'空字符串' }}
+{#0#}
+{{ number|default_if_none:'数字0' }}
+{#None#}
+{{ none|default_if_none:'None' }}
+</code></pre>
+<h2 id="first"><code>first</code></h2>
+<p><strong>返回列表或元组中的第一个元素</strong></p>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+
+
+def index(request):
+    context = {
+        'student': ['威震天', '擎天柱']
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 威震天 #}
+{{ student|first }}
+</code></pre>
+<h2 id="last"><code>last</code></h2>
+<p><strong>返回列表或元组中的最后一个元素</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 擎天柱 #}
+{{ student|last }}
+</code></pre>
+<h2 id="floatformat"><code>floatformat</code></h2>
+<p><strong>四舍五入格式化浮点类型</strong></p>
+<ul>
+<li>
+<p>没有参数是，默认保留一位小数点</p>
+</li>
+<li>
+<p>传递的参数代表小数点的位数</p>
+</li>
+</ul>
+<p><code>templates/index.html</code></p>
+<pre><code>{#3.1#}
+{{ 3.141592654|floatformat }} &lt;br&gt;
+{#3.14159 #}
+{{ 3.141592654|floatformat:5 }} &lt;br&gt;
+</code></pre>
+<h2 id="join"><code>join</code></h2>
+<p><strong>指定分隔符把元组或者列表，转换为字符串</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{#威震天-擎天柱#}
+{{ student|join:'-' }}
+</code></pre>
+<h2 id="length"><code>length</code></h2>
+<p><strong>返回元组、列表、字符串的长度</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{#2#}
+{{ student|length }}
+</code></pre>
+<h2 id="lower"><code>lower</code></h2>
+<p><strong>将字符串转换为小写</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{#abc#}
+{{ &quot;ABC&quot;|lower }}
+</code></pre>
+<h2 id="upper"><code>upper</code></h2>
+<p><strong>将字符串转换为大写</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{#ABC#}
+{{ &quot;abc&quot;|upper }}
+</code></pre>
+<h2 id="random"><code>random</code></h2>
+<p><strong>返回元组、列表、字符串中随机选取一个值</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{{ &quot;abc&quot;|random }}
+</code></pre>
+<h2 id="safe"><code>safe</code></h2>
+<p><strong>标记一个字符串是安全的，包含特殊字符，也不会被转义， 类似关闭<code>autoescape</code>标签的自动转义</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{{ &quot;&lt;h1&gt;autoescape off&lt;/h1&gt;&quot;|safe }}
+</code></pre>
+<h2 id="slice"><code>slice</code></h2>
+<p><strong>类似于<code>python</code>的切片操作</strong></p>
+<p><code>front/views.py</code></p>
+<pre><code>def index(request):
+    context = {
+        'data': list(range(10))
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{#[1, 3, 5, 7, 9]#}
+{{ data|slice:&quot;1::2&quot;}}
+</code></pre>
+<h2 id="striptags"><code>striptags</code></h2>
+<p><strong>去除字符串中的 <code>HTML</code> 标签</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{{ &quot;&lt;h1&gt;去除字符串中的html标签&lt;/h1&gt;&quot;|striptags }}
+</code></pre>
+<h2 id="truncatechars"><code>truncatechars</code></h2>
+<p><strong>显示指定字符长度，超出部分显示..., 三个点也纳入指定字符范围的长度</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{#显示...#}
+{{ &quot;显示指定字符长度，超出部分显示...&quot;|truncatechars:5 }}
+</code></pre>
+<h2 id="truncatechars_html"><code>truncatechars_html</code></h2>
+<p><strong>类似 <code>truncatechars</code>, 只不过不会切割 <code>HTML</code> 标签</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{{ &quot;&lt;h1&gt;显示指定字符长度，超出部分显示...&lt;/h1&gt;&quot;|truncatechars_html:5 }}
+</code></pre>
+<h2 id="其它不常用过滤器">其它不常用过滤器</h2>
+<p><strong>可以在 <code>pycharm</code> 中， 查看源代码</strong></p>
+<pre><code>from django.template import defaultfilters, defaulttags
+# defaultfilters 查看内置过滤器
+# defaulttags 查看内置标签
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django 模板标签详解]]></title>
+        <id>https://xiong-zh.github.io/post/Django模板标签详解</id>
+        <link href="https://xiong-zh.github.io/post/Django模板标签详解">
+        </link>
+        <updated>2020-01-18T13:05:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django 模板标签详解</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django 模板标签详解</p>
+<!-- more -->
+<h1 id="dtl-模板标签详解"><code>DTL</code> 模板标签详解</h1>
+<blockquote>
+<p>接着上一篇 <a href="https://zhb333.github.io/readme-blog/Python/Django/urls.html" title="urls与视图详解">urls与视图详解</a> 继续往下讲</p>
+</blockquote>
+<h2 id="一-模板查找路径">一、模板查找路径</h2>
+<p><code>mysite/setting.py</code>： 模板查找的优先级最高为如下配置</p>
+<pre><code>TEMPLATES = [
+    {
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    },
+]
+</code></pre>
+<p>其次是，在各自的 <code>app</code> 中， 注意， 需要在 <code>INSTALLED_APPS</code> 中注册后才能起作用：</p>
+<pre><code>INSTALLED_APPS = [
+    'front',
+]
+
+TEMPLATES = [
+    {
+        'APP_DIRS': True,
+    },
+]
+</code></pre>
+<p>最后如果在当前 <code>app</code> 中还找不到模板，会到其它已安装的 <code>app</code> 中查找， 如果还找不到就会报错了！</p>
+<h2 id="二-render_to_string">二、<code>render_to_string</code></h2>
+<ul>
+<li>
+<p>在根目录新建 <code>templates</code> 文件夹</p>
+</li>
+<li>
+<p>创建 <code>templates/index.html</code></p>
+</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            color: #f00;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+佛曰： 我执， 是痛苦的根源！
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>修改 <code>front/urls.py</code></li>
+</ul>
+<pre><code> path('', views.index, name='index'),
+</code></pre>
+<ul>
+<li>修改 <code>front/views.py</code></li>
+</ul>
+<pre><code>from django.template.loader import render_to_string
+from django.http import HttpResponse
+
+
+def index(request):
+    # 在 mysite/settings.py 配置了项目模板路径
+    html = render_to_string(&quot;index.html&quot;)
+    return HttpResponse(html)
+</code></pre>
+<h2 id="三-render">三、<code>render</code></h2>
+<blockquote>
+<p><code>render_to_string</code> 与 <code>HttpResponse</code> 组合的快捷方式， 可 <code>pycharm</code> 查看 <code>render</code> 的实现如下：</p>
+</blockquote>
+<pre><code>def render(request, template_name, context=None, content_type=None, status=None, using=None):
+    content = loader.render_to_string(template_name, context, request, using=using)
+    return HttpResponse(content, content_type, status)
+</code></pre>
+<p>修改 <code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+
+
+def index(request):
+    return render(request, 'index.html')
+</code></pre>
+<h2 id="四-模板变量">四、模板变量</h2>
+<blockquote>
+<p>可以通过<code>render</code> 函数的 <code>context</code> 参数，给模板传递数据</p>
+</blockquote>
+<p><strong>模板中，不支持中括号语法，只能通过 <code>.</code> 语法获取</strong></p>
+<ul>
+<li>
+<p>传递字符串</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>def index(request):
+    context = {'username': 'zhb333'}
+    return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>修改 `templates/index.html`
+</code></pre>
+<pre><code>    &lt;body&gt;
+    {{ username }}
+    &lt;/body&gt;
+</code></pre>
+<pre><code>访问：`http://localhost:8000/`, 页面显示： **zhb333**
+</code></pre>
+<ul>
+<li>
+<p>传递一个对象</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>class Person:
+   def __init__(self, username):
+        self.username = username
+
+
+   def index(request):
+        context = {'person': Person('理想三旬')}
+        return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>修改 `templates/index.html`
+</code></pre>
+<pre><code>  {{ person.username }}
+</code></pre>
+<ul>
+<li>
+<p>传递的数据是一个字典时， 字典中不要出现关键字，这样会造成歧义</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    def index(request):
+        context = {'person': {'username': '我要你'}}
+        return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>   {{ person.keys }}
+</code></pre>
+<pre><code>浏览器显示： **dict_keys(['username'])**  
+
+修改 `front/views.py`
+</code></pre>
+<pre><code>def index(request):
+     context = {'person': {'username': '我要你', 'keys': '夜空中最亮的星'}}
+     return render(request, 'index.html', context=context)
+</code></pre>
+<pre><code>浏览器显示： **夜空中最亮的星**
+</code></pre>
+<ul>
+<li>
+<p>传递列表或元组</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>   # context = {'persons': ['那些花儿', '她们都老了吧', '她们在哪里呀']}
+   context = {'persons': ('那些花儿', '她们都老了吧', '她们在哪里呀')}
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>   {{ persons.0 }} &lt;br&gt;
+   {{ persons.1 }} &lt;br&gt;
+   {{ persons.2 }} &lt;br&gt;
+</code></pre>
+<h2 id="五-常用的模板标签">五 常用的模板标签</h2>
+<p><strong>所有标签都需要用 <code>{%%}</code> 进行包裹</strong></p>
+<ul>
+<li><code>if</code> 标签
+<blockquote>
+<p><code>if</code> 标签中可以使用： <code>==</code>、<code>!=</code>、<code>&lt;</code>、<code>&lt;=</code>、<code>&gt;</code>、<code>&gt;=</code>、<code>in</code>、<code>not in</code>、<code>is</code>、<code>is not</code> 等判断运算符</p>
+</blockquote>
+<ul>
+<li>
+<p><code>if...else</code> 运算符举例</p>
+<p>修改 <code>templates/index.html</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>        {% if '那些花儿' in persons %}
+            &lt;p style=&quot;color: hotpink&quot;&gt;可爱的花儿&lt;/p&gt;
+        {% else %}
+            &lt;p style=&quot;color: darkgray&quot;&gt;可伶的花儿&lt;/p&gt;
+        {% endif %}
+</code></pre>
+<pre><code>* `if...elif...else` 举例
+ 修改 `templates/index.html`
+</code></pre>
+<pre><code>      {% if age &lt; 18 %}
+            &lt;p&gt;乳臭未干的小子&lt;/p&gt;
+      {% elif age == 18 %}
+            &lt;p&gt;恰逢少年时&lt;/p&gt;
+      {% else %}
+            &lt;p&gt;老男人&lt;/p&gt;
+      {% endif %}
+</code></pre>
+<ul>
+<li>
+<p><code>for...in</code> 循环列表</p>
+<ul>
+<li>
+<p>循环列表</p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    context = {
+            'books': ['深入理解ES6', 'JavaScript权威指南', 'JavaScript语言精粹']
+         }
+</code></pre>
+<pre><code>    修改 `templates/index.html`  
+</code></pre>
+<pre><code>    &lt;ul&gt;
+       {% for book in books %}
+             &lt;li&gt;{{ book }}&lt;/li&gt;
+       {% endfor %}
+    &lt;/ul&gt;
+</code></pre>
+<pre><code>* 反向循环列表  `reversed`
+
+    修改 `templates/index.html`  
+</code></pre>
+<pre><code>     {% for book in books reversed %}
+        &lt;li&gt;{{ book }}&lt;/li&gt;
+     {% endfor %}
+</code></pre>
+<ul>
+<li>
+<p><code>for...in</code> 循环中， <code>DTL</code> 提供了一些可用的模板变量：</p>
+<ul>
+<li>
+<p>列表的下标 <code>forloop.counter</code> 从 <code>1</code> 开始</p>
+<p>修改 <code>templates/index.html</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>   {% for book in books %}
+      &lt;li&gt;{{ forloop.counter }} -- {{ book }}&lt;/li&gt;
+   {% endfor %}
+</code></pre>
+<pre><code>* 列表的下标 `forloop.counter0` 从 `0` 开始
+
+    修改 `templates/index.html`  
+</code></pre>
+<pre><code>        {% for book in books %}
+            &lt;li&gt;{{ forloop.counter0 }} -- {{ book }}&lt;/li&gt;
+        {% endfor %}
+</code></pre>
+<pre><code>* 列表的反向下标 `forloop.revcounter` 从 `1` 开始
+</code></pre>
+<pre><code>        {% for book in books reversed %}
+            &lt;li&gt;{{ forloop.revcounter }} -- {{ book }}&lt;/li&gt;
+        {% endfor %}
+</code></pre>
+<pre><code>* 列表的反向下标 `forloop.revcounter0` 从 `0` 开始
+</code></pre>
+<pre><code>        {% for book in books reversed %}
+            &lt;li&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+        {% endfor %}
+</code></pre>
+<pre><code>* 是否是第一次遍历 `forloop.first`
+</code></pre>
+<pre><code>        {% for book in books %}
+            {% if forloop.first %}
+                &lt;li style=&quot;color: green;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% else %}
+                &lt;li style=&quot;color: red;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% endif %}
+        {% endfor %}
+</code></pre>
+<pre><code>* 是否是最后一次次遍历 `forloop.last`
+</code></pre>
+<pre><code>        {% for book in books %}
+            {% if forloop.last %}
+                &lt;li style=&quot;color: green;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% else %}
+                &lt;li style=&quot;color: red;&quot;&gt;{{ forloop.revcounter0 }} -- {{ book }}&lt;/li&gt;
+            {% endif %}
+        {% endfor %}
+</code></pre>
+<pre><code>* 调用上一级循环的 `forloop` 模板变量  `forloop.parentloop`  
+    修改 `front/views.py` 
+</code></pre>
+<pre><code>    context = {
+      'family': [{'father': '大头爸爸', 'children': ['小头孩儿', '小头女儿']}]
+      }
+</code></pre>
+<pre><code>     修改 `templates/index.html`  
+</code></pre>
+<pre><code>        {% for who in family %}
+            &lt;p&gt;this is &lt;strong style=&quot;color: green&quot;&gt;{{ who.father }}&lt;/strong&gt;&lt;/p&gt;
+            {% for child in who.children %}
+                &lt;p&gt;{{ child }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.first }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.last }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.counter }}&lt;/p&gt;
+                &lt;p&gt;{{ forloop.parentloop.revcounter }}&lt;/p&gt;
+            {% endfor %}
+        {% endfor %}
+</code></pre>
+<ul>
+<li>
+<p><code>for...in</code> 循环字典</p>
+<ul>
+<li>循环字典 <code>keys</code><br>
+修改 <code>front/views.py</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>           context = {'student': {
+                'name': '道明寺',
+                'girl': '杉菜',
+                'age': '18',
+            }}
+</code></pre>
+<pre><code>    修改 `templates/index.html`  
+
+    ```
+    &lt;ul&gt;
+        {% for key in student.keys %}
+            &lt;li&gt;{{ key }}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+    ```      
+    
+* 循环字典 `values`    
+
+    修改 `templates/index.html`  
+
+    ```
+    {% for value in student.values %}
+        &lt;li&gt;{{ value }}&lt;/li&gt;
+    {% endfor %}
+    ```   
+
+* 循环字典 `items`    
+
+    修改 `templates/index.html`  
+
+    ```
+    {% for key,value in student.items %}
+        &lt;li&gt;{{ key }}--{{ value }}&lt;/li&gt;
+    {% endfor %}
+    ```   
+</code></pre>
+<ul>
+<li>
+<p><code>for...in...empty...</code></p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    context = {
+    'comments': []
+    }
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>    {% for comment in comments %}
+        {{ comment }}
+    {% empty %}
+        还没有任何评论
+    {% endfor %}
+</code></pre>
+<ul>
+<li>
+<p><code>with</code> 标签 （在模板中定义变量）</p>
+<p><strong>通过 <code>with</code> 标签定义的变量只能在， 只能在 <code>with</code> 标签包裹的语句块中使用</strong></p>
+<p>修改 <code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    context = {
+        'students': ['孙悟空', '猪八戒', '沙和尚']
+    }
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>    {% with students.0 as monkey %}
+        {{ monkey }}
+    {% endwith %}
+
+    {% with pig=students.1 %}
+        {{ pig }}
+    {% endwith %}
+</code></pre>
+<ul>
+<li>
+<p><code>url</code> 标签</p>
+<p><strong>通过 <code>url</code> 标签 可以把 <code>urls.py</code> 中， 对应的 <code>path</code> 或 <code>re_path</code> 的命名，转换化为浏览器可识别的链接</strong></p>
+<p>修改 <code>front/urls.py</code></p>
+</li>
+</ul>
+<pre><code>    from django.urls import path
+    from . import views
+
+    app_name = 'front'
+
+    urlpatterns = [
+        path('', views.index, name='index'),
+        path('book/&lt;book_id&gt;/', views.book, name='book'),
+        path('movie/', views.movie, name='movie'),
+        path('story/&lt;story_id&gt;/&lt;category&gt;/', views.story, name='story'),
+    ]
+</code></pre>
+<pre><code>修改 `front/views.py`
+</code></pre>
+<pre><code>    from django.http import HttpResponse
+    from django.template.loader import render_to_string
+
+
+    def index(request):
+        return HttpResponse(render_to_string('index.html'))
+
+
+    def book(request, book_id):
+        return HttpResponse('书籍, %s' % book_id)
+
+
+    def movie(request):
+        movie_id = request.GET.get('movie_id')
+        return HttpResponse('电影, %s' % movie_id)
+
+
+    def story(request, story_id, category):
+        _type = request.GET.get('type')
+        return HttpResponse('故事id: %s, 分类： %s, 类型： %s' % (story_id, category, _type))
+</code></pre>
+<pre><code>修改 `templates/index.html`  
+</code></pre>
+<pre><code>    &lt;p&gt;&lt;a href=&quot;{% url 'front:index' %}&quot;&gt;首页&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;{% url 'front:book' book_id=1 %}&quot;&gt;书籍&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;{% url 'front:movie' %}?movie_id=2&quot;&gt;电影&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;{% url 'front:story' story_id=3 category='冒险' %}?type=未知&quot;&gt;故事&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+<ul>
+<li>
+<p><code>spaceless</code> 标签 （去除html代码中的空白字符）</p>
+<p><strong>下面的 <code>html</code> 模板代码存在很多空白字符，可以通过 <code>spaceless</code> 标签去除</strong></p>
+</li>
+</ul>
+<pre><code>    {% spaceless %}
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;https://www.baidu.com&quot;&gt;
+                    百度
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    {% endspaceless %}
+</code></pre>
+<ul>
+<li>
+<p><code>autoescape</code>标签 （默认开启了特殊字符自动转义）</p>
+<p><strong>可以通过设置 <code>autoescape</code> 标签的自动转义 为 <code>off</code>, 关闭自动转义</strong><br>
+修改 <code>front/urls.py</code></p>
+</li>
+</ul>
+<pre><code>    urlpatterns = [
+        path('', views.index, name='index'),
+    ]
+</code></pre>
+<pre><code>修改 `front/views.py`
+</code></pre>
+<pre><code>    from django.shortcuts import render
+
+
+    def index(request):
+        return render(request, 'index.html', context={'link': '&lt;p&gt;&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;&lt;/p&gt;'})
+</code></pre>
+<pre><code>修改 `templates/index.html`
+</code></pre>
+<pre><code>    &lt;body&gt;
+    {{ link }}
+    {% autoescape off %}
+        {{ link }}
+    {% endautoescape %}
+    &lt;/body&gt;
+</code></pre>
+<ul>
+<li><code>verbatim</code> 标签<br>
+<strong>当不想要<code>DTL</code>编译 {{}} 或 {%%} 时， 可以通过 <code>verbatim</code> 标签包裹</strong></li>
+</ul>
+<pre><code>    {% verbatim %}
+        {{ 哈哈 }}
+        {% 呵呵 %}
+    {% endverbatim %}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django ORM常用Field详解]]></title>
+        <id>https://xiong-zh.github.io/post/Django-ORM常用Field详解</id>
+        <link href="https://xiong-zh.github.io/post/Django-ORM常用Field详解">
+        </link>
+        <updated>2020-01-18T13:04:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django ORM常用Field详解</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django ORM常用Field详解</p>
+<!-- more -->
+<h2 id="一-常用的field">一、常用的<code>Field</code></h2>
+<p><code>book/models.py</code></p>
+<pre><code>class Fields(models.Model):
+
+    # 映射到数据库中是int类型，可以有自动增长的特性。一般不需要使用这个类型，如果不指定主键，那么模型会自动的生成一个叫做id的自动增长的主键。
+    # auto_id = models.AutoField()
+
+    # 64位的整形，类似于AutoField，只不过是产生的数据的范围是从1-9223372036854775807
+    id = models.BigAutoField(primary_key=True)
+
+    # 在模型层面接收的是True / False。在数据库层面是tinyint类型 存储的是 0/1。如果没有指定默认值，默认值是None。
+    removed = models.BooleanField()
+
+    # 在数据库层面是varchar类型。在Python层面就是普通的字符串。这个类型在使用的时候必须要指定最大的长度，也即必须要传递max_length
+    title = models.CharField(max_length=100)
+
+    # 日期类型。在Python中是datetime.date类型，可以记录年月日。在映射到数据库中也是date类型。使用这个Field可以传递以下几个参数：
+    #
+    # auto_now：最后一次修改时间，可以将这个属性设置为True。
+    # auto_now_add：新增时间，可以将这个属性设置为True。
+    birth = models.DateField(auto_now_add=True)
+
+    # 日期时间类型，类似于DateField。不仅仅可以存储日期，还可以存储时间。映射到数据库中是datetime类型。这个Field也可以使用auto_now和auto_now_add两个属性。
+    created_time = models.DateTimeField(auto_now_add=True)
+
+    # 时间类型。在数据库中是time类型。在Python中是datetime.time类型。
+    lunch_time = models.TimeField()
+
+    # 类似于CharField。在数据库底层也是一个varchar类型。最大长度是254个字符。并不验证邮箱格式，配合 ModelForm 使用时，才会与进行邮箱格式验证
+    email = models.EmailField()
+
+    # 用来存储文件的。这个请参考后面的文件上传章节部分。
+    # file = models.FileField()
+
+    # 用来存储图片文件的。这个请参考后面的图片上传章节部分。
+    # image = models.ImageField()
+
+    # 浮点类型。映射到数据库中是double类型。
+    price = models.FloatField()
+
+    # 整形。值的区间是-2147483648——2147483647
+    age = models.IntegerField()
+
+    # 大整形。值的区间是-9223372036854775808——9223372036854775807。
+    total = models.BigIntegerField()
+
+    # 正整形。值的区间是0——2147483647。
+    money = models.PositiveIntegerField()
+
+    # 小整形。值的区间是-32768——32767。
+    apple = models.SmallIntegerField()
+
+    # 小整形。值的区间是-32768——32767。
+    pear = models.PositiveSmallIntegerField()
+
+    # 小整形。值的区间是-32768——32767。
+    content = models.TextField()
+
+    # 只能存储uuid格式的字符串。uuid是一个32位的全球唯一的字符串，一般用来作为主键。
+    uuid = models.UUIDField()
+
+    # 类似于CharField，只不过只能用来存储url格式的字符串。并且默认的max_length是200。
+    url = models.URLField()
+</code></pre>
+<h2 id="二-注意事项">二、注意事项：</h2>
+<ul>
+<li>已经将模型映射到数据库后，修改或新增表字段，如果没有提供默认值，在生成迁移文件时，会提供两个选项，让你添加默认值</li>
+</ul>
+<pre><code>  (myenv) E:\code\PythonEnvs\myenv\book_manager&gt;python manage.py makemigrations
+  You are trying to add a non-nullable field 'age' to fields without a default; we can't do that (the database nee
+  ds something to populate existing rows).
+  Please select a fix:
+  1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+  2) Quit, and let me add a default in models.py
+</code></pre>
+<ul>
+<li>
+<p>使用 <code>DateField</code>、 <code>DateTimeField</code> 的自动添加时间参数 <code>auto_now_add</code> 或 <code>auto_now</code>， 添加到数据库使用的是 <code>django.utils.timezone.now()</code> , 这是一个  <code>UTC</code> 时间， 为了在模板中正确显示当前时区的时间，需要配置正确时区</p>
+<p><code>book_manager/settings.py</code></p>
+</li>
+</ul>
+<pre><code>  TIME_ZONE = 'Asia/Shanghai'
+</code></pre>
+<hr>
+<p><code>book_manager/urls.py</code></p>
+<pre><code>  from django.urls import path, include
+
+  urlpatterns = [
+      path('', include('book.urls')),
+  ]
+</code></pre>
+<hr>
+<p><code>book/urls.py</code></p>
+<pre><code>  from django.urls import path
+  from . import views
+
+  app_name = 'book'
+
+  urlpatterns = [
+      path('', views.index, name='index')
+  ]
+</code></pre>
+<hr>
+<p><code>book/models.py</code></p>
+<pre><code>  class Book(models.Model):
+      id = models.AutoField(primary_key=True)
+      title = models.CharField(max_length=100, null=False)
+      author = models.CharField(max_length=100, null=False)
+      price = models.FloatField(default=0)
+      create_time = models.DateTimeField(auto_now_add=True)
+</code></pre>
+<hr>
+<p><code>book/views.py</code></p>
+<pre><code>  from django.shortcuts import render
+  from . import models
+
+  def index(request):
+      book = models.Book(title='精通ES6', author='zhb333', price=333)
+      book.save()
+      obj = models.Book.objects.get(pk=1)
+      # UTC 时间
+      return render(request, 'book/index.html', context={'create_time': obj.create_time})
+</code></pre>
+<hr>
+<p><code>book/templates/book/index.html</code></p>
+<pre><code>  {#正确配置时区，即便存储在数据库中的时间是UTC时间，模板中也会正确显示配置的时区所对应的时间#}
+  {{ create_time }}
+</code></pre>
+<h2 id="三-其它不常用的-field">三、其它不常用的 <code>Field</code></h2>
+<p><strong>可以在 <code>pycharm</code> 中按<code>ctrl</code> 并点击任一个 <code>Field</code>进入所有<code>Field</code>的定义文件查看</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django创建和映射ORM模型到数据库]]></title>
+        <id>https://xiong-zh.github.io/post/Django创建和映射ORM模型到数据库</id>
+        <link href="https://xiong-zh.github.io/post/Django创建和映射ORM模型到数据库">
+        </link>
+        <updated>2020-01-18T13:03:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django创建和映射ORM模型到数据库</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django创建和映射ORM模型到数据库</p>
+<!-- more -->
+<h2 id="1-新建应用-book">1、新建应用 <code>book</code></h2>
+<pre><code>python manage.py startapp book
+</code></pre>
+<h2 id="2-配置-book-为已安装应用">2、配置 <code>book</code> 为已安装应用</h2>
+<p><code>book_manager/settings.py</code></p>
+<pre><code>INSTALLED_APPS = [
+    'book',
+]
+</code></pre>
+<h2 id="3-创建模型">3、创建模型</h2>
+<p><code>book/models.py</code></p>
+<pre><code>from django.db import models
+# Create your models here.
+
+class Book(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100, null=False)
+    author = models.CharField(max_length=100, null=False)
+    price = models.FloatField(default=0)
+</code></pre>
+<h2 id="4-生成数据库迁移文件">4、生成数据库迁移文件</h2>
+<pre><code>python manage.py makemigrations
+</code></pre>
+<h2 id="5-将已安装的应用的迁移文件映射到数据库">5、将已安装的应用的迁移文件映射到数据库</h2>
+<pre><code>python manage.py migrate
+</code></pre>
+<p><strong>注意：</strong></p>
+<ol>
+<li>
+<p>如果在模型中不指定表名，默认是以 应用名_模型名（小写）如：<code>book_book</code> 作为表名</p>
+</li>
+<li>
+<p>模型中默认以 <code>id</code> 作为主键，因此在模型中可以省略主键的定义即：</p>
+<p><code>book/models.py</code></p>
+</li>
+</ol>
+<pre><code>    class Book(models.Model):
+        title = models.CharField(max_length=100, null=False)
+        author = models.CharField(max_length=100, null=False)
+        price = models.FloatField(default=0)
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django操作数据库原生SQL初体验]]></title>
+        <id>https://xiong-zh.github.io/post/Django操作数据库原生SQL初体验</id>
+        <link href="https://xiong-zh.github.io/post/Django操作数据库原生SQL初体验">
+        </link>
+        <updated>2020-01-18T13:00:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>Django - Django 操作数据库-原生SQL初体验</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Django - Django 操作数据库-原生SQL初体验</p>
+<!-- more -->
+<h2 id="一-安装-mysqlclient">一、安装 <code>mysqlclient</code></h2>
+<pre><code>pip install mysqlclient
+</code></pre>
+<h2 id="二-配置连接数据库">二、 配置连接数据库</h2>
+<p><code>mysite/settings.py</code></p>
+<pre><code>DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        # 数据库名
+        'NAME': 'django_db1',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
+</code></pre>
+<h2 id="三-使用原生-sql-操作数据库">三、使用原生 <code>sql</code> 操作数据库</h2>
+<ul>
+<li>
+<p>使用 <code>navicat</code> 新建数据库 <code>django_db1</code></p>
+</li>
+<li>
+<p>在数据库 <code>django_db1</code> 新建表 <code>book</code></p>
+</li>
+<li>
+<p>新增数据：</p>
+<p><code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>from django.shortcuts import render
+from django.db import connection
+def index(request):
+      cursor = connection.cursor()
+      cursor.execute(&quot;insert into book(title,author) values('深入理解ES6', '尼古拉斯')&quot;)
+      return render(request, 'front/index.html')
+</code></pre>
+<ul>
+<li>
+<p>浏览器访问： <code>localhost:8000</code>, 便会新增一条数据</p>
+</li>
+<li>
+<p>查询数据</p>
+<p><code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    def index(request):
+    cursor = connection.cursor()
+    cursor.execute(&quot;select * from book&quot;)
+    # 查询一条数据
+    # row = cursor.fetchone()
+    # 指定查询的条数
+    # rows = cursor.fetchmany(2)
+    # 查询所有数据
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    return render(request, 'front/index.html')
+</code></pre>
+<h2 id="四-python-db-api下-cursor对象常用接口">四、<code>Python DB API</code>下 <code>cursor</code>对象，常用接口</h2>
+<ul>
+<li>
+<p><code>description</code></p>
+<p>执行 <code>cursor.execute</code>后，可通过 <code>cursor.description</code> 查看字段信息</p>
+<p><code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    def index(request):
+    cursor = connection.cursor()
+    cursor.execute(&quot;select * from book&quot;)
+    # (('id', 3, 1, 11, 11, 0, 0), ('title', 253, 15, 765, 765, 0, 0), ('author', 253, 12, 765, 765, 0, 0))
+    print(cursor.description)
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+    return render(request, 'front/index.html')
+</code></pre>
+<ul>
+<li>
+<p><code>rowcount</code></p>
+<p>执行 <code>sql</code> 删除，新增，修改时，返回受影响的条数， 查询时，返回查询数据的条数</p>
+<p><code>front/views.py</code></p>
+</li>
+</ul>
+<pre><code>    def index(request):
+    cursor = connection.cursor()
+    cursor.execute(&quot;delete from book where id=2&quot;)
+    # 1
+    print(cursor.rowcount)
+    return render(request, 'front/index.html')
+</code></pre>
+<ul>
+<li>
+<p><code>close</code></p>
+<p>关闭游标</p>
+</li>
+</ul>
+<pre><code>   cursor.close()
+</code></pre>
+<ul>
+<li>
+<p><code>execute</code></p>
+<p>用于执行 <code>sql</code> 语句， 还可以传递参数</p>
+</li>
+</ul>
+<pre><code> cursor.execute('select * from book where id=%s', (1,))
+</code></pre>
+<ul>
+<li><code>fetchone</code></li>
+<li><code>fetchmany</code></li>
+<li><code>fetchall</code></li>
+</ul>
+<pre><code>    # 查询一条数据
+    row = cursor.fetchone()
+    # 指定查询的条数
+    rows = cursor.fetchmany(2)
+    # 查询所有数据
+    rows = cursor.fetchall()
+</code></pre>
+<h2 id="五-图书管理系统案例">五、图书管理系统案例</h2>
+<ul>
+<li>进入虚拟环境</li>
+</ul>
+<pre><code>   workon myenv
+</code></pre>
+<ul>
+<li>创建一个新的项目</li>
+</ul>
+<pre><code>    django-admin startproject book_manager
+</code></pre>
+<ul>
+<li>创建 <code>front</code> 应用</li>
+</ul>
+<pre><code>    cd book_manager
+    python manage.py startapp front
+</code></pre>
+<ul>
+<li>配置将 <code>front</code> 应用，注册到已安装应用<br>
+<code>book_manager/setting.py</code></li>
+</ul>
+<pre><code>    INSTALLED_APPS = [
+        'front',
+    ]
+</code></pre>
+<hr>
+<ol>
+<li>
+<p>使用 <code>Navicat</code> 创建数据库 <code>book_manager</code></p>
+</li>
+<li>
+<p>创建表 <code>book</code>, 三个字段： <code>id</code>、 <code>title</code>、 <code>author</code></p>
+</li>
+<li>
+<p>配置数据库连接<br>
+<code>book_manager/settings.py</code></p>
+</li>
+</ol>
+<pre><code>    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            # 数据库名
+            'NAME': 'book_manager',
+            'USER': 'root',
+            'PASSWORD': '123456',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+        }
+    }
+</code></pre>
+<ol start="4">
+<li>
+<p>配置路由</p>
+<p><code>book_manager/urls.py</code></p>
+</li>
+</ol>
+<pre><code>    from django.urls import path, include
+
+    urlpatterns = [
+        path('', include('front.urls')),
+    ]
+</code></pre>
+<pre><code>`front/urls.py`
+</code></pre>
+<pre><code>    from django.urls import path
+    from . import views
+
+    app_name = 'front'
+
+    urlpatterns = [
+        path('', views.index, name='index'),
+        path('create/', views.create_book, name='create'),
+        path('detail/&lt;int:book_id&gt;', views.book_detail, name='detail'),
+        path('delete/&lt;int:book_id&gt;', views.book_delete, name='delete'),
+        path('edit/&lt;int:book_id&gt;', views.book_edit, name='edit'),
+    ]
+</code></pre>
+<ol start="5">
+<li>
+<p>编写视图函数</p>
+<p><code>front/views.py</code></p>
+</li>
+</ol>
+<pre><code>    from django.shortcuts import render, reverse, redirect
+    from django.db import connection
+
+
+    # 获取操作数据库锚点
+    def get_cursor():
+        return connection.cursor()
+
+    # 首页，展示所有图书
+    def index(request):
+        cursor = get_cursor()
+        cursor.execute('select * from book')
+        keys = [item[0] for item in cursor.description]
+        books = [dict(zip(keys, values)) for values in cursor.fetchall()]
+        cursor.close()
+        return render(request, 'front/index.html', context={&quot;books&quot;: books})
+
+    # 新增图书
+    def create_book(request):
+        if request.method == 'POST':
+            title = request.POST.get('title')
+            author = request.POST.get('author')
+            cursor = get_cursor()
+            cursor.execute('insert into book(title, author) values(%s, %s)', (title, author))
+            cursor.close()
+            return redirect(reverse('front:index'))
+        else:
+            return render(request, 'front/create.html')
+
+    # 图书详情
+    def book_detail(request, book_id):
+        cursor = get_cursor()
+        cursor.execute('select * from book where id=%s', (book_id,))
+        keys = [item[0] for item in cursor.description]
+        book = dict(zip(keys, cursor.fetchone()))
+        cursor.close()
+        return render(request, 'front/detail.html', context={&quot;book&quot;: book})
+
+    # 删除图书
+    def book_delete(request, book_id):
+        cursor = get_cursor()
+        cursor.execute('delete from book where id=%s', (book_id,))
+        cursor.close()
+        return redirect(reverse('front:index'))
+
+    # 编辑图书
+    def book_edit(request, book_id):
+        cursor = get_cursor()
+        if request.method == 'GET':
+            cursor.execute('select * from book where id=%s', (book_id,))
+            keys = [item[0] for item in cursor.description]
+            book = dict(zip(keys, cursor.fetchone()))
+            cursor.close()
+            return render(request, 'front/edit.html', context={&quot;book&quot;: book})
+        else:
+            title = request.POST.get('title')
+            author = request.POST.get('author')
+            cursor.execute('update book set title=%s, author=%s where id=%s', (title, author, book_id))
+            cursor.close()
+            return redirect(reverse('front:index'))
+</code></pre>
+<ol start="6">
+<li>将 <code>static</code> 注册为模板标签<br>
+<code>book_manager/settings.py</code></li>
+</ol>
+<pre><code>    TEMPLATES = [
+        {
+            'OPTIONS': {
+                'builtins': [
+                    'django.templatetags.static'
+                ],
+            },
+        },
+    ]
+</code></pre>
+<ol start="7">
+<li>关闭表单 <code>csrf</code> 验证<br>
+<code>book_manager/settings.py</code></li>
+</ol>
+<pre><code>    MIDDLEWARE = [
+        # 'django.middleware.csrf.CsrfViewMiddleware',
+    ]
+</code></pre>
+<ol start="6">
+<li>编写模板<br>
+<code>front/templates/front/base.html</code></li>
+</ol>
+<pre><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;图书管理系统&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'front/style.css' %}&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        {% include 'front/header.html' %}
+        {% block content %}
+        {% endblock %}
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+<pre><code>`front/templates/front/header.html`
+</code></pre>
+<pre><code>     &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;/&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;/create/&quot;&gt;新增图书&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+</code></pre>
+<pre><code>`front/templates/front/index.html`
+</code></pre>
+<pre><code>    {% extends &quot;front/base.html&quot; %}
+
+    {% block content %}
+        &lt;h1&gt;所有图书&lt;/h1&gt;
+        &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; &gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th class=&quot;table-id&quot;&gt;序号&lt;/th&gt;
+                    &lt;th class=&quot;table-title&quot;&gt;书名&lt;/th&gt;
+                    &lt;th class=&quot;table-author&quot;&gt;作者&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                {% for book in books %}
+                    &lt;tr&gt;
+                        &lt;td class=&quot;table-id&quot;&gt;{{ forloop.counter }}&lt;/td&gt;
+                        &lt;td class=&quot;table-title&quot;&gt;&lt;a href=&quot;{% url 'front:detail' book_id=book.id %}&quot;&gt;{{ book.title }}&lt;/a&gt;&lt;/td&gt;
+                        &lt;td class=&quot;table-author&quot;&gt;{{ book.author }}&lt;/td&gt;
+                    &lt;/tr&gt;
+                {% endfor %}
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    {% endblock %}
+</code></pre>
+<pre><code>`front/templates/front/create.html`
+</code></pre>
+<pre><code>    {% extends &quot;front/base.html&quot; %}
+
+    {% block content %}
+        &lt;h1&gt;新增图书&lt;/h1&gt;
+        &lt;form action=&quot;&quot; method=&quot;post&quot; id=&quot;create-form&quot;&gt;
+            &lt;p&gt;
+                &lt;label for=&quot;title&quot;&gt; 书名：
+                    &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;title&quot; id=&quot;title&quot; required&gt;
+                &lt;/label&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;label for=&quot;author&quot;&gt; 作者：
+                    &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;author&quot; id=&quot;author&quot; required&gt;
+                &lt;/label&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;新增图书&quot; class=&quot;default-btn&quot;&gt;
+            &lt;/p&gt;
+        &lt;/form&gt;
+    {% endblock %}
+</code></pre>
+<pre><code>`front/templates/front/detail.html`
+</code></pre>
+<pre><code>    {% extends &quot;front/base.html&quot; %}
+
+    {% block content %}
+        &lt;h1&gt;图书详情&lt;/h1&gt;
+        &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+            {% for key, value in book.items %}
+                &lt;tr&gt;
+                    &lt;td class=&quot;table-id&quot;&gt;{{ key }}&lt;/td&gt;
+                    &lt;td class=&quot;table-title&quot;&gt;{{ value }}&lt;/td&gt;
+                &lt;/tr&gt;
+            {% endfor %}
+            &lt;tr&gt;
+                &lt;td class=&quot;table-id&quot;&gt;&lt;button id=&quot;book-del&quot; class=&quot;small-danger-btn&quot;&gt;删除&lt;/button&gt;&lt;/td&gt;
+                &lt;td class=&quot;table-title&quot;&gt;&lt;button id=&quot;book-edit&quot; class=&quot;small-default-btn&quot;&gt;编辑&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+
+        &lt;script&gt;
+            const delBtn = document.querySelector('#book-del');
+            const editBtn = document.querySelector('#book-edit');
+
+            delBtn.onclick = function() {
+                window.location.href = '{% url 'front:delete' book_id=book.id %}'
+            };
+
+            editBtn.onclick = function() {
+                window.location.href = '{% url 'front:edit' book_id=book.id %}'
+            };
+        &lt;/script&gt;
+    {% endblock %}
+</code></pre>
+<pre><code>`front/templates/front/edit.html`
+</code></pre>
+<pre><code>    {% extends &quot;front/base.html&quot; %}
+
+    {% block content %}
+        &lt;h1&gt;编辑图书&lt;/h1&gt;
+        &lt;form action=&quot;{% url 'front:edit' book_id=book.id %}&quot; method=&quot;post&quot; id=&quot;create-form&quot;&gt;
+            &lt;p&gt;
+                &lt;label for=&quot;title&quot;&gt; 书名：
+                    &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;{{ book.title }}&quot; name=&quot;title&quot; id=&quot;title&quot; required&gt;
+                &lt;/label&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;label for=&quot;author&quot;&gt; 作者：
+                    &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;{{ book.author }}&quot; name=&quot;author&quot; id=&quot;author&quot; required&gt;
+                &lt;/label&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;编辑图书&quot; class=&quot;default-btn&quot;&gt;
+            &lt;/p&gt;
+        &lt;/form&gt;
+    {% endblock %}
+</code></pre>
+<pre><code>`front/static/front/style.css`
+</code></pre>
+<pre><code>    body, ul, li, h1{
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style: none;
+        height: 60px;
+        background-color: #333;
+    }
+
+    nav li {
+        padding: 0 10px;
+        float: left;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    nav a {
+        width: 120px;
+        display: block;
+        height: 60px;
+        font-size: 22px;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: lightblue;
+    }
+
+    #create-form {
+        width: 600px;
+        height: 300px;
+        background-color: #abcdef;
+        margin: 15px auto;
+    }
+
+    #create-form p {
+        text-align: center;
+        padding-top:  25px;
+    }
+
+    .input-text {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid lightblue;
+    }
+
+    .default-btn {
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        color: #fff;
+        background-color: lightgreen;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #89a1a9;
+    }
+
+    .small-default-btn {
+        width: 100px;
+        height: 35px;
+        border-radius: 10px;
+        color: #fff;
+        background-color: lightgreen;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #89a1a9;
+    }
+
+    .small-danger-btn {
+        width: 100px;
+        height: 35px;
+        border-radius: 10px;
+        color: #fff;
+        background-color: darkred;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #89a1a9;
+    }
+
+    table {
+        margin: 25px auto;
+    }
+
+    td, th {
+        border: 1px solid lightblue;
+        text-align: center;
+    }
+
+    .table-id {
+        width: 100px;
+        height: 50px;
+    }
+
+    .table-title {
+        width: 500px;
+        height: 50px;
+    }
+
+    .table-author {
+        width: 300px;
+        height: 50px;
+    }
+
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python语法速查]]></title>
+        <id>https://xiong-zh.github.io/post/Python语法速查</id>
+        <link href="https://xiong-zh.github.io/post/Python语法速查">
+        </link>
+        <updated>2020-01-18T04:04:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>Python 是一门独特的语言，快速浏览一下他的要点：</p>
+<ul>
+<li>面向对象：每一个变量都是一个类，有其自己的属性（attribute）与方法（method）。</li>
+<li>语法块：用缩进（四个空格）而不是分号、花括号等符号来标记。因此，行首的空格不能随意书写。</li>
+<li>注释：行内用“#”号，行间注释写在两组连续三单引号之间：’’’</li>
+<li>续行：行尾输入一个反斜杠加一个空格（’\ ‘），再换行。如果行尾语法明显未完成（比如以逗号结尾），可以直接续行。</li>
+<li>打印与输入： 函数 print() 与 input()，注意 print() 的 sep 与 end 参数。</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<p>Python 是一门独特的语言，快速浏览一下他的要点：</p>
+<ul>
+<li>面向对象：每一个变量都是一个类，有其自己的属性（attribute）与方法（method）。</li>
+<li>语法块：用缩进（四个空格）而不是分号、花括号等符号来标记。因此，行首的空格不能随意书写。</li>
+<li>注释：行内用“#”号，行间注释写在两组连续三单引号之间：’’’</li>
+<li>续行：行尾输入一个反斜杠加一个空格（’\ ‘），再换行。如果行尾语法明显未完成（比如以逗号结尾），可以直接续行。</li>
+<li>打印与输入： 函数 print() 与 input()，注意 print() 的 sep 与 end 参数。</li>
+</ul>
+<!--more-->
+<h1 id="介绍">介绍</h1>
+<p>Python 是一门独特的语言，快速浏览一下他的要点：</p>
+<ul>
+<li>面向对象：每一个变量都是一个类，有其自己的属性（attribute）与方法（method）。</li>
+<li>语法块：用缩进（四个空格）而不是分号、花括号等符号来标记。因此，行首的空格不能随意书写。</li>
+<li>注释：行内用“#”号，行间注释写在两组连续三单引号之间：’’’</li>
+<li>续行：行尾输入一个反斜杠加一个空格（’\ ‘），再换行。如果行尾语法明显未完成（比如以逗号结尾），可以直接续行。</li>
+<li>打印与输入： 函数 print() 与 input()，注意 print() 的 sep 与 end 参数。</li>
+<li>变量：无需指定变量类型，也不需要提前声明变量。
+<ul>
+<li>删除变量：del()</li>
+<li>复制变量：直接将变量a赋值给b，有时仅仅复制了一个“引用”。此后 b 与 a 的改动仍会互相影响。必要时使用 a is b 来判断是否同址。</li>
+</ul>
+</li>
+<li>模块：通过 import pandas 的方式加载模块（或者 import pandas as pd），并用形如 pandas.DataFrame（或 pd.DataFrame）的方式调用模块内的方法。也可以使用 from pandas import DataFrame 的方式，这样在下文可以直接使用 DataFrame 作为调用名。</li>
+<li>帮助：配合使用 dir() 与 help() 命令；其中前者是输出变量所有的成员。以及查阅 官网页面。</li>
+</ul>
+<p>变量复制的一个例子。</p>
+<pre><code>a = [1, 2]
+b = a
+print(id(a) - id(b))  # 地址差为 0，表示实质是同址的
+0
+</code></pre>
+<pre><code>b.append(3)
+print(a)  # 只改动了 b，但 a 也跟着变动了
+[1, 2, 3]
+a is b
+True
+</code></pre>
+<p>使用切片来重新分配空间：</p>
+<pre><code>a is a[:]
+False
+</code></pre>
+<h1 id="数据结构">数据结构</h1>
+<p>Python 原生的数据结构包括：</p>
+<h2 id="数字num">数字（num）</h2>
+<p>细分为整数（int）与浮点数（float）两种。</p>
+<ul>
+<li>四则运算：+， -， *， / ，乘方： **</li>
+<li>整除： 5 // 2 = 2，取余：5 % 2 = 1</li>
+<li>自运算： a += 1 （四则与乘方均可类似自运算）<br>
+以及一些细节：</li>
+<li>运算两数中只要有一个浮点数，结果就是浮点数；</li>
+<li>整数相除，即使能除尽，结果也是浮点数；</li>
+<li>Python 内部的机制解决了整数溢出的问题，不用担心。</li>
+</ul>
+<h2 id="布尔bool与逻辑">布尔（bool）与逻辑</h2>
+<p>首字母大写 True / False.</p>
+<ul>
+<li>逻辑运算符：与 A and B，或 A or B，非 not A</li>
+<li>逻辑关系符：等于 ==， 不等于 !=. 其他不赘述。</li>
+<li>几种逻辑判断例子：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量 x</th>
+<th style="text-align:center">x = []</th>
+<th style="text-align:center">x = 0</th>
+<th style="text-align:center">x = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">bool(x)</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+</tr>
+<tr>
+<td style="text-align:center">if x: …</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">True</td>
+</tr>
+<tr>
+<td style="text-align:center">if x is None: …</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+</tr>
+</tbody>
+</table>
+<h2 id="序列sequence">序列（sequence）</h2>
+<p>序列主要包括**字符串（str）、列表（list）与元祖（tuple）**三类。</p>
+<ul>
+<li>序列索引规则：
+<ul>
+<li>索引从0开始，到 N-1 结束。</li>
+<li>切片：切片的索引是左闭右开的。
+<ul>
+<li>seq[0:2]（从 0 到 1）</li>
+<li>seq[2:]（从 2 到尾）</li>
+<li>seq[:3] （从头到 2）</li>
+<li>seq[:]（全部）</li>
+<li>seq[:10:2]（从头到9，每两个取一个）</li>
+<li>seq[::2]（全部，每两个取一个）</li>
+</ul>
+</li>
+<li>索引允许负数：seq(-1) 与 seq(N - 1) 等同，seq(-3:-1)与 seq(N-3:N-1) 等同。</li>
+</ul>
+</li>
+<li>序列通用函数：
+<ul>
+<li>len()：返回序列长度。</li>
+<li>+/* ：加号用于连接两个序列，乘号重复排列若干次再连接。</li>
+<li>seq1 in seq2：如果 seq1 这个片段可以在 seq2 中被找到，返回 True.</li>
+<li>index：在 seq1 in seq2 为 True 时使用，seq2.index(seq1) 表示 seq1 首次出现于 seq2 中的位置。</li>
+<li>max()/min()：返回序列中的最值。如果不是数字，则按 ASCII 码顺序返回。</li>
+<li>cmp(seq1, seq2)：比较大小。结果为负，则表示 seq1 较小。</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串str">字符串（str）</h3>
+<p>写于一对双引号或单引号内。用 str() 可以强制转换为字符串。</p>
+<ul>
+<li>
+<p>转义：反斜杠。如果强制不解释字符串，在左引号前加字母 r 即可： <code>r&quot;c:\new&quot;</code>.</p>
+</li>
+<li>
+<p>分割与连接：<code>**.split()</code> 与 <code>**.join()</code>.</p>
+<pre><code>s = &quot; I love Python&quot;  # 首位是空格
+lst = s.split(' ')
+lst1 = '-'.join(lst)
+
+print(lst, '\n', lst1)
+['', 'I', 'love', 'Python'] 
+ -I-love-Python
+</code></pre>
+</li>
+<li>
+<p>紧切：<code>strip()</code> 去掉字符串首尾两端的空格。方法 <code>lstrip()/rstrip()</code> 则只切除首端/尾端的空格。</p>
+<pre><code>s.strip()
+'I love Python'
+</code></pre>
+</li>
+<li>
+<p>大小写转换：如下几个方法：</p>
+<ul>
+<li>首字母大写：s.title()</li>
+<li>全大写：s.upper()</li>
+<li>全小写：s.lower()</li>
+<li>句首大写：s.capitalize()</li>
+</ul>
+</li>
+<li>
+<p>格式化：字符串格式化是一种实用功能。通过 .format() 成员函数完成。</p>
+<pre><code>'I like {} and {}'.format('Python', 'you')
+'I like Python and you'
+'{0} + {2} = {1}'.format (10, 20, 'Python ')  # 按顺序引用
+'10 + Python  = 20'
+'{0} * {1} = {0}'.format (10, 'Python ')  # 编号反复引用
+'10 * Python  = 10'
+</code></pre>
+</li>
+</ul>
+<p>格式化控制码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">控制码</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">控制码</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">😒</td>
+<td style="text-align:center">字符串</td>
+<td style="text-align:center">:c</td>
+<td style="text-align:center">单个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">:b/o/x/d</td>
+<td style="text-align:center">二、八、十六、十进制数</td>
+<td style="text-align:center">:e/f</td>
+<td style="text-align:center">科学计数法/浮点数</td>
+</tr>
+</tbody>
+</table>
+<p>一些复杂控制的例子：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">例子</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">例子</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:.2f/:+.2f</td>
+<td style="text-align:center">两位小数/带符号两位小数</td>
+<td style="text-align:center">: .2f</td>
+<td style="text-align:center">正数前补空格的两位小数</td>
+</tr>
+<tr>
+<td style="text-align:center">:,</td>
+<td style="text-align:center">逗号分隔符</td>
+<td style="text-align:center">:.2%</td>
+<td style="text-align:center">百分比两位小数</td>
+</tr>
+<tr>
+<td style="text-align:center">:.2e</td>
+<td style="text-align:center">科学计数法两位小数</td>
+<td style="text-align:center">:^4d</td>
+<td style="text-align:center">总宽四位居中对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">:&gt;4d/&lt;4d</td>
+<td style="text-align:center">总宽四位左/右对齐</td>
+<td style="text-align:center">:0&gt;4d</td>
+<td style="text-align:center">总宽四位左侧补零</td>
+</tr>
+</tbody>
+</table>
+<p>举例：</p>
+<pre><code>&quot;{:0&gt;7.2f} is an odd number&quot;.format(123.4)  # 总宽 7 位小数点后 2 位，左侧补零
+'0123.40 is an odd number'
+</code></pre>
+<p>其他实用的字符串函数：</p>
+<ul>
+<li>str.replace(old, new[, times])：将字符串中前 times 个 old 子串替换为 new。Times 不指定时默认替换全部。</li>
+<li>str.isdigit()：判断字符串是否每一位都是数字，返回 True 或者 False。<br>
+字符串中正则表达式的内容参见本文附录。</li>
+</ul>
+<h3 id="列表list">列表（list）</h3>
+<p>中括号式的结构。<code>list()</code> 用于强制转换类型。</p>
+<pre><code>lst = [1, 2, 3]
+print(lst)
+[1, 2, 3]
+# 【反转】：其中第二种方式会更改现有的列表
+lst1 = list(reversed(lst))
+lst.reverse()
+print(lst1, lst)
+[3, 2, 1] [3, 2, 1]
+# 【追加】：元素 append()，另一个列表：extend()
+lst.append(4)
+print(lst)
+[3, 2, 1, 4]
+lst.extend(lst1)
+print(lst)
+[3, 2, 1, 4, 3, 2, 1]
+# 【插入】：lst.insert(idx, obj) 会在 lst[idx] 处插入 obj，然后依次后移原有项
+lst.insert(1, 100)
+print(lst)
+[3, 100, 2, 1, 4, 3, 2, 1]
+# 【删除】：lst.remove(obj) 会删除首个匹配值，若无匹配会报错；
+#           lst.pop(idx) 会返回 lst[idx]，并将其删除。如果不指定 idx，默认为列表尾
+lst.remove(2)
+print(lst)
+[3, 100, 1, 4, 3, 2, 1]
+tmp = lst.pop()
+print(lst, &quot;\n&quot;, tmp)
+[3, 100, 1, 4, 3, 2] 
+ 1
+# 【搜索】：使用序列通用函数即可。用 count(obj) 可以计算频数。
+# 【排序】：sort() 方法。如果指定 reverse 参数，可降序排序。
+lst.sort(reverse=True)
+print(lst)
+[100, 4, 3, 3, 2, 1]
+# 【清空】：clear()
+lst.clear()
+print(lst)
+[]
+</code></pre>
+<h3 id="元组tuple">元组（tuple）</h3>
+<p>圆括号式的结构，是一种不可变序列。</p>
+<pre><code>a = (1, 'string ', [1 ,2])
+print(a)
+(1, 'string ', [1, 2])
+</code></pre>
+<p><strong>Note</strong>: 定义一个空的元组用<code>()</code>，定义只有一个元组的元组，需要加<code>,</code>，否则就不是元组了，如下：</p>
+<pre><code>&gt;&gt;&gt; tuple1 = ()
+&gt;&gt;&gt; type(tuple1)
+&lt;type 'tuple'&gt;
+&gt;&gt;&gt; tuple2 = (1)
+&gt;&gt;&gt; type(tuple2)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; tuple3 = (1,)
+&gt;&gt;&gt; type(tuple3)
+&lt;type 'tuple'&gt;
+</code></pre>
+<h2 id="字典dict">字典（dict）</h2>
+<p>字典是一种类哈希表的数据结构，内部无序，通过键值对（key: value）的形式存储数据。几种字典初始化的方式：</p>
+<pre><code># 小字典直接赋值
+d1 = {&quot;name&quot;: &quot;wklchris&quot;, &quot;gender&quot;: &quot;male&quot;}
+# 利用字典增加键值对的方法
+d2 = {}
+d2['name'] = 'wklchris'
+# 一个值赋给多个键
+d3 = {}.fromkeys((&quot;name&quot;, &quot;gender&quot;), &quot;NA&quot;)
+# 强制格式转换
+d4 = dict(name=&quot;wklchris&quot;, gender=&quot;male&quot;)
+
+print(d1, d2, d3, d4, sep=&quot;\n&quot;)
+{'name': 'wklchris', 'gender': 'male'}
+{'name': 'wklchris'}
+{'name': 'NA', 'gender': 'NA'}
+{'name': 'wklchris', 'gender': 'male'}
+</code></pre>
+<p>字典的操作方法：</p>
+<pre><code>len(d1)
+2
+# 【复制】：
+dd = d1.copy()
+dd is d1
+False
+# 【查找键名称】：
+&quot;name&quot; in dd
+True
+# 【删除键值对】
+del(dd[&quot;name&quot;])
+# 【get】
+dd.get(&quot;name&quot;, &quot;Nothing&quot;)  # 如果键不存在，返回“Nothing”
+'Nothing'
+# 【setdefault】
+dd.setdefault(&quot;name&quot;, &quot;wklchris&quot;)  # 如果键不存在，就新建该键，并赋值
+'wklchris'
+print(dd)
+{'name': 'wklchris', 'gender': 'male'}
+# 【输出键值】：
+list(dd.items())
+[('name', 'wklchris'), ('gender', 'male')]
+list(dd.keys())
+['name', 'gender']
+list(dd.values())
+['wklchris', 'male']
+# 【弹出键值对】：pop(key) / popitem(key)
+# 其中，后者会随机弹出一个键值对
+tmp = dd.pop(&quot;gender&quot;)
+print(dd, tmp)
+{'name': 'wklchris'} male
+# 【更新】：update(ref_dict) 以 ref_dict 为准，更新当前字典
+d4 = {&quot;name&quot;: &quot;Test&quot;, &quot;Age&quot;: 3}
+dd.update(d4)
+print(dd)
+{'name': 'Test', 'Age': 3}
+</code></pre>
+<h2 id="集合set">集合（set）</h2>
+<p>本文只讨论可变集合，关于不可变集合的内容，参考 help(frozenset)。</p>
+<p>集合是一种无序的数据存储方式，且内部元素具有唯一性。集合与字典一样都可以用花括号的形式创立。但在书写 a={} 时，Python 会将其识别为字典类型。</p>
+<ul>
+<li>
+<p>增添：add() / update()</p>
+</li>
+<li>
+<p>删除：remove() / discard()，区别在于后者搜索无结果会报错。</p>
+</li>
+<li>
+<p>从属：a.issubset(b) 集合 a 是否是 b 的子集；a.issuperset(b) 集合 a 是否是 b 的父集。a == b 两集合是否全等。</p>
+</li>
+<li>
+<p>集合运算：集合运算不会改变参与运算的集合本身。</p>
+<ul>
+<li>
+<p>并集： a | b 或者 a.union(b)</p>
+</li>
+<li>
+<p>交集： a &amp; b 或者 a.intersection(b)</p>
+</li>
+<li>
+<p>补集： a - b 或者 a.difference(b)</p>
+<p>注意</p>
+<p>：在字符串强制转换为集合时，必要时使用中括号先转为列表（否则字符串会被拆分为单个字符后再进行转换）。例如：</p>
+<pre><code>ss = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}
+ss | set(&quot;de&quot;)
+{'a', 'b', 'c', 'd', 'e'}
+ss | set([&quot;de&quot;])
+{'a', 'b', 'c', 'de'}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="基本语句">基本语句</h1>
+<p>同大多数程序语言一样，Python 拥有 <code>if, for, while</code>语句。什么？<code>switch</code> 语句？使用字典就好。</p>
+<h2 id="if-语句与三元操作">if 语句与三元操作</h2>
+<p>在 Python 中，<code>else if</code> 被缩写为单个关键词 <code>elif</code>.</p>
+<pre><code>if 1.0 &gt; 1:
+    a = 1
+elif 1.0 &lt; 1:
+    a = 2
+else:
+    a = 3
+    
+a
+3
+</code></pre>
+<p>值得一提的是，Python 中的 if 语句支持链式比较，形如 <code>a &lt; x &lt; b, a &lt; x &gt;= b</code> 等：</p>
+<pre><code>a = 0
+if 1 &lt; 2 &gt; 1.5:
+    a = 1
+a
+1
+</code></pre>
+<p>三元操作实质是高度简化的 if 环境，形如 <code>X = a if flag else b</code>：</p>
+<pre><code>a = 1 if 2 &lt; 1 else 2
+a
+2
+</code></pre>
+<h2 id="for-语句">for 语句</h2>
+<p>Python 的循环语句中，像其他语言一样，有 <code>break</code>（跳出循环体） 与 <code>continue</code>（循环步进） 关键词可以使用。</p>
+<p>for 语句借助关键词 in 使用：（函数 <code>range(N, M=0, s=1)</code> 是一个生成等差数列的函数，位于左闭右开区间<code>[M,N)</code>上且公差为 s）。</p>
+<pre><code>for i in range(3):
+    print(i)
+0
+1
+2
+</code></pre>
+<p>注意到字典的 d.items(), d.keys(), d.values() 命令也常常用于 for 语句：</p>
+<pre><code>d = {&quot;a&quot;: 1, &quot;b&quot;: 2, &quot;c&quot;: 3}
+for k, v in d.items():
+    print(k, v)
+b 2
+c 3
+a 1
+</code></pre>
+<p>以上等价于：</p>
+<pre><code>for k in d.keys():
+    print(k, d[k])
+b 2
+c 3
+a 1
+</code></pre>
+<p>Python 中的 <code>for</code> 语句可选 <code>else</code> 语法块，表示 <code>for</code> 语句正常结束后执行的内容（中途 <code>break</code> 不属于正常结束）。这对于处理一些 break 操作很有帮助。例如：</p>
+<pre><code>a = 0
+flag = 0
+for i in range(5):
+    if i &gt; 2:
+        flag = 1
+        break
+if flag == 1:
+    a = 1
+a
+1
+</code></pre>
+<p>这在 Python 中显得太复杂了，直接使用 <code>for…else…</code>即可：</p>
+<pre><code>a = 1
+for i in range(5):
+    if i &gt; 1:
+        break
+else:
+    a = 0
+a
+1
+</code></pre>
+<h2 id="while-语句">while 语句</h2>
+<p>while 语句的 <code>else</code> 语法块，指明了退出 while 循环后立刻执行的内容；它不是必需的。</p>
+<p>如果你想要将 while 语句内部的参数传出（比如下例的计数器终值），这是一个不错的方案。</p>
+<pre><code>count = 1
+while count &lt; 5:
+    a = count
+    count *= 2
+else:
+    b = count
+
+print(a, b)
+4 8
+</code></pre>
+<h2 id="列表解析">列表解析</h2>
+<p>列表解析是一种创建列表的高度缩写方式：</p>
+<pre><code>lst = [x ** 2 for x in range(4)]
+lst
+[0, 1, 4, 9]
+</code></pre>
+<p>也可以配合 if 语句：</p>
+<pre><code>lst = [x ** 2 for x in range(4) if x &gt; 0]
+lst
+[1, 4, 9]
+</code></pre>
+<p>类似的，也有字典解析，以及下文会介绍的生成器，也有生成器解析（把外围的括号换成圆括号即可）：</p>
+<pre><code>{n: n ** 2 for n in range(3)}
+{0: 0, 1: 1, 2: 4}
+</code></pre>
+<h1 id="函数">函数</h1>
+<p>本节介绍 Python 函数的基础特点，以及一些实用函数。</p>
+<h2 id="函数定义与判断">函数定义与判断</h2>
+<p>使用 <code>def</code> 关键字。三连双引号间的内容被视为函数的帮助字符串，可以通过 <code>help()</code> 命令查看。</p>
+<pre><code>def func(a, b=0):
+    &quot;&quot;&quot;
+    This is a function that can meow.
+    &quot;&quot;&quot;
+    return &quot; &quot;.join([&quot;meow&quot;] * (a + b))
+</code></pre>
+<p>调用函数：</p>
+<pre><code>func(2)  # 单参数，仅 a 
+'meow meow'
+func(2, 3)  # 双参数， a 与 b 都被传入
+'meow meow meow meow meow'
+help(func)
+Help on function func in module __main__:
+
+func(a, b=0)
+    This is a function that can meow.
+</code></pre>
+<p>通过 <code>callable()</code> 可以判断一个对象是否是一个可调用的函数：</p>
+<pre><code>callable(func)
+True
+</code></pre>
+<h2 id="不定参函数">不定参函数</h2>
+<p>利用序列（或元组）与字典，向函数传参。前者在传入时需要加上一个星号，后者需要两个。</p>
+<pre><code>lst = [1, 3, 4]
+d = {&quot;a&quot;: 2, &quot;b&quot;: 3, &quot;c&quot;: 5}
+print(&quot;{}+{}={}&quot;.format(*lst), &quot;{a}+{b}={c}&quot;.format(**d))
+1+3=4 2+3=5
+</code></pre>
+<h2 id="zip-函数">zip 函数</h2>
+<p>zip() 函数的作用是“合并”多个列表为一个。其返回值是一个列表，列表内的元素类型是元组。如果待合并的列表长度不同，以最短的为准。</p>
+<pre><code>a = [1, 2, 3, 4]
+b = [5 ,6, 7]
+c = &quot;abcd&quot;
+list(zip(a, b, c))
+[(1, 5, 'a'), (2, 6, 'b'), (3, 7, 'c')]
+</code></pre>
+<p>它比较常用于交换字典的键与值：</p>
+<pre><code>dict(zip(d.values(), d.keys()))
+{2: 'a', 3: 'b', 5: 'c'}
+</code></pre>
+<h2 id="lambda-函数">lambda 函数</h2>
+<p>一种匿名函数的声明方式。如果你使用过 <code>MATLAB</code>，你可能熟悉这一类概念。</p>
+<pre><code>func = lambda x, y: x + y
+func(2, 5)
+7
+</code></pre>
+<h2 id="map-函数">map 函数</h2>
+<p><code>map()</code> 能够对传入的序列进行依次操作，并将结果返回为一个可转换为列表的 <code>map</code> 对象。通常列表解析（或生成器解析）可以实现与其同样的工作。</p>
+<pre><code>lst = list(map(lambda x: x + 1, range (5)))
+print(lst)
+[1, 2, 3, 4, 5]
+f = lambda x: x + 1
+[f(x) for x in range(5)]
+[1, 2, 3, 4, 5]
+</code></pre>
+<h2 id="filter-函数">filter 函数</h2>
+<p>给定序列，对于满足某规则的部分（即 True），予以返回。</p>
+<pre><code>list(filter(lambda x: x &gt; 0, range(-3, 3)))
+[1, 2]
+</code></pre>
+<h2 id="reduce-函数">reduce 函数</h2>
+<p>该函数在 Python 2 中是可以直接调用的，但在 Python 3 中需要从 <code>functools</code> 模块进行调用。</p>
+<pre><code>from functools import reduce
+reduce(lambda x, y: x + y, range (5))  # 0+1+2+3+4
+10
+</code></pre>
+<h2 id="enumerate-函数">enumerate 函数</h2>
+<p>它允许你像 d.items() 那样，用类似的方式操作列表：</p>
+<pre><code>a = [1, 3, 5]
+for i, v in enumerate(a):
+    print(&quot;lst[{}] = {}&quot;.format(i, v))
+
+lst[0] = 1
+lst[1] = 3
+lst[2] = 5
+</code></pre>
+<h1 id="装饰器算子">装饰器：算子</h1>
+<p>装饰器是函数的函数——传入的参数是一个函数，返回的值也是一个函数。相当于一个函数集到另一个函数集的映射，可以理解为数学意义上的算子。</p>
+<p>首先来看一个简单的例子：函数可以被赋值给一个变量。</p>
+<pre><code>def pyrint(data=&quot;Python&quot;):
+    return data.upper()
+
+f = pyrint
+f()
+'PYTHON'
+</code></pre>
+<p>还可以通过 <code>__name__</code> 来得到当前函数的名称：</p>
+<pre><code>f.__name__
+'pyrint'
+</code></pre>
+<p>那什么时候需要装饰器呢？比如在函数需要被重用、但又不能直接改写 <code>def</code>的场合（在维护中应该不少见吧！）。例如，我们希望在返回值之前，把函数名也打印出来：</p>
+<pre><code>def showname(func):
+    def subfunc(*args, **kwarg):
+        print(&quot;FUNCTION {} called.&quot;.format(func.__name__))
+        return func(*args, **kwarg)
+    return subfunc
+</code></pre>
+<p>这样如果我们通过 <code>showname(pyrint)</code> 这种形式，就能够在 <code>pyrint</code> 函数被调用之前，额外打印一行内容。</p>
+<p>想要改动该函数，不需要改动 def 语句以下的内容，只需要用 <code>@showname</code> 命令来应用这个装饰器：</p>
+<pre><code>@showname
+def pyrint(data=&quot;Python&quot;):
+    return data.upper()
+pyrint()
+FUNCTION pyrint called.
+
+'PYTHON'
+</code></pre>
+<p>如果装饰器需要传递参数，那么，需要在定义时，外层再嵌套一个函数：</p>
+<pre><code>def showname(num=1):
+    def decorator(func):
+        def subfunc(*args, **kwarg):
+            print(&quot;Call time: {}. FUNCTION {} called.&quot;.format(num, func.__name__))
+            return func(*args, **kwarg)
+        return subfunc
+    return decorator
+
+@showname(2)
+def pyrint(data=&quot;Python&quot;):
+    return data.upper()
+
+pyrint()
+Call time: 2. FUNCTION pyrint called.
+
+'PYTHON'
+</code></pre>
+<p>不过装饰器被应用于函数定义之前时，函数的 <code>__name__</code> 属性会改变。比如上例：</p>
+<pre><code>pyrint.__name__
+'subfunc'
+使用模块 functools 来解决这一问题：
+
+import functools
+
+def showname(num=1):
+    def decorator(func):
+        @functools.wraps(func)  # 加上这一行
+        def subfunc(*args, **kwarg):
+            print(&quot;Call time: {}. FUNCTION {} called.&quot;.format(num, func.__name__))
+            return func(*args, **kwarg)
+        return subfunc
+    return decorator
+
+@showname(2)
+def pyrint(data=&quot;Python&quot;):
+    return data.upper()
+
+pyrint.__name__
+'pyrint'
+</code></pre>
+<h1 id="迭代器-itertools">迭代器 [itertools]</h1>
+<p>迭代器与生成器在内存优化上很有意义。</p>
+<h2 id="迭代器">迭代器</h2>
+<p>迭代器最显著的特征是拥有 <code>__iter__()</code> 和 <code>__next__()</code> 方法；它像一个链表。如果它指向末尾，那么再次执行 <code>__next__()</code> 时会报错。一个例子：</p>
+<pre><code>a = [1, 2, 3]
+b = iter(a)
+print(b.__next__(), b.__next__())  # 或者使用 next(b)
+1 2
+</code></pre>
+<p>实际上，Python 3 内置了一个 <code>itertools</code> 的库，里面有诸如 <code>cycle</code> 和 <code>count</code> 等适用于迭代器的函数：</p>
+<pre><code>import itertools
+
+# count: 给定首项与公差的无穷等差数列
+p = itertools.count(start = 1, step = 0.5)
+print(p.__next__(), p.__next__())
+
+# cycle: 周期循环的无穷序列
+p = itertools.cycle(list(&quot;AB&quot;))
+print(next(p), next(p), next(p))
+
+# islice: 从无穷序列中切片
+p = itertools.cycle(list(&quot;AB&quot;))
+print(list(itertools.islice(p, 0, 4)))
+1 1.5
+A B A
+['A', 'B', 'A', 'B']
+</code></pre>
+<p>请时刻注意当前指向的迭代器位置——失之毫厘，谬以千里。</p>
+<h2 id="生成器">生成器</h2>
+<p>生成器是迭代器的一种，其实质是定义中含有 yield 关键词的函数。它没有 return() 语句。</p>
+<p>生成器可以直接使用类似列表解析的方式，称为生成器解析。例如：(i for i in range(10)。</p>
+<pre><code>def Fib(N):  # 斐波那契数列
+    n, former, later = 0, 0, 1
+    while n &lt; N:
+        yield later
+        former, later = later, later + former
+        n += 1
+
+list(Fib(5))
+[1, 1, 2, 3, 5]
+</code></pre>
+<p>上例与普通的写法看上去差别不大，但实际上可以将 while 语句改写为 <code>while True</code>，删除变量 n，在外部借助 itertools 的 <code>islice</code> 函数来截取。这在函数定义时对代码的压缩是显然的。</p>
+<pre><code>def iterFib():
+    former, later = 0, 1
+    while True:
+        yield later
+        former, later = later, later + former
+
+list(itertools.islice(iterFib(), 0, 5))
+[1, 1, 2, 3, 5]
+</code></pre>
+<h1 id="错误try-语句">错误：<code>try()</code> 语句</h1>
+<p>常见的错误有以下几种：</p>
+<ul>
+<li>
+<p>ZeroDivisionError: 除数为 0.</p>
+</li>
+<li>
+<p>SyntaxError：语法错误。</p>
+</li>
+<li>
+<p>IndexError：索引超界。</p>
+</li>
+<li>
+<p>KeyError：字典键不存在。</p>
+</li>
+<li>
+<p>IOError：读写错误。</p>
+<p>try() 语句的常见写法：</p>
+<pre><code>try:
+    a = 1 
+except ZeroDivisionError as e:
+    print(e)
+    exit()
+else:  # 如果无错误，执行
+    print(a)
+finally:  # 不管有无错误均执行
+    print(&quot;-- End --&quot;)
+1
+-- End --
+</code></pre>
+</li>
+</ul>
+<p>其中，<code>else</code> 与 <code>finally</code> 语句都不是必需的。如果不想输出错误信息、或不能预先判断可能的错误类型，可以使用仅含 exit() 语句的 <code>except</code> 块。</p>
+<h2 id="多个-except-块">多个 except 块</h2>
+<p>一个 try 语法块是可以跟着多个 <code>except</code> 的；如果靠前的 except 捕获了错误，之后的就不会运行。 这也就是说，如果错误之间有继承关系时，子错误需要放在父错误之前尝试 except，否则子错误永远也不可能被捕获。</p>
+<p>比如上一节的例子中，<code>ZeroDivisionError</code> 是 <code>ArithmeticError</code> 下的子错误，而 <code>ArithmeticError</code> 又是 Exception 下的子错误（当不清楚错误的类型时，Exception 可以捕获绝大多数错误）。关于错误的继承关系，参考：Python - Exception Hierarchy 官方页面。</p>
+<p>一个例子：</p>
+<pre><code>try:
+    a = 1 / 0
+except Exception:
+    print(&quot;Exception&quot;)
+    exit()
+except ZeroDivisionError:
+    print(&quot;ZeroDivisionError&quot;)
+    exit()
+else:
+    print(&quot;No error.&quot;)
+finally:
+    print(&quot;-- End --&quot;)
+输出 Exception 与 – End –。
+</code></pre>
+<h2 id="错误的捕获">错误的捕获</h2>
+<p>错误在很多地方都可能发生，那是否需要在可能的地方都加上 try 语句呢？当然不是。建议只在主代码中加入 try 语句，因为 Python 会自动跟踪到错误产生的源头何在。</p>
+<h2 id="错误的抛出及上抛">错误的抛出及上抛</h2>
+<p>有时候我们想人为抛出一个错误，这是使用 <code>raise</code> 即可：</p>
+<pre><code># raise TypeError(&quot;Wrong type.&quot;)
+</code></pre>
+<p>如果在函数中没有处理错误的语句，可能在捕获错误后将其上抛。记住，捕获错误只是为了记录错误的产生，并不意味者必须原地解决错误。</p>
+<pre><code>def makeerror(n):
+    if n == 0:
+        raise ValueError(&quot;Divided by zero.&quot;)
+    return 1 / n
+
+def callerror():
+    try:
+        makeerror(0)
+    except ValueError as e:
+        print(&quot;ValueError detected.&quot;)
+        raise
+
+# 输出 &quot;ValueError detected.&quot; 并打印错误日志
+# callerror()
+</code></pre>
+<p>上面的 <code>raise</code> 命令没有紧跟任何参数，表示将错误原样上抛。你也可以手动指定上抛的错误类型，并不需要与原错误类型一致。甚至你可以定义一个错误（继承某一错误类）：</p>
+<pre><code>class MyError(ValueError):
+    print(&quot;This is MyError.&quot;)
+
+# raise MyError
+This is MyError.
+</code></pre>
+<h1 id="文件读写">文件读写</h1>
+<p>open() 函数用于文件的读写操作。一般我们会在操作文件时，引入 os 模块（os 模块的用法参考“常用模块”一节的内容）。</p>
+<pre><code>import os
+</code></pre>
+<p><code>open()</code> 函数常常配合 <code>with</code> 语法块进行使用，它会在语法块结束时自动关闭文件。该函数：</p>
+<pre><code>open(file, mode=&quot;r&quot;, encoding=None)
+</code></pre>
+<p>第一参数是包含文件名的路径（传入基于当前目录的相对路径，传入或者绝对路径），mode 参数是读写操作方式；<code>encoding</code> 是编码类型，一般取<code>”utf8”</code>。其中，读写操作方式常用的有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“r”</td>
+<td style="text-align:center">（默认）读。</td>
+</tr>
+<tr>
+<td style="text-align:center">“w”</td>
+<td style="text-align:center">写。该模式会覆盖原有内容；如文件不存在，会自动新建。</td>
+</tr>
+<tr>
+<td style="text-align:center">“x”</td>
+<td style="text-align:center">创建新文件并写入。</td>
+</tr>
+<tr>
+<td style="text-align:center">“a”</td>
+<td style="text-align:center">在已有文件的尾部追加。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一般读写操作read-readlines">一般读写操作：<code>read() / readlines()</code></h2>
+<p>函数 <code>read()</code> 将整个文件读为一个字符串，来看一个例子：</p>
+<pre><code>datapath = os.path.join(os.getcwd(), &quot;data&quot;, &quot;iris.data.csv&quot;)
+with open(datapath, &quot;r&quot;, encoding=&quot;utf8&quot;) as f:
+    rawtext = f.read()
+
+rawtext[:200]
+'5.1,3.5,1.4,0.2,Iris-setosa\n4.9,3.0,1.4,0.2,Iris-setosa\n4.7,3.2,1.3,0.2,Iris-setosa\n4.6,3.1,1.5,0.2,Iris-setosa\n5.0,3.6,1.4,0.2,Iris-setosa\n5.4,3.9,1.7,0.4,Iris-setosa\n4.6,3.4,1.4,0.3,Iris-setosa\n5.0,'
+</code></pre>
+<p>函数 <code>readlines()</code> 将整个文件读为一个列表，文件的每一行对应列表的一个元素。</p>
+<pre><code>with open(datapath, &quot;r&quot;, encoding=&quot;utf8&quot;) as f:
+    rawtext = f.readlines()
+
+rawtext[:3]
+['5.1,3.5,1.4,0.2,Iris-setosa\n',
+ '4.9,3.0,1.4,0.2,Iris-setosa\n',
+ '4.7,3.2,1.3,0.2,Iris-setosa\n']
+</code></pre>
+<p>上述的 <code>readlines()</code> 函数实质等同于列表解析：</p>
+<pre><code>with open(datapath, &quot;r&quot;, encoding=&quot;utf8&quot;) as f:
+    rawtext = [line for line in f]
+
+rawtext[:3]
+['5.1,3.5,1.4,0.2,Iris-setosa\n',
+ '4.9,3.0,1.4,0.2,Iris-setosa\n',
+ '4.7,3.2,1.3,0.2,Iris-setosa\n']
+</code></pre>
+<p>文件写入，使用 <code>write()</code> 函数。一个简单的例子：</p>
+<pre><code>with open(datapath, &quot;w&quot;) as f:
+   f.write(&quot;Sometimes naive.&quot;)
+</code></pre>
+<h2 id="大文件读取readline">大文件读取：<code>readline()</code></h2>
+<p>如果文件比较大，使用 <code>read()/readlines()</code> 函数直接读入可能会占用太多内存。推荐使用函数 <code>readline()</code>，一种迭代器式的读取方法。</p>
+<pre><code>with open(datapath, &quot;r&quot;, encoding=&quot;utf8&quot;) as f:
+    print(f.readline().strip())
+    print(f.readline().strip())
+5.1,3.5,1.4,0.2,Iris-setosa
+4.9,3.0,1.4,0.2,Iris-setosa
+</code></pre>
+<p>你会发现两次结果是不同的，这是因为迭代器内部的“指针”向后移动了。</p>
+<p>怎样获取 / 移动“指针”的位置呢？使用 tell() / seek() 命令。</p>
+<pre><code>with open(datapath, &quot;r&quot;, encoding=&quot;utf8&quot;) as f:
+    print(f.tell(), f.readline().strip())
+    print(f.tell(), f.readline().strip())
+    f.seek(0)  # 回到文件头
+    print(f.tell(), f.readline().strip())
+0 5.1,3.5,1.4,0.2,Iris-setosa
+28 4.9,3.0,1.4,0.2,Iris-setosa
+0 5.1,3.5,1.4,0.2,Iris-setosa
+</code></pre>
+<h1 id="类">类</h1>
+<p>类的成员包括属性（<code>attribute</code>）与方法（<code>method</code>）两种。例子：</p>
+<pre><code>class MyClass:
+    &quot;&quot;&quot;
+    This is a class that can meow!
+    &quot;&quot;&quot;
+    animal = &quot;cat&quot;  # An attribute
+    def talk(self):  # A method
+        return &quot;Meow&quot;
+
+# An instance of the class
+a = MyClass()
+print(a.animal, a.talk())
+cat Meow
+</code></pre>
+<p>上例中的 <code>self</code> 表示类的实例，所有类内部的方法都需要把该参数放在首位（你也不可不用 self 而使用 this 等，但是 <code>self</code> 是惯例）。例如，<code>self.animal</code> 就表示了实例的 animal 属性。这与 C# 等语言中的“this.animal”是类似的。</p>
+<p>下例证明了 <code>self</code> 代表的实质是类的实例，而不是类本身。</p>
+<pre><code>class EgClass:
+    def __init__(self):
+        print(self)  # 实例，有对应地址
+        print(self.__class__)  # 类
+
+a = EgClass()
+&lt;__main__.EgClass object at 0x000002531C0AF860&gt;
+&lt;class '__main__.EgClass'&gt;
+</code></pre>
+<h2 id="构造函数__init__">构造函数：<code>__init__()</code></h2>
+<p>类的构造函数是 <code>__init__()</code> （左右均为双下划线），用于初始化实例。在声明实例时，该函数自动被调用。</p>
+<pre><code>class MyClass2:
+    def __init__(self, animal=&quot;cat&quot;):
+        self.animal = animal
+
+a = MyClass2(&quot;dog&quot;)
+a.animal
+'dog'
+</code></pre>
+<h2 id="封装">封装</h2>
+<p>类的重要特性是封装性，即部分变量只能在其内部修改或访问，不能从类的外部进行处理。Python 中的封装非常简单，只要把属性或方法的名称前缀设置为双下划线即可。</p>
+<p>由此可见，构造函数 <code>__init__()</code> 是最基本的一个私有方法。一个例子：</p>
+<pre><code>class MyClass3:
+    def __init__(self, animal=&quot;cat&quot;):
+        self.__animal = animal
+        self.__foo()
+    def __foo(self):
+        self.__animal = &quot;rabbit&quot;
+    def show(self):
+        print(self.__animal)
+
+a = MyClass3(&quot;dog&quot;)
+a.show()
+rabbit
+</code></pre>
+<p>如果想直接调用 <code>__foo() 或者 __animal</code>，都会被禁止，产生 <code>AttributeError</code>。</p>
+<pre><code># a.__animal  # AttributeError
+</code></pre>
+<p>要注意，前后均添加了双下划线的属性，如 <strong>name</strong> ，表示特殊属性而不是私有属性，是可以从外部访问的。</p>
+<h2 id="继承">继承</h2>
+<p>下面是一个著名的猫与狗的例子；类 Cat 与 Dog 都继承自 Animal，同时也都重载了方法 talk()。</p>
+<pre><code>class Animal:
+    def talk(self):
+        pass # 表示定义留空
+
+class Cat(Animal): # 从Animal 继承
+    def talk(self): # 重写talk()
+        print('Meow')
+
+class Dog(Animal):
+    def talk(self):
+        print('Woof')
+
+a, b = Cat(), Dog()
+a.talk() # 'Meow'
+b.talk() # 'Woof'
+Meow
+Woof
+</code></pre>
+<p>通过 <code>isinstance()</code> 函数可以判断一个对象是否是某个类（或其子类）的实例：</p>
+<pre><code>print(isinstance(a, Cat), isinstance(a, Animal))
+True True
+或者：
+
+type(a).__name__
+'Cat'
+</code></pre>
+<p>当然，类也可以多继承。写在左侧的类的属性与方法，在继承时会被优先采用。例如：</p>
+<pre><code>class Pet:
+    def talk(self):
+        print(&quot;Pet&quot;)
+
+class Cat2(Pet, Cat):
+    pass
+
+a = Cat2()
+a.talk()
+Pet
+</code></pre>
+<h2 id="property-装饰器">@property 装饰器</h2>
+<p>装饰器 <code>@property</code>可以被用于限制类属性的读写行为。比如，一个普通的类，如果想封装一个属性，却允许从外部读取它的值，一般我们用 <code>getter</code> 函数实现：</p>
+<pre><code>class Person:
+    def __init__(self):
+        self.__name = &quot;Py&quot;
+    def get_name(self):
+        return self.__name
+a = Person()
+a.get_name()
+'Py'
+</code></pre>
+<p>不得不说这实在是麻烦了，代码里一堆 get 函数满天飞并不令人愉快。而且还不能忘记它是一个函数，需要在尾部加上括号。</p>
+<p>装饰器 <code>@property</code> 可以将一个方法伪装成同名的属性，因此装饰了 <code>getter</code> 函数后，调用时就不用加上尾部的括号了：</p>
+<pre><code>class Person:
+    def __init__(self):
+        self.__name = &quot;Py&quot;
+        
+    @property
+    def name(self):
+        return self.__name
+a = Person()
+a.name
+'Py'
+</code></pre>
+<p>而且，如果你想从外部修改该属性的值，会产生错误：</p>
+<pre><code>a.name = 1
+---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-97-8c607f2aa25b&gt; in &lt;module&gt;()
+----&gt; 1 a.name = 1
+
+
+AttributeError: can't set attribute
+</code></pre>
+<p>但同时，我们也可以指定其 setter 函数（该装饰器 @age.setter 在用 @property 装饰 age 方法后会自动生成），让属性修改成为可能，甚至附加修改条件：</p>
+<pre><code>class Person:
+    def __init__(self):
+        self.__age = 20
+        
+    @property
+    def age(self):
+        return self.__age
+    
+    @age.setter
+    def age(self, value):
+        if not isinstance(value, int):
+            raise ValueError(&quot;Age should be an integer.&quot;)
+        else:
+            self.__age = value
+a = Person()
+a.age = 30
+a.age
+30
+</code></pre>
+<p>不传入整数会报错：</p>
+<pre><code>a.age = 0.5
+---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-100-001bfa8fe26b&gt; in &lt;module&gt;()
+----&gt; 1 a.age = 0.5
+
+
+&lt;ipython-input-98-83364d5faa13&gt; in age(self, value)
+     10     def age(self, value):
+     11         if not isinstance(value, int):
+---&gt; 12             raise ValueError(&quot;Age should be an integer.&quot;)
+     13         else:
+     14             self.__age = value
+
+
+ValueError: Age should be an integer.
+</code></pre>
+<h2 id="类的特殊属性与方法">类的特殊属性与方法</h2>
+<h3 id="属性-__dict__">属性 <code>__dict__</code></h3>
+<p>首先是 <code>__dict__</code>属性，用于查看类的属性与方法，返回一个字典。</p>
+<pre><code>a = MyClass()
+MyClass.__dict__
+mappingproxy({'__dict__': &lt;attribute '__dict__' of 'MyClass' objects&gt;,
+              '__doc__': '\n    This is a class that can meow!\n    ',
+              '__module__': '__main__',
+              '__weakref__': &lt;attribute '__weakref__' of 'MyClass' objects&gt;,
+              'animal': 'cat',
+              'talk': &lt;function __main__.MyClass.talk&gt;})
+</code></pre>
+<p>需要注意的是，此时实例 a 的属性没有被更改过，实例的 <strong>dict</strong> 是一个空字典：</p>
+<pre><code>print(a.__dict__, a.animal)
+{} cat
+</code></pre>
+<p>类的 <code>__dict__</code> 方法下的同名键，与实例具有相同值。</p>
+<pre><code>MyClass.__dict__[&quot;animal&quot;]
+'cat'
+</code></pre>
+<p>一旦被从外部更改，实例 a 的 <strong>dict</strong> 字典就不再为空。</p>
+<pre><code>a.animal = &quot;dog&quot;
+print(a.__dict__, a.animal)
+{'animal': 'dog'} dog
+</code></pre>
+<h3 id="属性-__slots__">属性 <code>__slots__</code></h3>
+<p>从上面可以看到，非私有的类属性可以从外部更改值，而且属性还能直接从外部增加。<strong>slots</strong> 属性的作用就在于使类的属性不能从外部进行更改、追加。它能够限制属性滥用，并在优化内存上也有意义。</p>
+<pre><code>class MySlotClass():
+    __slots__ = (&quot;meow&quot;, &quot;woof&quot;)
+    def __init__(self):
+        self.meow = &quot;Meow&quot;
+        self.woof = &quot;Woof&quot;
+    
+a = MySlotClass()
+MySlotClass.__dict__
+mappingproxy({'__doc__': None,
+              '__init__': &lt;function __main__.MySlotClass.__init__&gt;,
+              '__module__': '__main__',
+              '__slots__': ('meow', 'woof'),
+              'meow': &lt;member 'meow' of 'MySlotClass' objects&gt;,
+              'woof': &lt;member 'woof' of 'MySlotClass' objects&gt;})
+</code></pre>
+<p>此时，如果使用 <code>a.__dict__</code>，结果不会返回空字典，而是会报错。</p>
+<h3 id="运算符重载">运算符重载</h3>
+<p>特别地，Python 提供了运算符重载的功能。常用的对应如下（参考 官方页面）：</p>
+<p>方法 含义 应用<br>
+一元运算符<br>
+<strong>len</strong> 长度 len(a)<br>
+<strong>bool</strong> 逻辑值 bool(a)<br>
+<strong>neg</strong> 取负值 -a<br>
+<strong>str</strong> / <strong>repr</strong> 字符串形式 repr(a) / str(a), print(a)<br>
+二元运算符<br>
+<strong>add</strong> 加 a + b, a += b<br>
+<strong>sub</strong> 减 a - b, a -= b<br>
+<strong>mul</strong> 乘 a <em>b, a</em> = b<br>
+<strong>div</strong> 除 a / b, a /= b<br>
+<strong>pow</strong> 乘方 a <strong>b, a</strong> = b<br>
+<strong>radd</strong> 左加 … + a<br>
+二元关系符<br>
+<strong>lt</strong> / <strong>le</strong> 小于 / 小于等于 a &lt; b, a &lt;= b<br>
+<strong>gt</strong> / <strong>ge</strong> 大于 / 大于等于 a &gt; b, a &gt;= b<br>
+<strong>eq</strong> / <strong>ne</strong> 等于 / 不等于 a == b, a != b<br>
+比如下例中，对多个运算进行了重载，完成了二维向量在加减法上与向量、与数运算的基本定义。</p>
+<pre><code>class Vector:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+   
+    def __add__(self, another):
+        if isinstance(another, Vector):
+            c, d = another.a, another.b
+        else:
+            c, d = another, another
+        return Vector(self.a + c, self.b + d)
+    
+    def __radd__(self, another):
+        return self.__add__(another)
+    
+    def __neg__(self):
+        return Vector(-self.a, -self.b)
+    
+    def __sub__(self, another):
+        return self.__add__(-another)
+    
+    def __str__(self):
+        return &quot;Vector({},{})&quot;.format(self.a, self.b)
+
+v1 = Vector(0,3)
+v2 = Vector(5,-2)
+print(v1 - 1, -v2, v1 + v2, v1 - v2)
+Vector(-1,2) Vector(-5,2) Vector(5,1) Vector(-5,5)
+</code></pre>
+<p>其中，<code>__repr__()</code> 与 <code>__str__()</code> 的主要区别在于，前者在交互式步骤中显示结果，后者在 print 函数中显示结果。</p>
+<p>例如上例，如果直接输入 v1，不会以 “Vector(0,3)”的形式显示。</p>
+<pre><code>v1  # 在类中附加定义： __repr__ = __str__ 即可解决问题。
+&lt;__main__.Vector at 0x2531c129c88&gt;
+</code></pre>
+<h2 id="迭代行为">迭代行为</h2>
+<p>在类中也能定义迭代行为，需要 <strong>iter</strong>() 与 <strong>next</strong>() 方法。</p>
+<pre><code># 该例改编自官方文档
+class MyClass4:
+    def __init__(self, lst):
+        self.data = lst
+        self.__index = len(lst)
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.__index == 0:
+            raise StopIteration
+        self.__index -= 1
+        return self.data[self.__index]
+
+a = MyClass4(&quot;Meow&quot;)
+for char in a:
+    print(char)
+w
+o
+e
+M
+</code></pre>
+<h1 id="常用模块">常用模块</h1>
+<p>下面介绍几个常用的 Python 标准模块（即随 Python 安装的模块）。更多的第三方模块，例如 NumPy, pandas, matplotlib，可以参考本系列博文的其他文章。</p>
+<h2 id="os-模块">os 模块</h2>
+<p>这个模块应该是 Python 自带模块中使用率最高的一个了。一些例子：</p>
+<pre><code># import os
+#
+# ----- 文件操作 -----
+# os.rename(&quot;old.py&quot;, &quot;new.py&quot;)  # 重命名
+# os.remove(&quot;a.py&quot;)  # 删除
+# os.stat(&quot;b.py&quot;)  # 查看文件属性
+#
+# ----- 路径操作 -----
+# os.getcwd()  # 获取当前目录
+# os.chdir(r&quot;d:\list&quot;)  # 更改当前目录为
+# os.chdir(os.pardir)  # 返回上一级目录
+# os.mkdir('newfolder ')  # 在当前目录新建一个文件夹
+# os.listdir('c:\list')  # 列出文件夹下所有文件的列表
+# os.removedirs('thefolder ')  # 删除空文件夹
+# os.path.isfile/ispath(&quot;f&quot;)  # 检查路径是文件或是目录
+# os.path.exists(&quot;f&quot;)  # 检查路径是否存在
+# 
+# ----- 操作平台相关 -----
+# os.sep  # 当前操作系统的路径分隔符
+# os.linesep  # 当前操作系统的换行符
+# os.path.join(r&quot;c:\abc&quot;, &quot;d&quot;)  # 连接字串成为路径
+</code></pre>
+<h2 id="sys-模块">sys 模块</h2>
+<p>一般我很少用到这个模块。可能有这么几个命令会用到：</p>
+<ul>
+<li>
+<p>sys.argv：能够传递从命令行接受的参数到代码内。</p>
+</li>
+<li>
+<p>sys.platform：当前操作系统平台。</p>
+</li>
+<li>
+<p>sys.exit()：无参数时抛出 SystemExit 错误并退出；有参数时会在退出前输出对应的字符串到屏幕。</p>
+<pre><code>import sys
+sys.platform
+'win32'
+</code></pre>
+</li>
+</ul>
+<p>一个 <code>sys.argv</code> 的例子：</p>
+<pre><code>sys.argv
+['e:\\python\\lib\\site-packages\\ipykernel_launcher.py',
+ '-f',
+ 'C:\\Users\\wklchris\\AppData\\Roaming\\jupyter\\runtime\\kernel-3724c4c9-2130-485d-b388-7a84379fd043.json']
+</code></pre>
+<p>以上不是典型的例子，因为并不是在命令行下运行的。命令行下通常有如下格式：</p>
+<pre><code>python test.py hello
+</code></pre>
+<p>此时，sys.argv[0] = test.py，sys.argv[1] = hello.</p>
+<h2 id="re-模块正则表达式">re 模块：正则表达式</h2>
+<p>参考本文附录。</p>
+<h2 id="其他模块">其他模块</h2>
+<ul>
+<li>collection 模块：
+<ul>
+<li>提供了一种双端列表 deque，可以用 appendleft, extendleft, popleft 等方法从 deque 的左侧（也就是lst[0]）进行操作。注意，deque 的更新操作比 list 更快，但读取操作比 list 慢。</li>
+<li>提供了一种缺省字典<code>defaultdict</code>，可以直接操作键值（即使这个键先前未定义）；首次操作时会赋一个合理的初值，比如首次调用 d[“a”] += 1 而字典本身没有 “a” 键时，会自动初始化 “a” 键并赋初值 0。</li>
+</ul>
+</li>
+<li>calendar 模块：判断星期、闰年，输出日历等等。</li>
+<li>itertools 模块：在本文“迭代器”小节已进行了简要介绍。</li>
+<li>logging 模块：在调试中可能会使用。</li>
+<li>urllib 模块：这是一个 HTML 请求模块，常用于爬虫。</li>
+</ul>
+<h1 id="调试与测试">调试与测试</h1>
+<p>Python 中有一些内置的办法进行调试与测试。</p>
+<h2 id="断言assert">断言：assert</h2>
+<p>断言的含义在于，如果断言失败（False），那么代码会被终止（抛出一个<code>AssertionError</code>）。比如：</p>
+<pre><code>n = 0
+assert(n != 0)
+1 / n
+---------------------------------------------------------------------------
+
+AssertionError                            Traceback (most recent call last)
+
+&lt;ipython-input-112-e53f92f6c644&gt; in &lt;module&gt;()
+      1 n = 0
+----&gt; 2 assert(n != 0)
+      3 1 / n
+
+
+AssertionError:
+</code></pre>
+<p>与大家一贯喜欢使用的 print 调试法相比，断言语句可以用命令行参数 -O 忽略。这样所有的 assert() 语句都不会被执行。</p>
+<pre><code>$ python -O main.py
+</code></pre>
+<h2 id="日志调试logging-模块">日志调试：logging 模块</h2>
+<p>logging 模块支持将错误日志输出（到控制台或者到文件）。</p>
+<p>此乃调试神器。延伸阅读： logging 官方基础教程。</p>
+<pre><code>import logging
+# 该行也可能通过控制台：$ python main.py --log=WARNING 的方式实现
+logging.basicConfig(level=logging.WARNING)
+n = 0
+logging.warning(&quot;n = {}&quot;.format(n))
+WARNING:root:n = 0
+</code></pre>
+<p>logging 模块的灵活之处在于你可以记录信息的级别（<code>DEBUG，INFO，WARNING，ERROR，CRITICAL</code>），各级别的作用如下：</p>
+<ul>
+<li>
+<p>DEBUG：最详细的级别，所有详细日志都会被输出。</p>
+</li>
+<li>
+<p>INFO：检测代码是否按照预期执行。</p>
+</li>
+<li>
+<p>WARNING：非预期的事件发生了，或者可能在近期发生（例如：低磁盘空间）。但代码仍然执行。</p>
+</li>
+<li>
+<p>ERROR：发生了级别更高的问题，某些功能无法正常实现。</p>
+</li>
+<li>
+<p>CRITICAL：严重错误，代码可能无法继续运行。</p>
+<p>通过</p>
+<pre><code>filename
+</code></pre>
+<p>参数，可以将日志写入到文件。一般使用</p>
+<pre><code>DEBUG
+</code></pre>
+<p>级别，即输出所有信息。</p>
+<pre><code># logging.basicConfig(filename=&quot;log.log&quot;, level=logging.DEBUG)
+</code></pre>
+</li>
+</ul>
+<p>默认会将日志追加到文件末尾，如果想要覆写文件而不是追加，使用 filemode 参数：</p>
+<pre><code># logging.basicConfig(filename=&quot;log.log&quot;, filemode=&quot;w&quot;, level=logging.DEBUG)
+</code></pre>
+<p>更改日志格格式，使用 format 参数。一般来说，常用的格式码（格式码后加 s 表示字符串）有：</p>
+<ul>
+<li>
+<p><code>%(levelname)</code>：当前日志字串级别。</p>
+</li>
+<li>
+<p><code>%(message)</code>：当前日志字串。</p>
+</li>
+<li>
+<pre><code>%(asctime)
+</code></pre>
+<p>：当前时间。默认 datefmt 参数为</p>
+<pre><code>%Y-%m-%d %I:%M:%S
+</code></pre>
+<p>例子。下例会输出形如：”01/23/1900 08:05:05 PM is when this event was logged.” 这样的格式。</p>
+<pre><code># logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+# logging.warning('is when this event was logged.')
+# 常用的格式：
+# logging.basicConfig(format=&quot;%(levelname)s: %(message)s&quot;)
+</code></pre>
+</li>
+</ul>
+<p>还可以通过配置文件来代替 basicConfig 命令，并进行设置 logger 等更高级的配置。这部分可以参考：此处。</p>
+<pre><code># import logging.config
+
+# logging.config.fileConfig('logging.conf')
+</code></pre>
+<h1 id="附录正则表达式">附录：正则表达式</h1>
+<p>正则表达式的基础内容参考本博客的这篇博文：正则表达式。注意：如果要保存一个正则表达式供多次使用，请存储其 <code>compile</code> 后的结果，避免反复编译。</p>
+<ul>
+<li>
+<p>re.compile(exp)：编译正则表达式。</p>
+</li>
+<li>
+<p>re.compile(exp).match(str)：判断正则表达式能否匹配一个字串。可以 bool() 结果来获知是否匹配。</p>
+<ul>
+<li>re.compile(exp).match(str).groups()：将匹配结果返回为单个字符串（无子组时）或元组（有子组时）。</li>
+<li>re.compile(exp).findall(str)：找出字符串中所有匹配表达式的子串。返回列表。</li>
+</ul>
+</li>
+<li>
+<p>re.split(exp, str)：用表达式来分割字符串，相当于 str.split() 的增强版。</p>
+<pre><code>import re
+bool(re.match(r&quot;\d&quot;, &quot;1&quot;))
+True
+phone_re = re.compile(r'\d{3,4}-\d{7,8}')
+phone_re.match('010-12345678').group()
+'010-12345678'
+# 如果在正则表达式中添加了子组（小括号），那么会返回子组依顺序组成的一个元组
+phone_re = re.compile(r'(\d{3,4})-(\d{7,8})')
+phone_re.match('010-12345678').groups()
+('010', '12345678')
+phone_re = re.compile(r'\d{3,4}-\d{7,8}')  # 寻找所有子串
+phone_set = '010-12345678, 021-65439876 '
+phone_re.findall(phone_set)
+['010-12345678', '021-65439876']
+s = 'a b   c'  # 用 re.split() 处理连续的空格
+print(s.split(' '), re.split(r&quot;\s+&quot;, s))
+['a', 'b', '', '', 'c'] ['a', 'b', 'c']
+</code></pre>
+</li>
+</ul>
 ]]></content>
     </entry>
 </feed>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Django模板过滤器详解 | 张雄</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579413177369">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Django模板过滤器详解
+
+DTL 模板过滤器
+add
+
+原理：
+
+  def add(value, arg):
+    &quot;&quot;&quot;Add the arg to the value&quot;&quot;&quo..." />
+    <meta name="keywords" content="Django" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579413177369" class="site-logo">
+        <h1 class="site-title">张雄</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
+        
+      
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于博主
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Django模板过滤器详解</h2>
+            <div class="post-date">2020-01-18</div>
+            
+            <div class="post-content" v-pre>
+              <p>Django模板过滤器详解</p>
+<!-- more -->
+<h1 id="dtl-模板过滤器"><code>DTL</code> 模板过滤器</h1>
+<h2 id="add"><code>add</code></h2>
+<ul>
+<li>原理：</li>
+</ul>
+<pre><code>  def add(value, arg):
+    &quot;&quot;&quot;Add the arg to the value&quot;&quot;&quot;
+    try:
+      return int(value) + int(arg)
+    except (ValueError, TypeError):
+      try:
+        return value + arg
+      except Exception:
+        return ''
+</code></pre>
+<ul>
+<li>使用<br>
+<code>front/views.py</code></li>
+</ul>
+<pre><code>  def index(request):
+    context = {
+        &quot;number&quot;: 1,
+        &quot;persons&quot;: ['baby', 'dear'],
+        &quot;girls&quot;: ['宝宝', '亲爱的']
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{#数字相加#}
+{{ number|add:&quot;2&quot; }} &lt;br&gt;
+{#字符串拼接#}
+{{ number|add:'abc' }} &lt;br&gt;
+{#列表拼接#}
+{{ persons|add:girls }}
+</code></pre>
+<h2 id="cut"><code>cut</code></h2>
+<ul>
+<li>
+<p>原理：</p>
+<pre><code>def cut(vaule, arg):
+  &quot;&quot;&quot;Remove all values of arg from the given string&quot;&quot;&quot;
+  safe = isinstance(value, SafeData)
+  value = value.replace(arg, '')
+  if safe and arg != ';':
+    return mark_safe(value)
+  return value
+</code></pre>
+</li>
+<li>
+<p>使用<br>
+<code>templates/index.html</code></p>
+<pre><code>{# 去除字符串中空格 #}
+{{ &quot;This is ten percent luck, twenty percent skill&quot;|cut:&quot; &quot; }}
+</code></pre>
+</li>
+</ul>
+<h2 id="date"><code>date</code></h2>
+<ul>
+<li>
+<p>所有格式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">格式字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">'a.m.' 或 'p.m.' （请注意，这与PHP输出略有不同，因为这包括与Associated Press样式匹配的句点。）</td>
+<td style="text-align:center">'a.m.'</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">'AM' 或 'PM'。</td>
+<td style="text-align:center">'a.m.'</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">月，文字，3个字母，小写。</td>
+<td style="text-align:center">'jan'</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">未实现。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">ISO 8601格式。 （注意：与其他格式化程序，如“Z”，“O”或“r”不同，如果值是一个天真的datetime（见 datetime.tzinfo），“c”格式化程序不会添加时区偏移。</td>
+<td style="text-align:center">2008-01-02T10:30:00.000123+02:00 或 2008-01-02T10:30:00.000123 （如果datetime是天真的）</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">月的日期，带前导零的2位数字。</td>
+<td style="text-align:center">'01' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">星期几，文字，3个字母。</td>
+<td style="text-align:center">'Fri'</td>
+</tr>
+<tr>
+<td style="text-align:center">e</td>
+<td style="text-align:center">时区名称。可以是任何格式，或可能返回一个空字符串，具体取决于datetime。</td>
+<td style="text-align:center">''，'GMT'，'-500'，'US/Eastern' 等。</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">月，特定于语言环境的替代表示，通常用于长日期表示。</td>
+<td style="text-align:center">'listopada' （对于波兰语区域，而不是 'Listopad'）</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">时间，12小时小时和分钟，如果他们为零，分钟将关闭。专有扩展。</td>
+<td style="text-align:center">'1'，'1:30'</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">月，文字，长。</td>
+<td style="text-align:center">'January'</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">小时，12小时格式，不含前导零。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">小时，24小时格式，无前导零。</td>
+<td style="text-align:center">'0' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">小时，12小时格式。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">小时，24小时格式。</td>
+<td style="text-align:center">'00' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">分钟。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+<tr>
+<td style="text-align:center">I</td>
+<td style="text-align:center">夏令时，无论是否生效。</td>
+<td style="text-align:center">'1' 或 '0'</td>
+</tr>
+<tr>
+<td style="text-align:center">j</td>
+<td style="text-align:center">没有前导零的月份日。</td>
+<td style="text-align:center">'1' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">星期几，文字，长。</td>
+<td style="text-align:center">'Friday'</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">是否为闰年的布尔值。</td>
+<td style="text-align:center">True 或 False</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">月，2位数字，前导零。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">月，文字，3个字母。</td>
+<td style="text-align:center">'Jan'</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">没有前导零的月。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">月缩写在Associated Press风格。专有扩展。</td>
+<td style="text-align:center">'Jan.'，'Feb.'，'March'，'May'</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">ISO-8601周编号年，对应于使用闰年的ISO-8601周编号（W）。更常见的年份格式见Y。</td>
+<td style="text-align:center">'1999'</td>
+</tr>
+<tr>
+<td style="text-align:center">O</td>
+<td style="text-align:center">与格林威治时间的差值（以小时为单位）。</td>
+<td style="text-align:center">'+0200'</td>
+</tr>
+<tr>
+<td style="text-align:center">P</td>
+<td style="text-align:center">时间，12小时制，分钟和’a.m。’/’p.m。’，如果它们为零，分钟将关闭，如果合适，分钟将保留特殊字符串’午夜’和’中午’。专</td>
+<td style="text-align:center">有扩展。 '1 a.m.'，'1:30 p.m.'，'midnight'，'noon'，'12:30 p.m.'</td>
+</tr>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">RFC 5322 格式的日期。</td>
+<td style="text-align:center">'Thu, 21 Dec 2000 16:01:07 +0200'</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">秒，带前导零的2位数。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">每月日期的英文序数后缀，2个字符。</td>
+<td style="text-align:center">'st'，'nd'，'rd' 或 'th'</td>
+</tr>
+<tr>
+<td style="text-align:center">t</td>
+<td style="text-align:center">指定月份的天数。</td>
+<td style="text-align:center">28 到 31</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">本机的时区。</td>
+<td style="text-align:center">'EST'，'MDT'</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">微秒。</td>
+<td style="text-align:center">000000 到 999999</td>
+</tr>
+<tr>
+<td style="text-align:center">U</td>
+<td style="text-align:center">自Unix时代以来的秒数（1970年1月1日00:00:00 UTC）。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">星期几，没有前导零的数字。</td>
+<td style="text-align:center">'0' （星期日）至 '6' （星六）</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">ISO-8601年的周数，周从星期一开始。</td>
+<td style="text-align:center">1，53</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:center">年，2位数。</td>
+<td style="text-align:center">'99'</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">年，4位数。</td>
+<td style="text-align:center">'1999'</td>
+</tr>
+<tr>
+<td style="text-align:center">z</td>
+<td style="text-align:center">一年中的一天。</td>
+<td style="text-align:center">0 到 365</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">时区偏移（以秒为单位）。 UTC之前的时区的偏移总是负的，并且对于UTC的东部的偏移总是正的。</td>
+<td style="text-align:center">-43200 到 43200</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>常用格式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">格式字符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">示例输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">年，4位数。</td>
+<td style="text-align:center">'1999'</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">月，2位数字，前导零。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">没有前导零的月。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">月的日期，带前导零的2位数字。</td>
+<td style="text-align:center">'01' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">j</td>
+<td style="text-align:center">没有前导零的月份日。</td>
+<td style="text-align:center">'1' 到 '31'</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:center">小时，12小时格式，不含前导零。</td>
+<td style="text-align:center">'1' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">小时，12小时格式。</td>
+<td style="text-align:center">'01' 到 '12'</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">小时，24小时格式，无前导零。</td>
+<td style="text-align:center">'0' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">小时，24小时格式。</td>
+<td style="text-align:center">'00' 到 '23'</td>
+</tr>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">分钟。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">秒，带前导零的2位数。</td>
+<td style="text-align:center">'00' 到 '59'</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+from datetime import datetime
+
+
+def index(request):
+    context = {
+        &quot;today&quot;: datetime.now()
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 2018/12/09 #}
+{{ today|date:&quot;Y/m/d&quot; }}
+</code></pre>
+<h2 id="default"><code>default</code></h2>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+
+
+def index(request):
+    context = {
+        'list': [],
+        'dict': {},
+        'str': '',
+        'none': None,
+        'number': 0,
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 空列表 #}
+{{ list|default:'空列表' }}
+{#空字典#}
+{{ dict|default:'空字典' }}
+{#空字符串#}
+{{ str|default:'空字符串' }}
+{#数字0#}
+{{ number|default:'数字0' }}
+{#None#}
+{{ none|default:'None' }}
+</code></pre>
+<h2 id="default-if-none"><code>default-if-none</code></h2>
+<p><strong>只有值为<code>None</code>才会起作用</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{#[]#}
+{{ list|default_if_none:'空字典' }}
+{{ str|default_if_none:'空字符串' }}
+{#0#}
+{{ number|default_if_none:'数字0' }}
+{#None#}
+{{ none|default_if_none:'None' }}
+</code></pre>
+<h2 id="first"><code>first</code></h2>
+<p><strong>返回列表或元组中的第一个元素</strong></p>
+<p><code>front/views.py</code></p>
+<pre><code>from django.shortcuts import render
+
+
+def index(request):
+    context = {
+        'student': ['威震天', '擎天柱']
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 威震天 #}
+{{ student|first }}
+</code></pre>
+<h2 id="last"><code>last</code></h2>
+<p><strong>返回列表或元组中的最后一个元素</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{# 擎天柱 #}
+{{ student|last }}
+</code></pre>
+<h2 id="floatformat"><code>floatformat</code></h2>
+<p><strong>四舍五入格式化浮点类型</strong></p>
+<ul>
+<li>
+<p>没有参数是，默认保留一位小数点</p>
+</li>
+<li>
+<p>传递的参数代表小数点的位数</p>
+</li>
+</ul>
+<p><code>templates/index.html</code></p>
+<pre><code>{#3.1#}
+{{ 3.141592654|floatformat }} &lt;br&gt;
+{#3.14159 #}
+{{ 3.141592654|floatformat:5 }} &lt;br&gt;
+</code></pre>
+<h2 id="join"><code>join</code></h2>
+<p><strong>指定分隔符把元组或者列表，转换为字符串</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{#威震天-擎天柱#}
+{{ student|join:'-' }}
+</code></pre>
+<h2 id="length"><code>length</code></h2>
+<p><strong>返回元组、列表、字符串的长度</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{#2#}
+{{ student|length }}
+</code></pre>
+<h2 id="lower"><code>lower</code></h2>
+<p><strong>将字符串转换为小写</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{#abc#}
+{{ &quot;ABC&quot;|lower }}
+</code></pre>
+<h2 id="upper"><code>upper</code></h2>
+<p><strong>将字符串转换为大写</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{#ABC#}
+{{ &quot;abc&quot;|upper }}
+</code></pre>
+<h2 id="random"><code>random</code></h2>
+<p><strong>返回元组、列表、字符串中随机选取一个值</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{{ &quot;abc&quot;|random }}
+</code></pre>
+<h2 id="safe"><code>safe</code></h2>
+<p><strong>标记一个字符串是安全的，包含特殊字符，也不会被转义， 类似关闭<code>autoescape</code>标签的自动转义</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{{ &quot;&lt;h1&gt;autoescape off&lt;/h1&gt;&quot;|safe }}
+</code></pre>
+<h2 id="slice"><code>slice</code></h2>
+<p><strong>类似于<code>python</code>的切片操作</strong></p>
+<p><code>front/views.py</code></p>
+<pre><code>def index(request):
+    context = {
+        'data': list(range(10))
+    }
+    return render(request, 'index.html', context=context)
+</code></pre>
+<p><code>templates/index.html</code></p>
+<pre><code>{#[1, 3, 5, 7, 9]#}
+{{ data|slice:&quot;1::2&quot;}}
+</code></pre>
+<h2 id="striptags"><code>striptags</code></h2>
+<p><strong>去除字符串中的 <code>HTML</code> 标签</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{{ &quot;&lt;h1&gt;去除字符串中的html标签&lt;/h1&gt;&quot;|striptags }}
+</code></pre>
+<h2 id="truncatechars"><code>truncatechars</code></h2>
+<p><strong>显示指定字符长度，超出部分显示..., 三个点也纳入指定字符范围的长度</strong></p>
+<p><code>templates/index.html</code></p>
+<pre><code>{#显示...#}
+{{ &quot;显示指定字符长度，超出部分显示...&quot;|truncatechars:5 }}
+</code></pre>
+<h2 id="truncatechars_html"><code>truncatechars_html</code></h2>
+<p><strong>类似 <code>truncatechars</code>, 只不过不会切割 <code>HTML</code> 标签</strong><br>
+<code>templates/index.html</code></p>
+<pre><code>{{ &quot;&lt;h1&gt;显示指定字符长度，超出部分显示...&lt;/h1&gt;&quot;|truncatechars_html:5 }}
+</code></pre>
+<h2 id="其它不常用过滤器">其它不常用过滤器</h2>
+<p><strong>可以在 <code>pycharm</code> 中， 查看源代码</strong></p>
+<pre><code>from django.template import defaultfilters, defaulttags
+# defaultfilters 查看内置过滤器
+# defaulttags 查看内置标签
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/opJrPL36c" class="tag">
+                    Django
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/Django模板标签详解">
+                  <h3 class="post-title">
+                    Django 模板标签详解
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
