@@ -1,135 +1,375 @@
-<!DOCTYPE html>
 <html>
-       <head>
-        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
-        <meta charset="utf-8">
-        <title>Shell | 张雄</title>
-        <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
-        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-         <script >hljs.initHighlightingOnLoad();</script>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>Shell | 张雄</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579421226609">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" type='text/css' media='all'>
 
-    </head>
-    <body>
-          <header class="header mdui-m-b-5">      
-            <div class="container  ">
-                <div class="index-title animated fadeInDown mdui-text-center mdui-text-color-white mdui-m-b-2" style="animation-delay: 0.2s"><a href="https://xiong-zh.github.io">张雄</a></div>
-                <div class="mdui-text-color-white animated fadeInDown mdui-text-center  mdui-m-b-3" style="animation-delay: 0.4s">凡心所向,素履所往。生如逆旅，一苇以航。</div>
-           
-            <nav id="nav" class="mdui-text-center animated fadeInDown" style="animation-delay: 0.6s">
-                   
-                            <li><a href="/">回到首页</a>
-                                <span class="nav-style top"></span>
-                                <span class="nav-style bottom"></span>
-                                <span class="nav-style left"></span>
-                                <span class="nav-style right"></span>
-                                </li>
-                    
-                            <li><a href="/archives">历史归档</a>
-                                <span class="nav-style top"></span>
-                                <span class="nav-style bottom"></span>
-                                <span class="nav-style left"></span>
-                                <span class="nav-style right"></span>
-                                </li>
-                    
-                            <li><a href="/tags">所有标签</a>
-                                <span class="nav-style top"></span>
-                                <span class="nav-style bottom"></span>
-                                <span class="nav-style left"></span>
-                                <span class="nav-style right"></span>
-                                </li>
-                    
-                            <li><a href="/documents/">后端图谱</a>
-                                <span class="nav-style top"></span>
-                                <span class="nav-style bottom"></span>
-                                <span class="nav-style left"></span>
-                                <span class="nav-style right"></span>
-                                </li>
-                    
-                            <li><a href="/post/about">关于｜友链</a>
-                                <span class="nav-style top"></span>
-                                <span class="nav-style bottom"></span>
-                                <span class="nav-style left"></span>
-                                <span class="nav-style right"></span>
-                                </li>
-                    
-                  </nav>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+
+
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+    <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/opJrPL36c">Django</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi">Python</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-">sublime</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF">Scrapy</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8">Flask</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/uIIrRO8Ty0">面试技巧</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp">感悟</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
                 </div>
-        </header>
-        <div class="mdui-container ">
-                <div class="mdui-row">
-                        <div class="mdui-col-md-8 mdui-col-offset-md-2 mdui-m-t-1">
-                                                         
-                               <article class="mdui-p-a-5 index-list mdui-m-b-3 animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
-                                    <div class="mdui-typo-body-2 mdui-m-b-1" datetime="2019-08-10 16:27:28">2019-08-10</div>
-                                    <div class="mdui-typo-headline mdui-m-b-3 index-list-title index-guo"><a href="https://xiong-zh.github.io/post/Shell编程常用命令">Shell编程常用命令</a></div>
-                                    <div class="mdui-typo-subheading mdui-m-b-2 index-neirong"><h3 id="shell简介">Shell简介</h3>
+            </div>
+            <ul class="social-media-icons">
+                
+                    
+                        <li>
+                            <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                                <i class="fab fa-github" title="github"></i>
+                                <span class="screen-reader-text">github</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="facebook" target="_blank">
+                                <i class="fab fa-facebook" title="facebook"></i>
+                                <span class="screen-reader-text">facebook</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                        <li>
+                            <a href="2551426007" data-animate-hover="pulse" class="qq" target="_blank">
+                                <i class="fab fa-qq" title="qq"></i>
+                                <span class="screen-reader-text">qq</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://xiong-zh.github.io">  张雄 </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">回到首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">历史归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">所有标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/documents/" target="_blank">后端图谱</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于｜友链</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+        <div class="main-content">
+            <div class="current-tag-container">
+                <h2 class="title">
+                    标签：#Shell
+                </h2>
+            </div>
+        </div>
+    <div id="main" class="main" role="main">
+  <h1 class="screen-reader-text">Posts</h1>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+      even
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-08-10 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
+            
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/Gah7pxU-rM">Linux</a>
+                </span>
+            
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/p0ASXc3D0A">Shell</a>
+                </span>
+            
+
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/Shell编程常用命令"> Shell编程常用命令 </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              <h3 id="shell简介">Shell简介</h3>
 <p>Shell自身是一个用C语言编写的程序，是用户来使用Unix或Linux的桥梁，用户的大部分工作都需要通过Shell来完成。只有熟练使用shell，才能熟练掌握linux。<br>
 可以说：Shell既是一种命令语言，又是一种程序设计语言。<br>
 Shell虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式来协调各个程序的运行。<br>
 因此，对于使用者来说，shell是最重要的实用程序，深入了解和熟练掌握shell的特性极其使用方法，是用好Unix/Linux系统的关键。</p>
 <p>这里归纳总结了一些常见常用重要的shell命令，方便在使用遗忘时查阅。</p>
-</div>
-                                    <div class="index-list-rm index-guo"><a href="https://xiong-zh.github.io/post/Shell编程常用命令">Read More</a></div>
-                                </article>
-                                
-                                                            <nav class="mdui-m-t-5">
-                                
-                                
-                                </nav>     
 
-                        </div>
-                      </div>
-              </div>
-                <footer class="footer mdui-m-t-5 mdui-text-center">
-               <nav class="social-links">
-                      <ul>
-                      
-                      
-                           
-                      	
-                        <li class="social-link"><a href="https://twitter.com/imzhangxiong" target="_blank"><i class="iconfont icon-twitter"></i></a></li>
-                          
-                           
-                      	
-                        <li class="social-link"><a href="https://github.com/xiong-zh" target="_blank"><i class="iconfont icon-github"></i></a></li>
-                          
-                           
-                      	
-                        <li class="social-link"><a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="iconfont icon-zhihu"></i></a></li>
-                          
-                           
-                      	
-                        <li class="social-link"><a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="iconfont icon-facebook"></i></a></li>
-                          
-                           
-                      
-                           
-                      
-                           
-                      
-                           
-                      	
-                        <li class="social-link"><a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="iconfont icon-instagram"></i></a></li>
-                          
-                           
-                      
-                           
-                      	
-                        <li class="social-link"><a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
-                          
-                           
-                      
-                           
-                      </ul>
-                    </nav>
-                    <div class="copyright">
-                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> <br/> Theme <a href="https://github.com/alterfang/gridea-theme-song/" target="_blank"  title="宋"  >Song</a> by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >shanbufun</a> </p>
-                  </div>
-                  
-              </footer>
-    </body>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+    <nav class="navigation pagination" role="navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+        
+        
+    </div>
+</nav>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://xiong-zh.github.io"> 张雄 </a>
+    </h1>
+    <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+                <li>
+                    <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                        <i class="fab fa-github" title="github"></i>
+                        <span class="screen-reader-text">github</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="facebook" target="_blank">
+                        <i class="fab fa-facebook" title="facebook"></i>
+                        <span class="screen-reader-text">facebook</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a href="2551426007" data-animate-hover="pulse" class="qq" target="_blank">
+                        <i class="fab fa-qq" title="qq"></i>
+                        <span class="screen-reader-text">qq</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/production.min.js"></script>
+
+</div>
+</body>
 </html>
