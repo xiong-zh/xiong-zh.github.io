@@ -1,462 +1,556 @@
 <html>
-
 <head>
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    音乐分享 | 张雄
-</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>音乐分享 | 张雄</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579417453099">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" type='text/css' media='all'>
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+
 
 </head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://xiong-zh.github.io">
-                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    张雄
-                </h1>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+    <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/opJrPL36c">Django</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi">Python</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-">sublime</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF">Scrapy</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8">Flask</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/uIIrRO8Ty0">面试技巧</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp">感悟</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
             </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
+            <ul class="social-media-icons">
                 
                     
-                            <li>
-                                <a href="/" class="menu">
-                                    回到首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    历史归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    所有标签
-                                </a>
-                            </li>
-                            
-                                
-                    
                         <li>
-                            <a href="/documents/" class="menu" target="_blank">
-                                后端图谱
+                            <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                                <i class="fab fa-github" title="github"></i>
+                                <span class="screen-reader-text">github</span>
                             </a>
                         </li>
-                        
-                                
                     
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于博主
-                                </a>
-                            </li>
-                            
-                                
+                
+                    
+                        <li>
+                            <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="facebook" target="_blank">
+                                <i class="fab fa-facebook" title="facebook"></i>
+                                <span class="screen-reader-text">facebook</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                        <li>
+                            <a href="2551426007" data-animate-hover="pulse" class="qq" target="_blank">
+                                <i class="fab fa-qq" title="qq"></i>
+                                <span class="screen-reader-text">qq</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
             </ul>
         </div>
     </div>
-</div>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-    <div class="i-card">
-        <b>标签：#
-        音乐分享</b>
-    </div>
-    
-        
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/音乐-光辉岁月-国语版">
-                        音乐-光辉岁月(国语版)
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-25</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
-                            i-tag-banana">
-            #音乐分享
-        </a>
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://xiong-zh.github.io">  张雄 </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
                         
-                </div>
-                <div class="post-article">
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">回到首页</a>
+                            </li>
+                        
                     
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <blockquote>
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">历史归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">所有标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/documents/" target="_blank">后端图谱</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于博主</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+        <div class="main-content">
+            <div class="current-tag-container">
+                <h2 class="title">
+                    标签：#音乐分享
+                </h2>
+            </div>
+        </div>
+    <div id="main" class="main" role="main">
+  <h1 class="screen-reader-text">Posts</h1>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+      even
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-08-25 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
+            
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX">音乐分享</a>
+                </span>
+            
+
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/音乐-光辉岁月-国语版"> 音乐-光辉岁月(国语版) </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              <blockquote>
 <p>一生要走多远的路程,经过多少年,才能走到终点.梦想需要多久的时间,多少血和泪,才能慢慢实现.</p>
 </blockquote>
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/音乐-光辉岁月-国语版">Read More ~</a>
-                            </div>
-                </div>
-            </article>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+        odd
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-04-07 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/如去年一样伤悲">
-                        如去年一样伤悲
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-04-07</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
-                            i-tag-primary">
-            #音乐分享
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <h2 id="没了烟火气人生就像一段孤独的旅行">没了烟火气，人生就像一段孤独的旅行。</h2>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/如去年一样伤悲">Read More ~</a>
-                            </div>
-                </div>
-            </article>
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX">音乐分享</a>
+                </span>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/你来人间一趟 你要看看太阳">
-                        你来人间一趟 你要看看太阳
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-03-26</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="post-tag i-tag
-                            i-tag-other_2">
-            #感悟
-        </a>
-                        
-                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
-                            i-tag-info">
-            #音乐分享
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
 
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/如去年一样伤悲"> 如去年一样伤悲 </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              <h2 id="没了烟火气人生就像一段孤独的旅行">没了烟火气，人生就像一段孤独的旅行。</h2>
 
-搬运几首我喜欢的他的诗
-想起你 我今夜跑尽这空无一人的街道
-明天，明天起来后我要重新做人
-我要成为宇宙的孩子 世纪的孩子
-挥霍我自己的青春
-然后放弃爱情的王位
-去做铁石心肠的船长
-——眺望北方
-
-夏天的太阳
-夏天
-如果这条街没有鞋匠
-
-我就打着赤脚
-站在太阳下看太阳
-
-我想到在白天出生的孩子
-一定是出于故意
-
-你来人间一趟
-你要看看太阳
-
-和你的心上人
-一起走在街上
-
-
-明天醒来我会在哪一只鞋子里
-我不声不响的
-带来自己这个包袱
-尽管我不喜爱自己
-但我还是悄悄打开
-
-我以前睡在黑暗的壳里
-我的脑袋就是我的边疆
-
-我的呼吸
-一直在证明
-树叶飘飘
-
-活在这珍贵的人间
-活在这珍贵的人间
-太阳强烈
-水波温柔
-一层层白云覆盖着
-我
-踩在青草上
-感到自己是彻底干净的黑土块
-
-活在这珍贵的人间
-泥土高溅
-扑打面颊
-活在这珍贵的人间
-人类和植物一样幸福
-爱情和雨水一样幸福
-
-极致热爱的结果是极致的死亡
-引自知乎作者-废名
-“生命的极致在于生命的狂喜。”
-
-写下这句话的人，在吗啡的海市蜃楼中放逐了自己的生命。
-“春暖花开，喂马劈柴。”“以梦为马，太阳是我的名字。&amp;quot;
-
-写下这种诗的人在天梯上被隆隆轰鸣碾成碎片，告别草木人间。
-“生活永远不可能像你想像得那么好，但是也不会像你想像得那么糟。”
-
-写下这个句子的人，用一席矮纸割开了咽喉。
-“黑夜给了我黑色的眼睛，我却用它去寻找光明。”
-
-写这句诗的人最后举起了嗜血的斧头，挥霍着自己理想国。
-“一个人可以被毁灭，但不可被打败。”
-
-写下这个句子的人，用一粒钢铁饮弹自尽，完成了对意志的最后通牒。
-“凌晨四点钟看到海棠花未眠。”
-
-写下隽永至美句子的人，最后不留绝笔，吞咽下滚滚煤气。
-“有朝一日，我将赢得整个世界。我将把血肉做成黄金，做成粮食。”
-
-写下这句话的人，把自己的棺椁安置在沧浪之水。
-极致热爱的结果是极致的死亡。极致的死亡是不想看到极致热爱的想象毁灭。关于海子，我一直在想，如果他活到现在，有两种可能。一种可能，他是盛誉天下的掮客，高屋建瓴的学者，为尊者讳，为长者讳，对着领导搞汇报，对着媒体吹牛逼，宣告河清海晏，高歌盛世升平，人生得意，笑靥如花。
-还有一种可能，他是胡子拉碴的大叔，落魄的精神贵族，会写狗血的三流剧本打牙祭，然后用自己的剧本垫桌角打麻将；也会抽劣质烟喝燕京鲜啤，然后发福恬着啤酒肚；也会沉湎于红灯绿酒，然后出轨有夫之妇。
-无论哪一种可能，我好象都看见他扶着厚眼镜踽踽而行，走过面朝南海的高楼，走过千禧年，走过零八奥运会，走过芸芸的人潮和车海，走过叠叠房贷，走过无数的魔幻元年，走过无数的绝望失望与期望，走过公知熬的心灵鸡汤和屁民洒的狗血鸡血。
-矫情文青对他的诗帖念念不忘，欲自杀者将他作为崇拜图腾，路人潜吟他的诗附庸风雅。有了他，世界好像更加浓墨重彩，但没有他，地球日复一日照样转，不免流俗的日子照样过。他就是个才华横溢而敏感脆弱的平凡的人，面对崩塌的梦想顾影自怜，面对变化的世界无力转圜。不想妥协的完美主义者，或许毁灭自我才是最好的选择。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/你来人间一趟 你要看看太阳">Read More ~</a>
-                            </div>
-                </div>
-            </article>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+      even
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-03-26 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/音乐-小雨と君-荒木毬菜">
-                        音乐分享-小雨と君
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-03-08</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
-                            i-tag-other_4">
-            #音乐分享
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <blockquote>
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp">感悟</a>
+                </span>
+            
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX">音乐分享</a>
+                </span>
+            
+
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/你来人间一趟 你要看看太阳"> 你来人间一趟 你要看看太阳 </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+        odd
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-03-08 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
+            
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX">音乐分享</a>
+                </span>
+            
+
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/音乐-小雨と君-荒木毬菜"> 音乐分享-小雨と君 </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              <blockquote>
 <p>“请不要出现在我的梦里，我已负担不起再一次失落的早晨。”</p>
 </blockquote>
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/音乐-小雨と君-荒木毬菜">Read More ~</a>
-                            </div>
-                </div>
-            </article>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+      even
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-02-08 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/MP3音乐外链生成方法">
-                        MP3音乐外链生成方法
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-02-08</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
-                            i-tag-warning">
-            #音乐分享
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <p>为博客添加MP3音乐外链，支持酷狗、网易云音乐、虾米、酷我等平台。</p>
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX">音乐分享</a>
+                </span>
+            
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/MP3音乐外链生成方法">Read More ~</a>
-                            </div>
-                </div>
-            </article>
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/MP3音乐外链生成方法"> MP3音乐外链生成方法 </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              <p>为博客添加MP3音乐外链，支持酷狗、网易云音乐、虾米、酷我等平台。</p>
+
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard  hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+        odd
+       excerpt">
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-01-24 ·</span> <span> / </span>
+          <span class="author">
+              <a href="https://xiong-zh.github.io" title="Posts by  张雄" rel="author"> 张雄</a>
+          </span>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://xiong-zh.github.io/post/音乐-Angel-Sarah McLachlan">
-                        音乐-Angel-Sarah McLachlan
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-01-24</time>
-                    
-                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" class="post-tag i-tag
-                            i-tag-other_2">
-            #音乐分享
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <ul>
+                <span> / </span>
+                <span class="category">
+                        <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX">音乐分享</a>
+                </span>
+            
+
+        </div>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://xiong-zh.github.io/post/音乐-Angel-Sarah McLachlan"> 音乐-Angel-Sarah McLachlan </a>
+          </h2>
+        </div>
+        <div class='excerpt-content'>
+          <article>
+              <ul>
 <li>@美少女中的一股泥石流<br>
 喜欢手嶌葵歌曲的人，想必内心都很温柔吧。几年前我听不下去这样的歌，觉得绵软无力，不懂欣赏。现在，却从她的歌声中听出救赎的味道，感受到了绵绵不绝的温柔，很喜欢。希望是因为我变得温柔。</li>
 </ul>
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://xiong-zh.github.io/post/音乐-Angel-Sarah McLachlan">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://xiong-zh.github.io/images/avatar.png?v=1579414666430)">
+          </article>
         </div>
-        <h1 class="id_card-title">
-            张雄
-        </h1>
-        <h2 class="id_card-description">
-            凡心所向,素履所往。生如逆旅，一苇以航。
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/xiong-zh" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                        <a href="https://twitter.com/imzhangxiong" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-twitter"></i></a>
-                        
-                            <!-- weibo -->
-                            
-                                <a href="https://weibo.com/zhangxiongblog" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-weibo"></i></a>
-                                
-                                    <!-- facebook -->
-                                    
-                                        <a href="https://www.facebook.com/xiong.zh.397" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-facebook"></i></a>
-                                        
-
-        </div>
+      </div>
     </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-    <div class="notice-card i-card ">
-        <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">
-            凡心所向,素履所往。生如逆旅，一苇以航。
-        </div>
-    </div>
-    
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+  
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
+    <nav class="navigation pagination" role="navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+        
+        
     </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-</body>
+</nav>
 
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://xiong-zh.github.io"> 张雄 </a>
+    </h1>
+    <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+                <li>
+                    <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                        <i class="fab fa-github" title="github"></i>
+                        <span class="screen-reader-text">github</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="facebook" target="_blank">
+                        <i class="fab fa-facebook" title="facebook"></i>
+                        <span class="screen-reader-text">facebook</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a href="2551426007" data-animate-hover="pulse" class="qq" target="_blank">
+                        <i class="fab fa-qq" title="qq"></i>
+                        <span class="screen-reader-text">qq</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/production.min.js"></script>
+
+</div>
+</body>
 </html>

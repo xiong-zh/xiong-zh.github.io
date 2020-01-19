@@ -1,128 +1,250 @@
 <html>
-
 <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    Git常用命令 | 张雄
-</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579414666430">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://xiong-zh.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>Git常用命令 | 张雄</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579417453099">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" type='text/css' media='all'>
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
 
-                    
-                            
+
 </head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://xiong-zh.github.io">
-                <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579414666430" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    张雄
-                </h1>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/opJrPL36c">Django</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi">Python</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-">sublime</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF">Scrapy</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8">Flask</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/uIIrRO8Ty0">面试技巧</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp">感悟</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
             </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
+            <ul class="social-media-icons">
                 
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    回到首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    历史归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    所有标签
-                                </a>
-                            </li>
-                            
-                                
                     
                         <li>
-                            <a href="/documents/" class="menu" target="_blank">
-                                后端图谱
+                            <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                                <i class="fab fa-github" title="github"></i>
+                                <span class="screen-reader-text">github</span>
                             </a>
                         </li>
-                        
-                                
                     
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于博主
-                                </a>
-                            </li>
-                            
-                                
+                
+                    
+                        <li>
+                            <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="facebook" target="_blank">
+                                <i class="fab fa-facebook" title="facebook"></i>
+                                <span class="screen-reader-text">facebook</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                        <li>
+                            <a href="2551426007" data-animate-hover="pulse" class="qq" target="_blank">
+                                <i class="fab fa-qq" title="qq"></i>
+                                <span class="screen-reader-text">qq</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
             </ul>
         </div>
     </div>
-</div>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            Git常用命令
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2020-01-15</time>
-                            
-                        </div>
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://xiong-zh.github.io">  张雄 </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
                         
-                                <div class="post-content">
-                                    <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">回到首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">历史归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">所有标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/documents/" target="_blank">后端图谱</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于博主</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="https://xiong-zh.github.io/post-images/Git常用命令.jpg">
+          </div>
+        
+
+        <div class="entry-meta">
+          <span class="date">· 2020-01-15 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://xiong-zh.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
+          </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>Git常用命令</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
 <!-- more -->
 <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂，<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">戳此处即可开始学习</a></p>
 <h3 id="1安装git">1.安装Git</h3>
@@ -459,147 +581,268 @@ $ git config --global user.email &quot;email@example.com&quot;
 <figure data-type="image" tabindex="1"><img src="https://user-gold-cdn.xitu.io/2018/1/4/160c049ccf1e2bd9?imageslim" alt="这里写图片描述" loading="lazy"></figure>
 <p>好了，基本差不多了，其实常用的命令也就那么几个，如果使用多了，就熟练了，相信git给我们工作效率及工作上的提升...</p>
 
-                                </div>
-                    </article>
-                    <!--  -->
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
                     
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-                                <h3 class="post-title">
-                                    Python爬取不确定页数网页
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
+                  <a href="https://xiong-zh.github.io/tag/opJrPL36c" title="View all posts in Django">Django</a>
                     
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1%E5%AE%89%E8%A3%85git">1.安装Git</a></li>
-<li><a href="#2%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E7%94%A8%E6%88%B7name%E5%92%8Ce-mail">2.配置全局用户Name和E-mail</a></li>
-<li><a href="#3%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93">3.初始化仓库</a></li>
-<li><a href="#4%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%88%B0git%E4%BB%93%E5%BA%93">4.添加文件到Git仓库</a></li>
-<li><a href="#5%E6%8F%90%E4%BA%A4%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0git%E4%BB%93%E5%BA%93">5.提交添加的文件到Git仓库</a></li>
-<li><a href="#6%E6%9F%A5%E7%9C%8B%E4%BB%93%E5%BA%93%E5%BD%93%E5%89%8D%E7%9A%84%E7%8A%B6%E6%80%81">6.查看仓库当前的状态</a></li>
-<li><a href="#7%E6%AF%94%E8%BE%83%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9">7.比较当前文件的修改</a></li>
-<li><a href="#8%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95">8.查看历史提交记录</a></li>
-<li><a href="#9%E5%9B%9E%E9%80%80%E7%89%88%E6%9C%AC">9.回退版本</a></li>
-<li><a href="#10%E6%9F%A5%E7%9C%8B%E6%93%8D%E4%BD%9C%E7%9A%84%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95">10.查看操作的历史命令记录</a></li>
-<li><a href="#11diff%E6%96%87%E4%BB%B6">11.diff文件</a></li>
-<li><a href="#12%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9">12.丢弃工作区的修改</a></li>
-<li><a href="#13%E4%B8%A2%E5%BC%83%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E6%96%87%E4%BB%B6">13.丢弃暂存区的文件</a></li>
-<li><a href="#14%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6">14.删除文件</a></li>
-<li><a href="#15%E5%88%9B%E5%BB%BAssh-key">15.创建SSH key</a></li>
-<li><a href="#16%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%8D%8F%E4%BD%9C">16.与远程仓库协作</a></li>
-<li><a href="#17%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">17.推送到远程仓库</a></li>
-<li><a href="#18%E5%85%8B%E9%9A%86%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E5%BA%93">18.克隆一个远程库</a></li>
-<li><a href="#19git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86">19.Git分支管理</a></li>
-<li><a href="#20%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E7%9A%84%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">20.查看提交的历史记录</a></li>
-<li><a href="#21%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF">21.合并分支</a></li>
-<li><a href="#22%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E7%8E%B0%E5%9C%BA">22.保存工作现场</a></li>
-<li><a href="#23%E4%B8%A2%E5%BC%83%E4%B8%80%E4%B8%AA%E6%B2%A1%E6%9C%89%E8%A2%AB%E5%90%88%E5%B9%B6%E8%BF%87%E7%9A%84%E5%88%86%E6%94%AF">23.丢弃一个没有被合并过的分支</a></li>
-<li><a href="#24%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E5%BA%93%E7%9A%84%E4%BF%A1%E6%81%AF">24.查看远程库的信息</a></li>
-<li><a href="#25%E6%8E%A8%E9%80%81%E5%88%86%E6%94%AF">25.推送分支</a></li>
-<li><a href="#26%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF">26.创建本地分支</a></li>
-<li><a href="#27%E6%8C%87%E5%AE%9A%E6%9C%AC%E5%9C%B0branch1%E5%88%86%E6%94%AF%E4%B8%8E%E8%BF%9C%E7%A8%8Boriginbranch1%E5%88%86%E6%94%AF%E7%9A%84%E9%93%BE%E6%8E%A5">27.指定本地branch1分支与远程origin/branch1分支的链接</a></li>
-<li><a href="#28%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE">28.创建标签</a></li>
-<li><a href="#29%E8%87%AA%E5%AE%9A%E4%B9%89git%E8%AE%BE%E7%BD%AE">29.自定义Git设置</a></li>
-<li><a href="#30%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E8%A7%84%E5%88%99">30.忽略文件规则</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
-    </div>
-    
-                            
-
-                </div>
-
-
-
-
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" title="View all posts in Python">Python</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-" title="View all posts in sublime">sublime</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF" title="View all posts in Scrapy">Scrapy</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" title="View all posts in Flask">Flask</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/uIIrRO8Ty0" title="View all posts in 面试技巧">面试技巧</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" title="View all posts in 感悟">感悟</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/myAeoJ-TNY" title="View all posts in 书籍">书籍</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" title="View all posts in 音乐分享">音乐分享</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/JGoq_olm9I" title="View all posts in Redis">Redis</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/Gah7pxU-rM" title="View all posts in Linux">Linux</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+              </p>
             </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://xiong-zh.github.io/images/avatar.png?v=1579417453099" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://xiong-zh.github.io'>zhangxiong</a> </span>
+            </div>
+            <div class="bio">
+              <p>凡心所向,素履所往。生如逆旅，一苇以航。</p>
+              
+                
+                  <a class="github" target="_blank"
+                     href="https://github.com/xiong-zh">
+                    <i class="fab fa-github" title="github"></i>
+                  </a>
+                
+              
+                
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/imzhangxiong">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
+                
+              
+                
+                  <a class="weibo" target="_blank"
+                     href="https://weibo.com/zhangxiongblog">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/yisyxi">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
+                
+              
+                
+                  <a class="facebook" target="_blank"
+                     href="https://weibo.com/zhangxiongblog">
+                    <i class="fab fa-facebook" title="facebook"></i>
+                  </a>
+                
+              
+                
+              
+                
+                  <a class="qq" target="_blank"
+                     href="2551426007">
+                    <i class="fab fa-qq" title="qq"></i>
+                  </a>
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">下一篇->Python爬取不确定页数网页</a>
+              </div>
+            </nav>
+          
+      </div>
+      <section id="comments" class="comments">
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-</div>
+<div id="gitalk-container"></div>
 
 <script>
-  hljs.initHighlightingOnLoad()
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
 </script>
 
+          
 
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
+          
         
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: '7691fdf5a3780e9bb3a4',
-            clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-            repo: 'xiong-zh.github.io',
-            owner: 'xiong-zh',
-            admin: ['xiong-zh'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
-
-        gitalk.render('gitalk-container')
-    }
+      </section>
+    </div>
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://xiong-zh.github.io"> 张雄 </a>
+    </h1>
+    <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+                <li>
+                    <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                        <i class="fab fa-github" title="github"></i>
+                        <span class="screen-reader-text">github</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="facebook" target="_blank">
+                        <i class="fab fa-facebook" title="facebook"></i>
+                        <span class="screen-reader-text">facebook</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+                <li>
+                    <a href="2551426007" data-animate-hover="pulse" class="qq" target="_blank">
+                        <i class="fab fa-qq" title="qq"></i>
+                        <span class="screen-reader-text">qq</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
 </script>
-                
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/production.min.js"></script>
 
-                    
-                                
+</div>
 </body>
-
 </html>
+
