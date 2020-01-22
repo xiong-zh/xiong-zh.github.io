@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-01-22T07:47:25.987Z</updated>
+    <updated>2020-01-22T08:55:10.423Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,6 +10,100 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
+    <entry>
+        <title type="html"><![CDATA[Django restframework初步使用]]></title>
+        <id>https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong</id>
+        <link href="https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong">
+        </link>
+        <updated>2020-01-22T08:53:05.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；</li>
+<li>认证组件；</li>
+<li>访问频率限制组件；</li>
+<li>序列化组件；</li>
+<li>路由组件；</li>
+<li>视图组件；</li>
+<li>分页组件；</li>
+<li>解析器组件；</li>
+<li>渲染器组件；</li>
+<li>版本组件</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；</li>
+<li>认证组件；</li>
+<li>访问频率限制组件；</li>
+<li>序列化组件；</li>
+<li>路由组件；</li>
+<li>视图组件；</li>
+<li>分页组件；</li>
+<li>解析器组件；</li>
+<li>渲染器组件；</li>
+<li>版本组件</li>
+</ul>
+<!-- more -->
+<h3 id="安装djangorestframework">安装djangorestframework</h3>
+<pre><code>pip install djangorestframework
+</code></pre>
+<h3 id="在django项目中的settingspy文件中进行配置">在Django项目中的settings.py文件中进行配置</h3>
+<p>在INSTALL_APPS中加入应用</p>
+<pre><code>INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
+</code></pre>
+<h3 id="在app名modelspy创建数据模型">在APP名/models.py创建数据模型</h3>
+<pre><code>class File(models.Model):
+  # 名称
+  name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
+</code></pre>
+<p>###创建完数据模型之后，下面就要真正的开始对djangorestframework的使用了</p>
+<p>（1）在该APP下创建serializers.py，注意文件名必须为serializers.py，不能使用其他的！</p>
+<pre><code>from rest_framework serializers
+
+
+# 第一种序列化方式，该序列化器是通用的，但是要被序列化的模型有我们定义的字段，如name
+class FileSerializer(serializers.Serializer):
+    name = serializers.CharField()
+
+ 
+# 第二种序列化方式相对来说可以省很多代码，但是只能对File模型使用，因为我们指定了序列化
+# 的模型为File
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = ('id', 'name')  # 元组内为数据模型中需要序列化的字段
+</code></pre>
+<p>添加处理视图</p>
+<p>（1）采用CBV的模式进行开发，视图处理逻辑为返回所有的文件信息</p>
+<pre><code>Class AllFilesAPI(APIView):
+    def get(self,request,**kwargs):
+        files = File.objects.all()
+        file_data = FileSerializer(files, many=True)
+        Response(file_data.data)
+</code></pre>
+<p>（2）处理的视图继承了djangorestframework的APIview，该视图封装好了get和post等其他request请求方法，我们只需要根据我们的需求重写对应的方法即可。</p>
+<p>（3）数据的返回方法也改用djangorestframework的Response，否则接受不到响应结果，另外需要注意的只能传输Json数据，因为它将django自带的JsonResponse进行了封装。</p>
+<p>###在APP名/urls.py中添加对应的路由</p>
+<pre><code>from . import views
+
+urlpatterns = [
+    url(views.AllFilesAPI.as_view()),
+]
+</code></pre>
+<p>到此为止，djangorestframework的简单实用已经初步完成，接下里通过postman访问我们定义的路由即可看到系统返回的json数据。</p>
+<p><strong>总结：</strong></p>
+<p>对于前后端开发来说，后台返回的数据一般都是json数据，而djangorestframework也给我们封装好了数据序列化的方式。</p>
+<p>对于djangorestframework的使用本文只是简单的做了一个demo，还有很多的知识点还需要我们继续摸索</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python面试题全解析2019 版]]></title>
         <id>https://xiong-zh.github.io/post/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban</id>
@@ -4219,153 +4313,6 @@ def index_list(request, category_id=0):
     首页中的内容
     &lt;p&gt;{{ block.super }}&lt;/p&gt;
     {% endblock %}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Django自定义模板过滤器]]></title>
-        <id>https://xiong-zh.github.io/post/Django自定义模板过滤器</id>
-        <link href="https://xiong-zh.github.io/post/Django自定义模板过滤器">
-        </link>
-        <updated>2020-01-18T13:08:18.000Z</updated>
-        <summary type="html"><![CDATA[<p>Django自定义模板过滤器</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Django自定义模板过滤器</p>
-<!-- more -->
-<h1 id="dtl-自定义模板过滤器"><code>DTL</code> 自定义模板过滤器</h1>
-<h2 id="一-模板过滤器的定义">一、模板过滤器的定义</h2>
-<ul>
-<li>
-<p>在应用的目录下，如 <code>front</code> 下， 新建一个名为： <code>templatetags</code> 的 <code>python</code> 包</p>
-</li>
-<li>
-<p>新建 <code>front/templatetags/custom_filter.py</code>, 并定义两个模板过滤器如下：</p>
-</li>
-</ul>
-<pre><code>  from django import template
-
-  register = template.Library()
-
-
-  def my_add(value, arg):
-      try:
-          return value + arg
-      except (Exception,):
-          return ''
-
-
-  def my_upper(value):
-      try:
-          return value.upper()
-      except (Exception,):
-          return value
-
-
-  register.filter('my_add', my_add)
-  register.filter('my_upper', my_upper)
-</code></pre>
-<ul>
-<li>
-<p>需要使用 <code>{% load custom_filter %}</code>, 把应用下定义模板过滤器的文件导入模板</p>
-</li>
-<li>
-<p><code>templates/index.html</code> 代码修改如下：</p>
-</li>
-</ul>
-<pre><code>  {% load custom_filter %}
-  &lt;!DOCTYPE html&gt;
-  &lt;html lang=&quot;en&quot;&gt;
-  &lt;head&gt;
-      &lt;meta charset=&quot;UTF-8&quot;&gt;
-      &lt;title&gt;Title&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  {#abcdef#}
-  {{ &quot;abc&quot;|my_add:&quot;def&quot; }} &lt;br&gt;
-  {#HELLO#}
-  {{ &quot;hello&quot;|my_upper }}
-  &lt;/body&gt;
-  &lt;/html&gt;
-</code></pre>
-<ul>
-<li>*<em>注意，<code>front</code> 应用必须在 <code>mysite/settings.py</code> 进行注册，在 <code>front</code> 下定义的模板过滤器才能起作用</em></li>
-</ul>
-<pre><code>  INSTALLED_APPS = [
-      'front',
-  ]
-</code></pre>
-<h2 id="二-实战-自定义时间计算过滤器">二、实战--自定义时间计算过滤器</h2>
-<p><code>front/templatetags/custom_filter.py</code></p>
-<pre><code>from django import template
-from datetime import datetime
-
-register = template.Library()
-
-
-@register.filter
-def time_since(value):
-    &quot;&quot;&quot;
-    time距离现在的时间间隔
-    1 如果时间间隔小于1分钟，那么显示 刚刚
-    2 如果时间间隔大于1分钟小于1小时， 那么显示 xx 分钟前
-    3 如果是大于1小时小于24小时，那么显示 xx 小时前
-    4 如果大于24小时，小于30天， 那么显示 xx 天前
-    5 否则显示具体时间， 2018/12/10 23:05
-    &quot;&quot;&quot;
-    if not isinstance(value, datetime):
-        return value
-    now = datetime.now()
-    timestamp = (now - value).total_seconds()
-    if timestamp &lt; 60:
-        return '刚刚'
-    elif 60 &lt;= timestamp &lt; 60 * 60:
-        minutes = int(timestamp/60)
-        return '%s分钟前' % minutes
-    elif 60 * 60 &lt;= timestamp &lt; 60 * 60 * 24:
-        hour = int(timestamp / (60 * 60))
-        return '%s 小时前' % hour
-    elif 60 * 60 * 24 &lt;= timestamp &lt; 60 * 60 * 24 * 30:
-        days = int(timestamp / (60 * 60 * 24))
-        return '%s 天前' % days
-    else:
-        return value.strftime(&quot;%Y/%m/%d %H:%M&quot;)
-</code></pre>
-<p><code>front/views.py</code></p>
-<pre><code>from django.shortcuts import render
-from datetime import datetime
-
-
-def index(request):
-    context = {
-        'my_time_1': datetime.now(),
-        'my_time_2': datetime(year=2018, month=12, day=10, hour=23, minute=18),
-        'my_time_3': datetime(year=2018, month=12, day=10, hour=18, minute=18),
-        'my_time_4': datetime(year=2018, month=12, day=1, hour=22, minute=18),
-        'my_time_5': datetime(year=2017, month=12, day=10, hour=23, minute=18),
-    }
-    return render(request, 'index.html', context=context)
-</code></pre>
-<p><code>templates/index.html</code></p>
-<pre><code>{% load custom_filter %}
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-{#刚刚 #}
-{{ my_time_1|time_since }} &lt;br&gt;
-{#7分钟前 #}
-{{ my_time_2|time_since }} &lt;br&gt;
-{#5 小时前 #}
-{{ my_time_3|time_since }} &lt;br&gt;
-{#9 天前 #}
-{{ my_time_4|time_since }} &lt;br&gt;
-{#2017/12/10 23:18#}
-{{ my_time_5|time_since }}
-&lt;/body&gt;
-&lt;/html&gt;
 </code></pre>
 ]]></content>
     </entry>
