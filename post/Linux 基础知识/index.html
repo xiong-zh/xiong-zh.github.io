@@ -2,16 +2,17 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ZhangXiong</title>
+<title>Linux 基础知识 | ZhangXiong</title>
 <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579683437650">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579683598248">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Linux 基础知识 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -26,120 +27,61 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://xiong-zh.github.io">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1579683437650" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">ZhangXiong</h1>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
-          </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E4%B8%80-%E4%BB%8E%E8%AE%A4%E8%AF%86%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%A7%8B">一 从认识操作系统开始</a>
-<ul>
-<li><a href="#11-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B">1.1  操作系统简介</a></li>
-<li><a href="#12-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E5%8D%95%E5%88%86%E7%B1%BB">1.2  操作系统简单分类</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C-%E5%88%9D%E6%8E%A2linux">二  初探Linux</a>
-<ul>
-<li><a href="#21-linux%E7%AE%80%E4%BB%8B">2.1 Linux简介</a></li>
-<li><a href="#22-linux%E8%AF%9E%E7%94%9F%E7%AE%80%E4%BB%8B">2.2  Linux诞生简介</a></li>
-<li><a href="#23-linux%E7%9A%84%E5%88%86%E7%B1%BB">2.3 Linux的分类</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89-linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%A7%88">三  Linux文件系统概览</a>
-<ul>
-<li><a href="#31-linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B">3.1 Linux文件系统简介</a></li>
-<li><a href="#32-%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">3.2 文件类型与目录结构</a></li>
-</ul>
-</li>
-<li><a href="#%E5%9B%9B-linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4">四  Linux基本命令</a>
-<ul>
-<li><a href="#41-%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2%E5%91%BD%E4%BB%A4">4.1 目录切换命令</a></li>
-<li><a href="#42-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5">4.2 目录的操作命令（增删改查）</a></li>
-<li><a href="#43-%E6%96%87%E4%BB%B6%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5">4.3 文件的操作命令（增删改查）</a></li>
-<li><a href="#44-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4">4.4 压缩文件的操作命令</a></li>
-<li><a href="#45-linux%E7%9A%84%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4">4.5 Linux的权限命令</a></li>
-<li><a href="#46-linux-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86">4.6 Linux 用户管理</a></li>
-<li><a href="#47-linux%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E7%AE%A1%E7%90%86">4.7 Linux系统用户组的管理</a></li>
-<li><a href="#48-%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">4.8 其他常用命令</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
+        
+          <a href="/">回到首页</a>
+        
       
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/post/about">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
     </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
+    <article role="main" class="hentry has-cover">
       
-        <a href="/" class="menu" style="animation-delay: 0s">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          历史归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 0.8s">
-          关于｜友链
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</div>
-    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Linux 基础知识</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2019-08-09 / 17 min read
+        <div class="entry-cover js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b62.jpg" data-width="900" data-height="423" style="background-image:url(http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b62.jpg); height: 80vw;">
+          <h1 class="post-title">Linux 基础知识</h1>
         </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b62.jpg" alt="">
-        
-        <div class="post-content yue">
-          <p>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件.</p>
+      
+      <h1 class="entry-title" itemprop="headline">Linux 基础知识</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2019-08-09 22:33:58">2019-08-09</time>
+        <span class="author vcard">
+          17 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件.</p>
 <!-- more -->
 <h2 id="一-从认识操作系统开始">一 从认识操作系统开始</h2>
 <h3 id="11-操作系统简介">1.1  操作系统简介</h3>
@@ -461,42 +403,41 @@ Linux命令大全：<a href="http://man.linuxde.net/">http://man.linuxde.net/</a
 </li>
 </ul>
 
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/tag/Gah7pxU-rM">
+              Linux
+            </a>
+          
         </div>
-
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/Gah7pxU-rM">
-            <span class="flex-auto">Linux</span>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/post/Shell编程常用命令">
+            <strong>Shell编程常用命令</strong>
           </a>
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://xiong-zh.github.io/post/Shell编程常用命令">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  Shell编程常用命令
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://xiong-zh.github.io/post/Python基础梳理-2">
-                <h3 class="post-title">
-                  Python基础梳理-2
-                  <i class="remixicon-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
-          
         </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/post/Python基础梳理-2">
+            <strong>Python基础梳理-2</strong>
+          </a>
+        </div>
+      </section>
+    
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -517,112 +458,62 @@ Linux命令大全：<a href="http://man.linuxde.net/">http://man.linuxde.net/</a
 
 </script>
 
-          
+      
 
-          
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579683598248" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
         
-
-      </div>
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
     </div>
+    <p class="footer__sosumi">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>
