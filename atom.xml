@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-01-22T08:55:10.423Z</updated>
+    <updated>2020-01-22T08:56:34.114Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -19,31 +19,13 @@
         <summary type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
 <p>10个常用组件如下：</p>
 <ul>
-<li>权限组件；</li>
-<li>认证组件；</li>
-<li>访问频率限制组件；</li>
-<li>序列化组件；</li>
-<li>路由组件；</li>
-<li>视图组件；</li>
-<li>分页组件；</li>
-<li>解析器组件；</li>
-<li>渲染器组件；</li>
-<li>版本组件</li>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
 </ul>
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
 <p>10个常用组件如下：</p>
 <ul>
-<li>权限组件；</li>
-<li>认证组件；</li>
-<li>访问频率限制组件；</li>
-<li>序列化组件；</li>
-<li>路由组件；</li>
-<li>视图组件；</li>
-<li>分页组件；</li>
-<li>解析器组件；</li>
-<li>渲染器组件；</li>
-<li>版本组件</li>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
 </ul>
 <!-- more -->
 <h3 id="安装djangorestframework">安装djangorestframework</h3>
