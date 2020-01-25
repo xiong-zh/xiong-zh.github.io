@@ -1,83 +1,134 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>随便聊聊,算是对2018做个总结吧 | ZhangXiong</title>
-<meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579686331139">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579916458344">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="随便聊聊,算是对2018做个总结吧 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
 
-  gtag('config', 'UA-156420077-1');
-</script>
+  
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="每当回首这一年，最怕不好也不坏。
+
+  每当回首这一年，最怕不好也不坏。这句话让我想到了包括自己在内的一大部分人。许多人这一辈子，除了一小部分人生命中会经历极致的大起大落后变得一蹶不振外，平淡生活中最常见的不快乐大概就是生活过得还凑合,不好..." />
+    <meta name="keywords" content="感悟" />
   </head>
   <body>
-    <div class="site-nav no-cover">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>ZhangXiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579916458344" class="site-logo">
+        <h1 class="site-title">ZhangXiong</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">回到首页</a>
-        
-      
-        
-          <a href="/archives">历史归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
         
       
         
-          <a href="/documents/" target="_blank">后端图谱</a>
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
         
       
         
-          <a href="/post/about">关于｜友链</a>
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
         
       
-    </nav>
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于｜友链
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有 | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <article role="main" class="hentry ">
-      
-      <h1 class="entry-title" itemprop="headline">随便聊聊,算是对2018做个总结吧</h1>
-      <div class="entry-meta">
-        <time class="updated" datetime="2018-12-31 06:06:06">2018-12-31</time>
-        <span class="author vcard">
-          4 min read
-        </span>
-      </div>
-      <div class="post-content yue">
-        <p>每当回首这一年，最怕不好也不坏。</p>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">随便聊聊,算是对2018做个总结吧</h2>
+            <div class="post-date">2018-12-31</div>
+            
+            <div class="post-content" v-pre>
+              <p>每当回首这一年，最怕不好也不坏。</p>
 <!-- more -->
 <p>  每当回首这一年，最怕不好也不坏。这句话让我想到了包括自己在内的一大部分人。许多人这一辈子，除了一小部分人生命中会经历极致的大起大落后变得一蹶不振外，平淡生活中最常见的不快乐大概就是生活过得还凑合,不好不坏。</p>
 <p>  其实，在真正的生活中，大部分的人都是不好不坏的处于一个还凑合的状态中，极少见到很好或者很坏的人。很多人觉得自己生活的不好，其实并没有很坏。通常都是不上不下的状态，而且那种不快乐太普通了，以至于我们觉得不满足之中又发现没有太多抱怨的基础，但当你度过很长一段时间平淡无奇的日子之后，再回首望去时，你会发现，它就像笼罩在我们生活之上的雾霾，总让人有隐约的不踏实，让人没有办法痛快地大哭或者大笑一次。</p>
@@ -89,117 +140,82 @@
 <p>  我不愿当一个旁观者，但生活从来不是完全随你心意任你摆布的玩具，恰恰相反的是，大多数时候它是一个让你不得不向现实低头的邪恶势力。如果结合我自身身体状况和其他各方面因素的话，继续学习是与我现在来说不错的选择。所以处在既不想违背自己的心，又做不到完全任性做自己的状态之下.也不知一年以后的现在我会在哪里做着怎样的事，只是希望无论结果如何，是否是自己最终想要的，只要选择一条路就坚定不移并且用尽全身力气向前走下去，不要后悔就够了，其他的事情，时间不停的向前走，下一个路口，终究会有答案。</p>
 <p>  挣扎了好久，终究是睡不着，索性好久没写东西了，也算是另一阶段了，记录一下</p>
 
-      </div>
-      <div class="entry-block">
-        <div class="entry-tags">
-          
-            <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp">
-              感悟
-            </a>
-          
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" class="tag">
+                    感悟
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://xiong-zh.github.io/post/复盘2018计划和完成情况">
+                  <h3 class="post-title">
+                    复盘2018计划和完成情况
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
         </div>
       </div>
-    </article>
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>前一篇</h3>
-          <a href="https://xiong-zh.github.io/post/新年快乐">
-            <strong>新年快乐</strong>
-          </a>
-        </div>
-      </section>
-    
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>后一篇</h3>
-          <a href="https://xiong-zh.github.io/post/复盘2018计划和完成情况">
-            <strong>复盘2018计划和完成情况</strong>
-          </a>
-        </div>
-      </section>
-    
-
-    
-      
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '7691fdf5a3780e9bb3a4',
-    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
-    repo: 'xiong-zh.github.io',
-    owner: 'xiong-zh',
-    admin: ['xiong-zh'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-      
-
-      
-    
-
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579686331139" alt="ZhangXiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
     </div>
-    <p class="footer__sosumi">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7691fdf5a3780e9bb3a4',
+        clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+        repo: 'xiong-zh.github.io',
+        owner: 'xiong-zh',
+        admin: ['xiong-zh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
 
   </body>
 </html>

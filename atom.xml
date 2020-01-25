@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-01-22T09:45:36.649Z</updated>
+    <updated>2020-01-25T01:41:01.378Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
+    <entry>
+        <title type="html"><![CDATA[新年大吉]]></title>
+        <id>https://xiong-zh.github.io/post/xin-nian-da-ji</id>
+        <link href="https://xiong-zh.github.io/post/xin-nian-da-ji">
+        </link>
+        <updated>2020-01-24T16:00:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
+以梦为马，期待人间。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
+以梦为马，期待人间。</p>
+<!-- more -->
+<p>走到一年的尾巴上时，总有一种奇异心绪。</p>
+<p>一方面，总觉又是虚度了三百日光阴，仍然没有什么长进。</p>
+<p>另一方面，又劝说自己可以做得不好也没什么嘛，大不了及时清零，2020年再去“收拾旧山河”。</p>
+<p>我不知道会不会有朝一日，我变得不再奢望，安于现状。</p>
+<p>但至少，要在彻底沦为庸庸碌碌之前，打磨出更多些的光亮。</p>
+<p>与世界交手的第二十四年，我还想试试！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Django restframework初步使用]]></title>
         <id>https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong</id>
@@ -4197,105 +4217,6 @@ def index_list(request, category_id=0):
   ]
 </code></pre>
 <p><strong>这样就不用在每个页面中引入<code>{% load static %}</code></strong></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Django模板结构优化]]></title>
-        <id>https://xiong-zh.github.io/post/Django模板结构优化</id>
-        <link href="https://xiong-zh.github.io/post/Django模板结构优化">
-        </link>
-        <updated>2020-01-18T13:09:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>Django模板结构优化</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Django模板结构优化</p>
-<!-- more -->
-<h1 id="dtl-模板结构优化"><code>DTL</code> 模板结构优化</h1>
-<h2 id="一-引入模板">一、引入模板</h2>
-<h3 id="include-标签的使用"><code>include</code> 标签的使用</h3>
-<ul>
-<li>
-<p>新建 <code>templates/header.html</code></p>
-<pre><code>&lt;header&gt;头部&lt;/header&gt;
-</code></pre>
-</li>
-<li>
-<p>新建 <code>templates/footer.html</code></p>
-<pre><code>&lt;footer&gt;尾部&lt;/footer&gt;
-</code></pre>
-</li>
-<li>
-<p>修改 <code>templates/index.html</code></p>
-</li>
-</ul>
-<pre><code>    &lt;body&gt;
-    {% include 'header.html' %}
-    &lt;div&gt;内容&lt;/div&gt;
-    {% include 'footer.html' %}
-    &lt;/body&gt;
-</code></pre>
-<h3 id="include-标签中的模板查找路径"><code>include</code> 标签中的模板查找路径</h3>
-<p><strong>参照 <a href="http://localhost:8080/readme-blog/Python/Django/templates_1.html#%E4%B8%80%E3%80%81%E6%A8%A1%E6%9D%BF%E6%9F%A5%E6%89%BE%E8%B7%AF%E5%BE%84">render_to_string的模板查找路径</a></strong></p>
-<h3 id="include-标签引入的模板可以引用当前模板中的变量"><code>include</code> 标签引入的模板可以引用当前模板中的变量</h3>
-<ul>
-<li>修改 <code>front/views.py</code></li>
-</ul>
-<pre><code>    def index(request):
-        context = {
-            'title': 'Django'
-        }
-        return render(request, 'index.html', context=context)
-</code></pre>
-<ul>
-<li>
-<p>修改 <code>templates/header.html</code></p>
-<pre><code>{#头部 Django#}
-&lt;header&gt;头部 {{ title }}&lt;/header&gt;
-</code></pre>
-</li>
-<li>
-<p>但为了所有引用 <code>templates/header.html</code> 的模板都能使用 <code>title</code> 变量， 可以在 <code>include</code> 标签中传递该变量</p>
-<p>修改 <code>templates/index.html</code></p>
-<pre><code>{#头部 Young and Beautiful#}
-{% include 'header.html' with title='Young and Beautiful' %}
-</code></pre>
-</li>
-</ul>
-<h2 id="二-模板继承">二、模板继承</h2>
-<ul>
-<li>新建 <code>templates/base.html</code>：</li>
-</ul>
-<pre><code>    &lt;body&gt;
-    {% include 'header.html' with title='Young and Beautiful' %}
-    &lt;div&gt;
-        {% block content %}
-            默认内容
-        {% endblock %}
-    &lt;/div&gt;
-    {% include 'footer.html' %}
-    &lt;/body&gt;
-</code></pre>
-<ul>
-<li>修改 <code>templates/index.html</code>:</li>
-</ul>
-<pre><code>    {% extends 'base.html' %}
-
-    {% block content %}
-    首页中的内容
-    {% endblock %}
-</code></pre>
-<ul>
-<li>
-<p>访问 <code>block</code> 标签被覆盖的内容：</p>
-<p><code>templates/index.html</code>:</p>
-</li>
-</ul>
-<pre><code>    {% extends 'base.html' %}
-
-    {% block content %}
-    首页中的内容
-    &lt;p&gt;{{ block.super }}&lt;/p&gt;
-    {% endblock %}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

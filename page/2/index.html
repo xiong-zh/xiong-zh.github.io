@@ -1,259 +1,357 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>ZhangXiong</title>
-<meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579686331139">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579916458344">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-156420077-1');
-</script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
+
+    <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。">
+    
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>ZhangXiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://xiong-zh.github.io">
+        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579916458344" class="site-logo">
+        <h1 class="site-title">ZhangXiong</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">回到首页</a>
-        
-      
-        
-          <a href="/archives">历史归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
+          <a href="/" class="site-nav">
+            回到首页
+          </a>
         
       
         
-          <a href="/documents/" target="_blank">后端图谱</a>
+          <a href="/archives" class="site-nav">
+            历史归档
+          </a>
         
       
         
-          <a href="/post/about">关于｜友链</a>
+          <a href="/tags" class="site-nav">
+            所有标签
+          </a>
         
       
-    </nav>
+        
+          <a href="/documents/" class="site-nav" target="_blank">
+            后端图谱
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于｜友链
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        
+      
+    </div>
+    <div class="site-description">
+      凡心所向,素履所往。生如逆旅，一苇以航。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有 | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Django自定义模板过滤器">
+                  <h2 class="post-title">Django自定义模板过滤器</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Django自定义模板过滤器</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Django自定义模板过滤器">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f12.jpg')">
+                  </div>
+                </a>
+              
+            </article>
           
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Django模板过滤器详解">
+                  <h2 class="post-title">Django模板过滤器详解</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Django模板过滤器详解</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Django模板过滤器详解">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f13.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Django模板标签详解">
+                  <h2 class="post-title">Django 模板标签详解</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Django 模板标签详解</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Django模板标签详解">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f14.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Django-ORM常用Field详解">
+                  <h2 class="post-title">Django ORM常用Field详解</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Django ORM常用Field详解</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Django-ORM常用Field详解">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f15.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Django创建和映射ORM模型到数据库">
+                  <h2 class="post-title">Django创建和映射ORM模型到数据库</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Django创建和映射ORM模型到数据库</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Django创建和映射ORM模型到数据库">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f16.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Django操作数据库原生SQL初体验">
+                  <h2 class="post-title">Django操作数据库原生SQL初体验</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Django - Django 操作数据库-原生SQL初体验</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Django操作数据库原生SQL初体验">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f17.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Python语法速查">
+                  <h2 class="post-title">Python语法速查</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-18
+                </div>
+                <div class="post-abstract">
+                  <p>Python 是一门独特的语言，快速浏览一下他的要点：</p>
+<ul>
+<li>面向对象：每一个变量都是一个类，有其自己的属性（attribute）与方法（method）。</li>
+<li>语法块：用缩进（四个空格）而不是分号、花括号等符号来标记。因此，行首的空格不能随意书写。</li>
+<li>注释：行内用“#”号，行间注释写在两组连续三单引号之间：’’’</li>
+<li>续行：行尾输入一个反斜杠加一个空格（’\ ‘），再换行。如果行尾语法明显未完成（比如以逗号结尾），可以直接续行。</li>
+<li>打印与输入： 函数 print() 与 input()，注意 print() 的 sep 与 end 参数。</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Python语法速查">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f18.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/sublime使用总结">
+                  <h2 class="post-title">sublime使用总结</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-16
+                </div>
+                <div class="post-abstract">
+                  <h2 id="快捷键">快捷键</h2>
+<h3 id="新建文件">新建文件</h3>
+<blockquote>
+<ol>
+<li>Ctrl+N：新建窗口</li>
+<li>输入文件名</li>
+<li>Ctrl+S：保存</li>
+</ol>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/sublime使用总结">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f19.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://xiong-zh.github.io/post/Git常用命令">
+                  <h2 class="post-title">Git常用命令</h2>
+                </a>
+                <div class="post-date">
+                  2020-01-15
+                </div>
+                <div class="post-abstract">
+                  <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://xiong-zh.github.io/post/Git常用命令">
+                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f2.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f13.jpg" href="https://xiong-zh.github.io/post/Django模板过滤器详解" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f13.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Django模板过滤器详解">
-        <div class="item-meta">
-          <time datetime="2020-01-18 21:06:44">2020-01-18</time>
-        </div>
-        <h2>Django模板过滤器详解</h2>
-      </a>
-    </div>
+    <a href="https://xiong-zh.github.io/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f14.jpg" href="https://xiong-zh.github.io/post/Django模板标签详解" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f14.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Django模板标签详解">
-        <div class="item-meta">
-          <time datetime="2020-01-18 21:05:34">2020-01-18</time>
-        </div>
-        <h2>Django 模板标签详解</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f15.jpg" href="https://xiong-zh.github.io/post/Django-ORM常用Field详解" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f15.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Django-ORM常用Field详解">
-        <div class="item-meta">
-          <time datetime="2020-01-18 21:04:14">2020-01-18</time>
-        </div>
-        <h2>Django ORM常用Field详解</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f16.jpg" href="https://xiong-zh.github.io/post/Django创建和映射ORM模型到数据库" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f16.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Django创建和映射ORM模型到数据库">
-        <div class="item-meta">
-          <time datetime="2020-01-18 21:03:08">2020-01-18</time>
-        </div>
-        <h2>Django创建和映射ORM模型到数据库</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f17.jpg" href="https://xiong-zh.github.io/post/Django操作数据库原生SQL初体验" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f17.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Django操作数据库原生SQL初体验">
-        <div class="item-meta">
-          <time datetime="2020-01-18 21:00:51">2020-01-18</time>
-        </div>
-        <h2>Django操作数据库原生SQL初体验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f18.jpg" href="https://xiong-zh.github.io/post/Python语法速查" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f18.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Python语法速查">
-        <div class="item-meta">
-          <time datetime="2020-01-18 12:04:14">2020-01-18</time>
-        </div>
-        <h2>Python语法速查</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f19.jpg" href="https://xiong-zh.github.io/post/sublime使用总结" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f19.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/sublime使用总结">
-        <div class="item-meta">
-          <time datetime="2020-01-16 00:11:48">2020-01-16</time>
-        </div>
-        <h2>sublime使用总结</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f2.jpg" href="https://xiong-zh.github.io/post/Git常用命令" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f2.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Git常用命令">
-        <div class="item-meta">
-          <time datetime="2020-01-15 19:27:36">2020-01-15</time>
-        </div>
-        <h2>Git常用命令</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f20.jpg" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f20.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-        <div class="item-meta">
-          <time datetime="2020-01-15 12:12:53">2020-01-15</time>
-        </div>
-        <h2>Python爬取不确定页数网页</h2>
-      </a>
-    </div>
+    <a href="https://xiong-zh.github.io/page/3/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://xiong-zh.github.io/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://xiong-zh.github.io/page/3/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
+        </div>
       </div>
     </div>
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579686331139" alt="ZhangXiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
+
+
 
   </body>
 </html>
