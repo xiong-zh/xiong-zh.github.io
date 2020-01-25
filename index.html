@@ -1,360 +1,278 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ZhangXiong</title>
+<meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579922056725">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579916458344">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579916458344" class="site-logo">
-        <h1 class="site-title">ZhangXiong</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于｜友链
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有 | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/xin-nian-da-ji">
-                  <h2 class="post-title">新年大吉</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-25
-                </div>
-                <div class="post-abstract">
-                  <p>岁岁年年，深情未减，<br>
-以梦为马，期待人间。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/xin-nian-da-ji">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/%E6%96%B0%E5%B9%B43.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong">
-                  <h2 class="post-title">Django restframework初步使用</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-22
-                </div>
-                <div class="post-abstract">
-                  <h2 id="django-rest-framework">Django REST framework</h2>
-<p>10个常用组件如下：</p>
-<ul>
-<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
-</ul>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b37.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban">
-                  <h2 class="post-title">Python面试题全解析2019 版</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-20
-                </div>
-                <div class="post-abstract">
-                  <h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
-<p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b11.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python 110面试题归纳">
-                  <h2 class="post-title">Python面试题归纳</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-20
-                </div>
-                <div class="post-abstract">
-                  <p>提高 python 运行效率的方法：<br>
-1、使用生成器，因为可以节约大量内存<br>
-2、循环代码优化，避免过多重复代码的执行<br>
-3、核心模块用Cython  PyPy等，提高效率<br>
-4、多进程、多线程、协程<br>
-5、多个if elif条件判断，可以把最有可能先发生的条件放到前面写，这样可以减少程序判断的次数，提高效率</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Python 110面试题归纳">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f3.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/flask_sqlalchemy">
-                  <h2 class="post-title">Flask_SQLALchemy</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-20
-                </div>
-                <div class="post-abstract">
-                  <p>SQLAlchemy常用数据类型：</p>
-<ol>
-<li>Integer：整形，映射到数据库中是int类型。</li>
-<li>Float：浮点类型，映射到数据库中是float类型。他占据的32位。</li>
-<li>Double：双精度浮点类型，映射到数据库中是double类型，占据64位。</li>
-<li>String：可变字符类型，映射到数据库中是varchar类型.</li>
-<li>Boolean：布尔类型，映射到数据库中的是tinyint类型。</li>
-<li>DECIMAL：定点类型。是专门为了解决浮点类型精度丢失的问题的。</li>
-</ol>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/flask_sqlalchemy">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b17.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/ge-ren-shu-ji">
-                  <h2 class="post-title">个人书籍</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-19
-                </div>
-                <div class="post-abstract">
-                  <p>注： 在学习和工作的过程中，遇到一些bug，大佬难寻或一时难已解决，或需求与现状对不上等一系列问题，于是萌生了写一些较完整成体系的文章记录遇到的问题和解决之道的文章。所以一下的书籍就这样出现了。<br>
-其中还有非常多的想法还没有实现，或者还没有呈现出来，有许多不完美的地方，在后续会不断实现并加以完善。在这里诚恳的希望读者能提出宝贵的意见和你的期待，你可以通过本博客中留的方式联系到我。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/ge-ren-shu-ji">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f1.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Django-urls与视图详解">
-                  <h2 class="post-title">Django urls与视图详解</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-18
-                </div>
-                <div class="post-abstract">
-                  <p>Django urls与视图详解</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Django-urls与视图详解">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f10.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Django模板中加载静态文件">
-                  <h2 class="post-title">Django模板中加载静态文件</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-18
-                </div>
-                <div class="post-abstract">
-                  <p>Django模板中加载静态文件</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Django模板中加载静态文件">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f9.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Django模板结构优化">
-                  <h2 class="post-title">Django模板结构优化</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-18
-                </div>
-                <div class="post-abstract">
-                  <p>Django模板结构优化</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Django模板结构优化">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f11.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
-    <a href="https://xiong-zh.github.io/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+  gtag('config', 'UA-156420077-1');
 </script>
 
 
+  </head>
+  <body>
+    <div class="homepage">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/post/about">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          
+            <h1 class="info_title"><a href="https://xiong-zh.github.io">ZhangXiong</a></h1>
+            <h2 class="info_subtitle">凡心所向,素履所往。生如逆旅，一苇以航。</h2>
+            <nav class="info_nav">
+              
+                
+                  <a href="/">回到首页</a>
+                
+              
+                
+                  <a href="/archives">历史归档</a>
+                
+              
+                
+                  <a href="/tags">所有标签</a>
+                
+              
+                
+                  <a href="/documents/" target="_blank">后端图谱</a>
+                
+              
+                
+                  <a href="/post/about">关于｜友链</a>
+                
+              
+            </nav>
+          
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="inner">
+        <div class="items">
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/%E6%96%B0%E5%B9%B43.jpg" href="https://xiong-zh.github.io/post/xin-nian-da-ji" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/%E6%96%B0%E5%B9%B43.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/xin-nian-da-ji">
+        <div class="item-meta">
+          <time datetime="2020-01-25 00:00:01">2020-01-25</time>
+        </div>
+        <h2>新年大吉</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b37.jpg" href="https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b37.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong">
+        <div class="item-meta">
+          <time datetime="2020-01-22 16:53:05">2020-01-22</time>
+        </div>
+        <h2>Django restframework初步使用</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b11.jpg" href="https://xiong-zh.github.io/post/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b11.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban">
+        <div class="item-meta">
+          <time datetime="2020-01-20 14:48:56">2020-01-20</time>
+        </div>
+        <h2>Python面试题全解析2019 版</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f3.jpg" href="https://xiong-zh.github.io/post/Python 110面试题归纳" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f3.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Python 110面试题归纳">
+        <div class="item-meta">
+          <time datetime="2020-01-20 13:14:59">2020-01-20</time>
+        </div>
+        <h2>Python面试题归纳</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b17.jpg" href="https://xiong-zh.github.io/post/flask_sqlalchemy" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b17.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/flask_sqlalchemy">
+        <div class="item-meta">
+          <time datetime="2020-01-20 12:47:57">2020-01-20</time>
+        </div>
+        <h2>Flask_SQLALchemy</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f1.jpg" href="https://xiong-zh.github.io/post/ge-ren-shu-ji" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f1.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/ge-ren-shu-ji">
+        <div class="item-meta">
+          <time datetime="2020-01-19 15:10:35">2020-01-19</time>
+        </div>
+        <h2>个人书籍</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f10.jpg" href="https://xiong-zh.github.io/post/Django-urls与视图详解" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f10.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Django-urls与视图详解">
+        <div class="item-meta">
+          <time datetime="2020-01-18 21:12:17">2020-01-18</time>
+        </div>
+        <h2>Django urls与视图详解</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f9.jpg" href="https://xiong-zh.github.io/post/Django模板中加载静态文件" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f9.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Django模板中加载静态文件">
+        <div class="item-meta">
+          <time datetime="2020-01-18 21:11:05">2020-01-18</time>
+        </div>
+        <h2>Django模板中加载静态文件</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f11.jpg" href="https://xiong-zh.github.io/post/Django模板结构优化" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f11.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Django模板结构优化">
+        <div class="item-meta">
+          <time datetime="2020-01-18 21:09:55">2020-01-18</time>
+        </div>
+        <h2>Django模板结构优化</h2>
+      </a>
+    </div>
+  
+</div>
 
+        
+          <div class="navigation">
+            <a href="https://xiong-zh.github.io/page/2" style="padding-right: 0.5em;">阅读更多 <i class="remixicon-arrow-right-line"></i></a>
+          </div>
+        
+      </div>
+    </div>
 
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579922056725" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
 
   </body>
 </html>

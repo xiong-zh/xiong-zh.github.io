@@ -1,359 +1,259 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ZhangXiong</title>
+<meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579922056725">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1579916458344">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://xiong-zh.github.io">
-        <img src="https://xiong-zh.github.io/images/avatar.png?v=1579916458344" class="site-logo">
-        <h1 class="site-title">ZhangXiong</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            回到首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            历史归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            所有标签
-          </a>
-        
-      
-        
-          <a href="/documents/" class="site-nav" target="_blank">
-            后端图谱
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于｜友链
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/xiong-zh" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://twitter.com/imzhangxiong" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://weibo.com/zhangxiongblog" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.zhihu.com/people/yisyxi" target="_blank">
-            <i class="fab fa-zhihu"></i>
-          </a>
-        
-      
-        
-          <a class="social-link" href="https://www.facebook.com/xiong.zh.397" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        
-      
-    </div>
-    <div class="site-description">
-      凡心所向,素履所往。生如逆旅，一苇以航。
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有 | <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-                  <h2 class="post-title">Python爬取不确定页数网页</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
-                </div>
-                <div class="post-abstract">
-                  <p>我们通常遇到的网站页数展现形式有这么几种：</p>
-<ul>
-<li>第一种是直观地显示所有页数，显示在页面上。</li>
-<li>第二种是不直观显示网页总页数，需要抓包才可以看到，一般来说会有一个 <code>totalPage</code> 参数。</li>
-<li><strong>第三种是不知道具体有多少页的网页。</strong></li>
-</ul>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f20.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
-                  <h2 class="post-title">Scrapy框架的使用之Item Pipeline用法</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
-                </div>
-                <div class="post-abstract">
-                  <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
-Item Pipeline 的主要功能有如下 4 点。</p>
-<ul>
-<li>清理 HTML 数据。</li>
-<li>验证爬取数据，检查爬取字段。</li>
-<li>查重并丢弃重复内容。</li>
-<li>将爬取结果保存到数据库。</li>
-</ul>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f21.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python为什么现在这么火">
-                  <h2 class="post-title">Python为什么现在这么火</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
-                </div>
-                <div class="post-abstract">
-                  <p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Python为什么现在这么火">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f22.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python基础知识总结">
-                  <h2 class="post-title">Python基础知识总结</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-15
-                </div>
-                <div class="post-abstract">
-                  <p>Python 的火热度怕是大家已经早已感受到了，很多程序员将 Python 作为了他的第二语言，如果你至今还未接触任何和 Python 相关的知识，那么今天我带给你的这篇文章可以让你快速了解 Python 语法，上手做东西了。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Python基础知识总结">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f23.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/常用Linux命令">
-                  <h2 class="post-title">常用Linux命令</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-14
-                </div>
-                <div class="post-abstract">
-                  <p>超全整理！Linux shell及常用36类命令汇总</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/常用Linux命令">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f24.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/推荐一些Flask资源">
-                  <h2 class="post-title">推荐一些Flask资源</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-14
-                </div>
-                <div class="post-abstract">
-                  <p>Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，给大家安利几个 Flask 学习资源.</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/推荐一些Flask资源">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f25.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">
-                  <h2 class="post-title">Flask对时间、邮件、文件上传下载、视图函数的处理</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-11
-                </div>
-                <div class="post-abstract">
-                  <p>Flask对时间、邮件、文件上传下载、视图函数的处理</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f26.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python开发环境配置">
-                  <h2 class="post-title">Python开发环境配置</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-10
-                </div>
-                <div class="post-abstract">
-                  <p>Python 2和Python 3之间存在着较大的差异，并且，由于各种原因导致了Python 2和Python 3的长期共存。在实际工作过程中，我们可能会同时用到Python 2和Python 3，因此，也需要经常在Python 2和Python 3之间进行来回切换。这就需要对python的版本进行管理，除此之外还需要对不同的软件包进行管理。大部分情况下，对于开源的库我们使用最新版本即可。但是，有时候可能需要对相同的Python版本，在不同的项目中使用不同版本的软件包。</p>
-<p>在这里，我们要使用两个工具：pyenv和virtualenv。前者用于管理不同的Python版本，后者用于管理不同的工作环境。有了这两个工具，Python相关的版本问题将不再是问题。</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Python开发环境配置">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f27.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">
-                  <h2 class="post-title">Python用list实现堆栈和队列</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-10
-                </div>
-                <div class="post-abstract">
-                  <p>Python 中可以用 list 来模拟栈和队列：</p>
-<ul>
-<li><strong>栈（stack）</strong>: 只能在一端进行数据操作，遵循后进先出（LIFO）原则</li>
-<li><strong>队列（queue）</strong>: 可以在两端进行数据操作，遵循先进先出（FIFO）原则，出队列的一端称为队首，入队列的一端称为队尾</li>
-</ul>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">
-                  <div class="feature-container" style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f28.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-    <a href="https://xiong-zh.github.io/page/2/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
-  
-  
-    <a href="https://xiong-zh.github.io/page/4/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+  gtag('config', 'UA-156420077-1');
 </script>
 
 
+  </head>
+  <body>
+    <div class="">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/post/about">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          
+            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+          
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="inner">
+        <div class="items">
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f20.jpg" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f20.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
+        <div class="item-meta">
+          <time datetime="2020-01-15 12:12:53">2020-01-15</time>
+        </div>
+        <h2>Python爬取不确定页数网页</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f21.jpg" href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f21.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
+        <div class="item-meta">
+          <time datetime="2020-01-15 12:09:15">2020-01-15</time>
+        </div>
+        <h2>Scrapy框架的使用之Item Pipeline用法</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f22.jpg" href="https://xiong-zh.github.io/post/Python为什么现在这么火" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f22.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Python为什么现在这么火">
+        <div class="item-meta">
+          <time datetime="2020-01-15 11:56:05">2020-01-15</time>
+        </div>
+        <h2>Python为什么现在这么火</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f23.jpg" href="https://xiong-zh.github.io/post/Python基础知识总结" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f23.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Python基础知识总结">
+        <div class="item-meta">
+          <time datetime="2020-01-15 11:50:31">2020-01-15</time>
+        </div>
+        <h2>Python基础知识总结</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f24.jpg" href="https://xiong-zh.github.io/post/常用Linux命令" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f24.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/常用Linux命令">
+        <div class="item-meta">
+          <time datetime="2020-01-14 23:38:21">2020-01-14</time>
+        </div>
+        <h2>常用Linux命令</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f25.jpg" href="https://xiong-zh.github.io/post/推荐一些Flask资源" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f25.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/推荐一些Flask资源">
+        <div class="item-meta">
+          <time datetime="2020-01-14 21:07:35">2020-01-14</time>
+        </div>
+        <h2>推荐一些Flask资源</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f26.jpg" href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f26.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Flask-对邮件文件上传下载视图函数的处理">
+        <div class="item-meta">
+          <time datetime="2020-01-11 22:29:03">2020-01-11</time>
+        </div>
+        <h2>Flask对时间、邮件、文件上传下载、视图函数的处理</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f27.jpg" href="https://xiong-zh.github.io/post/Python开发环境配置" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f27.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Python开发环境配置">
+        <div class="item-meta">
+          <time datetime="2020-01-10 22:29:03">2020-01-10</time>
+        </div>
+        <h2>Python开发环境配置</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f28.jpg" href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f28.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/post/Python用list实现堆栈和队列">
+        <div class="item-meta">
+          <time datetime="2020-01-10 12:04:14">2020-01-10</time>
+        </div>
+        <h2>Python用list实现堆栈和队列</h2>
+      </a>
+    </div>
+  
+</div>
 
+        
+          <div class="navigation">
+  
+    <a href="https://xiong-zh.github.io/page/2/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://xiong-zh.github.io/page/4/">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
+        
+      </div>
+    </div>
 
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1579922056725" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
 
   </body>
 </html>
