@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-01-25T03:15:32.990Z</updated>
+    <updated>2020-01-28T15:22:13.491Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,6 +10,71 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
+    <entry>
+        <title type="html"><![CDATA[不再孤独]]></title>
+        <id>https://xiong-zh.github.io/post/bu-zai-gu-du</id>
+        <link href="https://xiong-zh.github.io/post/bu-zai-gu-du">
+        </link>
+        <updated>2020-01-28T15:12:53.000Z</updated>
+        <summary type="html"><![CDATA[<ul>
+<li>文章来自商院高静老师，在这个肺炎肆掠的时节，感觉写出了荆楚大地对疫病的决心和信心，相信在不久的时间，疫情一定能得到抑制，武汉恢复成昔日繁华的武汉，武汉加油！，中国加油！</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<ul>
+<li>文章来自商院高静老师，在这个肺炎肆掠的时节，感觉写出了荆楚大地对疫病的决心和信心，相信在不久的时间，疫情一定能得到抑制，武汉恢复成昔日繁华的武汉，武汉加油！，中国加油！</li>
+</ul>
+<!-- more -->
+<h2 id="不再孤独">不再孤独</h2>
+<p>—— 再和满玲</p>
+<p>百年孤独<br>
+是马尔克斯<br>
+来自哥伦比亚的传唱<br>
+一个世纪的风云变幻<br>
+凄风冷雨</p>
+<p>冠状病毒<br>
+从湖北从武汉<br>
+从华南海鲜市场跃出<br>
+吞噬健康<br>
+也考验人性</p>
+<p>2020年的春节<br>
+是湖北人刻骨铭心的殇<br>
+有国难家愁的悲壮守候<br>
+有返乡度假的身心孤独<br>
+更有封城保国的大爱情怀</p>
+<p>壮士断臂<br>
+英雄扼腕<br>
+群居者隔离<br>
+热闹时孤寂<br>
+痛不过冷眼和流言</p>
+<p>压顶的泰山<br>
+呼啸的动车<br>
+碾过敏感的故乡和异乡<br>
+是亲是友<br>
+非亲非友</p>
+<p>暗夜的武汉上空<br>
+一城合唱《义勇军进行曲》<br>
+回荡不息的雄浑歌声<br>
+伴随阳光穿透雾霾和阴雨<br>
+驱散了内心孤独</p>
+<p>成千近万的逆行勇士<br>
+穿越关山阻隔<br>
+各地友善的关爱<br>
+大中华的伟大格局<br>
+无惧你是湖北人</p>
+<p>接二连三的康复者<br>
+丈量着来时的路<br>
+用我的孤独你的勇敢<br>
+书写难忘的温馨<br>
+我和我的祖国<br>
+一刻也不能分割</p>
+<p>这个春节<br>
+不再孤独<br>
+四面八方的阳光<br>
+驱散了隔离中的阴影<br>
+为回归与团聚<br>
+吹响了胜利的号角</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[新年大吉]]></title>
         <id>https://xiong-zh.github.io/post/xin-nian-da-ji</id>
@@ -4129,94 +4194,6 @@ def index_list(request, category_id=0):
 <code>flask</code></p>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Django模板中加载静态文件]]></title>
-        <id>https://xiong-zh.github.io/post/Django模板中加载静态文件</id>
-        <link href="https://xiong-zh.github.io/post/Django模板中加载静态文件">
-        </link>
-        <updated>2020-01-18T13:11:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>Django模板中加载静态文件</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Django模板中加载静态文件</p>
-<!-- more -->
-<h1 id="模板中加载静态文件">模板中加载静态文件</h1>
-<blockquote>
-<p>接着 <a href="https://zhb333.github.io/readme-blog/Python/Django/templates_4.html">模板结构优化</a> 往下讲</p>
-</blockquote>
-<ul>
-<li>
-<p>确保<code>mysite/setting.py</code> 中 <code>INSTALLED_APPS</code> 已经安装了 <code>django.contrib.staticfiles</code></p>
-</li>
-<li>
-<p>确保 <code>mysite/setting.py</code> 中设置了 <code>STATIC_URL</code></p>
-</li>
-<li>
-<p>在已经安装的 <code>app</code> 下创建 <code>static</code> 文件夹，并将该应用的静态资源存放在里面 : <code>front/static/suolong.jpg</code></p>
-<p><code>templates/index.html</code></p>
-</li>
-</ul>
-<pre><code class="language-html">  {% block content %}
-      &lt;img src=&quot;/static/suolong.jpg&quot; alt=&quot;suolong&quot;&gt;
-  {% endblock %}
-</code></pre>
-<ul>
-<li>
-<p><code>mysite/setting.py</code> 中 <code>STATIC_URL</code> 值是可变的，这样以后引用静态资源的路径都要根据 <code>STATIC_URL</code> 是新值去修改，因此我们需要使用 <code>{% load static %}</code></p>
-<p><code>templates/index.html</code></p>
-</li>
-</ul>
-<pre><code>  {% extends 'base.html' %}
-  {% load static %}
-
-  {% block content %}
-      &lt;img src=&quot;{% static 'suolong.jpg' %}&quot; alt=&quot;suolong&quot;&gt;
-  {% endblock %}
-</code></pre>
-<ul>
-<li>
-<p>公共资源路径</p>
-<p>在更目录下创建 <code>static</code> 文件夹</p>
-<p><code>static/style.css</code></p>
-</li>
-</ul>
-<pre><code>  body {
-      background-color: #abcdef;
-  }
-</code></pre>
-<p><code>mysite/setting.py</code></p>
-<pre><code>  STATICFILES_DIRS = (
-      os.path.join(BASE_DIR, 'static'),
-  )
-</code></pre>
-<p><code>mysite/base.html</code></p>
-<pre><code>  {% load static %}
-  &lt;!DOCTYPE html&gt;
-  &lt;html lang=&quot;en&quot;&gt;
-  &lt;head&gt;
-      &lt;meta charset=&quot;UTF-8&quot;&gt;
-      &lt;title&gt;Title&lt;/title&gt;
-      &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'style.css' %}&quot;&gt;
-  &lt;/head&gt;
-</code></pre>
-<ul>
-<li>
-<p>在每个需要加载静态资源文件的模板中都要写 <code>{% load static %}</code>, 为了不在每个模板中都写，我们可以吧 <code>static</code> 变为 <code>DTL</code> 模板标签</p>
-<p><code>mysite/setting.py</code></p>
-</li>
-</ul>
-<pre><code>  TEMPLATES = [
-      {
-        'OPTIONS': {
-            'builtins': [
-                'django.templatetags.static'
-            ]
-        },
-      },
-  ]
-</code></pre>
-<p><strong>这样就不用在每个页面中引入<code>{% load static %}</code></strong></p>
 ]]></content>
     </entry>
 </feed>
