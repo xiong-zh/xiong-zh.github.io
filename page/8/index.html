@@ -26,7 +26,7 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+    <div class="main px-4 flex flex-col lg:flex-row">
       <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
   <div class="lg:sticky top-0">
     <div class="sidebar-content">
@@ -138,65 +138,43 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> Scrapy
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="remixicon-article-line"></i>
+          最新文章
         </h2>
         
   <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
     
-      <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f20.jpg'">
+      <a href="https://xiong-zh.github.io/post/hello-gridea" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://xiong-zh.github.io/post-images/hello-gridea.png'">
         </div>
       </a>
     
     <div class="content">
-      <a href="https://xiong-zh.github.io/post/Python爬取不确定页数网页">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Python爬取不确定页数网页</h2>
+      <a href="https://xiong-zh.github.io/post/hello-gridea">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Hello Gridea</h2>
       </a>
       <div class="post-abstract text-gray-700 font-light my-4">
-        <p>我们通常遇到的网站页数展现形式有这么几种：</p>
-<ul>
-<li>第一种是直观地显示所有页数，显示在页面上。</li>
-<li>第二种是不直观显示网页总页数，需要抓包才可以看到，一般来说会有一个 <code>totalPage</code> 参数。</li>
-<li><strong>第三种是不知道具体有多少页的网页。</strong></li>
-</ul>
+        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2020-01-15 / 4 min read</div>
+      <div class="text-gray-400 text-sm font-light">2018-12-12 / 2 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f21.jpg'">
+        <div class="read-more">
+          
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://xiong-zh.github.io/post/Scrapy框架的使用之Item-Pipeline用法">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Scrapy框架的使用之Item Pipeline用法</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
-Item Pipeline 的主要功能有如下 4 点。</p>
-<ul>
-<li>清理 HTML 数据。</li>
-<li>验证爬取数据，检查爬取字段。</li>
-<li>查重并丢弃重复内容。</li>
-<li>将爬取结果保存到数据库。</li>
-</ul>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2020-01-15 / 4 min read</div>
-    </div>
-  </section>
-
-        <div class="pagination-container animated fadeIn">
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
+  
+    <a href="https://xiong-zh.github.io/page/7/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
   
   
 </div>
 
+        </div>
       </div>
     </div>
 
