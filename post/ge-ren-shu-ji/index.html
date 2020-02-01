@@ -2,16 +2,17 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ZhangXiong</title>
+<title>个人书籍 | ZhangXiong</title>
 <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580535841757">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580535888095">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="个人书籍 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -26,95 +27,61 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://xiong-zh.github.io">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1580535841757" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">ZhangXiong</h1>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
-          </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%95%99%E7%A8%8B">教程</a></li>
-<li><a href="#%E6%83%B3%E6%B3%95">想法</a>
-<ul>
-<li><a href="#%E6%9B%B4%E5%A4%9A%E4%BD%9C%E5%93%81%E6%95%AC%E8%AF%B7%E6%9C%9F%E5%BE%85">更多作品敬请期待···</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
+        
+          <a href="/">回到首页</a>
+        
       
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/post/about">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
     </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
+    <article role="main" class="hentry has-cover">
       
-        <a href="/" class="menu" style="animation-delay: 0s">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          历史归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 0.8s">
-          关于｜友链
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</div>
-    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">个人书籍</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2020-01-19 / 3 min read
+        <div class="entry-cover js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f1.jpg" data-width="900" data-height="423" style="background-image:url(http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f1.jpg); height: 80vw;">
+          <h1 class="post-title">个人书籍</h1>
         </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f1.jpg" alt="">
-        
-        <div class="post-content yue">
-          <p>注： 在学习和工作的过程中，遇到一些bug，大佬难寻或一时难已解决，或需求与现状对不上等一系列问题，于是萌生了写一些较完整成体系的文章记录遇到的问题和解决之道的文章。所以一下的书籍就这样出现了。<br>
+      
+      <h1 class="entry-title" itemprop="headline">个人书籍</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-01-19 15:10:35">2020-01-19</time>
+        <span class="author vcard">
+          3 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>注： 在学习和工作的过程中，遇到一些bug，大佬难寻或一时难已解决，或需求与现状对不上等一系列问题，于是萌生了写一些较完整成体系的文章记录遇到的问题和解决之道的文章。所以一下的书籍就这样出现了。<br>
 其中还有非常多的想法还没有实现，或者还没有呈现出来，有许多不完美的地方，在后续会不断实现并加以完善。在这里诚恳的希望读者能提出宝贵的意见和你的期待，你可以通过本博客中留的方式联系到我。</p>
 <!-- more -->
 <p>注： 在学习和工作的过程中，遇到一些bug，大佬难寻或一时难已解决，或需求与现状对不上等一系列问题，于是萌生了写一些较完整成体系的文章记录遇到的问题和解决之道的文章。所以一下的书籍就这样出现了。<br>
@@ -137,38 +104,37 @@
 <p><a href="https://gqlx.zhangxiong.net">归去来兮</a> 暂未完成</p>
 <h3 id="更多作品敬请期待">更多作品敬请期待···</h3>
 
-        </div>
-
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://xiong-zh.github.io/post/flask_sqlalchemy">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  Flask_SQLALchemy
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://xiong-zh.github.io/post/Django-urls与视图详解">
-                <h3 class="post-title">
-                  Django urls与视图详解
-                  <i class="remixicon-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
           
         </div>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/post/flask_sqlalchemy">
+            <strong>Flask_SQLALchemy</strong>
+          </a>
+        </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/post/Django-urls与视图详解">
+            <strong>Django urls与视图详解</strong>
+          </a>
+        </div>
+      </section>
+    
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -189,112 +155,62 @@
 
 </script>
 
-          
+      
 
-          
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1580535888095" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
         
-
-      </div>
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
     </div>
+    <p class="footer__sosumi">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>
