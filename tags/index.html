@@ -4,15 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ZhangXiong</title>
 <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580226557905">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580533362805">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -27,241 +26,335 @@
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>ZhangXiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://xiong-zh.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1580533362805" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">ZhangXiong</h1>
       </div>
-    </button>
-    <nav class="info_nav">
       
-        
-          <a href="/">回到首页</a>
-        
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/xiong-zh" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/imzhangxiong" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-twitter-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://weibo.com/zhangxiongblog" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-weibo-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://www.zhihu.com/people/yisyxi" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-zhihu-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://www.facebook.com/xiong.zh.397" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-facebook-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://www.instagram.com/imzhangxiong/" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-instagram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
       
-        
-          <a href="/archives">历史归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
-        
-      
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
-      
-        
-          <a href="/post/about">关于｜友链</a>
-        
-      
-    </nav>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 目前共计 22 个标签</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="tags">
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/uIIrRO8Ty0">
-              <div class="tag-name">面试技巧</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/opJrPL36c">
-              <div class="tag-name">Django</div>
-              <div class="tag-count">9</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/yaI-h-rVLi">
-              <div class="tag-name">Python</div>
-              <div class="tag-count">8</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/pWmUoqOzB-">
-              <div class="tag-name">sublime</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/RKbXlPuzuF">
-              <div class="tag-name">Scrapy</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/3e5ZUh7gT8">
-              <div class="tag-name">Flask</div>
-              <div class="tag-count">3</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/VVhvu3OtMp">
-              <div class="tag-name">感悟</div>
-              <div class="tag-count">10</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/myAeoJ-TNY">
-              <div class="tag-name">书籍</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/KF0LJCmDpX">
-              <div class="tag-name">音乐分享</div>
-              <div class="tag-count">6</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/JGoq_olm9I">
-              <div class="tag-name">Redis</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/Gah7pxU-rM">
-              <div class="tag-name">Linux</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/p0ASXc3D0A">
-              <div class="tag-name">Shell</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/ejxnkFenzC">
-              <div class="tag-name">书籍推荐</div>
-              <div class="tag-count">5</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/aJT3P20zaN">
-              <div class="tag-name">C</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/L-mexE1Ckv">
-              <div class="tag-name">算法</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/t4RszL3qg0">
-              <div class="tag-name">C语言</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/QRVGLCofGMp">
-              <div class="tag-name">视频</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/oB69LmlOTC6">
-              <div class="tag-name">加密</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/asWc08yGPpq">
-              <div class="tag-name">阅读笔记</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/dyg7zyawR5u">
-              <div class="tag-name">总结</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/icvIAbFdV7k">
-              <div class="tag-name">计划</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/tag/jp3Tjo8u3">
-              <div class="tag-name">Gridea</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1580226557905" alt="ZhangXiong">
-    </a>
-    <div class="footer__social">
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
       
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
+        <a href="/" class="menu" style="animation-delay: 0s">
+          回到首页
+        </a>
       
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
+    
       
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          历史归档
+        </a>
       
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
+    
       
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          所有标签
+        </a>
       
-        
+    
       
-        
+        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
+          后端图谱
+        </a>
       
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
+    
       
-        
+        <a href="/post/about" class="menu" style="animation-delay: 0.8s">
+          关于｜友链
+        </a>
       
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+    
   </div>
-</footer>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</div>
+    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="text-lg text-gray-700 mb-8">
+          <i class="remixicon-bookmark-2-line"></i> 标签云
+        </h2>
+        <div class="tags-container">
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/uIIrRO8Ty0" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+              <span class="flex-auto">面试技巧</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/opJrPL36c" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+              <span class="flex-auto">Django</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">9</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/yaI-h-rVLi" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+              <span class="flex-auto">Python</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">8</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/pWmUoqOzB-" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+              <span class="flex-auto">sublime</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/RKbXlPuzuF" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+              <span class="flex-auto">Scrapy</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">2</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+              <span class="flex-auto">Flask</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">3</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/VVhvu3OtMp" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+              <span class="flex-auto">感悟</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">10</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/myAeoJ-TNY" :style="{ 'animation-delay': `${7 * 0.2}s` }">
+              <span class="flex-auto">书籍</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/KF0LJCmDpX" :style="{ 'animation-delay': `${8 * 0.2}s` }">
+              <span class="flex-auto">音乐分享</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">6</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/JGoq_olm9I" :style="{ 'animation-delay': `${9 * 0.2}s` }">
+              <span class="flex-auto">Redis</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/Gah7pxU-rM" :style="{ 'animation-delay': `${10 * 0.2}s` }">
+              <span class="flex-auto">Linux</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">2</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/p0ASXc3D0A" :style="{ 'animation-delay': `${11 * 0.2}s` }">
+              <span class="flex-auto">Shell</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/ejxnkFenzC" :style="{ 'animation-delay': `${12 * 0.2}s` }">
+              <span class="flex-auto">书籍推荐</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">5</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/aJT3P20zaN" :style="{ 'animation-delay': `${13 * 0.2}s` }">
+              <span class="flex-auto">C</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/L-mexE1Ckv" :style="{ 'animation-delay': `${14 * 0.2}s` }">
+              <span class="flex-auto">算法</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">2</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/t4RszL3qg0" :style="{ 'animation-delay': `${15 * 0.2}s` }">
+              <span class="flex-auto">C语言</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/QRVGLCofGMp" :style="{ 'animation-delay': `${16 * 0.2}s` }">
+              <span class="flex-auto">视频</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/oB69LmlOTC6" :style="{ 'animation-delay': `${17 * 0.2}s` }">
+              <span class="flex-auto">加密</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/asWc08yGPpq" :style="{ 'animation-delay': `${18 * 0.2}s` }">
+              <span class="flex-auto">阅读笔记</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/dyg7zyawR5u" :style="{ 'animation-delay': `${19 * 0.2}s` }">
+              <span class="flex-auto">总结</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/icvIAbFdV7k" :style="{ 'animation-delay': `${20 * 0.2}s` }">
+              <span class="flex-auto">计划</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/tag/jp3Tjo8u3" :style="{ 'animation-delay': `${21 * 0.2}s` }">
+              <span class="flex-auto">Gridea</span>
+              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            </a>
+          
+        </div>
+      </div>
+    </div>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
+    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
 <script>
-  Prism.highlightAll()
-</script>
 
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
   </body>
 </html>

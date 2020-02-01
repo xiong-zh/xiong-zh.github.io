@@ -4,15 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ZhangXiong</title>
 <meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580226557905">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580533362805">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -27,244 +26,392 @@
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>ZhangXiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://xiong-zh.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1580533362805" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">ZhangXiong</h1>
       </div>
-    </button>
-    <nav class="info_nav">
       
-        
-          <a href="/">回到首页</a>
-        
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            凡心所向,素履所往。生如逆旅，一苇以航。
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/xiong-zh" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/imzhangxiong" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-twitter-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://weibo.com/zhangxiongblog" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-weibo-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://www.zhihu.com/people/yisyxi" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-zhihu-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://www.facebook.com/xiong.zh.397" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-facebook-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://www.instagram.com/imzhangxiong/" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-instagram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
       
-        
-          <a href="/archives">历史归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
-        
-      
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
-      
-        
-          <a href="/post/about">关于｜友链</a>
-        
-      
-    </nav>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-archive-line"></i> 目前共计 63 篇创作</h1>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          回到首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          历史归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          所有标签
+        </a>
+      
+    
+      
+        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
+          后端图谱
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.8s">
+          关于｜友链
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</div>
+    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="text-lg text-gray-700 mb-8">
+          <i class="remixicon-archive-line"></i> 文章归档
+        </h2>
+        
+
+        <div class="archives-container">
+          
+            <h2 class="text-gray-600 py-4 animated fadeIn">
+              <i class="remixicon-map-pin-time-line"></i>
+              2019
+            </h2>
+            
+              
+                <a href="https://xiong-zh.github.io/post/sha256加密测试" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    SHA256加密测试
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-03-05</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/2019在读书单" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    2019在读书单（1）
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-02-14</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/《门前》顾诚" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    《门前》顾诚
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-02-14</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/MP3音乐外链生成方法" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    MP3音乐外链生成方法
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-02-08</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/《小王子》阅读笔记" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    《小王子》阅读笔记
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-02-07</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/2019阅读书单" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    2019阅读书单
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-01-31</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/音乐-Angel-Sarah McLachlan" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    音乐-Angel-Sarah McLachlan
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2019-01-24</div>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+            <h2 class="text-gray-600 py-4 animated fadeIn">
+              <i class="remixicon-map-pin-time-line"></i>
+              2018
+            </h2>
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/新年快乐" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    新年快乐
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-31</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/随便聊聊-算是对2018做个总结吧" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    随便聊聊,算是对2018做个总结吧
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-31</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/复盘2018计划和完成情况" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    复盘2018计划和完成情况
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-28</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/第一篇文章闲谈" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    第一篇文章交给测试
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-12</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/hello-world" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    Hello World
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-12</div>
+              
+            
+              
+                <a href="https://xiong-zh.github.io/post/hello-gridea" class="post">
+                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
+                    Hello Gridea
+                  </h2>
+                </a>
+                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-12</div>
+              
+            
+          
         </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+        <div>
+          <div class="pagination-container animated fadeIn">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b40.jpg" href="https://xiong-zh.github.io/post/2019在读书单" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b40.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/2019在读书单">
-        <div class="item-meta">
-          <time datetime="2019-02-14 16:19:09">2019-02-14</time>
-        </div>
-        <h2>2019在读书单（1）</h2>
-      </a>
-    </div>
+    <a href="https://xiong-zh.github.io/archives/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
   
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/《门前》顾诚">
-        <div class="item-meta">
-          <time datetime="2019-02-14 14:49:10">2019-02-14</time>
-        </div>
-        <h2>《门前》顾诚</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/MP3音乐外链生成方法">
-        <div class="item-meta">
-          <time datetime="2019-02-08 22:49:35">2019-02-08</time>
-        </div>
-        <h2>MP3音乐外链生成方法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/《小王子》阅读笔记">
-        <div class="item-meta">
-          <time datetime="2019-02-07 17:11:24">2019-02-07</time>
-        </div>
-        <h2>《小王子》阅读笔记</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/2019阅读书单">
-        <div class="item-meta">
-          <time datetime="2019-01-31 23:24:07">2019-01-31</time>
-        </div>
-        <h2>2019阅读书单</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/音乐-Angel-Sarah McLachlan">
-        <div class="item-meta">
-          <time datetime="2019-01-24 19:06:49">2019-01-24</time>
-        </div>
-        <h2>音乐-Angel-Sarah McLachlan</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/新年快乐">
-        <div class="item-meta">
-          <time datetime="2018-12-31 23:59:59">2018-12-31</time>
-        </div>
-        <h2>新年快乐</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/随便聊聊-算是对2018做个总结吧">
-        <div class="item-meta">
-          <time datetime="2018-12-31 06:06:06">2018-12-31</time>
-        </div>
-        <h2>随便聊聊,算是对2018做个总结吧</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b36.jpg" href="https://xiong-zh.github.io/post/复盘2018计划和完成情况" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b36.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/复盘2018计划和完成情况">
-        <div class="item-meta">
-          <time datetime="2018-12-28 23:31:12">2018-12-28</time>
-        </div>
-        <h2>复盘2018计划和完成情况</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/第一篇文章闲谈">
-        <div class="item-meta">
-          <time datetime="2018-12-12 16:00:00">2018-12-12</time>
-        </div>
-        <h2>第一篇文章交给测试</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f7.jpg" href="https://xiong-zh.github.io/post/hello-world" style="background-image:url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f7.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/hello-world">
-        <div class="item-meta">
-          <time datetime="2018-12-12 15:05:08">2018-12-12</time>
-        </div>
-        <h2>Hello World</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://xiong-zh.github.io/post-images/hello-gridea.png" href="https://xiong-zh.github.io/post/hello-gridea" style="background-image:url('https://xiong-zh.github.io/post-images/hello-gridea.png');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/post/hello-gridea">
-        <div class="item-meta">
-          <time datetime="2018-12-12 00:00:00">2018-12-12</time>
-        </div>
-        <h2>Hello Gridea</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-    <a href="https://xiong-zh.github.io/archives/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1580226557905" alt="ZhangXiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
+    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
 <script>
-  Prism.highlightAll()
-</script>
 
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
   </body>
 </html>
