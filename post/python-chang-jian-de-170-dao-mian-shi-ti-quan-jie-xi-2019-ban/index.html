@@ -1,17 +1,19 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
+<meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ZhangXiong</title>
-<meta name="description" content="凡心所向,素履所往。生如逆旅，一苇以航。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580565597732">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>Python面试题全解析2019 版 | ZhangXiong</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580633362796">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" type='text/css' media='all'>
 
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -24,325 +26,227 @@
 </script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://xiong-zh.github.io">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1580565597732" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">ZhangXiong</h1>
-      </div>
-      
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
-          </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-%E8%B0%88%E8%B0%88%E5%AF%B9-python-%E5%92%8C%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8C%BA%E5%88%AB">1. 谈谈对 Python 和其他语言的区别</a>
-<ul>
-<li><a href="#1-%E8%B0%88%E8%B0%88%E5%AF%B9-python-%E5%92%8C%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8C%BA%E5%88%AB-2">1. 谈谈对 Python 和其他语言的区别</a></li>
-<li><a href="#2-%E7%AE%80%E8%BF%B0%E8%A7%A3%E9%87%8A%E5%9E%8B%E5%92%8C%E7%BC%96%E8%AF%91%E5%9E%8B%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">2. 简述解释型和编译型编程语言</a></li>
-<li><a href="#3-python-%E7%9A%84%E8%A7%A3%E9%87%8A%E5%99%A8%E7%A7%8D%E7%B1%BB%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%89%B9%E7%82%B9">3. Python 的解释器种类以及相关特点？</a></li>
-<li><a href="#4-python3-%E5%92%8C-python2-%E7%9A%84%E5%8C%BA%E5%88%AB">4. Python3 和 Python2 的区别？</a></li>
-<li><a href="#5-python3-%E5%92%8C-python2-%E4%B8%AD-int-%E5%92%8C-long-%E5%8C%BA%E5%88%AB">5. Python3 和 Python2 中 int 和 long 区别？</a></li>
-<li><a href="#6-xrange-%E5%92%8C-range-%E7%9A%84%E5%8C%BA%E5%88%AB">6. xrange 和 range 的区别？</a></li>
-</ul>
-</li>
-<li><a href="#%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83">编码规范</a>
-<ul>
-<li><a href="#7-%E4%BB%80%E4%B9%88%E6%98%AF-pep8">7. 什么是 PEP8?</a></li>
-<li><a href="#8-%E4%BA%86%E8%A7%A3-python-%E4%B9%8B%E7%A6%85%E4%B9%88">8. 了解 Python 之禅么？</a></li>
-<li><a href="#9-%E4%BA%86%E8%A7%A3-docstrings-%E4%B9%88">9. 了解 DocStrings 么？</a></li>
-<li><a href="#10-%E4%BA%86%E8%A7%A3%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3%E4%B9%88">10. 了解类型注解么？</a></li>
-<li><a href="#11-%E4%BE%8B%E4%B8%BE%E4%BD%A0%E7%9F%A5%E9%81%93-python-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E4%BE%8B%E5%A6%82%E6%96%B9%E6%B3%95%E6%88%96%E8%80%85%E7%B1%BB%E7%AD%89">11. 例举你知道 Python 对象的命名规范，例如方法或者类等</a></li>
-<li><a href="#12-python-%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E6%9C%89%E5%87%A0%E7%A7%8D">12. Python 中的注释有几种？</a></li>
-<li><a href="#13-%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E7%BB%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%8A%A0%E6%B3%A8%E9%87%8A">13. 如何优雅的给一个函数加注释？</a></li>
-<li><a href="#14-%E5%A6%82%E4%BD%95%E7%BB%99%E5%8F%98%E9%87%8F%E5%8A%A0%E6%B3%A8%E9%87%8A">14. 如何给变量加注释？</a></li>
-<li><a href="#15-python-%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B%E4%B8%AD%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81-tab-%E9%94%AE%E5%92%8C%E7%A9%BA%E6%A0%BC%E6%B7%B7%E7%94%A8">15. Python 代码缩进中是否支持 Tab 键和空格混用。</a></li>
-<li><a href="#16-%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%B8%80%E5%8F%A5-import-%E4%B8%AD%E5%AF%BC%E5%85%A5%E5%A4%9A%E4%B8%AA%E5%BA%93">16. 是否可以在一句 import 中导入多个库?</a></li>
-<li><a href="#17-%E5%9C%A8%E7%BB%99-py-%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D%E7%9A%84%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BB%80%E4%B9%88">17. 在给 Py 文件命名的时候需要注意什么?</a></li>
-<li><a href="#18-%E4%BE%8B%E4%B8%BE%E5%87%A0%E4%B8%AA%E8%A7%84%E8%8C%83-python-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%B7%A5%E5%85%B7">18. 例举几个规范 Python 代码风格的工具</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%AD%97%E7%AC%A6%E4%B8%B2">数据类型-字符串</a>
-<ul>
-<li><a href="#19-%E5%88%97%E4%B8%BE-python-%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">19. 列举 Python 中的基本数据类型？</a></li>
-<li><a href="#20-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB%E5%8F%AF%E5%8F%98%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">20. 如何区别可变数据类型和不可变数据类型</a></li>
-<li><a href="#21-%E5%B0%86hello-world%E8%BD%AC%E6%8D%A2%E4%B8%BA%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99hello-world">21. 将&quot;hello world&quot;转换为首字母大写&quot;Hello World&quot;</a></li>
-<li><a href="#22-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%8F%AA%E5%90%AB%E6%9C%89%E6%95%B0%E5%AD%97">22. 如何检测字符串中只含有数字?</a></li>
-<li><a href="#23-%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2ilovechina%E8%BF%9B%E8%A1%8C%E5%8F%8D%E8%BD%AC">23. 将字符串&quot;ilovechina&quot;进行反转</a></li>
-<li><a href="#24-python-%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%96%B9%E5%BC%8F%E4%BD%A0%E7%9F%A5%E9%81%93%E5%93%AA%E4%BA%9B">24. Python 中的字符串格式化方式你知道哪些？</a></li>
-<li><a href="#25-%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BC%80%E5%A4%B4%E5%92%8C%E6%9C%AB%E5%B0%BE%E9%83%BD%E6%9C%89%E7%A9%BA%E6%A0%BC%E6%AF%94%E5%A6%82-adabdw-%E8%A6%81%E6%B1%82%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%8A%8A%E8%BF%99%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC%E9%83%BD%E5%8E%BB%E6%8E%89">25. 有一个字符串开头和末尾都有空格，比如“ adabdw ”，要求写一个函数把这个字符串的前后空格都去掉。</a></li>
-<li><a href="#26-%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2123456%E6%9C%80%E5%90%8E%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6">26. 获取字符串”123456“最后的两个字符。</a></li>
-<li><a href="#27-%E4%B8%80%E4%B8%AA%E7%BC%96%E7%A0%81%E4%B8%BA-gbk-%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-s%E8%A6%81%E5%B0%86%E5%85%B6%E8%BD%AC%E6%88%90-utf-8-%E7%BC%96%E7%A0%81%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BA%94%E5%A6%82%E4%BD%95%E6%93%8D%E4%BD%9C">27. 一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？</a></li>
-<li><a href="#28-1sinfoxiaozhang-33-shandong%E7%94%A8%E6%AD%A3%E5%88%99%E5%88%87%E5%88%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BAinfo-xiaozhang-33-shandong-2a-%E4%BD%A0%E5%A5%BD-%E4%B8%AD%E5%9B%BD-%E5%8E%BB%E9%99%A4%E5%A4%9A%E4%BD%99%E7%A9%BA%E6%A0%BC%E5%8F%AA%E7%95%99%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%A0%BC">28. （1）s=&quot;info：xiaoZhang 33 shandong&quot;，用正则切分字符串输出['info', 'xiaoZhang', '33', 'shandong']。（2）a = &quot;你好 中国 &quot;，去除多余空格只留一个空格。</a></li>
-<li><a href="#29-1-%E6%80%8E%E6%A0%B7%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%B0%8F%E5%86%99-2-%E5%8D%95%E5%BC%95%E5%8F%B7-%E5%8F%8C%E5%BC%95%E5%8F%B7-%E4%B8%89%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB">29. (1) 怎样将字符串转换为小写。 (2) 单引号、双引号、三引号的区别？</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%88%97%E8%A1%A8">数据类型 - 列表</a>
-<ul>
-<li><a href="#30-%E5%B7%B2%E7%9F%A5-alist-12312%E5%AF%B9-alist-%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0%E5%8E%BB%E9%87%8D%E5%86%99%E5%87%BA%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B">30. 已知 AList = [1,2,3,1,2]，对 AList 列表元素去重，写出具体过程。</a></li>
-<li><a href="#31-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0-123-%E5%8F%98%E6%88%90-123">31. 如何实现 &quot;1,2,3&quot; 变成 [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]</a></li>
-<li><a href="#32-%E7%BB%99%E5%AE%9A%E4%B8%A4%E4%B8%AA-lista-%E5%92%8C-b%E6%89%BE%E5%87%BA%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%8D%E5%90%8C%E5%85%83%E7%B4%A0">32. 给定两个 list，A 和 B，找出相同元素和不同元素</a></li>
-<li><a href="#33-123456-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%B1%95%E5%BC%80%E8%AF%A5%E5%88%97%E8%A1%A8%E5%BE%97%E5%87%BA-123456">33. [[1,2],[3,4],[5,6]] 一行代码展开该列表，得出 [1,2,3,4,5,6]</a></li>
-<li><a href="#34-%E5%90%88%E5%B9%B6%E5%88%97%E8%A1%A8-1579-%E5%92%8C-2268">34. 合并列表 [1,5,7,9] 和 [2,2,6,8]</a></li>
-<li><a href="#35-%E5%A6%82%E4%BD%95%E6%89%93%E4%B9%B1%E4%B8%80%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E5%85%83%E7%B4%A0">35. 如何打乱一个列表的元素？</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%AD%97%E5%85%B8">数据类型 - 字典</a>
-<ul>
-<li><a href="#36-%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E4%B8%AD-del-%E5%92%8C-pop-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">36. 字典操作中 del 和 pop 有什么区别</a></li>
-<li><a href="#37-%E6%8C%89%E7%85%A7%E5%AD%97%E5%85%B8%E7%9A%84%E5%86%85%E7%9A%84%E5%B9%B4%E9%BE%84%E6%8E%92%E5%BA%8F">37. 按照字典的内的年龄排序</a></li>
-<li><a href="#38-%E8%AF%B7%E5%90%88%E5%B9%B6%E4%B8%8B%E9%9D%A2%E4%B8%A4%E4%B8%AA%E5%AD%97%E5%85%B8-a-a1b2b-c3d4">38. 请合并下面两个字典 a = {&quot;A&quot;：1,&quot;B&quot;：2},b = {&quot;C&quot;：3,&quot;D&quot;：4}</a></li>
-<li><a href="#39-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%94%9F%E6%88%90%E5%BC%8F%E7%9A%84%E6%96%B9%E5%BC%8F%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%AD%97%E5%85%B8%E5%86%99%E4%B8%80%E6%AE%B5%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81">39. 如何使用生成式的方式生成一个字典，写一段功能代码。</a></li>
-<li><a href="#40-%E5%A6%82%E4%BD%95%E6%8A%8A%E5%85%83%E7%BB%84-ab-%E5%92%8C%E5%85%83%E7%BB%84-12%E5%8F%98%E4%B8%BA%E5%AD%97%E5%85%B8-a1b2">40. 如何把元组 (&quot;a&quot;,&quot;b&quot;) 和元组 (1,2)，变为字典 {&quot;a&quot;：1,&quot;b&quot;：2}</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E7%BB%BC%E5%90%88">数据类型 - 综合</a>
-<ul>
-<li><a href="#41-%E4%B8%8B%E5%88%97%E5%AD%97%E5%85%B8%E5%AF%B9%E8%B1%A1%E9%94%AE%E7%B1%BB%E5%9E%8B%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF">41. 下列字典对象键类型不正确的是？</a></li>
-<li><a href="#42-%E5%A6%82%E4%BD%95%E4%BA%A4%E6%8D%A2%E5%AD%97%E5%85%B8-a1b2%E7%9A%84%E9%94%AE%E5%92%8C%E5%80%BC">42. 如何交换字典 {&quot;A&quot;：1,&quot;B&quot;：2}的键和值</a></li>
-<li><a href="#43-python-%E9%87%8C%E9%9D%A2%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0-tuple-%E5%92%8C-list-%E7%9A%84%E8%BD%AC%E6%8D%A2">43. Python 里面如何实现 tuple 和 list 的转换？</a></li>
-<li><a href="#44-%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%E5%AF%B9%E4%BA%8E%E5%88%97%E8%A1%A8%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C%E8%BF%9B%E8%A1%8C%E9%83%A8%E5%88%86%E5%85%83%E7%B4%A0%E7%9A%84%E9%80%89%E6%8B%A9%E9%82%A3%E4%B9%88%E5%A6%82%E4%BD%95%E5%AF%B9%E7%94%9F%E6%88%90%E5%99%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%90%8C%E7%9A%84%E5%8A%9F%E8%83%BD%E5%91%A2">44. 我们知道对于列表可以使用切片操作进行部分元素的选择，那么如何对生成器类型的对象实现相同的功能呢？</a></li>
-<li><a href="#45-%E8%AF%B7%E5%B0%86-i-for-i-in-range3-%E6%94%B9%E6%88%90%E7%94%9F%E6%88%90%E5%99%A8">45. 请将 [i for i in range(3)] 改成生成器</a></li>
-<li><a href="#46-ahello-%E5%92%8C-b%E4%BD%A0%E5%A5%BD-%E7%BC%96%E7%A0%81%E6%88%90-bytes-%E7%B1%BB%E5%9E%8B">46. a=&quot;hello&quot; 和 b=&quot;你好&quot; 编码成 bytes 类型</a></li>
-<li><a href="#47-%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88">47. 下面的代码输出结果是什么？</a></li>
-<li><a href="#48-%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88">48. 下面的代码输出的结果是什么?</a></li>
-</ul>
-</li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E9%A2%98%E7%9B%AE">操作类题目</a>
-<ul>
-<li><a href="#49-python-%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC">49. Python 交换两个变量的值</a></li>
-<li><a href="#50-%E5%9C%A8%E8%AF%BB%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E5%80%99%E4%BC%9A%E4%BD%BF%E7%94%A8-read-readline-%E6%88%96%E8%80%85-readlines%E7%AE%80%E8%BF%B0%E5%AE%83%E4%BB%AC%E5%90%84%E8%87%AA%E7%9A%84%E4%BD%9C%E7%94%A8">50. 在读文件操作的时候会使用 read、readline 或者 readlines，简述它们各自的作用</a></li>
-<li><a href="#51-json-%E5%BA%8F%E5%88%97%E5%8C%96%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E5%A6%82%E4%BD%95%E5%AE%9A%E5%88%B6%E6%94%AF%E6%8C%81-datetime-%E7%B1%BB%E5%9E%8B">51. json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？</a></li>
-<li><a href="#52-json-%E5%BA%8F%E5%88%97%E5%8C%96%E6%97%B6%E9%BB%98%E8%AE%A4%E9%81%87%E5%88%B0%E4%B8%AD%E6%96%87%E4%BC%9A%E8%BD%AC%E6%8D%A2%E6%88%90-unicode%E5%A6%82%E6%9E%9C%E6%83%B3%E8%A6%81%E4%BF%9D%E7%95%99%E4%B8%AD%E6%96%87%E6%80%8E%E4%B9%88%E5%8A%9E">52. json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？</a></li>
-<li><a href="#53-%E6%9C%89%E4%B8%A4%E4%B8%AA%E7%A3%81%E7%9B%98%E6%96%87%E4%BB%B6-a-%E5%92%8C-b%E5%90%84%E5%AD%98%E6%94%BE%E4%B8%80%E8%A1%8C%E5%AD%97%E6%AF%8D%E8%A6%81%E6%B1%82%E6%8A%8A%E8%BF%99%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E4%BF%A1%E6%81%AF%E5%90%88%E5%B9%B6%E6%8C%89%E5%AD%97%E6%AF%8D%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97%E8%BE%93%E5%87%BA%E5%88%B0%E4%B8%80%E4%B8%AA%E6%96%B0%E6%96%87%E4%BB%B6-c-%E4%B8%AD">53. 有两个磁盘文件 A 和 B，各存放一行字母，要求把这两个文件中的信息合并(按字母顺序排列)，输出到一个新文件 C 中。</a></li>
-<li><a href="#54-%E5%A6%82%E6%9E%9C%E5%BD%93%E5%89%8D%E7%9A%84%E6%97%A5%E6%9C%9F%E4%B8%BA-20190530%E8%A6%81%E6%B1%82%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E8%BE%93%E5%87%BA-n-%E5%A4%A9%E5%90%8E%E7%9A%84%E6%97%A5%E6%9C%9F%E6%AF%94%E5%A6%82-n-%E4%B8%BA-2%E5%88%99%E8%BE%93%E5%87%BA-20190601">54. 如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)。</a></li>
-<li><a href="#55-%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%8E%A5%E6%94%B6%E6%95%B4%E6%95%B0%E5%8F%82%E6%95%B0-n%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%87%BD%E6%95%B0%E7%9A%84%E5%8A%9F%E8%83%BD%E6%98%AF%E6%8A%8A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E5%92%8C-n-%E7%9B%B8%E4%B9%98%E5%B9%B6%E6%8A%8A%E7%BB%93%E6%9E%9C%E8%BF%94%E5%9B%9E">55. 写一个函数，接收整数参数 n，返回一个函数，函数的功能是把函数的参数和 n 相乘并把结果返回。</a></li>
-<li><a href="#56-%E4%B8%8B%E9%9D%A2%E4%BB%A3%E7%A0%81%E4%BC%9A%E5%AD%98%E5%9C%A8%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E6%94%B9%E8%BF%9B">56. 下面代码会存在什么问题，如何改进？</a></li>
-<li><a href="#57-%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA-1-100-%E4%B9%8B%E9%97%B4%E7%9A%84%E6%89%80%E6%9C%89%E5%81%B6%E6%95%B0">57. 一行代码输出 1-100 之间的所有偶数。</a></li>
-<li><a href="#58-with-%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%BD%9C%E7%94%A8%E5%86%99%E4%B8%80%E6%AE%B5%E4%BB%A3%E7%A0%81">58. with 语句的作用，写一段代码？</a></li>
-<li><a href="#59-python-%E5%AD%97%E5%85%B8%E5%92%8C-json-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95">59. Python 字典和 json 字符串相互转化方法</a></li>
-<li><a href="#60-%E8%AF%B7%E5%86%99%E4%B8%80%E4%B8%AA-python-%E9%80%BB%E8%BE%91%E8%AE%A1%E7%AE%97%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D%E6%95%B0%E9%87%8F">60. 请写一个 Python 逻辑，计算一个文件中的大写字母数量</a></li>
-<li><a href="#61-%E8%AF%B7%E5%86%99%E4%B8%80%E6%AE%B5-python%E8%BF%9E%E6%8E%A5mongo%E6%95%B0%E6%8D%AE%E5%BA%93%E7%84%B6%E5%90%8E%E7%9A%84%E6%9F%A5%E8%AF%A2%E4%BB%A3%E7%A0%81">61. 请写一段 Python连接Mongo数据库，然后的查询代码。</a></li>
-<li><a href="#62%E8%AF%B4%E4%B8%80%E8%AF%B4redis%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B">62.说一说Redis的基本类型</a></li>
-<li><a href="#63-%E8%AF%B7%E5%86%99%E4%B8%80%E6%AE%B5-python%E8%BF%9E%E6%8E%A5redis%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BB%A3%E7%A0%81">63. 请写一段 Python连接Redis数据库的代码。</a></li>
-<li><a href="#64-%E8%AF%B7%E5%86%99%E4%B8%80%E6%AE%B5-python%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BB%A3%E7%A0%81">64. 请写一段 Python连接Mysql数据库的代码。</a></li>
-<li><a href="#65%E4%BA%86%E8%A7%A3redis%E7%9A%84%E4%BA%8B%E5%8A%A1%E4%B9%88">65.了解Redis的事务么</a></li>
-<li><a href="#66%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E8%8C%83%E5%BC%8F%E4%B9%88">66.了解数据库的三范式么？</a></li>
-<li><a href="#67%E4%BA%86%E8%A7%A3%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E4%B9%88">67.了解分布式锁么</a></li>
-<li><a href="#68%E7%94%A8-python-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA-reids-%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%9A%84%E5%8A%9F%E8%83%BD">68.用 Python 实现一个 Reids 的分布式锁的功能</a></li>
-<li><a href="#69%E5%86%99%E4%B8%80%E6%AE%B5-python-%E4%BD%BF%E7%94%A8-mongo-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BB%A3%E7%A0%81">69.写一段 Python 使用 mongo 数据库创建索引的代码:</a></li>
-</ul>
-</li>
-<li><a href="#%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7">高级特性</a>
-<ul>
-<li><a href="#70-%E5%87%BD%E6%95%B0%E8%A3%85%E9%A5%B0%E5%99%A8%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%E8%AF%B7%E5%88%97%E4%B8%BE%E8%AF%B4%E6%98%8E">70. 函数装饰器有什么作用？请列举说明？</a></li>
-<li><a href="#71-python-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">71. Python 垃圾回收机制？</a></li>
-<li><a href="#72-%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0-_call_%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8">72. 魔法函数 _<em>call</em>_怎么使用?</a></li>
-<li><a href="#73-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%87%BD%E6%95%B0%E8%BF%98%E6%98%AF%E6%96%B9%E6%B3%95">73. 如何判断一个对象是函数还是方法？</a></li>
-<li><a href="#74-classmethod-%E5%92%8C-staticmethod-%E7%94%A8%E6%B3%95%E5%92%8C%E5%8C%BA%E5%88%AB">74. @classmethod 和 @staticmethod 用法和区别</a></li>
-<li><a href="#75-python-%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0">75. Python 中的接口如何实现？</a></li>
-<li><a href="#76-python-%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%B0%84%E4%BA%86%E8%A7%A3%E4%B9%88">76. Python 中的反射了解么?</a></li>
-<li><a href="#77-metaclass-%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">77. metaclass 作用？以及应用场景？</a></li>
-<li><a href="#78-hasattr-getattr-setattr-%E7%9A%84%E7%94%A8%E6%B3%95">78. hasattr()、getattr()、setattr() 的用法</a></li>
-<li><a href="#79-%E8%AF%B7%E5%88%97%E4%B8%BE%E4%BD%A0%E7%9F%A5%E9%81%93%E7%9A%84-python-%E7%9A%84%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95%E5%8F%8A%E7%94%A8%E9%80%94">79. 请列举你知道的 Python 的魔法方法及用途。</a></li>
-<li><a href="#80-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E4%B8%80%E4%B8%AA-python-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%B1%BB%E5%9E%8B">80. 如何知道一个 Python 对象的类型？</a></li>
-<li><a href="#81-python-%E7%9A%84%E4%BC%A0%E5%8F%82%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%9D%80">81. Python 的传参是传值还是传址？</a></li>
-<li><a href="#82-python-%E4%B8%AD%E7%9A%84%E5%85%83%E7%B1%BB-metaclass-%E4%BD%BF%E7%94%A8%E4%B8%BE%E4%BE%8B">82. Python 中的元类 (metaclass) 使用举例</a></li>
-<li><a href="#83-%E7%AE%80%E8%BF%B0-any-%E5%92%8C-all-%E6%96%B9%E6%B3%95">83. 简述 any() 和 all() 方法</a></li>
-<li><a href="#84-filter-%E6%96%B9%E6%B3%95%E6%B1%82%E5%87%BA%E5%88%97%E8%A1%A8%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E5%B9%B6%E6%9E%84%E9%80%A0%E6%96%B0%E5%88%97%E8%A1%A8a-1-2-3-4-5-6-7-8-9-10">84. filter 方法求出列表所有奇数并构造新列表，a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</a></li>
-<li><a href="#85-%E4%BB%80%E4%B9%88%E6%98%AF%E7%8C%B4%E5%AD%90%E8%A1%A5%E4%B8%81">85. 什么是猴子补丁？</a></li>
-<li><a href="#86-%E5%9C%A8-python-%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84">86. 在 Python 中是如何管理内存的？</a></li>
-<li><a href="#87-%E5%BD%93%E9%80%80%E5%87%BA-python-%E6%97%B6%E6%98%AF%E5%90%A6%E9%87%8A%E6%94%BE%E6%89%80%E6%9C%89%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D">87. 当退出 Python 时是否释放所有内存分配？</a></li>
-</ul>
-</li>
-<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>
-<ul>
-<li><a href="#88-1%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E5%87%BAwwwbaiducom%E4%B8%AD%E7%9A%84%E5%9C%B0%E5%9D%802a%E5%BC%A0%E6%98%8E-98-%E5%88%86%E7%94%A8-resub%E5%B0%86-98-%E6%9B%BF%E6%8D%A2%E4%B8%BA-100">88. （1）使用正则表达式匹配出<code>www.baidu.com</code>中的地址（2）a=&quot;张明 98 分&quot;，用 re.sub，将 98 替换为 100</a></li>
-<li><a href="#89-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E4%B8%AD%E5%92%8C%E5%8C%B9%E9%85%8D%E5%8C%BA%E5%88%AB">89. 正则表达式匹配中(.<em>)和(.</em>?)匹配区别？</a></li>
-<li><a href="#90-%E5%86%99%E4%B8%80%E6%AE%B5%E5%8C%B9%E9%85%8D%E9%82%AE%E7%AE%B1%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">90. 写一段匹配邮箱的正则表达式</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9">其他内容</a>
-<ul>
-<li><a href="#91-%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B-python-%E4%B8%AD-pass-%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%BD%9C%E7%94%A8">91. 解释一下 Python 中 pass 语句的作用？</a></li>
-<li><a href="#92-%E7%AE%80%E8%BF%B0%E4%BD%A0%E5%AF%B9-input%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3">92. 简述你对 input()函数的理解</a></li>
-<li><a href="#93-python-%E4%B8%AD%E7%9A%84-is-%E5%92%8C">93. Python 中的 is 和==</a></li>
-<li><a href="#94-python-%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F">94. Python 中的作用域</a></li>
-<li><a href="#95-%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E5%86%99%E6%B3%95%E5%92%8C%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">95. 三元运算写法和应用场景？</a></li>
-<li><a href="#96-%E4%BA%86%E8%A7%A3-enumerate-%E4%B9%88">96. 了解 enumerate 么？</a></li>
-<li><a href="#97-%E5%88%97%E4%B8%BE-5-%E4%B8%AA-python-%E4%B8%AD%E7%9A%84%E6%A0%87%E5%87%86%E6%A8%A1%E5%9D%97">97. 列举 5 个 Python 中的标准模块</a></li>
-<li><a href="#98-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%87%BD%E6%95%B0%E4%B8%AD%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">98. 如何在函数中设置一个全局变量</a></li>
-<li><a href="#99-pathlib-%E7%9A%84%E7%94%A8%E6%B3%95%E4%B8%BE%E4%BE%8B">99. pathlib 的用法举例</a></li>
-<li><a href="#100-python-%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">100. Python 中的异常处理，写一个简单的应用场景</a></li>
-<li><a href="#101-python-%E4%B8%AD%E9%80%92%E5%BD%92%E7%9A%84%E6%9C%80%E5%A4%A7%E6%AC%A1%E6%95%B0%E9%82%A3%E5%A6%82%E4%BD%95%E7%AA%81%E7%A0%B4%E5%91%A2">101. Python 中递归的最大次数，那如何突破呢？</a></li>
-<li><a href="#102-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84-mro">102. 什么是面向对象的 mro</a></li>
-<li><a href="#103-isinstance-%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">103. isinstance 作用以及应用场景？</a></li>
-<li><a href="#104-%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%AD%E8%A8%80%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">104. 什么是断言？应用场景？</a></li>
-<li><a href="#105-lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%BC%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">105. lambda 表达式格式以及应用场景？</a></li>
-<li><a href="#106-%E6%96%B0%E5%BC%8F%E7%B1%BB%E5%92%8C%E6%97%A7%E5%BC%8F%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB">106. 新式类和旧式类的区别</a></li>
-<li><a href="#107-dir%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%94%A8%E7%9A%84">107. dir()是干什么用的？</a></li>
-<li><a href="#108-%E4%B8%80%E4%B8%AA%E5%8C%85%E9%87%8C%E6%9C%89%E4%B8%89%E4%B8%AA%E6%A8%A1%E5%9D%97demo1py-demo2py-demo3py%E4%BD%86%E4%BD%BF%E7%94%A8-from-tools-import-%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E6%97%B6%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%8F%AA%E6%9C%89-demo1-demo3-%E8%A2%AB%E5%AF%BC%E5%85%A5%E4%BA%86">108. 一个包里有三个模块，demo1.py、demo2.py、demo3.py，但使用 from tools import *导入模块时，如何保证只有 demo1、demo3 被导入了。</a></li>
-<li><a href="#109-%E5%88%97%E4%B8%BE-5-%E4%B8%AA-python-%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%85%B6%E5%90%AB%E4%B9%89">109. 列举 5 个 Python 中的异常类型以及其含义</a></li>
-<li><a href="#110-copy-%E5%92%8C-deepcopy-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88">110. copy 和 deepcopy 的区别是什么？</a></li>
-<li><a href="#111-%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%BB%8F%E5%B8%B8%E9%81%87%E5%88%B0%E7%9A%84args-kwargs-%E5%90%AB%E4%B9%89%E5%8F%8A%E7%94%A8%E6%B3%95">111. 代码中经常遇到的*args, **kwargs 含义及用法。</a></li>
-<li><a href="#112-python-%E4%B8%AD%E4%BC%9A%E6%9C%89%E5%87%BD%E6%95%B0%E6%88%96%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%8C%85%E5%90%AB%E5%8D%95%E4%B8%8B%E5%88%92%E7%BA%BF%E5%89%8D%E7%BC%80%E5%92%8C%E7%BB%93%E5%B0%BE%E5%92%8C%E5%8F%8C%E4%B8%8B%E5%88%92%E7%BA%BF%E5%89%8D%E7%BC%80%E7%BB%93%E5%B0%BE%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88">112. Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?</a></li>
-<li><a href="#113-w-a-wb-%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB">113. w、a+、wb 文件写入模式的区别</a></li>
-<li><a href="#114-%E4%B8%BE%E4%BE%8B-sort-%E5%92%8C-sorted-%E7%9A%84%E5%8C%BA%E5%88%AB">114. 举例 sort 和 sorted 的区别</a></li>
-<li><a href="#115-%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%9F%E7%B4%A2%E5%BC%95">115. 什么是负索引？</a></li>
-<li><a href="#116-pprint-%E6%A8%A1%E5%9D%97%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%9A%84">116. pprint 模块是干什么的？</a></li>
-<li><a href="#117-%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B-python-%E4%B8%AD%E7%9A%84%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6">117. 解释一下 Python 中的赋值运算符</a></li>
-<li><a href="#118-%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B-python-%E4%B8%AD%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6">118. 解释一下 Python 中的逻辑运算符</a></li>
-<li><a href="#119-%E8%AE%B2%E8%AE%B2-python-%E4%B8%AD%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6">119. 讲讲 Python 中的位运算符</a></li>
-<li><a href="#120-%E5%9C%A8-python-%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%A4%9A%E8%BF%9B%E5%88%B6%E6%95%B0%E5%AD%97">120. 在 Python 中如何使用多进制数字？</a></li>
-<li><a href="#121-%E6%80%8E%E6%A0%B7%E5%A3%B0%E6%98%8E%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%B9%B6%E8%B5%8B%E5%80%BC">121. 怎样声明多个变量并赋值？</a></li>
-</ul>
-</li>
-<li><a href="#%E7%AE%97%E6%B3%95%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">算法和数据结构</a>
-<ul>
-<li><a href="#122-%E5%B7%B2%E7%9F%A5">122. 已知：</a></li>
-<li><a href="#123-%E7%94%A8-python-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E5%87%BD%E6%95%B0">123. 用 Python 实现一个二分查找的函数</a></li>
-<li><a href="#124-python-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95">124. Python 单例模式的实现方法</a></li>
-<li><a href="#125-%E4%BD%BF%E7%94%A8-python-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97">125. 使用 Python 实现一个斐波那契数列</a></li>
-<li><a href="#126-%E6%89%BE%E5%87%BA%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97">126. 找出列表中的重复数字</a></li>
-<li><a href="#127-%E6%89%BE%E5%87%BA%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%AA%E6%95%B0%E5%AD%97">127. 找出列表中的单个数字</a></li>
-<li><a href="#128-%E5%86%99%E4%B8%80%E4%B8%AA%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">128. 写一个冒泡排序</a></li>
-<li><a href="#129-%E5%86%99%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F">129. 写一个快速排序</a></li>
-<li><a href="#130-%E5%86%99%E4%B8%80%E4%B8%AA%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F">130. 写一个拓扑排序</a></li>
-<li><a href="#131-python-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%AE%A1%E7%AE%97">131. Python 实现一个二进制计算</a></li>
-<li><a href="#132-%E6%9C%89%E4%B8%80%E7%BB%84%E5%92%8C-%E7%AC%A6%E5%8F%B7%E8%A6%81%E6%B1%82%E5%B0%86%E6%8E%92%E5%88%B0%E5%B7%A6%E8%BE%B9-%E6%8E%92%E5%88%B0%E5%8F%B3%E8%BE%B9%E5%86%99%E5%87%BA%E5%85%B7%E4%BD%93%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95">132. 有一组“+”和“-”符号，要求将“+”排到左边，“-”排到右边，写出具体的实现方法。</a></li>
-<li><a href="#133-%E5%8D%95%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC">133. 单链表反转</a></li>
-<li><a href="#134-%E4%BA%A4%E5%8F%89%E9%93%BE%E8%A1%A8%E6%B1%82%E4%BA%A4%E7%82%B9">134. 交叉链表求交点</a></li>
-<li><a href="#135-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88">135. 用队列实现栈</a></li>
-<li><a href="#136-%E6%89%BE%E5%87%BA%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0">136. 找出数据流的中位数</a></li>
-<li><a href="#137-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%AC-k-%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0">137. 二叉搜索树中第 K 小的元素</a></li>
-</ul>
-</li>
-<li><a href="#%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3">爬虫相关</a>
-<ul>
-<li><a href="#138-%E5%9C%A8-requests-%E6%A8%A1%E5%9D%97%E4%B8%ADrequestscontent-%E5%92%8C-requeststext-%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">138. 在 requests 模块中，requests.content 和 requests.text 什么区别</a></li>
-<li><a href="#139-%E7%AE%80%E8%A6%81%E5%86%99%E4%B8%80%E4%B8%8B-lxml-%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%A1%86%E6%9E%B6">139. 简要写一下 lxml 模块的使用方法框架</a></li>
-<li><a href="#140-%E8%AF%B4%E4%B8%80%E8%AF%B4-scrapy-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">140. 说一说 scrapy 的工作流程</a></li>
-<li><a href="#141-scrapy-%E7%9A%84%E5%8E%BB%E9%87%8D%E5%8E%9F%E7%90%86">141. scrapy 的去重原理</a></li>
-<li><a href="#142-scrapy-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%9C%89%E5%87%A0%E7%A7%8D%E7%B1%BB%E4%BD%A0%E7%94%A8%E8%BF%87%E5%93%AA%E4%BA%9B%E4%B8%AD%E9%97%B4%E4%BB%B6">142. scrapy 中间件有几种类，你用过哪些中间件</a></li>
-<li><a href="#143-%E4%BD%A0%E5%86%99%E7%88%AC%E8%99%AB%E7%9A%84%E6%97%B6%E5%80%99%E9%83%BD%E9%81%87%E5%88%B0%E8%BF%87%E4%BB%80%E4%B9%88%E5%8F%8D%E7%88%AC%E8%99%AB%E6%8E%AA%E6%96%BD%E4%BD%A0%E6%98%AF%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E7%9A%84">143. 你写爬虫的时候都遇到过什么？反爬虫措施，你是怎么解决的？</a></li>
-<li><a href="#144-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%94%A8%E5%88%B0%E4%BB%A3%E7%90%86">144. 为什么会用到代理？</a></li>
-<li><a href="#145-%E4%BB%A3%E7%90%86%E5%A4%B1%E6%95%88%E4%BA%86%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86">145. 代理失效了怎么处理？</a></li>
-<li><a href="#146-%E5%88%97%E5%87%BA%E4%BD%A0%E7%9F%A5%E9%81%93-header-%E7%9A%84%E5%86%85%E5%AE%B9%E4%BB%A5%E5%8F%8A%E4%BF%A1%E6%81%AF">146. 列出你知道 header 的内容以及信息</a></li>
-<li><a href="#147-%E8%AF%B4%E4%B8%80%E8%AF%B4%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE-wwwbaiducom-%E8%8E%B7%E5%8F%96%E5%88%B0%E7%BB%93%E6%9E%9C%E6%95%B4%E4%B8%AA%E6%B5%81%E7%A8%8B">147. 说一说打开浏览器访问 www.baidu.com 获取到结果，整个流程。</a></li>
-<li><a href="#148-%E7%88%AC%E5%8F%96%E9%80%9F%E5%BA%A6%E8%BF%87%E5%BF%AB%E5%87%BA%E7%8E%B0%E4%BA%86%E9%AA%8C%E8%AF%81%E7%A0%81%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86">148. 爬取速度过快出现了验证码怎么处理</a></li>
-<li><a href="#149-scrapy-%E5%92%8C-scrapy-redis-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-redis-%E6%95%B0%E6%8D%AE%E5%BA%93">149. scrapy 和 scrapy-redis 有什么区别？为什么选择 redis 数据库？</a></li>
-<li><a href="#150-%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E4%B8%BB%E8%A6%81%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">150. 分布式爬虫主要解决什么问题</a></li>
-<li><a href="#151-%E5%86%99%E7%88%AC%E8%99%AB%E6%98%AF%E7%94%A8%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A5%BD%E8%BF%98%E6%98%AF%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A5%BD-%E4%B8%BA%E4%BB%80%E4%B9%88">151. 写爬虫是用多进程好？还是多线程好？ 为什么？</a></li>
-<li><a href="#152-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E6%9E%90%E5%99%A8%E4%BD%BF%E7%94%A8%E6%9C%80%E5%A4%9A%E7%9A%84%E6%98%AF%E5%93%AA%E5%87%A0%E4%B8%AA">152. 解析网页的解析器使用最多的是哪几个</a></li>
-<li><a href="#153-%E9%9C%80%E8%A6%81%E7%99%BB%E5%BD%95%E7%9A%84%E7%BD%91%E9%A1%B5%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%90%8C%E6%97%B6%E9%99%90%E5%88%B6-ipcookiesession%E5%85%B6%E4%B8%AD%E6%9C%89%E4%B8%80%E4%BA%9B%E6%98%AF%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E7%9A%84%E5%9C%A8%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E7%88%AC%E5%8F%96%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B">153. 需要登录的网页，如何解决同时限制 ip，cookie,session（其中有一些是动态生成的）在不使用动态爬取的情况下？</a></li>
-<li><a href="#154-%E9%AA%8C%E8%AF%81%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3">154. 验证码的解决?</a></li>
-<li><a href="#155-%E4%BD%BF%E7%94%A8%E6%9C%80%E5%A4%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93mysqlmongodbredis-%E7%AD%89%E5%AF%B9%E4%BB%96%E7%9A%84%E7%90%86%E8%A7%A3">155. 使用最多的数据库（mysql，mongodb，redis 等），对他的理解？</a></li>
-</ul>
-</li>
-<li><a href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B">网络编程</a>
-<ul>
-<li><a href="#156-tcp-%E5%92%8C-udp-%E7%9A%84%E5%8C%BA%E5%88%AB">156. TCP 和 UDP 的区别？</a></li>
-<li><a href="#157-%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B">157. 简要介绍三次握手和四次挥手</a></li>
-<li><a href="#158-%E4%BB%80%E4%B9%88%E6%98%AF%E7%B2%98%E5%8C%85-socket-%E4%B8%AD%E9%80%A0%E6%88%90%E7%B2%98%E5%8C%85%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88-%E5%93%AA%E4%BA%9B%E6%83%85%E5%86%B5%E4%BC%9A%E5%8F%91%E7%94%9F%E7%B2%98%E5%8C%85%E7%8E%B0%E8%B1%A1">158. 什么是粘包？ socket 中造成粘包的原因是什么？ 哪些情况会发生粘包现象？</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B9%B6%E5%8F%91">并发</a>
-<ul>
-<li><a href="#159-%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E-concurrentfuture-%E7%9A%84%E4%B8%AD%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E7%94%A8%E6%B3%95">159. 举例说明 concurrent.future 的中线程池的用法</a></li>
-<li><a href="#160-%E8%AF%B4%E4%B8%80%E8%AF%B4%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB">160. 说一说多线程，多进程和协程的区别。</a></li>
-<li><a href="#161-%E7%AE%80%E8%BF%B0-gil">161. 简述 GIL</a></li>
-<li><a href="#162-%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E5%A6%82%E4%BD%95%E9%80%9A%E4%BF%A1">162. 进程之间如何通信</a></li>
-<li><a href="#163-io-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E7%9A%84%E4%BD%9C%E7%94%A8">163. IO 多路复用的作用？</a></li>
-<li><a href="#164-select-poll-epoll-%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB">164. select、poll、epoll 模型的区别？</a></li>
-<li><a href="#165-%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C">165. 什么是并发和并行？</a></li>
-<li><a href="#166-%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B-1-%E8%AE%A9%E7%BA%BF%E7%A8%8B-2-%E5%8E%BB%E8%B0%83%E7%94%A8%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0">166. 一个线程 1 让线程 2 去调用一个函数怎么实现</a></li>
-<li><a href="#167-%E8%A7%A3%E9%87%8A%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E6%AD%A5%E9%9D%9E%E9%98%BB%E5%A1%9E">167. 解释什么是异步非阻塞？</a></li>
-<li><a href="#168-threadinglocal-%E7%9A%84%E4%BD%9C%E7%94%A8">168. threading.local 的作用？</a></li>
-</ul>
-</li>
-<li><a href="#git-%E9%9D%A2%E8%AF%95%E9%A2%98">Git 面试题</a>
-<ul>
-<li><a href="#169-%E8%AF%B4%E8%AF%B4%E4%BD%A0%E7%9F%A5%E9%81%93%E7%9A%84-git-%E5%91%BD%E4%BB%A4">169. 说说你知道的 git 命令</a></li>
-<li><a href="#170-git-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%9F%90%E6%AC%A1%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%94%B9%E7%9A%84%E5%86%85%E5%AE%B9">170. git 如何查看某次提交修改的内容</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/uIIrRO8Ty0">面试技巧</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/opJrPL36c">Django</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi">Python</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-">sublime</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF">Scrapy</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8">Flask</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp">感悟</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+            <ul class="social-media-icons">
+                
+                    
+                        <li>
+                            <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                                <i class="fab fa-github" title="github"></i>
+                                <span class="screen-reader-text">github</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.facebook.com/xiong.zh.397" data-animate-hover="pulse" class="facebook" target="_blank">
+                                <i class="fab fa-facebook" title="facebook"></i>
+                                <span class="screen-reader-text">facebook</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
         </div>
-      
     </div>
-  </div>
-</div>
 
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          历史归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 0.8s">
-          关于｜友链
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</div>
-    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Python面试题全解析2019 版</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2020-01-20 / 97 min read
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://xiong-zh.github.io">  ZhangXiong </a>
+            </div>
         </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">回到首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">历史归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">所有标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/documents/" target="_blank">后端图谱</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于｜友链</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b11.jpg" alt="">
+          <div class='featured-image lazy lazy-bg-image' data-background="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/b11.jpg">
+          </div>
         
-        <div class="post-content yue">
-          <h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
+
+        <div class="entry-meta">
+          <span class="date">· 2020-01-20 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://xiong-zh.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</a>
+          </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>Python面试题全解析2019 版</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
 <p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
 <!-- more -->
 <h4 id="1-谈谈对-python-和其他语言的区别-2">1. 谈谈对 Python 和其他语言的区别</h4>
@@ -2447,35 +2351,149 @@ for i in range(20)：
 <h4 id="170-git-如何查看某次提交修改的内容">170. git 如何查看某次提交修改的内容</h4>
 <p><strong>答</strong>：我们首先可以 git log 显示历史的提交列表 之后我们用 git show 便可以显示某次提交的修改内容 同样 git show filename 可以显示某次提交的某个内容的修改信息。</p>
 
-        </div>
-
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://xiong-zh.github.io/post/django-restframework-chu-bu-shi-yong">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  Django restframework初步使用
-                </h3>
-              </a>
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://xiong-zh.github.io/tag/uIIrRO8Ty0" title="View all posts in 面试技巧">面试技巧</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/opJrPL36c" title="View all posts in Django">Django</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/yaI-h-rVLi" title="View all posts in Python">Python</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/pWmUoqOzB-" title="View all posts in sublime">sublime</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/RKbXlPuzuF" title="View all posts in Scrapy">Scrapy</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/3e5ZUh7gT8" title="View all posts in Flask">Flask</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/VVhvu3OtMp" title="View all posts in 感悟">感悟</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/myAeoJ-TNY" title="View all posts in 书籍">书籍</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/KF0LJCmDpX" title="View all posts in 音乐分享">音乐分享</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/JGoq_olm9I" title="View all posts in Redis">Redis</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/tag/Gah7pxU-rM" title="View all posts in Linux">Linux</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+              </p>
             </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://xiong-zh.github.io/post/Python 110面试题归纳">
-                <h3 class="post-title">
-                  Python面试题归纳
-                  <i class="remixicon-arrow-right-line"></i>
-                </h3>
-              </a>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
             </div>
-          
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://xiong-zh.github.io/images/avatar.png?v=1580633362796" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://xiong-zh.github.io'>张雄</a> </span>
+            </div>
+            <div class="bio">
+              <p>凡心所向,素履所往。生如逆旅，一苇以航。</p>
+              
+                
+                  <a class="github" target="_blank"
+                     href="https://github.com/xiong-zh">
+                    <i class="fab fa-github" title="github"></i>
+                  </a>
+                
+              
+                
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/imzhangxiong">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
+                
+              
+                
+                  <a class="weibo" target="_blank"
+                     href="https://weibo.com/zhangxiongblog">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/yisyxi">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
+                
+              
+                
+                  <a class="facebook" target="_blank"
+                     href="https://www.facebook.com/xiong.zh.397">
+                    <i class="fab fa-facebook" title="facebook"></i>
+                  </a>
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
         </div>
-
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://xiong-zh.github.io/post/Python 110面试题归纳">下一篇->Python面试题归纳</a>
+              </div>
+            </nav>
+          
+      </div>
+      <section id="comments" class="comments">
         
           
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -2491,7 +2509,7 @@ for i in range(20)：
     repo: 'xiong-zh.github.io',
     owner: 'xiong-zh',
     admin: ['xiong-zh'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    id: location.pathname,      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
   })
 
@@ -2503,108 +2521,86 @@ for i in range(20)：
 
           
         
-
-      </div>
+      </section>
     </div>
-
-    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://xiong-zh.github.io"> ZhangXiong </a>
+    </h1>
+    <p class="site-description">凡心所向,素履所往。生如逆旅，一苇以航。</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+                <li>
+                    <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                        <i class="fab fa-github" title="github"></i>
+                        <span class="screen-reader-text">github</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.facebook.com/xiong.zh.397" data-animate-hover="pulse" class="facebook" target="_blank">
+                        <i class="fab fa-facebook" title="facebook"></i>
+                        <span class="screen-reader-text">facebook</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</p>
+    </div>
+</footer>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+    hljs.initHighlightingOnLoad()
 </script>
-  
-  </body>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/production.min.js"></script>
+
+</div>
+</body>
 </html>
+
