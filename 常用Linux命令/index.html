@@ -1,0 +1,779 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>常用Linux命令 | ZhangXiong</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1580804428778">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" type='text/css' media='all'>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/uIIrRO8Ty0">面试技巧</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/opJrPL36c">Django</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/yaI-h-rVLi">Python</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/pWmUoqOzB-">sublime</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/RKbXlPuzuF">Scrapy</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/3e5ZUh7gT8">Flask</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/VVhvu3OtMp">感悟</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+            <ul class="social-media-icons">
+                
+                    
+                        <li>
+                            <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                                <i class="fab fa-github" title="github"></i>
+                                <span class="screen-reader-text">github</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.facebook.com/xiong.zh.397" data-animate-hover="pulse" class="facebook" target="_blank">
+                                <i class="fab fa-facebook" title="facebook"></i>
+                                <span class="screen-reader-text">facebook</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://xiong-zh.github.io">  ZhangXiong </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">May you be faithful to yourself,live earnestly and laugh freel.</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">回到首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">历史归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">所有标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/documents/" target="_blank">后端图谱</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/about/">关于｜友链</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="http://zhangxiong-blog-pic.test.upcdn.net/blog/img/f24.jpg">
+          </div>
+        
+
+        <div class="entry-meta">
+          <span class="date">· 2020-01-14 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://xiong-zh.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</a>
+          </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>常用Linux命令</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>超全整理！Linux shell及常用36类命令汇总</p>
+<!-- more -->
+<pre><code>[root@ping ~]# tree -L 1 /
+</code></pre>
+<p>使用tree 命令查看根目录下的一层的目录结构</p>
+<pre><code>ls - list directory contents
+[root@ping ~]# ls -l /
+</code></pre>
+<p>以长格式显示文件和目录的信息</p>
+<pre><code>[root@ping ~]# ls -d /
+</code></pre>
+<p>显示目录和文件</p>
+<pre><code>[root@ping ~]# ls -d /*
+</code></pre>
+<p>根目录下的所有的目录和文件</p>
+<pre><code>cd - Change the shell working directory
+[root@ping ~]# cd -
+</code></pre>
+<p>上次一次所在的目录</p>
+<pre><code>[root@ping /]# cd .
+</code></pre>
+<p>当前目录</p>
+<pre><code>[root@ping ~]# cd ..
+</code></pre>
+<p>这个目录的上一次目录</p>
+<pre><code>[root@ping /]# cd ~
+</code></pre>
+<p>当前用户的家目录</p>
+<pre><code>pwd - Print the name of the current working directory.
+[root@ping ~]# pwd
+</code></pre>
+<p>查看当前所处的目录</p>
+<pre><code>cp - copy files and directories
+[root@ping ~]# cp
+</code></pre>
+<p>拷贝文件或目录</p>
+<pre><code>alias - Define or display aliases
+[root@ping ~]# alias rm =&quot;mv&quot;
+</code></pre>
+<p>定义别名alies 为mv 命令</p>
+<pre><code>unalias - Remove each NAME from the list of defined aliases
+[root@ping ~]# alias
+alias -rf='you want remvoe files or directories to mv'
+alias cp='cp -i'
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias mv='mv -i'
+[root@ping ~]# unalias mv
+</code></pre>
+<p>取消mv这个别名</p>
+<pre><code>cat - concatenate files and print on the standard output
+[root@ping ~]# cat -n /root/.bashrc
+</code></pre>
+<p>查看文件内容并列出行号</p>
+<pre><code>find - search for files in a directory hierarchy
+option:！取反、-a(and)并且、-o(or)
+[root@ping ~]# find / -type f -name &quot;useradd&quot;
+</code></pre>
+<p>查找根目录下文件类型为文本文件并且包含名字是&quot;useradd&quot; 的文件路径</p>
+<pre><code>head - output the first part of files
+[root@ping ~]# head /etc/services
+</code></pre>
+<p>默认查看文件前十行内容</p>
+<pre><code>tail - output the last part of files
+[root@ping ~]# tail /etc/passwd
+</code></pre>
+<p>默认查看文件后十行内容</p>
+<pre><code>[root@ping ~]# tail -f /var/log/messages
+</code></pre>
+<p>查看文件动态更新的内容</p>
+<pre><code>rpm - RPM Package Manager
+[root@ping ~]# rpm -ivh /mnt/Packages/elinks.el6_3.x86_64.rpm
+</code></pre>
+<p>安装显示输出rpm软件包情况</p>
+<pre><code>[root@ping ~]# rpm -qa | grep mysql
+</code></pre>
+<p>查看当前系统安装关于&quot;mysql&quot;的rpm包名</p>
+<pre><code>yum - Yellowdog Updater Modified
+[root@ping ~]# yum -y install ftp
+</code></pre>
+<p>用yum安装ftp管理工具</p>
+<pre><code>[root@ping ~]# yum grouplist
+</code></pre>
+<p>查看当前系统已经安装和可以安装的包组</p>
+<pre><code>[root@ping ~]# yum -y groupinstall PostgreSQL 数据库服务器
+</code></pre>
+<p>向当前系统中安装一组软件包</p>
+<pre><code>[root@ping ~]# yum info
+</code></pre>
+<p>显示关于软件包或组的详细信息</p>
+<pre><code>[root@ping ~]# yum groupinfo
+</code></pre>
+<p>查看yum和各个参数的详细信息</p>
+<pre><code>[root@ping ~]# yum serache all
+</code></pre>
+<p>在软件包详细信息中搜索指定字符串</p>
+<pre><code>seq - print a sequence of numbers
+[root@ping ~]# seq 5
+</code></pre>
+<p>生成序列从1到5的数字</p>
+<pre><code>[root@ping ~]# seq 3 5
+</code></pre>
+<p>生成序列从3到5的数字</p>
+<pre><code>[root@ping ~]# seq 3 3 10
+</code></pre>
+<p>生成序列3到10中间隔多少个数字</p>
+<pre><code>[root@ping ~]# seq -s &quot;&quot; 5
+</code></pre>
+<p>12345<br>
+-s指定分隔符为空</p>
+<pre><code>[root@ping ~]# seq -w 10
+</code></pre>
+<p>生成两位数的数字并对齐</p>
+<pre><code>hostname - show or set the system’s host name
+[root@ping ~]# hostname
+ping
+</code></pre>
+<p>显示系统主机名</p>
+<pre><code>uname - print system information
+[root@ping ~]# uname -r
+2.6.32-573.el6.x86_64
+</code></pre>
+<p>显示当前系统的内核版本和操作系统位数</p>
+<pre><code>[root@ping ~]# uname -a
+Linux ping 2.6.32-573.el6.x86_64 #1 SMP Wed Jul 1 18:23:37 EDT 2015 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre>
+<p>显示当前系统的所有版本信息</p>
+<pre><code>[root@ping ~]# uname -m
+x86_64
+</code></pre>
+<p>显示当前系统的操作系统位数</p>
+<pre><code>whoami - print effective userid
+[root@ping ~]# whoami
+root
+</code></pre>
+<p>查看当前登录系统的用户名</p>
+<pre><code>su - run a shell with substitute user and group IDs
+[root@ping ~]# su - ping
+</code></pre>
+<p>切换普通用户为ping</p>
+<pre><code>logout - Exit a login shell
+[root@ping ~]# logout
+</code></pre>
+<p>退出当前登录shell</p>
+<pre><code>history - Display or manipulate the history list
+[root@ping ~]# history
+</code></pre>
+<p>查看当前用户输入命令的历史记录</p>
+<pre><code>[root@ping ~]# history -d 122
+</code></pre>
+<p>指定122行的命令历史记录清除</p>
+<pre><code>[root@ping ~]# history -c
+</code></pre>
+<p>清除当前用户输入命令所有历史记录</p>
+<pre><code>runlevel - output previous and current runlevel
+[root@ping ~]# runlevel
+N 3
+</code></pre>
+<p>查看当前系统的运行级别</p>
+<pre><code>init - Upstart process management daemon
+[root@ping ~]# init 5
+</code></pre>
+<p>切换当前系统的运行级别</p>
+<pre><code>chkconfig - updates and queries runlevel information for system services
+[root@ping ~]# chkconfig sshd on
+</code></pre>
+<p>使ssh服务开机自启动</p>
+<pre><code>[root@ping ~]# chkconfig --list sshd
+</code></pre>
+<p>查看ssh服务在每一个运行级别是否为开机自启动</p>
+<pre><code>which - shows the full path of (shell) commands
+[root@ping ~]# which ps
+</code></pre>
+<p>搜索ps命令的绝对路径</p>
+<pre><code>whereis - locate the binary, source, and manual page files for a com-mand
+[root@ping ~]# whereis jobs
+</code></pre>
+<p>搜索命令的文件所在的绝对路径</p>
+<pre><code>[root@ping ~]# whereis -b ping
+</code></pre>
+<p>只搜索命令的二进制文件的绝对路径<br>
+开户网卡和重新读取配置文件</p>
+<pre><code>[root@ping ~]# ifdown eth0 &amp;&amp; ifup eth0 ==》 [root@ping ~]# /etc/init.d/network reload
+blkid - command-line utility to locate/print block device attributes
+[root@ping ~]# blkid
+</code></pre>
+<p>查看当前系统块设备的UUID号</p>
+<pre><code>BASH_BUILTINS(1)
+alias, bg, bind, break, builtin, caller, cd, command,
+compgen, complete, compopt, continue, declare, dirs, disown, echo,enable, eval, exec, exit, export, false, fc, fg, getopts, hash, help,history, jobs, kill, let, local, logout, mapfile, popd, printf, pushd,pwd, read, readonly, return, set, shift, shopt, source, suspend, test,times, trap, true, type, typeset, ulimit, umask, unalias, unset, wait
+</code></pre>
+<p>Linux中所有的内置命令，我们说which只能在PATH变量中搜索命令的绝对路径，内置命令是内置在bash中的，所以我们找不到</p>
+<pre><code>[root@ping ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+</code></pre>
+<p>DEVICE=eth0 #《==物理设备名，eth1表示第2块网卡</p>
+<p>ONBOOT=yes #《==控制网卡是否为开机自启动</p>
+<p>NM_CONTROLLED=yes #《==是一个可以让networkmanage管理的工具</p>
+<p>BOOTPROTO=none #《==其中，proto取下列值这一：none，引导时不使用 协议;</p>
+<p>static静态分配地址;bootp，使用bootp协议, 使用dhcp协议</p>
+<pre><code>IPADDR=192.168.114.5 #《==ip address是IP地址
+netmask=255.255.255.0 #《==子网掩码，划分网络位和主机位。
+resolv.conf - resolver configuration file
+
+[root@ping ~]# cat /etc/resolv.conf
+</code></pre>
+<p>DNS的客户端文件,DNS在网卡的文件中也可以配置</p>
+<pre><code>[root@ping ~]# cat /etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 202.106.0.20
+</code></pre>
+<ul>
+<li>一般最好配置两个DNS，一个主，一个备</li>
+<li>不要配置网卡里设置DNS优先于/etc/resolv.conf<br>
+小结：<br>
+1、客户端DNS可以在网卡配置文件里设置（ifcfg-eth0）<br>
+2、客户端DNS也可以在/etc/resolv.conf里设置<br>
+3、网卡里的设置DNS优先于/etc/resolv.conf</li>
+</ul>
+<pre><code>hosts - The static table lookup for hostnames
+[root@ping ~]# cat /etc/hosts
+</code></pre>
+<p>设定用户IP与名字(或域名)的对应解析表，相当于本地LAN局域网内的DNS</p>
+<p>对应windows的文件路径：C:\Windows\System32\drivers\etc\hosts<br>
+/etc/hosts:局域网 主机名和ip地址的解析，相当于DNS工具<br>
+hosts企业里的作用：<br>
+1.开发、产品、测试等人员，用于通过正式的域名测试产品<br>
+2.服务器之间的调用可以用域名(内部DNS),方便迁移</p>
+<pre><code>[root@ping ~]# cat /etc/sysconfig/network
+</code></pre>
+<p>配置主机的主机名的配置文件</p>
+<pre><code>fstab - static information about the filesystems
+[root@ping ~]# cat /etc/fstab
+</code></pre>
+<p>设置文件系统挂载信息的文件，使得开机自动挂载磁盘分区<br>
+The third field:such as adfs, affs, autofs,coda, coherent, cramfs, devpts, efs, ext2, ext3, hfs, hpfs, iso9660,jfs, minix, msdos, ncpfs, nfs, ntfs, proc, qnx4, reiserfs, romfs,smbfs, sysv, tmpfs, udf, ufs, umsdos, vfat, xenix, xfs, and possiblyothers.<br>
+包含了所有的Linux文件系统类型</p>
+<pre><code>df - report file system disk space usage
+[root@ping ~]# df -h
+</code></pre>
+<p>以人类可读的信息查看磁盘挂载信息</p>
+<pre><code>mount - mount a filesystem
+[root@ping ~]# mount
+</code></pre>
+<p>查看当前系统中所使用的文件系统类型</p>
+<pre><code>[root@ping ~]# mount -t ext4 -o loop,noatime,noexec /dev/sdb1 /mnt
+</code></pre>
+<p>-o 参数：noatime,noexec不改变时间戳，不改变命令<br>
+手动挂载一个文件系统<br>
+挂载：<br>
+1.命令</p>
+<pre><code>[root@ping ~]# mount -t ext4 -o noexec /dev/sdb1 /mnt
+</code></pre>
+<p>2.文件</p>
+<pre><code>[root@ping ~]# vim /etc/fstab
+dd - convert and copy a file
+[root@ping ~]# dd if=/dev/zero of=/dev/sdb1 bs=4096 count=10
+</code></pre>
+<p>生成一个文件系统</p>
+<pre><code>mke2fs - create an ext2/ext3/ext4 filesystem
+[root@ping ~]# mkfs.ext4 /dev/sdb1
+</code></pre>
+<p>格式化文件系统/dev/sdb1</p>
+<p>测试手动挂载：<br>
+1.创建一个虚拟的块设备</p>
+<pre><code>dd if=/dev/zero of=/dev/sdb1 bs=4906 count=100
+</code></pre>
+<p>2.格式化</p>
+<pre><code>mkfs.ext4 /dev/sdb1
+</code></pre>
+<p>3.挂载</p>
+<pre><code>mount -t ext4 -o loop,noatime,noexec /dev/sda1 /mnt
+fsck - check and repair a Linux file system
+</code></pre>
+<pre><code>[root@ping ~]# fsck -A /dev/sda
+</code></pre>
+<p>磁盘检查(不要检查好磁盘），卸载的状态检查</p>
+
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://xiong-zh.github.io/uIIrRO8Ty0" title="View all posts in 面试技巧">面试技巧</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/opJrPL36c" title="View all posts in Django">Django</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/yaI-h-rVLi" title="View all posts in Python">Python</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/pWmUoqOzB-" title="View all posts in sublime">sublime</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/RKbXlPuzuF" title="View all posts in Scrapy">Scrapy</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/3e5ZUh7gT8" title="View all posts in Flask">Flask</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/VVhvu3OtMp" title="View all posts in 感悟">感悟</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/myAeoJ-TNY" title="View all posts in 书籍">书籍</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/KF0LJCmDpX" title="View all posts in 音乐分享">音乐分享</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/JGoq_olm9I" title="View all posts in Redis">Redis</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/Gah7pxU-rM" title="View all posts in Linux">Linux</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://xiong-zh.github.io/images/avatar.png?v=1580804428778" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://xiong-zh.github.io'>张雄</a> </span>
+            </div>
+            <div class="bio">
+              <p>凡心所向,素履所往。生如逆旅，一苇以航。</p>
+              
+                
+                  <a class="github" target="_blank"
+                     href="https://github.com/xiong-zh">
+                    <i class="fab fa-github" title="github"></i>
+                  </a>
+                
+              
+                
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/imzhangxiong">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
+                
+              
+                
+                  <a class="weibo" target="_blank"
+                     href="https://weibo.com/zhangxiongblog">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/yisyxi">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
+                
+              
+                
+                  <a class="facebook" target="_blank"
+                     href="https://www.facebook.com/xiong.zh.397">
+                    <i class="fab fa-facebook" title="facebook"></i>
+                  </a>
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://xiong-zh.github.io/推荐一些Flask资源">下一篇->推荐一些Flask资源</a>
+              </div>
+            </nav>
+          
+      </div>
+      <section id="comments" class="comments">
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+      </section>
+    </div>
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://xiong-zh.github.io"> ZhangXiong </a>
+    </h1>
+    <p class="site-description">May you be faithful to yourself,live earnestly and laugh freel.</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+                <li>
+                    <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                        <i class="fab fa-github" title="github"></i>
+                        <span class="screen-reader-text">github</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.facebook.com/xiong.zh.397" data-animate-hover="pulse" class="facebook" target="_blank">
+                        <i class="fab fa-facebook" title="facebook"></i>
+                        <span class="screen-reader-text">facebook</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">zhangxiong</a> 版权所有</p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/production.min.js"></script>
+
+</div>
+</body>
+</html>
+
