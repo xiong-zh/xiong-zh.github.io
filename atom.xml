@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-02-18T07:05:21.113Z</updated>
+    <updated>2020-02-18T16:24:53.540Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,17 +10,6 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
-    <entry>
-        <title type="html"><![CDATA[2020阅读书单]]></title>
-        <id>https://xiong-zh.github.io/2020-yue-du-shu-dan/</id>
-        <link href="https://xiong-zh.github.io/2020-yue-du-shu-dan/">
-        </link>
-        <updated>2020-02-16T16:42:02.000Z</updated>
-        <summary type="html"><![CDATA[<p>又到了今年书单出炉的适合了。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>又到了今年书单出炉的适合了。</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Python全栈工程师核心面试300问深入解析]]></title>
         <id>https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/</id>
@@ -122,6 +111,33 @@
 3、核心模块用Cython  PyPy等，提高效率<br>
 4、多进程、多线程、协程<br>
 5、多个if elif条件判断，可以把最有可能先发生的条件放到前面写，这样可以减少程序判断的次数，提高效率</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flask_SQLALchemy]]></title>
+        <id>https://xiong-zh.github.io/flask_sqlalchemy/</id>
+        <link href="https://xiong-zh.github.io/flask_sqlalchemy/">
+        </link>
+        <updated>2020-01-20T04:47:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>SQLAlchemy常用数据类型：</p>
+<ol>
+<li>Integer：整形，映射到数据库中是int类型。</li>
+<li>Float：浮点类型，映射到数据库中是float类型。他占据的32位。</li>
+<li>Double：双精度浮点类型，映射到数据库中是double类型，占据64位。</li>
+<li>String：可变字符类型，映射到数据库中是varchar类型.</li>
+<li>Boolean：布尔类型，映射到数据库中的是tinyint类型。</li>
+<li>DECIMAL：定点类型。是专门为了解决浮点类型精度丢失的问题的。</li>
+</ol>
+]]></summary>
+        <content type="html"><![CDATA[<p>SQLAlchemy常用数据类型：</p>
+<ol>
+<li>Integer：整形，映射到数据库中是int类型。</li>
+<li>Float：浮点类型，映射到数据库中是float类型。他占据的32位。</li>
+<li>Double：双精度浮点类型，映射到数据库中是double类型，占据64位。</li>
+<li>String：可变字符类型，映射到数据库中是varchar类型.</li>
+<li>Boolean：布尔类型，映射到数据库中的是tinyint类型。</li>
+<li>DECIMAL：定点类型。是专门为了解决浮点类型精度丢失的问题的。</li>
+</ol>
 ]]></content>
     </entry>
 </feed>
