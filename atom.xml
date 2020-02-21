@@ -2,14 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-02-20T05:48:03.794Z</updated>
+    <updated>2020-02-21T13:30:09.131Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
-    <subtitle>内外兼修，为的是凡事都能成为自己的机遇。</subtitle>
+    <subtitle>当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</subtitle>
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
+    <entry>
+        <title type="html"><![CDATA[Jupyter NoteBook 的快捷键使用指南]]></title>
+        <id>https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/</id>
+        <link href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">
+        </link>
+        <updated>2020-02-21T03:39:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python全栈工程师核心面试300问深入解析]]></title>
         <id>https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/</id>
@@ -123,19 +134,6 @@
 <li>Boolean：布尔类型，映射到数据库中的是tinyint类型。</li>
 <li>DECIMAL：定点类型。是专门为了解决浮点类型精度丢失的问题的。</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[个人书籍]]></title>
-        <id>https://xiong-zh.github.io/ge-ren-shu-ji/</id>
-        <link href="https://xiong-zh.github.io/ge-ren-shu-ji/">
-        </link>
-        <updated>2020-01-19T07:10:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>注： 在学习和工作的过程中，遇到一些bug，大佬难寻或一时难已解决，或需求与现状对不上等一系列问题，于是萌生了写一些较完整成体系的文章记录遇到的问题和解决之道的文章。所以一下的书籍就这样出现了。<br>
-其中还有非常多的想法还没有实现，或者还没有呈现出来，有许多不完美的地方，在后续会不断实现并加以完善。在这里诚恳的希望读者能提出宝贵的意见和你的期待，你可以通过本博客中留的方式联系到我。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>注： 在学习和工作的过程中，遇到一些bug，大佬难寻或一时难已解决，或需求与现状对不上等一系列问题，于是萌生了写一些较完整成体系的文章记录遇到的问题和解决之道的文章。所以一下的书籍就这样出现了。<br>
-其中还有非常多的想法还没有实现，或者还没有呈现出来，有许多不完美的地方，在后续会不断实现并加以完善。在这里诚恳的希望读者能提出宝贵的意见和你的期待，你可以通过本博客中留的方式联系到我。</p>
 ]]></content>
     </entry>
 </feed>

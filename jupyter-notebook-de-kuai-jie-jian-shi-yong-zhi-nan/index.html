@@ -1,0 +1,616 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jupyter NoteBook 的快捷键使用指南 | ZhangXiong</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582291795263">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Jupyter NoteBook 的快捷键使用指南 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+    <meta name="description" content="Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 Vim有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。
+
+在命令模式下，可以用快捷键命令运行单元格..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://xiong-zh.github.io">
+  <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1582291795263" alt="">
+  </a>
+  <h1 class="site-title">
+    ZhangXiong
+  </h1>
+  <p class="site-description">
+    当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          回到首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          历史归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          所有标签
+        </a>
+      
+    
+      
+        <a href="/documents/" class="menu" target="_blank">
+          后端图谱
+        </a>
+      
+    
+      
+        <a href="/about/" class="menu">
+          关于｜友链
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/xiong-zh" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/imzhangxiong" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/zhangxiongblog" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Jupyter NoteBook 的快捷键使用指南
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-21
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://zhangxiong.net/images/blog_picture/cover/011.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
+<!-- more -->
+<p>在命令模式下，可以用快捷键命令运行单元格，移动单元格，切换单元格编辑状态等等，此时的单元格被灰色的框线包围，且编辑模式下的快捷键不生效。</p>
+<p>从命令模式进入编辑模式需按 <code>Enter</code> 键，从编辑模式切换到命令模式需按 <code>Esc</code> 键。</p>
+<p>以下两表分别是对命令和编辑两种模式下快捷键的简单说明：</p>
+<h3 id="命令模式快捷键按-esc-键开启">命令模式快捷键（按 Esc 键开启）:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Enter</td>
+<td style="text-align:left">转入编辑模式</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-Enter</td>
+<td style="text-align:left">运行本单元，选中下个单元</td>
+<td style="text-align:left">新单元默认为命令模式</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Enter</td>
+<td style="text-align:left">运行本单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Alt-Enter</td>
+<td style="text-align:left">运行本单元，在其下插入新单元</td>
+<td style="text-align:left">新单元默认为编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">Y</td>
+<td style="text-align:left">单元转入代码状态</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">M</td>
+<td style="text-align:left">单元转入 markdown 状态</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">R</td>
+<td style="text-align:left">单元转入 raw 状态</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">设定 1 级标题</td>
+<td style="text-align:left">仅在 markdown 状态下时建议使用标题相关快捷键，如果单元处于其他状态，则会强制切换到 markdown 状态</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">设定 2 级标题</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">设定 3 级标题</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">设定 4 级标题</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">设定 5 级标题</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">设定 6 级标题</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Up</td>
+<td style="text-align:left">选中上方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">K</td>
+<td style="text-align:left">选中上方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Down</td>
+<td style="text-align:left">选中下方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">J</td>
+<td style="text-align:left">选中下方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-K</td>
+<td style="text-align:left">连续选择上方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-J</td>
+<td style="text-align:left">连续选择下方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">在上方插入新单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">B</td>
+<td style="text-align:left">在下方插入新单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">X</td>
+<td style="text-align:left">剪切选中的单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">C</td>
+<td style="text-align:left">复制选中的单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-V</td>
+<td style="text-align:left">粘贴到上方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">V</td>
+<td style="text-align:left">粘贴到下方单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Z</td>
+<td style="text-align:left">恢复删除的最后一个单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">D,D</td>
+<td style="text-align:left">删除选中的单元</td>
+<td style="text-align:left">连续按两个 D 键</td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-M</td>
+<td style="text-align:left">合并选中的单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-S</td>
+<td style="text-align:left">保存当前 NoteBook</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">S</td>
+<td style="text-align:left">保存当前 NoteBook</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">L</td>
+<td style="text-align:left">开关行号</td>
+<td style="text-align:left">编辑框的行号是可以开启和关闭的</td>
+</tr>
+<tr>
+<td style="text-align:left">O</td>
+<td style="text-align:left">转换输出</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-O</td>
+<td style="text-align:left">转换输出滚动</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Esc</td>
+<td style="text-align:left">关闭页面</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Q</td>
+<td style="text-align:left">关闭页面</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">H</td>
+<td style="text-align:left">显示快捷键帮助</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">I,I</td>
+<td style="text-align:left">中断 NoteBook 内核</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">0,0</td>
+<td style="text-align:left">重启 NoteBook 内核</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift</td>
+<td style="text-align:left">忽略</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-Space</td>
+<td style="text-align:left">向上滚动</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Space</td>
+<td style="text-align:left">向下滚动</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="编辑模式快捷键-按-enter-键启动">编辑模式快捷键（ 按 Enter 键启动）:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Tab</td>
+<td style="text-align:left">代码补全或缩进</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-Tab</td>
+<td style="text-align:left">提示</td>
+<td style="text-align:left">输出帮助信息，部分函数、类、方法等会显示其定义原型，如果在其后加 <code>?</code> 再运行会显示更加详细的帮助</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-]</td>
+<td style="text-align:left">缩进</td>
+<td style="text-align:left">向右缩进</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-[</td>
+<td style="text-align:left">解除缩进</td>
+<td style="text-align:left">向左缩进</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-A</td>
+<td style="text-align:left">全选</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Z</td>
+<td style="text-align:left">撤销</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Shift-Z</td>
+<td style="text-align:left">重做</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Y</td>
+<td style="text-align:left">重做</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Home</td>
+<td style="text-align:left">跳到单元开头</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Up</td>
+<td style="text-align:left">跳到单元开头</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-End</td>
+<td style="text-align:left">跳到单元末尾</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Down</td>
+<td style="text-align:left">跳到单元末尾</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Left</td>
+<td style="text-align:left">跳到左边一个字首</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Right</td>
+<td style="text-align:left">跳到右边一个字首</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Backspace</td>
+<td style="text-align:left">删除前面一个字</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Delete</td>
+<td style="text-align:left">删除后面一个字</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Esc</td>
+<td style="text-align:left">切换到命令模式</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-M</td>
+<td style="text-align:left">切换到命令模式</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift-Enter</td>
+<td style="text-align:left">运行本单元，选中下一单元</td>
+<td style="text-align:left">新单元默认为命令模式</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Enter</td>
+<td style="text-align:left">运行本单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Alt-Enter</td>
+<td style="text-align:left">运行本单元，在下面插入一单元</td>
+<td style="text-align:left">新单元默认为编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Shift--</td>
+<td style="text-align:left">分割单元</td>
+<td style="text-align:left">按光标所在行进行分割</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-Shift-Subtract</td>
+<td style="text-align:left">分割单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-S</td>
+<td style="text-align:left">保存当前 NoteBook</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Shift</td>
+<td style="text-align:left">忽略</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Up</td>
+<td style="text-align:left">光标上移或转入上一单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Down</td>
+<td style="text-align:left">光标下移或转入下一单元</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl-/</td>
+<td style="text-align:left">注释整行/撤销注释</td>
+<td style="text-align:left">仅代码状态有效</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注：</strong> 如果快捷键被系统中的其它应用占用，则可能会失效</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8C%89-esc-%E9%94%AE%E5%BC%80%E5%90%AF">命令模式快捷键（按 Esc 键开启）:</a></li>
+<li><a href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E5%BF%AB%E6%8D%B7%E9%94%AE-%E6%8C%89-enter-%E9%94%AE%E5%90%AF%E5%8A%A8">编辑模式快捷键（ 按 Enter 键启动）:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/">
+              <h3 class="post-title">
+                Python全栈工程师核心面试300问深入解析
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
