@@ -1,0 +1,260 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Django restframework初步使用 | ZhangXiong</title>
+<meta name="description" content="当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582440689040">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Django restframework初步使用 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/about/">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/031.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/031.jpg); height: 80vw;">
+          <h1 class="post-title">Django restframework初步使用</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">Django restframework初步使用</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-01-22 16:53:05">2020-01-22</time>
+        <span class="author vcard">
+          3 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
+</ul>
+<!-- more -->
+<h3 id="安装djangorestframework">安装djangorestframework</h3>
+<pre><code>pip install djangorestframework
+</code></pre>
+<h3 id="在django项目中的settingspy文件中进行配置">在Django项目中的settings.py文件中进行配置</h3>
+<p>在INSTALL_APPS中加入应用</p>
+<pre><code>INSTALLED_APPS = [
+    ...
+    'rest_framework',
+]
+</code></pre>
+<h3 id="在app名modelspy创建数据模型">在APP名/models.py创建数据模型</h3>
+<pre><code>class File(models.Model):
+  # 名称
+  name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
+</code></pre>
+<p>###创建完数据模型之后，下面就要真正的开始对djangorestframework的使用了</p>
+<p>（1）在该APP下创建serializers.py，注意文件名必须为serializers.py，不能使用其他的！</p>
+<pre><code>from rest_framework serializers
+
+
+# 第一种序列化方式，该序列化器是通用的，但是要被序列化的模型有我们定义的字段，如name
+class FileSerializer(serializers.Serializer):
+    name = serializers.CharField()
+
+ 
+# 第二种序列化方式相对来说可以省很多代码，但是只能对File模型使用，因为我们指定了序列化
+# 的模型为File
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = ('id', 'name')  # 元组内为数据模型中需要序列化的字段
+</code></pre>
+<p>添加处理视图</p>
+<p>（1）采用CBV的模式进行开发，视图处理逻辑为返回所有的文件信息</p>
+<pre><code>Class AllFilesAPI(APIView):
+    def get(self,request,**kwargs):
+        files = File.objects.all()
+        file_data = FileSerializer(files, many=True)
+        Response(file_data.data)
+</code></pre>
+<p>（2）处理的视图继承了djangorestframework的APIview，该视图封装好了get和post等其他request请求方法，我们只需要根据我们的需求重写对应的方法即可。</p>
+<p>（3）数据的返回方法也改用djangorestframework的Response，否则接受不到响应结果，另外需要注意的只能传输Json数据，因为它将django自带的JsonResponse进行了封装。</p>
+<p>###在APP名/urls.py中添加对应的路由</p>
+<pre><code>from . import views
+
+urlpatterns = [
+    url(views.AllFilesAPI.as_view()),
+]
+</code></pre>
+<p>到此为止，djangorestframework的简单实用已经初步完成，接下里通过postman访问我们定义的路由即可看到系统返回的json数据。</p>
+<p><strong>总结：</strong></p>
+<p>对于前后端开发来说，后台返回的数据一般都是json数据，而djangorestframework也给我们封装好了数据序列化的方式。</p>
+<p>对于djangorestframework的使用本文只是简单的做了一个demo，还有很多的知识点还需要我们继续摸索</p>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/opJrPL36c/">
+              Django
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/xin-nian-da-ji/">
+            <strong>新年大吉</strong>
+          </a>
+        </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/">
+            <strong>Python面试题全解析2019 版</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+      
+
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1582440689040" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>

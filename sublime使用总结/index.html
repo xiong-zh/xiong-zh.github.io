@@ -1,0 +1,316 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>sublime使用总结 | ZhangXiong</title>
+<meta name="description" content="当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582440689040">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="sublime使用总结 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/about/">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/048.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/048.jpg); height: 80vw;">
+          <h1 class="post-title">sublime使用总结</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">sublime使用总结</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-01-16 00:11:48">2020-01-16</time>
+        <span class="author vcard">
+          5 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <h2 id="快捷键">快捷键</h2>
+<h3 id="新建文件">新建文件</h3>
+<blockquote>
+<ol>
+<li>Ctrl+N：新建窗口</li>
+<li>输入文件名</li>
+<li>Ctrl+S：保存</li>
+</ol>
+</blockquote>
+<!-- more -->
+<h1 id="sublime3-使用总结">sublime3 使用总结</h1>
+<h2 id="快捷键-2">快捷键</h2>
+<h3 id="新建文件-2">新建文件</h3>
+<blockquote>
+<ol>
+<li>Ctrl+N：新建窗口</li>
+<li>输入文件名</li>
+<li>Ctrl+S：保存</li>
+</ol>
+</blockquote>
+<h3 id="列编辑">列编辑</h3>
+<blockquote>
+<ol>
+<li>Ctrl+A 全选</li>
+<li>Ctrl+Shift+L 进入列选模式</li>
+<li>使用方向键左右移动所有列的光标，并配合使用Shift键来多选每行的字符</li>
+</ol>
+</blockquote>
+<h3 id="快速查找">快速查找</h3>
+<blockquote>
+<ol>
+<li>Goto Anything功能 — 快速查找（ctrl + P）</li>
+<li>输入@+函数名可以快速找到函数。</li>
+<li>输入#+文本可以快速进行文件内文本匹配。</li>
+</ol>
+</blockquote>
+<h3 id="快速跳转到某一行">快速跳转到某一行</h3>
+<blockquote>
+<p>按下Ctrl + G，输入行号，可以快速跳转到该行。</p>
+</blockquote>
+<h3 id="注释">注释</h3>
+<blockquote>
+<ol>
+<li>Ctrl+/ 注释单行。</li>
+<li>Ctrl+Shift+/ 注释多行。</li>
+</ol>
+</blockquote>
+<h3 id="删除">删除</h3>
+<blockquote>
+<ol>
+<li>Ctrl+KK 从光标处删除至行尾</li>
+<li>Ctrl+Shift+K 删除整行</li>
+</ol>
+</blockquote>
+<h3 id="替换">替换</h3>
+<blockquote>
+<p>Ctrl+Shift+F：查找并替换 Ctrl+H：替换</p>
+</blockquote>
+<h2 id="插件介绍">插件介绍</h2>
+<h3 id="html-css-js-prettify">HTML-CSS-JS Prettify</h3>
+<p>一款集成了格式化（美化）html、css、js三种文件类型的插件，即便html,js写在PHP文件之内。插件依赖于nodejs，因此需要事先安装nodejs，然后才可以正常运行。插件安装完成后，快捷键ctrl+shift+H完成当前文件的美化操作。</p>
+<h3 id="sublimetmpl-快速生成文件模板">SublimeTmpl 快速生成文件模板</h3>
+<p>一直都很奇怪为什么sublime text 3没有新建文件模板的功能，像html头部的DTD声明每次都要复制粘贴。用SublimeTmpl这款插件终于可以解脱了，SublimeTmpl能新建html、css、javascript、php、python、ruby六种类型的文件模板，所有的文件模板都在插件目录的templates文件夹里，可以自定义编辑文件模板。</p>
+<blockquote>
+<ul>
+<li>SublimeTmpl默认的快捷键:</li>
+<li>ctrl+alt+h html</li>
+<li>ctrl+alt+j javascript</li>
+<li>ctrl+alt+c css</li>
+<li>ctrl+alt+p php</li>
+<li>ctrl+alt+r ruby</li>
+<li>ctrl+alt+shift+p python</li>
+</ul>
+</blockquote>
+<p>如果想要新建其他类型的文件模板的话，先自定义文件模板方在templates文件夹里，再分别打开Default (Windows).sublime-keymap、Default.sublime-commands、Main.sublime-menu、SublimeTmpl.sublime-settings这四个文件照着里面的格式自定义想要新建的类型</p>
+<h3 id="sublime-git">sublime git</h3>
+<p>git 的各种操作</p>
+<h3 id="markdown-extended-and-monokai-extended">Markdown Extended and Monokai Extended</h3>
+<p>markdown 代码高亮插件,两者配合使用效果最佳。</p>
+<h3 id="markdown-editing">MarkDown Editing</h3>
+<p>在 Sublime 中编写 Markdown 还有一个直观的不适就是缺少辅助提示，比如输入 *，编辑器应当自动补上一个 *，并使光标保持在两 * 之间，又比如应当支持选中一段文字快捷键添加链接。</p>
+<blockquote>
+<ul>
+<li>ctrl + win + R - 插入链接；</li>
+<li>ctrl + win + V - 粘贴为链接格式；</li>
+<li>Shift + win + K - 插入图片。</li>
+</ul>
+</blockquote>
+<h3 id="omnimarkuppreviewer">OmniMarkupPreviewer</h3>
+<p>作为 Sublime Text 的一款强大插件，支持将标记语言渲染为 HTML 并在浏览器上实时预览，同时支持导出 HTML 源码文件。插件安装成功后我们就可以使用快捷键对编辑的markdown源文件进行预览了。 下面是几个常用快捷键.</p>
+<blockquote>
+<ul>
+<li>Command +Option +O: 在浏览器中预览</li>
+<li>Command+Option+X: 导出HTML</li>
+<li>Ctrl+Alt+C: HTML标记拷贝至剪贴板</li>
+</ul>
+</blockquote>
+<h3 id="wordcount">WordCount</h3>
+<p>字数统计的一款小插件</p>
+<h3 id="imesupport">IMESupport</h3>
+<p>sublime text 有个BUG，那就是不支持中文的鼠标跟随，这个插件就是干这个事情的</p>
+<h2 id="如何安装插件">如何安装插件？</h2>
+<p>安装插件之前，我们需要首先安装一个Sublime 中最不可缺少的插件 Package Control, 以后我们安装和管理插件都需要这个插件的帮助。</p>
+<p>安装”Package Control” 使用快捷键 “ ctrl + `” 打开Sublime的控制台 ,或者选择 View &gt; Show Console 。</p>
+<p>在控制台的命令行输入框，把下面一段代码粘贴进去，回车 就可以完成Pacakge Control 的安装了。</p>
+<pre><code>import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+</code></pre>
+<h3 id="插件的安装">插件的安装</h3>
+<p>Package Control 安装成功后我们就可以使用它方便的管理插件了，首先使用快捷键 ‘command + shift + p ‘ 进入到Sublime 命令面板，输入 “package install” 从列表中选择 “install Package” 然后回车。在弹出的框中输入我们想要安装的插件名称，回车就自动安装了</p>
+<h3 id="输入法光标不跟随解决方案">输入法光标不跟随解决方案</h3>
+<p>1.手动安装：在GitHub页面下载该项目的ZIP包，解压出来将文件夹名称改为IMESupport，放到Sublime Text的插件目录重启软件即可。插件目录可通过菜单-&gt;preferences-&gt;packages来打开。</p>
+<p>2.通过Package Control在线安装：安装Package Control插件（安装方法请自行搜索），通过Install Package选项列出插件列表，搜索IMESupport安装即可。</p>
+<p>插件名称：IMESupport GitHub页面：https://github.com/chikatoike/IMESupport</p>
+<h2 id="mac下的快捷键">mac下的快捷键</h2>
+<p>1、替换</p>
+<blockquote>
+<p>Alt+Command+F</p>
+</blockquote>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/eaRCztKoZ/">
+              Sublime
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/Python语法速查/">
+            <strong>Python语法速查</strong>
+          </a>
+        </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/Git常用命令/">
+            <strong>Git常用命令</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+      
+
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1582440689040" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>

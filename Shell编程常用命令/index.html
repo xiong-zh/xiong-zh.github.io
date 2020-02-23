@@ -1,0 +1,871 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shell编程常用命令 | ZhangXiong</title>
+<meta name="description" content="当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582440689040">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Shell编程常用命令 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/about/">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/04.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/04.jpg); height: 80vw;">
+          <h1 class="post-title">Shell编程常用命令</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">Shell编程常用命令</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2019-08-10 16:27:28">2019-08-10</time>
+        <span class="author vcard">
+          14 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <h3 id="shell简介">Shell简介</h3>
+<p>Shell自身是一个用C语言编写的程序，是用户来使用Unix或Linux的桥梁，用户的大部分工作都需要通过Shell来完成。只有熟练使用shell，才能熟练掌握linux。<br>
+可以说：Shell既是一种命令语言，又是一种程序设计语言。<br>
+Shell虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式来协调各个程序的运行。<br>
+因此，对于使用者来说，shell是最重要的实用程序，深入了解和熟练掌握shell的特性极其使用方法，是用好Unix/Linux系统的关键。</p>
+<p>这里归纳总结了一些常见常用重要的shell命令，方便在使用遗忘时查阅。</p>
+<!--more-->
+<h3 id="shell简介-2">Shell简介</h3>
+<p>Shell自身是一个用C语言编写的程序，是用户来使用Unix或Linux的桥梁，用户的大部分工作都需要通过Shell来完成。只有熟练使用shell，才能熟练掌握linux。<br>
+可以说：Shell既是一种命令语言，又是一种程序设计语言。<br>
+Shell虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式来协调各个程序的运行。<br>
+因此，对于使用者来说，shell是最重要的实用程序，深入了解和熟练掌握shell的特性极其使用方法，是用好Unix/Linux系统的关键。</p>
+<p>这里归纳总结了一些常见常用重要的shell命令，方便在使用遗忘时查阅。</p>
+<h3 id="转义字符">转义字符</h3>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>警报，响铃</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格（删除键）</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页(FF)，将当前位置移到下页开头</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表符（tab键）</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="变量替换">变量替换</h3>
+<p>变量替换可以根据变量的状态（是否为空、是否定义等）来改变它的值,可以使用的变量替换形式：</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${var}</td>
+<td>变量本来的值</td>
+</tr>
+<tr>
+<td>${var:-word}</td>
+<td>如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值。</td>
+</tr>
+<tr>
+<td>${var:=word}</td>
+<td>如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word。</td>
+</tr>
+<tr>
+<td>${var:?message}</td>
+<td>如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。</td>
+</tr>
+<tr>
+<td>${var:+word}</td>
+<td>如果变量 var 被定义，那么返回 word，但不改变 var 的值。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="算术运算符列表">算术运算符列表</h3>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加法</td>
+<td><code>expr $a + $b</code> 结果为 30。</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td><code>expr $a - $b</code> 结果为 10。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td><code>expr $a \* $b</code> 结果为  200。</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+<td><code>expr $b / $a</code> 结果为 2。</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+<td><code>expr $b % $a</code> 结果为 0。</td>
+</tr>
+<tr>
+<td>=</td>
+<td>赋值</td>
+<td>a=$b 将把变量 b 的值赋给 a。</td>
+</tr>
+<tr>
+<td>==</td>
+<td>相等。用于比较两个数字，相同则返回 true。</td>
+<td>[ $a == $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不相等。用于比较两个数字，不相同则返回 true。</td>
+<td>[ $a != $b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关系运算符列表">关系运算符列表</h3>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>检测两个数是否相等，相等返回 true。</td>
+<td>[ $a -eq $b ] 返回 true。</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>检测两个数是否相等，不相等返回 true。</td>
+<td>[ $a -ne $b ] 返回 true。</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>检测左边的数是否大于右边的，如果是，则返回 true。</td>
+<td>[ $a -gt $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>检测左边的数是否小于右边的，如果是，则返回 true。</td>
+<td>[ $a -lt $b ] 返回 true。</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>检测左边的数是否大等于右边的，如果是，则返回 true。</td>
+<td>[ $a -ge $b ] 返回 false。</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>检测左边的数是否小于等于右边的，如果是，则返回 true。</td>
+<td>[ $a -le $b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件测试运算符列表">文件测试运算符列表</h3>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b file</td>
+<td>检测文件是否是块设备文件，如果是，则返回 true。</td>
+<td>[ -b $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>检测文件是否是字符设备文件，如果是，则返回 true。</td>
+<td>[ -b $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>检测文件是否是目录，如果是，则返回 true。</td>
+<td>[ -d $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。</td>
+<td>[ -f $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>检测文件是否设置了 SGID 位，如果是，则返回 true。</td>
+<td>[ -g $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td>
+<td>[ -k $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>检测文件是否是具名管道，如果是，则返回 true。</td>
+<td>[ -p $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>检测文件是否设置了 SUID 位，如果是，则返回 true。</td>
+<td>[ -u $file ] 返回 false。</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>检测文件是否可读，如果是，则返回 true。</td>
+<td>[ -r $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>检测文件是否可写，如果是，则返回 true。</td>
+<td>[ -w $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>检测文件是否可执行，如果是，则返回 true。</td>
+<td>[ -x $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>检测文件是否为空（文件大小是否大于0），不为空返回 true。</td>
+<td>[ -s $file ] 返回 true。</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>检测文件（包括目录）是否存在，如果是，则返回 true。</td>
+<td>[ -e $file ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="布尔运算符列表">布尔运算符列表</h3>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>非运算，表达式为 true 则返回 false，否则返回 true。</td>
+<td>[ ! false ] 返回 true。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>或运算，有一个表达式为 true 则返回 true。</td>
+<td>[ $a -lt 20 -o $b -gt 100 ] 返回 true。</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>与运算，两个表达式都为 true 才返回 true。</td>
+<td>[ $a -lt 20 -a $b -gt 100 ] 返回 false。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="特殊变量列表">特殊变量列表</h3>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0</td>
+<td>当前脚本的文件名</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>传递给脚本或函数的参数个数。</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>传递给脚本或函数的所有参数。</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>传递给脚本或函数的所有参数。被双引号(&quot; &quot;)包含时，与 $* 稍有不同，下面将会讲到。</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>上个命令的退出状态，或函数的返回值。</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数值测试">数值测试</h3>
+<p>Shell中的 test 命令用于检查某个条件是否成立，它可以进行数值、字符和文件三个方面的测试。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>等于则为真</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>不等于则为真</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>大于则为真</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>大于等于则为真</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>小于则为真</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>小于等于则为真</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件测试">文件测试</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e 文件名</td>
+<td>如果文件存在则为真</td>
+</tr>
+<tr>
+<td>-r 文件名</td>
+<td>如果文件存在且可读则为真</td>
+</tr>
+<tr>
+<td>-w 文件名</td>
+<td>如果文件存在且可写则为真</td>
+</tr>
+<tr>
+<td>-x 文件名</td>
+<td>如果文件存在且可执行则为真</td>
+</tr>
+<tr>
+<td>-s 文件名</td>
+<td>如果文件存在且至少有一个字符则为真</td>
+</tr>
+<tr>
+<td>-d 文件名</td>
+<td>如果文件存在且为目录则为真</td>
+</tr>
+<tr>
+<td>-f 文件名</td>
+<td>如果文件存在且为普通文件则为真</td>
+</tr>
+<tr>
+<td>-c 文件名</td>
+<td>如果文件存在且为字符型特殊文件则为真</td>
+</tr>
+<tr>
+<td>-b 文件名</td>
+<td>如果文件存在且为块特殊文件则为真</td>
+</tr>
+</tbody>
+</table>
+<h3 id="函数">函数</h3>
+<p>Shell 函数的定义格式如下：</p>
+<pre><code class="language-python">function_name () {
+    list of commands
+    [ return value ]
+}
+</code></pre>
+<p>如果你愿意，也可以在函数名前加上关键字 function：</p>
+<pre><code>function function_name () {
+    list of commands
+    [ return value ]
+}
+</code></pre>
+<p>函数返回值，可以显式增加return语句；如果不加，会将最后一条命令运行结果作为返回值。<br>
+Shell 函数返回值只能是整数，一般用来表示函数执行成功与否，0表示成功，其他值表示失败。如果 return 其他数据，比如一个字符串，往往会得到错误提示：“numeric argument required”。<br>
+如果一定要让函数返回字符串，那么可以先定义一个变量，用来接收函数的计算结果，脚本在需要的时候访问这个变量来获得函数返回值。</p>
+<p>删除变量一样，可以使用 unset 命令，删除函数也可以使用这个命令，不过要加上 .f 选项，如下所示</p>
+<pre><code class="language-python">$unset .f function_name
+</code></pre>
+<h3 id="重定向">重定向</h3>
+<p>命令的输出不仅可以是显示器，还可以很容易的转移向到文件，这被称为输出重定向。<br>
+命令输出重定向的语法为：</p>
+<pre><code class="language-python">$ command &gt; file
+</code></pre>
+<p>输入重定向<br>
+和输出重定向一样，Unix 命令也可以从文件获取输入，语法为：</p>
+<pre><code class="language-python">command &lt; file
+</code></pre>
+<h3 id="全部可用的重定向命令列表">全部可用的重定向命令列表</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>command &gt; file</td>
+<td>将输出重定向到 file。</td>
+</tr>
+<tr>
+<td>command &lt; file</td>
+<td>将输入重定向到 file。</td>
+</tr>
+<tr>
+<td>command &gt;&gt; file</td>
+<td>将输出以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt; file</td>
+<td>将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt;&gt; file</td>
+<td>将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td>n &gt;&amp; m</td>
+<td>将输出文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td>n &lt;&amp; m</td>
+<td>将输入文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td>&lt;&lt; tag</td>
+<td>将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="devnull-文件">/dev/null 文件</h3>
+<p>如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null：</p>
+<pre><code class="language-python">$ command &gt; /dev/null
+</code></pre>
+<p>/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到”禁止输出“的效果。</p>
+<p>如果希望屏蔽 stdout 和 stderr，可以这样写：</p>
+<pre><code>$ command &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<h3 id="shell文件包含">Shell文件包含</h3>
+<p>Shell 也可以包含外部脚本，将外部脚本的内容合并到当前脚本。<br>
+Shell 中包含脚本可以使用：</p>
+<pre><code class="language-python">. filename
+</code></pre>
+<p>或</p>
+<pre><code>source filename
+</code></pre>
+<p>两种方式的效果相同，简单起见，一般使用点号(.)，但是注意点号(.)和文件名中间有一空格。</p>
+<h3 id="单引号">单引号</h3>
+<pre><code class="language-shall">str='this is a string'
+</code></pre>
+<p>单引号字符串的限制：</p>
+<p>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的<br>
+单引号字串中不能出现单引号（对单引号使用转义符后也不行）<br>
+双引号</p>
+<pre><code class="language-python">your_name='qinjx'
+str=&quot;Hello, I know your are \&quot;$your_name\&quot;! \n&quot;
+</code></pre>
+<p>双引号里可以有变量<br>
+双引号里可以出现转义字符<br>
+字符串操作<br>
+拼接字符串</p>
+<pre><code>your_name=&quot;qinjx&quot;
+greeting=&quot;hello, &quot;$your_name&quot; !&quot;
+greeting_1=&quot;hello, ${your_name} !&quot;
+
+echo $greeting $greeting_1
+</code></pre>
+<h3 id="获取字符串长度">获取字符串长度：</h3>
+<pre><code>string=&quot;abcd&quot;
+echo ${#string} #输出：4
+</code></pre>
+<h3 id="提取子字符串">提取子字符串</h3>
+<pre><code>string=&quot;alibaba is a great company&quot;
+echo ${string:1:4} #输出：liba
+</code></pre>
+<h3 id="if">if</h3>
+<pre><code class="language-python">if condition
+then
+	command1 
+	command2
+	...
+	commandN 
+fi
+</code></pre>
+<p>写成一行（适用于终端命令提示符）：</p>
+<pre><code>if `ps -ef | grep ssh`;  then echo hello; fi
+</code></pre>
+<p>末尾的fi就是if倒过来拼写，后面还会遇到类似的</p>
+<h3 id="if-else">if else</h3>
+<pre><code>if condition
+then
+	command1 
+	command2
+	...
+	commandN
+else
+	command
+fi
+</code></pre>
+<h3 id="if-else-if-else">if else-if else</h3>
+<pre><code>if condition1
+then
+	command1
+elif condition2
+	command2
+else
+	commandN
+fi
+</code></pre>
+<h3 id="for-while">for while</h3>
+<p>for</p>
+<pre><code>for var in item1 item2 ... itemN
+do
+	command1
+	command2
+	...
+	commandN
+done
+</code></pre>
+<p>写成一行：</p>
+<pre><code>for var in item1 item2 ... itemN; do command1; command2… done;
+C风格的for
+for (( EXP1; EXP2; EXP3 ))
+do
+	command1
+	command2
+	command3
+done
+</code></pre>
+<h3 id="while">while</h3>
+<pre><code>while condition
+do
+	command
+done
+</code></pre>
+<p>无限循环</p>
+<pre><code>while :
+do
+	command
+done
+</code></pre>
+<p>或者</p>
+<pre><code>while true
+do
+	command
+done
+</code></pre>
+<p>或者</p>
+<pre><code>for (( ; ; ))
+</code></pre>
+<h3 id="until">until</h3>
+<pre><code>until condition
+do
+	command
+done
+</code></pre>
+<h3 id="case">case</h3>
+<pre><code class="language-python">
+case &quot;${opt}&quot; in
+	&quot;Install-Puppet-Server&quot; )
+		install_master $1
+		exit
+	;;
+
+	&quot;Install-Puppet-Client&quot; )
+		install_client $1
+		exit
+	;;
+
+	&quot;Config-Puppet-Server&quot; )
+		config_puppet_master
+		exit
+	;;
+
+	&quot;Config-Puppet-Client&quot; )
+		config_puppet_client
+		exit
+	;;
+
+	&quot;Exit&quot; )
+		exit
+	;;
+
+	* ) echo &quot;Bad option, please choose again&quot;
+esac
+</code></pre>
+<p>case的语法和C family语言差别很大，它需要一个esac（就是case反过来）作为结束标记，每个case分支用右圆括号，用两个分号表示break</p>
+<h3 id="删除变量">删除变量</h3>
+<p>使用 unset 命令可以删除变量。语法：</p>
+<pre><code class="language-python">unset variable_name
+</code></pre>
+<h3 id="显示结果重定向至文件">显示结果重定向至文件</h3>
+<pre><code>echo &quot;It is a test&quot; &gt; myfile
+</code></pre>
+<h3 id="原样输出字符串">原样输出字符串</h3>
+<p>若需要原样输出字符串（不进行转义），请使用单引号。例如：</p>
+<pre><code>echo '$name\&quot;'
+</code></pre>
+<h3 id="显示命令执行结果">显示命令执行结果</h3>
+<pre><code class="language-python">echo `date`
+</code></pre>
+<h3 id="printf-命令">printf 命令</h3>
+<p>printf 命令用于格式化输出<br>
+printf 不像 echo 那样会自动换行，必须显式添加换行符(\n)。</p>
+<p>printf 命令的语法：</p>
+<pre><code class="language-python">
+printf  format-string  [arguments...]
+</code></pre>
+<p>format-string 为格式控制字符串，arguments 为参数列表。</p>
+<p>C语言printf()函数的不同：</p>
+<pre><code>printf 命令不用加括号
+format-string 可以没有引号，但最好加上，单引号双引号均可。
+参数多于格式控制符(%)时，format-string 可以重用，可以将所有参数都转换。
+arguments 使用空格分隔，不用逗号。
+</code></pre>
+<h3 id="命令行参数">命令行参数</h3>
+<p>运行脚本时传递给脚本的参数称为命令行参数。命令行参数用 $n 表示，例如，$1 表示第一个参数，$2 表示第二个参数，依次类推。</p>
+<h3 id="和-的区别">$* 和 $@ 的区别</h3>
+<p>$* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号(&quot; &quot;)包含时，都以&quot;$1&quot; &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">&quot;</mi><mo>…</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">2&quot; … &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">&quot;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">&quot;</span></span></span></span>n&quot; 的形式输出所有参数。<br>
+但是当它们被双引号(&quot; &quot;)包含时，&quot;$*&quot; 会将所有的参数作为一个整体，以&quot;$1 $2 … <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi mathvariant="normal">&quot;</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">式</mi><mi mathvariant="normal">输</mi><mi mathvariant="normal">出</mi><mi mathvariant="normal">所</mi><mi mathvariant="normal">有</mi><mi mathvariant="normal">参</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">；</mi><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">n&quot;的形式输出所有参数；&quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord">&quot;</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">式</span><span class="mord cjk_fallback">输</span><span class="mord cjk_fallback">出</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">参</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">；</span><span class="mord">&quot;</span></span></span></span>@&quot; 会将各个参数分开，以&quot;$1&quot; &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">&quot;</mi><mo>…</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">2&quot; … &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">&quot;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">&quot;</span></span></span></span>n&quot; 的形式输出所有参数。</p>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/Gah7pxU-rM/">
+              Linux
+            </a>
+          
+            <a href="https://xiong-zh.github.io/p0ASXc3D0A/">
+              Shell
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/Redis/">
+            <strong>Redis</strong>
+          </a>
+        </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/Linux 基础知识/">
+            <strong>Linux 基础知识</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+      
+
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1582440689040" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scrapy框架的使用之Item Pipeline用法 | ZhangXiong</title>
+<meta name="description" content="当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582440689040">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Scrapy框架的使用之Item Pipeline用法 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/about/">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/051.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/051.jpg); height: 80vw;">
+          <h1 class="post-title">Scrapy框架的使用之Item Pipeline用法</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">Scrapy框架的使用之Item Pipeline用法</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-01-15 12:09:15">2020-01-15</time>
+        <span class="author vcard">
+          4 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
+Item Pipeline 的主要功能有如下 4 点。</p>
+<ul>
+<li>清理 HTML 数据。</li>
+<li>验证爬取数据，检查爬取字段。</li>
+<li>查重并丢弃重复内容。</li>
+<li>将爬取结果保存到数据库。</li>
+</ul>
+<!-- more -->
+<p>本文简单介绍一下 Scrapy 框架中的 Item Pipeline 的用法。</p>
+<p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。</p>
+<p>Item Pipeline 的主要功能有如下 4 点。</p>
+<ul>
+<li>清理 HTML 数据。</li>
+<li>验证爬取数据，检查爬取字段。</li>
+<li>查重并丢弃重复内容。</li>
+<li>将爬取结果保存到数据库。</li>
+</ul>
+<h2 id="一-核心方法">一、核心方法</h2>
+<p>我们可以自定义 Item Pipeline，只需要实现指定的方法，其中必须要实现的一个方法是： <code>process_item(item, spider)</code>。</p>
+<p>另外还有如下几个比较实用的方法。</p>
+<ul>
+<li><code>open_spider(spider)</code></li>
+<li><code>close_spider(spider)</code></li>
+<li><code>from_crawler(cls, crawler)</code></li>
+</ul>
+<p>下面我们详细介绍这几个方法的用法。</p>
+<h3 id="1-process_itemitem-spider">1、<code>process_item(item, spider)</code></h3>
+<p><code>process_item()</code> 是必须要实现的方法，被定义的 Item Pipeline 会默认调用这个方法对 Item 进行处理。比如，我们可以进行数据处理或者将数据写入到数据库等操作。它必须返回 Item 类型的值或者抛出一个 DropItem 异常。</p>
+<p><code>process_item()</code> 方法的参数有如下两个。</p>
+<ul>
+<li>item，是 Item 对象，即被处理的 Item。</li>
+<li>spider，是 Spider 对象，即生成该 Item 的 Spider。</li>
+</ul>
+<p><code>process_item()</code> 方法的返回类型归纳如下。</p>
+<ul>
+<li>如果它返回的是 Item 对象，那么此 Item 会被低优先级的 Item Pipeline 的 <code>process_item()</code> 方法处理，直到所有的方法被调用完毕。</li>
+<li>如果它抛出的是 DropItem 异常，那么此 Item 会被丢弃，不再进行处理。</li>
+</ul>
+<h3 id="2-open_spiderself-spider">2、<code>open_spider(self, spider)</code></h3>
+<p><code>open_spider()</code> 方法是在 Spider 开启的时候被自动调用的。在这里我们可以做一些初始化操作，如开启数据库连接等。其中，参数 spider 就是被开启的 Spider 对象。</p>
+<h3 id="3-close_spiderspider">3、<code>close_spider(spider)</code></h3>
+<p><code>close_spider()</code> 方法是在 Spider 关闭的时候自动调用的。在这里我们可以做一些收尾工作，如关闭数据库连接等。其中，参数 spider 就是被关闭的 Spider 对象。</p>
+<h3 id="4-from_crawlercls-crawler">4、<code>from_crawler(cls, crawler)</code></h3>
+<p><code>from_crawler()</code> 方法是一个类方法，用 <code>@classmethod</code> 标识，是一种依赖注入的方式。它的参数是 crawler，通过 crawler 对象，我们可以拿到 Scrapy 的所有核心组件，如全局配置的每个信息，然后创建一个 Pipeline 实例。参数 cls 就是 Class，最后返回一个 Class 实例。</p>
+<h2 id="二-实例">二、实例</h2>
+<h3 id="1-mongodb-pipeline">1、MongoDB Pipeline</h3>
+<p>我们用一个 MongoPipeline 将信息保存到 MongoDB，在 <code>pipelines.py</code> 里添加如下类的实现：</p>
+<pre><code>import pymongo
+
+class MongoPipeline(object):
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_uri=crawler.settings.get('MONGO_URI'),
+            mongo_db=crawler.settings.get('MONGO_DB')
+        )
+
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+
+    def process_item(self, item, spider):
+        self.db[item.collection].insert(dict(item))
+        return item
+
+    def close_spider(self, spider):
+        self.client.close()
+</code></pre>
+<p>这里需要用到两个变量，<code>MONGO_URI</code> 和 <code>MONGO_DB</code>，即存储到 MongoDB 的链接地址和数据库名称。我们在 settings.py 里添加这两个变量，如下所示：</p>
+<pre><code>MONGO_URI = 'localhost'
+MONGO_DB = 'images360'
+</code></pre>
+<p>这样一个保存到 MongoDB 的 Pipeline 的就创建好了。这里最主要的方法是 <code>process_item()</code> 方法，直接调用 Collection 对象的 <code>insert()</code> 方法即可完成数据的插入，最后返回 Item 对象。</p>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/yaI-h-rVLi/">
+              Python
+            </a>
+          
+            <a href="https://xiong-zh.github.io/RKbXlPuzuF/">
+              Scrapy
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/Python爬取不确定页数网页/">
+            <strong>Python爬取不确定页数网页</strong>
+          </a>
+        </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/Python为什么现在这么火/">
+            <strong>Python为什么现在这么火</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+      
+
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1582440689040" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>

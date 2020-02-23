@@ -1,45 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-01-18T17:34:02.494Z</updated>
+    <title>ZhangXiong</title>
+    <updated>2020-02-23T06:51:45.857Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</subtitle>
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, ZhangXiong</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://xiong-zh.github.io/post/hello-gridea</id>
-        <link href="https://xiong-zh.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[Jupyter NoteBook 的快捷键使用指南]]></title>
+        <id>https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/</id>
+        <link href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2020-02-21T03:39:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python之禅]]></title>
+        <id>https://xiong-zh.github.io/python-zhi-shan/</id>
+        <link href="https://xiong-zh.github.io/python-zhi-shan/">
+        </link>
+        <updated>2020-02-12T04:33:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>Beautiful is better than ugly.<br>
+Explicit is better than implicit.<br>
+Simple is better than complex.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Beautiful is better than ugly.<br>
+Explicit is better than implicit.<br>
+Simple is better than complex.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python全栈工程师核心面试300问深入解析]]></title>
+        <id>https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/</id>
+        <link href="https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/">
+        </link>
+        <updated>2020-02-01T13:22:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>Python 面试不仅需要掌握 Python 基础知识和高级语法，还会涉及网络编程、web 前端后端、数据库、网络爬虫、数据解析、数据分析和数据可视化等各方面的核心知识。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Python 面试不仅需要掌握 Python 基础知识和高级语法，还会涉及网络编程、web 前端后端、数据库、网络爬虫、数据解析、数据分析和数据可视化等各方面的核心知识。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[乌合之众]]></title>
+        <id>https://xiong-zh.github.io/wu-he-zhi-zhong/</id>
+        <link href="https://xiong-zh.github.io/wu-he-zhi-zhong/">
+        </link>
+        <updated>2020-02-01T04:56:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>群体缺乏主导意见，普遍信念也纷纷解体，结果是任何事情都没有统一的看法，公众对自己没有直接利益关系的东西越来越不关心。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>群体缺乏主导意见，普遍信念也纷纷解体，结果是任何事情都没有统一的看法，公众对自己没有直接利益关系的东西越来越不关心。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[不再孤独]]></title>
+        <id>https://xiong-zh.github.io/bu-zai-gu-du/</id>
+        <link href="https://xiong-zh.github.io/bu-zai-gu-du/">
+        </link>
+        <updated>2020-01-28T15:12:53.000Z</updated>
+        <summary type="html"><![CDATA[<ul>
+<li>文章来自商院高静老师，在这个肺炎肆掠的时节，感觉写出了荆楚大地对疫病的决心和信心，相信在不久的时间，疫情一定能得到抑制，武汉恢复成昔日繁华的武汉，武汉加油！，中国加油！</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<ul>
+<li>文章来自商院高静老师，在这个肺炎肆掠的时节，感觉写出了荆楚大地对疫病的决心和信心，相信在不久的时间，疫情一定能得到抑制，武汉恢复成昔日繁华的武汉，武汉加油！，中国加油！</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[新年大吉]]></title>
+        <id>https://xiong-zh.github.io/xin-nian-da-ji/</id>
+        <link href="https://xiong-zh.github.io/xin-nian-da-ji/">
+        </link>
+        <updated>2020-01-24T16:00:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
+以梦为马，期待人间。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
+以梦为马，期待人间。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django restframework初步使用]]></title>
+        <id>https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/</id>
+        <link href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/">
+        </link>
+        <updated>2020-01-22T08:53:05.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python面试题全解析2019 版]]></title>
+        <id>https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/</id>
+        <link href="https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/">
+        </link>
+        <updated>2020-01-20T06:48:56.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
+<p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
+<p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
 ]]></content>
     </entry>
 </feed>
