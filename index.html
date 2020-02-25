@@ -1,322 +1,428 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-     <meta charset="utf-8" />
-  <title>ZhangXiong</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-     <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://xiong-zh.github.io/images/avatar.png?v=1582636188884" style="width:127px;" />
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ZhangXiong</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582636687695">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-     <h3 title=""><a href="/">张雄</a></h3>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-     <div class="description">
-      <p>当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</p>
-     </div>
-    </div>
-   </div>
-   <ul class="social-links">
-
-
-    
-
-    <li><a href="https://twitter.com/imzhangxiong"><i class="fa fa-twitter"></i></a></li>
- 
-    
-
-    <li><a href="https://www.facebook.com/xiong.zh.397"><i class="fa fa-facebook"></i></a></li>
- 
-    
-
-    <li><a href="https://github.com/xiong-zh"><i class="fa fa-github"></i></a></li>
- 
-    
-
-    
-
-    
-
-    
-
-    <li><a href="https://weibo.com/zhangxiongblog"><i class="fa fa-weibo"></i></a></li>
- 
-    
-
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
-    </div>
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-156420077-1');
-</script>
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
 
 
-    </div>
-   </div>
-  </div>
-  <div class="main">
-      <div class="page-top animated fadeInDown">
-    <div class="nav">
 
-     <li><a  href="/">回到首页</a></li>
-
-     <li><a  href="/archives">历史归档</a></li>
-
-     <li><a  href="/tags">所有标签</a></li>
-
-     <li><a  href="/documents/">后端图谱</a></li>
-
-     <li><a  href="/about/">关于｜友链</a></li>
-
-
-    </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li>
-     </div>
-    </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-              
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">Jupyter NoteBook 的快捷键使用指南</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-02-21</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/iJYXSfMJ0/" title="Jupyter">Jupyter </a>
-         
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            ZhangXiong
         </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/2020-yue-du-shu-dan/">2020阅读书单</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>又到了今年书单出炉的适合了。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-02-17</span>
-         <i class="fa fa-tag"></i>
-         
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            回到首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            历史归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            所有标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/documents/" class="menu gt-a-link" target="_blank">
+                            后端图谱
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about/" class="menu gt-a-link">
+                            关于｜友链
+                        </a>
+                    
+                </div>
+            
         </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/python-zhi-shan/">Python之禅</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>Beautiful is better than ugly.<br>
+    </div>
+</nav>
+
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">
+                            <span class="post-title gt-c-content-color-first">Jupyter NoteBook 的快捷键使用指南</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-02-21 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/iJYXSfMJ0/" class="post-tag">
+                                # Jupyter
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/064.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/2020-yue-du-shu-dan/">
+                            <span class="post-title gt-c-content-color-first">2020阅读书单</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>又到了今年书单出炉的适合了。</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-02-17 ·
+                        </time>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/2020-yue-du-shu-dan/" class="post-feature-image"
+                       style="background-image: url('http://zhangxiong-blog-pic.test.upcdn.net/blog/img/%E5%9B%BE%E4%B9%A6%E9%A6%86.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/python-zhi-shan/">
+                            <span class="post-title gt-c-content-color-first">Python之禅</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>Beautiful is better than ugly.<br>
 Explicit is better than implicit.<br>
 Simple is better than complex.</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-02-12</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/yaI-h-rVLi/" title="Python">Python </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/">Python全栈工程师核心面试300问深入解析</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>Python 面试不仅需要掌握 Python 基础知识和高级语法，还会涉及网络编程、web 前端后端、数据库、网络爬虫、数据解析、数据分析和数据可视化等各方面的核心知识。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-02-01</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/yaI-h-rVLi/" title="Python">Python </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/wu-he-zhi-zhong/">乌合之众</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>群体缺乏主导意见，普遍信念也纷纷解体，结果是任何事情都没有统一的看法，公众对自己没有直接利益关系的东西越来越不关心。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-02-01</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/myAeoJ-TNY/" title="书籍">书籍 </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/bu-zai-gu-du/">不再孤独</a></h3>
-      </div>
-      <div class="post-content">
-       <p><ul>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-02-12 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/yaI-h-rVLi/" class="post-tag">
+                                # Python
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/python-zhi-shan/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/066.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/">
+                            <span class="post-title gt-c-content-color-first">Python全栈工程师核心面试300问深入解析</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>Python 面试不仅需要掌握 Python 基础知识和高级语法，还会涉及网络编程、web 前端后端、数据库、网络爬虫、数据解析、数据分析和数据可视化等各方面的核心知识。</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-02-01 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/yaI-h-rVLi/" class="post-tag">
+                                # Python
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/027.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/wu-he-zhi-zhong/">
+                            <span class="post-title gt-c-content-color-first">乌合之众</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>群体缺乏主导意见，普遍信念也纷纷解体，结果是任何事情都没有统一的看法，公众对自己没有直接利益关系的东西越来越不关心。</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-02-01 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/myAeoJ-TNY/" class="post-tag">
+                                # 书籍
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/wu-he-zhi-zhong/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/067.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/bu-zai-gu-du/">
+                            <span class="post-title gt-c-content-color-first">不再孤独</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <ul>
 <li>文章来自商院高静老师，在这个肺炎肆掠的时节，感觉写出了荆楚大地对疫病的决心和信心，相信在不久的时间，疫情一定能得到抑制，武汉恢复成昔日繁华的武汉，武汉加油！，中国加油！</li>
 </ul>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-01-28</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/NhIPBnAep/" title="碎碎念">碎碎念 </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/xin-nian-da-ji/">新年大吉</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>岁岁年年，深情未减，<br>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-01-28 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/NhIPBnAep/" class="post-tag">
+                                # 碎碎念
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/bu-zai-gu-du/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/029.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/xin-nian-da-ji/">
+                            <span class="post-title gt-c-content-color-first">新年大吉</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>岁岁年年，深情未减，<br>
 以梦为马，期待人间。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-01-25</span>
-         <i class="fa fa-tag"></i>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/">Django restframework初步使用</a></h3>
-      </div>
-      <div class="post-content">
-       <p><h2 id="django-rest-framework">Django REST framework</h2>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-01-25 ·
+                        </time>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/xin-nian-da-ji/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/030.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/">
+                            <span class="post-title gt-c-content-color-first">Django restframework初步使用</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <h2 id="django-rest-framework">Django REST framework</h2>
 <p>10个常用组件如下：</p>
 <ul>
 <li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
 </ul>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-01-22</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/opJrPL36c/" title="Django">Django </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/">Python面试题全解析2019 版</a></h3>
-      </div>
-      <div class="post-content">
-       <p><h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-01-22 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/opJrPL36c/" class="post-tag">
+                                # Django
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/031.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/">
+                            <span class="post-title gt-c-content-color-first">Python面试题全解析2019 版</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
 <p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-01-20</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/yaI-h-rVLi/" title="Python">Python </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-     
-     <div class="pagination">
-      <ul class="clearfix">
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-01-20 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/yaI-h-rVLi/" class="post-tag">
+                                # Python
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/032.jpg')">
+                    </a>
+                
+            </div>
+        
+    </div>
+</div>
+
+        <div class="pagination-container">
+    
+    
+        <a href="https://xiong-zh.github.io/page/2" class="prev-page gt-a-link">下一页</a>
+    
+</div>
+
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/xiong-zh" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
             
         
-       <li class="next pagbuttons"><a class="btn" role="navigation" href="https://xiong-zh.github.io/page/2">下一页</a></li>
-       
-
-      </ul>
-     </div>
+            
+                <a href="https://twitter.com/imzhangxiong" target="_blank">
+                    <i class="fab fa-twitter gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://weibo.com/zhangxiongblog" target="_blank">
+                    <i class="fab fa-weibo gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+                <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
+                    <i class="fab fa-facebook gt-c-content-color-first"></i>
+                </a>
+            
+        
     </div>
-   </div>
-  </div>
-  <script src="https://xiong-zh.github.io/media/scripts/jquery.js"></script>
-  <script src="https://xiong-zh.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://xiong-zh.github.io/media/scripts/jquery.appear.js"></script>
+    <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有 | <a href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
 
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
 
- </body>
+    </div>
+</div>
+</body>
 </html>

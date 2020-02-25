@@ -1,189 +1,255 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-    <meta charset="utf-8" />
-  <title>Linux | ZhangXiong</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-     <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://xiong-zh.github.io/images/avatar.png?v=1582636188884" style="width:127px;" />
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Linux | ZhangXiong</title>
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582636687695">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-     <h3 title=""><a href="/">张雄</a></h3>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-     <div class="description">
-      <p>当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</p>
-     </div>
-    </div>
-   </div>
-   <ul class="social-links">
-
-
-    
-
-    <li><a href="https://twitter.com/imzhangxiong"><i class="fa fa-twitter"></i></a></li>
- 
-    
-
-    <li><a href="https://www.facebook.com/xiong.zh.397"><i class="fa fa-facebook"></i></a></li>
- 
-    
-
-    <li><a href="https://github.com/xiong-zh"><i class="fa fa-github"></i></a></li>
- 
-    
-
-    
-
-    
-
-    
-
-    <li><a href="https://weibo.com/zhangxiongblog"><i class="fa fa-weibo"></i></a></li>
- 
-    
-
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
-    </div>
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-156420077-1');
-</script>
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
 
 
-    </div>
-   </div>
-  </div>
-  <div class="main">
-      <div class="page-top animated fadeInDown">
-    <div class="nav">
 
-     <li><a  href="/">回到首页</a></li>
-
-     <li><a  href="/archives">历史归档</a></li>
-
-     <li><a  href="/tags">所有标签</a></li>
-
-     <li><a  href="/documents/">后端图谱</a></li>
-
-     <li><a  href="/about/">关于｜友链</a></li>
-
-
-    </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li>
-     </div>
-    </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-              
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/常用Linux命令/">常用Linux命令</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>超全整理！Linux shell及常用36类命令汇总</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-01-14</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/Gah7pxU-rM/" title="Linux">Linux </a>
-         
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            ZhangXiong
         </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/Shell编程常用命令/">Shell编程常用命令</a></h3>
-      </div>
-      <div class="post-content">
-       <p><h3 id="shell简介">Shell简介</h3>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            回到首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            历史归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            所有标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/documents/" class="menu gt-a-link" target="_blank">
+                            后端图谱
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about/" class="menu gt-a-link">
+                            关于｜友链
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+        <div class="current-tag-container">
+            <h2 class="title gt-c-content-color-first">
+                #Linux
+            </h2>
+        </div>
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/常用Linux命令/">
+                            <span class="post-title gt-c-content-color-first">常用Linux命令</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>超全整理！Linux shell及常用36类命令汇总</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-01-14 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/Gah7pxU-rM/" class="post-tag">
+                                # Linux
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/常用Linux命令/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/054.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/Shell编程常用命令/">
+                            <span class="post-title gt-c-content-color-first">Shell编程常用命令</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <h3 id="shell简介">Shell简介</h3>
 <p>Shell自身是一个用C语言编写的程序，是用户来使用Unix或Linux的桥梁，用户的大部分工作都需要通过Shell来完成。只有熟练使用shell，才能熟练掌握linux。<br>
 可以说：Shell既是一种命令语言，又是一种程序设计语言。<br>
 Shell虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式来协调各个程序的运行。<br>
 因此，对于使用者来说，shell是最重要的实用程序，深入了解和熟练掌握shell的特性极其使用方法，是用好Unix/Linux系统的关键。</p>
 <p>这里归纳总结了一些常见常用重要的shell命令，方便在使用遗忘时查阅。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2019-08-10</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/Gah7pxU-rM/" title="Linux">Linux </a>
-         
-         <a class="tag" href="https://xiong-zh.github.io/p0ASXc3D0A/" title="Shell">Shell </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://xiong-zh.github.io/Linux 基础知识/">Linux 基础知识</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件.</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2019-08-09</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://xiong-zh.github.io/Gah7pxU-rM/" title="Linux">Linux </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-     
-     <div class="pagination">
-      <ul class="clearfix">
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2019-08-10 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/Gah7pxU-rM/" class="post-tag">
+                                # Linux
+                            </a>
+                        
+                            <a href="https://xiong-zh.github.io/p0ASXc3D0A/" class="post-tag">
+                                # Shell
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/Shell编程常用命令/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/04.jpg')">
+                    </a>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://xiong-zh.github.io/Linux 基础知识/">
+                            <span class="post-title gt-c-content-color-first">Linux 基础知识</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>在Linux操作系统中，所有被操作系统管理的资源，例如网络接口卡、磁盘驱动器、打印机、输入输出设备、普通文件或是目录都被看作是一个文件.</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2019-08-09 ·
+                        </time>
+                        
+                            <a href="https://xiong-zh.github.io/Gah7pxU-rM/" class="post-tag">
+                                # Linux
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://xiong-zh.github.io/Linux 基础知识/" class="post-feature-image"
+                       style="background-image: url('http://picture.zhangxiong.net/images/blog_picture/cover/05.jpg')">
+                    </a>
+                
+            </div>
+        
+    </div>
+</div>
+        <div class="pagination-container">
+    
+    
+</div>
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/xiong-zh" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
             
         
-
-      </ul>
-     </div>
+            
+                <a href="https://twitter.com/imzhangxiong" target="_blank">
+                    <i class="fab fa-twitter gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://weibo.com/zhangxiongblog" target="_blank">
+                    <i class="fab fa-weibo gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+                <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
+                    <i class="fab fa-facebook gt-c-content-color-first"></i>
+                </a>
+            
+        
     </div>
-   </div>
-  </div>
-  <script src="https://xiong-zh.github.io/media/scripts/jquery.js"></script>
-  <script src="https://xiong-zh.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://xiong-zh.github.io/media/scripts/jquery.appear.js"></script>
+    <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有 | <a href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
 
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
 
- </body>
+    </div>
+</div>
+</body>
 </html>
