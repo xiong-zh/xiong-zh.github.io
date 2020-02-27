@@ -1,0 +1,869 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Git高级玩法 | ZhangXiong</title>
+<meta name="description" content="当地一个比较有趣的小法师，最近在努力学习厉害的魔法。" />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1582783265049">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Git高级玩法 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">历史归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/about/">关于｜友链</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/034.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/034.jpg); height: 80vw;">
+          <h1 class="post-title">Git高级玩法</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">Git高级玩法</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-02-27 13:58:20">2020-02-27</time>
+        <span class="author vcard">
+          20 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>介绍了一些Git的使用方法和相关脚本的编写。</p>
+<!-- more -->
+<h2 id="git-blame">Git Blame</h2>
+<pre><code class="language-shell"># 查看文件中，每一行的修改人和最后改动时间
+$ git blame pom.xml
+  ^e81ccde3 (BenedictJin 2018-06-04 11:16:19 +0800   1) &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</code></pre>
+<h2 id="git-branch">Git Branch</h2>
+<pre><code class="language-shell"># 克隆当前分支，以此创建新的 branch，并切换
+$ git checkout -b &lt;branch&gt;
+
+# 重命名 branch 名称
+$ git branch -m &lt;old_name&gt; &lt;new_name&gt;
+$ git branch -m &lt;new_name&gt;
+
+# 恢复删除掉的 branch
+# 查看你上一次 commit SHA1 值
+$ git reflog
+# 恢复
+$ git branch &lt;branch_name&gt; &lt;sha1&gt;
+</code></pre>
+<h2 id="git-cache">Git Cache</h2>
+<pre><code class="language-shell"># 添加 .gitignore 文件之后，可能有些文件报错 `ignored tracked with git`
+# 需要用 `git rm --cached` 进行删除
+$ git rm --cached &lt;file&gt;
+
+# 部分动态文件可能报错文件内容不一致 `the following files have staged content different from both the file and the HEAD`
+# 需要增加 `-f` 参数进行强制删除
+$ git rm --cached -f .idea/workspace.xml
+</code></pre>
+<h2 id="git-cherry-pick">Git Cherry-pick</h2>
+<pre><code class="language-shell"># 指定某一次提交，合并到当前分支中
+$ git cherry-pick 5738c801c
+</code></pre>
+<h2 id="git-checkout">Git Checkout</h2>
+<h3 id="checkout-的同时创建新的-branch">checkout 的同时，创建新的 branch</h3>
+<pre><code class="language-shell">$ git checkout -b &lt;new_branch_new&gt;
+</code></pre>
+<h3 id="撤销某个文件的修改">撤销某个文件的修改</h3>
+<pre><code class="language-shell">$ git checkout -- &lt;file&gt;
+</code></pre>
+<h2 id="git-config">Git Config</h2>
+<pre><code class="language-shell">$ git config --global user.name &quot;asdf2014&quot;
+$ git config --global user.email &quot;asdf2014@apache.org&quot;
+$ git reset .
+$ git add -A
+$ git diff --staged
+</code></pre>
+<h2 id="git-commit">Git Commit</h2>
+<h3 id="allow-empty">Allow Empty</h3>
+<pre><code class="language-shell">$ git commit --allow-empty -m 'yuzhouwan.com'
+</code></pre>
+<h3 id="commit-merge">Commit Merge</h3>
+<h4 id="常规操作">常规操作</h4>
+<pre><code class="language-shell">$ git log --pretty=oneline
+
+  651cc60d971aba93bdde645b6331c33068462645 Merge branch 'master' of https://github.com/asdf2014/superset
+  415610958494446ccd37c0c87da98eba56af42ac Merge branch 'temp'
+  b881140282893fa4add183a2b3f2637968f95069 Merge branch 'master' into master
+  f2bf3160583533bd0dc5004f248f81251aa8c57e Add NUMERIC num_type (#2127)
+  6a0fefdbd542da4ea313313a191eadd1efe58faa Using the time zone with specific name for querying Druid
+  9cd38fa1eda63152c27b76c29dd948f29444b686 little code refactor in models.py (#2124)
+
+$ git reset --soft HEAD~2 &amp;&amp;
+$ git commit --edit -m &quot;$($ git log --format=%B --reverse HEAD..HEAD@{1})&quot;
+
+  [master fd41c16] Add NUMERIC num_type (#2127)
+  1 file changed, 1 insertion(+), 1 deletion(-)
+
+# 更改之后的 commit 信息
+fd41c1608579408fcd26d0dd03adf0d461599101 Add NUMERIC num_type (#2127)
+6a0fefdbd542da4ea313313a191eadd1efe58faa Using the time zone with specific name for querying Druid
+9cd38fa1eda63152c27b76c29dd948f29444b686 little code refactor in models.py (#2124)
+</code></pre>
+<h4 id="踩到的坑">踩到的坑</h4>
+<h5 id="failed-to-push-some-refs">Failed to push some refs</h5>
+<h6 id="描述">描述</h6>
+<pre><code class="language-shell">Username for 'https://github.com': asdf2014
+To https://github.com/asdf2014/superset.git
+! [rejected]        ext_deprecation_warning -&gt; ext_deprecation_warning (non-fast-forward)
+error: failed to push some refs to 'https://github.com/asdf2014/superset.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: '$ git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in '$ git push --help' for details.
+</code></pre>
+<h6 id="解决">解决</h6>
+<pre><code class="language-shell"># 强制提交
+$ git push -u origin ext_deprecation_warning --force
+</code></pre>
+<h3 id="commit-remove">Commit Remove</h3>
+<pre><code class="language-shell">$ git reset --hard &lt;sha1-commit-id&gt;
+$ git push origin HEAD --force
+</code></pre>
+<h3 id="commit-change">Commit Change</h3>
+<h4 id="只修改最后一次提交">只修改最后一次提交</h4>
+<pre><code class="language-shell"># 格式
+$ git commit --amend
+$ git commit --amend -m &quot;New commit message&quot;
+$ git commit --amend --author=&quot;Author Name &lt;email@address.com&gt;&quot;
+# 示例
+$ git commit --amend -m 'remove warnings.simplefilter from cli.py into superset for PEP (#2137)'
+$ git commit --amend --author=&quot;asdf2014 &lt;asdf2014@apache.org&gt;&quot;
+</code></pre>
+<h4 id="修改之前的提交信息">修改之前的提交信息</h4>
+<pre><code class="language-shell">$ git rebase -i HEAD~2
+  pick xxxx
+  reword yyyy
+</code></pre>
+<h4 id="修改提交的日期">修改提交的日期</h4>
+<pre><code class="language-shell"># 查看当前时间
+$ date -R
+  Mon, 07 Jan 2018 11:12:55 +0800
+
+# 修改最后一次 commit 的提交日期
+$ git commit --amend --date=&quot;Mon, 07 Jan 2018 12:00:00 +0800&quot;
+
+# 更新提交日期为当前时间
+$ git commit --amend --date=&quot;$(date -R)&quot;
+</code></pre>
+<h3 id="reset-into-specific-commit">Reset into Specific Commit</h3>
+<pre><code class="language-shell"># It will make your local code and local history be just like it was at that commit. But then if you wanted to push this to someone else who has the new history, it would fail.
+$ git reset --hard c14809fa
+
+# It will make your local files changed to be like they were then, but leave your history etc. the same.
+$ git reset --soft c14809fa
+</code></pre>
+<h3 id="squash-commits-into-a-single-commit">Squash Commits into a Single Commit</h3>
+<h4 id="常规操作-2">常规操作</h4>
+<pre><code class="language-shell"># 查看哪些 commits 需要进行合并
+$ git log --pretty=oneline
+# 合并最后 11 个 commit
+$ git rebase -i HEAD~11
+  pick xxxx yyyy
+  pick xxxx yyyy
+  pick xxxx yyyy
+  # 将需要压缩的 commit 之前的 `pick` 替换为 `squash`
+  pick xxxx yyyy
+  squash xxxx yyyy
+  squash xxxx yyyy
+
+$ git commit --amend -m 'The log length has exceeded the limit of 4 MB in Travis'
+$ git push origin travis_log --force
+
+# 如需解决冲突后，继续进行 rebase 操作，可执行
+$ git rebase --continue
+# 如果想中断 rebase 操作，则执行
+$ git rebase --abort
+# 更多细节
+$ git rebase --help
+</code></pre>
+<h4 id="其他">其他</h4>
+<h5 id="回滚">回滚</h5>
+<pre><code class="language-shell">$ git reset --hard ORIG_HEAD
+</code></pre>
+<h5 id="回滚上一次操作"><a href="https://stackoverflow.com/questions/927358/how-to-undo-the-most-recent-commits-in-git">回滚上一次操作</a></h5>
+<pre><code class="language-shell">$ git commit -m &quot;Something terribly misguided&quot;
+$ git reset HEAD~
+&lt;&lt; edit files as necessary &gt;&gt;
+$ git add ...
+$ git commit -c ORIG_HEAD
+</code></pre>
+<h5 id="指定-commit-number">指定 commit number</h5>
+<pre><code>$ git rebase &lt;commit number&gt;
+</code></pre>
+<h5 id="合并-branch-改动到-master-中">合并 branch 改动到 master 中</h5>
+<pre><code class="language-shell"># 会将 branch 里的 commit 排到 master 的顶部，避免带 Merge 信息的 `空 commit` 出现
+$ git checkout &lt;branch name&gt;
+$ git rebase -i master
+
+# 如果已经在当前 branch 执行了 git merge master，并解决了冲突，可以直接执行下面这行命令，完成 rebase 操作
+$ git rebase --root --onto master --preserve-merges
+
+# 万一出现太多的问题，难以解决，可以采用如下暴力的方式（在意 commit 信息的，请预先备份好）
+$ git rebase --abort                # 首先 abort 之前的 rebase 流程
+$ git checkout code_refactoring
+$ git checkout -b re2
+$ git branch root bbb61e638b391d29  # 以当前 branch 未做任何修改之前的 commit 为基础，创建 root 分支
+$ git checkout re2
+$ git diff master &gt; ../123.patch    # 当前 branch 相对 master 已经做的修改打出 patch 文件
+$ git checkout master
+$ git checkout -b r2
+$ git apply ../123.patch            # 以 master 为基础，apply 分支上做的修改
+$ git diff master
+$ git status
+$ git diff --name-status | wc -l    # 确认修改的文件数 是否正确
+$ git add .
+$ git status
+$ git diff master
+$ git commit -m 'Improve `collection` related things that reusing a immutable object instead of creating a new object'
+$ git status
+$ git push origin r2:code_refactoring -f
+</code></pre>
+<h2 id="git-diff">Git Diff</h2>
+<h3 id="git-diff-two-commits">Git diff two commits</h3>
+<pre><code class="language-shell">$ git diff 1285c982 b0aaa7de &gt; v3.4.6_vs_v3.4.10.patch
+</code></pre>
+<h3 id="git-diff-two-branchs">Git diff two branchs</h3>
+<pre><code class="language-shell">$ git diff branch_1..branch_2
+</code></pre>
+<h2 id="git-fetch">Git Fetch</h2>
+<h3 id="normal">Normal</h3>
+<pre><code class="language-shell"># Github 上对某一个开源项目进行 fork
+https://github.com/apache/superset
+https://github.com/asdf2014/superset (forked from apache/superset)
+
+# 本地获取 fork 出来的 asdf2014/superset
+$ git init
+$ git remote add origin https://github.com/asdf2014/superset.git
+$ git remote -v
+  origin  https://github.com/asdf2014/superset.git (fetch)
+  origin  https://github.com/asdf2014/superset.git (push)
+
+## 发现并没有 airbnb/superset 的 origin/master，可以在直接往 asdf2014/superset 提交，然后在 github 上进行 pull request 的创建
+https://github.com/apache/superset/pull/2136 (Fix werkzeug instance was created twice in Debug Mode (#2135) #2136)
+
+$ git fetch https://github.com/apache/superset.git master:tmp
+$ git diff tmp
+$ git merge tmp
+$ git branch -d tmp
+</code></pre>
+<h3 id="fetch-all-tags">Fetch all tags</h3>
+<pre><code class="language-shell">$ git fetch --tags
+$ git checkout tags/release-3.4.6
+$ git checkout master
+  Previous HEAD position was 1285c982... ZooKeeper 3.4.6 release.
+  Switched to branch 'master'
+</code></pre>
+<h2 id="git-merge">Git Merge</h2>
+<pre><code class="language-shell"># 如果不希望 PR 中的 comment 信息被冲掉，可以使用 `git merge` 替代 `git rebase`
+$ git merge
+# 如果存在冲突，解决后，执行如下两个命令
+$ git add .
+$ git merge --continue
+</code></pre>
+<h2 id="git-apply">Git Apply</h2>
+<pre><code class="language-shell"># 指定 --reject 强制打补丁，会生成 .rej 文件，需要手动解决冲突
+$ git apply --reject yuzhouwan.patch
+</code></pre>
+<h2 id="git-reflog">Git Reflog</h2>
+<h3 id="恢复-git-reset-hard">恢复 <code>git reset --hard</code></h3>
+<pre><code class="language-shell"># 找到 reset 操作的
+$ git reflog
+  2a93709d (HEAD -&gt; yuzhouwan, origin/yuzhouwan) HEAD@{0}: reset: moving to 631cc5233063bb014587a9caf0c9e3095fe6a60e
+  b5b67779 HEAD@{1}: commit: Something important
+
+# 回滚到 reset 操作前的一次提交
+$ git reset --hard b5b67779
+</code></pre>
+<h2 id="git-remote">Git Remote</h2>
+<h3 id="change-remote-url">Change remote url</h3>
+<pre><code>$ git remote set-url origin &lt;url&gt;
+</code></pre>
+<h3 id="pull-specific-tag-from-remote">Pull specific tag from remote</h3>
+<pre><code class="language-shell">$ git pull origin release-1.7.7:release-1.7.7
+</code></pre>
+<h3 id="同时-push-到多个仓库">同时 push 到多个仓库</h3>
+<pre><code class="language-shell">$ git remote set-url --add origin git@github.com:asdf2014/draft.git
+$ git remote -v
+  origin  https://git.coding.net/BenedictJin/test.git (fetch)
+  origin  https://git.coding.net/BenedictJin/test.git (push)
+  origin  git@github.com:asdf2014/test.git (push)
+</code></pre>
+<h3 id="删除远程仓库">删除远程仓库</h3>
+<pre><code class="language-shell">$ git remote rm origin
+</code></pre>
+<h2 id="git-reset">Git Reset</h2>
+<h3 id="回退某一个文件的修改">回退某一个文件的修改</h3>
+<pre><code class="language-shell">$ git reset HEAD^ yuzhouwan.txt
+</code></pre>
+<h2 id="git-revert">Git Revert</h2>
+<h3 id="创建某一个-commit-相反的-patch">创建某一个 commit 相反的 patch</h3>
+<pre><code class="language-shell">$ git revert &lt;commit number&gt;
+</code></pre>
+<h2 id="git-rm">Git Rm</h2>
+<h3 id="清理缓存">清理缓存</h3>
+<h4 id="描述-2">描述</h4>
+<p>某些已经被加到 <code>.gitignore</code> 的文件提示，ignored, tracked with git</p>
+<h4 id="解决-2">解决</h4>
+<pre><code class="language-shell"># 单个文件
+$ git rm --cached &lt;file&gt;
+
+# 整个项目
+$ git rm -r --cached .
+
+# add 变更内容，并切换到 tmp 分支，commit 后，再删除 tmp 分支
+$ git add .
+$ git checkout -b tmp
+$ git commit -m 'Remove ignored files'
+$ git checkout master
+$ git branch -D tmp
+</code></pre>
+<h2 id="git-stash">Git Stash</h2>
+<pre><code class="language-shell"># 查看当前分支已经存在的改动
+$ git status
+  On branch exception_governance
+  Your branch is up to date with 'origin/exception_governance'.
+
+  Changes to be committed:
+    (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+          new file:   a
+
+# 临时保存当前分支的修改
+$ git stash
+  Saved working directory and index state WIP on exception_governance: d5062a04 Govern old error codes and their exceptions
+
+# 查看已经临时保存的改动
+$ git stash list
+  stash@{0}: WIP on exception_governance: d5062a04 Govern old error codes and their exceptions
+
+# 已经看到修改已经被隐藏了
+$ git add .
+$ git diff --staged
+
+# 再次从 stash 中恢复出之前的修改
+$ git stash pop
+  On branch exception_governance
+  Your branch is up to date with 'origin/exception_governance'.
+
+  Changes to be committed:
+    (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+          new file:   a
+
+  Dropped refs/stash@{0} (a88e4f6d681eb59b9b22e800f2c00f4c9e22d529)
+</code></pre>
+<h2 id="git-tag">Git Tag</h2>
+<h3 id="create-tag">Create tag</h3>
+<pre><code class="language-shell"># 创建简单的标签
+$ git tag v0.0.1
+
+# 创建带有附注的 tag
+$ git tag -a v0.0.2 -m &quot;v0.0.2&quot;
+
+# 展示 tag 信息
+$ git show v0.0.2
+
+# 给指定的 commit，打 tag
+$ git tag -a v0.0.3 6d23400
+</code></pre>
+<h3 id="submit-tag">Submit tag</h3>
+<pre><code class="language-shell">$ git push origin v0.0.2
+
+# push 本地所有标签
+$ git push origin –tags
+</code></pre>
+<h3 id="pull-with-specific-tag">Pull with specific tag</h3>
+<pre><code class="language-shell">$ git clone
+
+# 列出 tag 列表，并 checkout 到指定的 tag
+$ git tag -l
+$ git checkout tags/&lt;tag_name&gt;
+
+# checkout 到指定的 tag，并创建一个新的 branch
+$ git checkout tags/&lt;tag_name&gt; -b &lt;branch_name&gt;
+</code></pre>
+<h3 id="delete-tag">Delete tag</h3>
+<pre><code class="language-shell"># 删除本地 Tag
+$ git tag -d v3.4.6.0
+  Deleted tag 'v3.4.6.0' (was 0e48a03a)
+
+# 删除远程 Tag
+$ git push origin :refs/tags/v3.4.6.0
+  To http://github.com/asdf2014/zookeeper.git
+   - [deleted]           v3.4.6.0
+</code></pre>
+<h2 id="git-编辑器切换为-notepad">Git 编辑器切换为 Notepad++</h2>
+<pre><code class="language-shell"># 命令行设置
+$ git config --global core.editor &quot;'D:/apps/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin&quot;
+
+# 修改配置文件
+$ vim ~/.gitconfig
+  [core]
+    editor = 'D:/apps/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+</code></pre>
+<h2 id="git-代理">Git 代理</h2>
+<h3 id="通过命令设置">通过命令设置</h3>
+<pre><code class="language-shell">$ git config --global http.proxy 'http://192.168.1.101:8888'
+$ git config --global https.proxy 'https://192.168.1.101:8888'
+$ git config --global http.proxy 'socks5://127.0.0.1:1080'
+$ git config --global https.proxy 'socks5://127.0.0.1:1080'
+</code></pre>
+<h3 id="通过配置文件设置">通过配置文件设置</h3>
+<pre><code class="language-shell">$ vim ~/.ssh/config
+   [http]
+     proxy = http://192.168.1.101:8888
+   [https]
+     proxy = https://192.168.1.101:8888
+#  [http]
+#    proxy = socks5://127.0.0.1:1080
+#  [https]
+#    proxy = socks5://127.0.0.1:1080
+</code></pre>
+<h3 id="踩过的坑">踩过的坑</h3>
+<h4 id="ssl_error_syscall-in-connection-to-gitcodingnet443">SSL_ERROR_SYSCALL in connection to git.coding.net:443</h4>
+<h5 id="描述-3">描述</h5>
+<pre><code class="language-shell">$ git push origin master
+  Counting objects: 9, done.
+  Delta compression using up to 4 threads.
+  Compressing objects: 100% (9/9), done.
+  Writing objects: 100% (9/9), 1.05 KiB | 1.05 MiB/s, done.
+  Total 9 (delta 6), reused 0 (delta 0)
+  error: RPC failed; curl 35 OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to git.coding.net:443
+  fatal: The remote end hung up unexpectedly
+  fatal: The remote end hung up unexpectedly
+  Everything up-to-date
+</code></pre>
+<h5 id="解决-3">解决</h5>
+<pre><code class="language-shell"># 先确保 git 和 curl 版本不能过低，如果 git &lt;2.60 或者 curl &lt;7.29，则需要升级到最新版本
+$ git --version
+$ curl --version
+
+# 打开 git 命令的 trace 日志
+$ export GIT_CURL_VERBOSE=1
+$ export GIT_TRACE_PACKET=2
+
+# 再次执行出错命令
+$ git push origin master
+  // ...
+  error: RPC failed; curl 7 Failed to connect to 127.0.0.1 port 1080: Connection refused
+  fatal: The remote end hung up unexpectedly
+  Everything up-to-date
+
+# 通过日志分析，定位出是 proxy 的问题，关闭 proxy 即可
+</code></pre>
+<h5 id="参考">参考</h5>
+<ul>
+<li><a href="https://support.cloudbees.com/hc/en-us/articles/218154647-Git-Unknown-SSL-protocol-error-in-connection">Git Unknown SSL protocol error in connection</a></li>
+</ul>
+<h2 id="git-中文乱码">Git 中文乱码</h2>
+<pre><code class="language-shell">$ git config --global core.quotepath false          # 显示 status 编码
+$ git config --global gui.encoding utf-8            # 图形界面编码
+$ git config --global i18n.commit.encoding utf-8    # 提交信息编码
+$ git config --global i18n.logoutputencoding utf-8  # 输出 log 编码
+$ export LESSCHARSET=utf-8                          # `git log` 默认使用 `less` 分页，所以需要 `bash` 对 `less` 命令进行 `utf-8` 编码
+
+# 让 `ls` 命令可以显示中文名称
+$ vim %GIT_HOME%\mingw64\share\git\completion\git-completion.bash
+  # 在文件末尾处添加一行
+  alias ls=&quot;ls --show-control-chars --color&quot;
+</code></pre>
+<h2 id="github-加速">Github 加速</h2>
+<pre><code class="language-shell"># Ctrl + R（管理员权限运行）
+# notepad &quot;%SystemRoot%\system32\drivers\etc\hosts&quot;
+
+# https://asm.ca.com/zh_cn/ping.php
+192.30.253.112 github.com
+151.101.56.133 assets-cdn.github.com
+192.30.253.116 api.github.com
+192.30.253.121 codeload.github.com
+
+# 中国 - 香港特别行政区（hkhkg02）
+192.30.253.112 github.com
+151.101.100.133 assets-cdn.github.com
+192.30.253.116 api.github.com
+192.30.253.121 codeload.github.com
+</code></pre>
+<h2 id="patch">Patch</h2>
+<pre><code class="language-shell">$ git diff &gt; patch
+$ git apply patch
+</code></pre>
+<p>参考</p>
+<ul>
+<li><a href="http://blog.csdn.net/maybe_windleave/article/details/8703778">Git 生成 patch 和使用 patch</a></li>
+</ul>
+<h2 id="ssh-免密">SSH 免密</h2>
+<h3 id="常规操作-3">常规操作</h3>
+<pre><code class="language-shell"># 如果没有 .ssh 隐藏文件，则需要先打开 `git bash`，并执行
+$ mkdir ~/.ssh
+$ chmod 700 ~/.ssh
+
+$ cd ~/.ssh
+$ ssh-keygen -t rsa -C &quot;asdf2014@apache.org&quot;
+
+# 将 ~/.ssh/id_rsa.pub 中的公钥加入 github/gitlab
+$ ssh -T git@github.com
+  Hi asdf2014! You've successfully authenticated, but GitHub does not provide shell access.    '
+
+# http -&gt; ssh
+$ git remote -v
+  origin  https://github.com/asdf2014/yuzhouwan (fetch)
+  origin  https://github.com/asdf2014/yuzhouwan (push)
+
+$ git remote set-url origin git@github.com:asdf2014/yuzhouwan.git
+
+$ git remote -v
+  origin  git@github.com:asdf2014/yuzhouwan.git (fetch)
+  origin  git@github.com:asdf2014/yuzhouwan.git (push)
+</code></pre>
+<h3 id="如何在代理环境下同时支持-github-gitlab-coding-的免密操作">如何在代理环境下，同时支持 github / gitlab / coding 的免密操作</h3>
+<h4 id="场景介绍">场景介绍</h4>
+<ul>
+<li><code>github.com</code> 和 <code>coding.net</code> 需要走代理访问</li>
+<li><code>gitlab</code> 是自建的私服</li>
+</ul>
+<h4 id="pac-配置">PAC 配置</h4>
+<p>在任何 git 相关操作之前，需要先配置 PAC 文件，来保证本机网络的畅通</p>
+<pre><code class="language-go">var domains = {
+  &quot;coding.net&quot;: 1,
+  &quot;git.coding.net&quot;: 1,
+  &quot;github.com&quot;: 1,
+  &quot;ssh.github.com&quot;: 1
+};
+
+var proxy = &quot;__PROXY__&quot;;
+
+var direct = 'DIRECT;';
+
+var hasOwnProperty = Object.hasOwnProperty;
+
+function FindProxyForURL(url, host) {
+    var suffix;
+    var pos = host.lastIndexOf('.');
+    pos = host.lastIndexOf('.', pos - 1);
+    while(1) {
+        if (pos &lt;= 0) {
+            if (hasOwnProperty.call(domains, host)) {
+                return proxy;
+            } else {
+                return direct;
+            }
+        }
+        suffix = host.substring(pos + 1);
+        if (hasOwnProperty.call(domains, suffix)) {
+            return proxy;
+        }
+        pos = host.lastIndexOf('.', pos - 1);
+    }
+}
+</code></pre>
+<h4 id="ssh-配置">SSH 配置</h4>
+<p>在配置 SSH 之前，同样需要保证 ssh 命令使用的网络代理是正确的</p>
+<p>首先，找到 <code>connect</code> 命令安装路径</p>
+<pre><code class="language-shell">$ which connect
+  /mingw64/bin/connect
+
+$ which connect.exe
+  /mingw64/bin/connect.exe
+</code></pre>
+<p>其次，修改 <code>~/.ssh/config</code> 文件</p>
+<pre><code class="language-shell">Host github.com
+  User git
+  Port 22
+  Hostname github.com
+  IdentityFile ~/.ssh/id_rsa  # 这里也可以填写绝对路径
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+  ProxyCommand /mingw64/bin/connect.exe -H 127.0.0.1:1080 %h %p
+
+Host ssh.github.com
+  User git
+  Port 443
+  Hostname ssh.github.com
+  IdentityFile ~/.ssh/id_rsa
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+  ProxyCommand /mingw64/bin/connect.exe -H 127.0.0.1:1080 %h %p
+
+Host git.coding.net
+  User &lt;email&gt;  # coding.net 这里比较特殊，需要填写注册的邮箱地址
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+  ProxyCommand /mingw64/bin/connect.exe -H 127.0.0.1:1080 %h %p
+
+Host yuzhouwan.gitlab.com
+  User git
+  Port 22
+  Hostname yuzhouwan.gitlab.com
+  IdentityFile ~/.ssh/id_rsa
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+</code></pre>
+<p>然后，生成私钥、公钥，并分别拷贝公钥到 <code>github</code> / <code>gitlab</code> / <code>coding</code> 服务器中，具体操作见上文描述</p>
+<p>最后，验证</p>
+<pre><code class="language-shell">$ ssh -T git@github.com
+  Hi asdf2014! You've successfully authenticated, but GitHub does not provide shell access.
+
+$ ssh -T git@yuzhouwan.gitlab.com
+  Welcome to GitLab, BenedictJin!
+
+$ ssh -T git@git.coding.net
+  Coding 提示: Hello BenedictJin, You've connected to Coding.net via SSH. This is a personal key.
+  BenedictJin，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥
+</code></pre>
+<h2 id="保持从-fork-端更新代码">保持从 fork 端更新代码</h2>
+<pre><code class="language-shell"># 申明 fork 端的仓库地址
+$ git remote add upstream git@gitlab.yuzhouwan.com:asdf2014/yuzhouwan.git
+
+# check 是否添加正确
+$ git remote -v
+  origin  git@gitlab.yuzhouwan.com:asdf2018/yuzhouwan.git (fetch)
+  origin  git@gitlab.yuzhouwan.com:asdf2018/yuzhouwan.git (push)
+  upstream  git@gitlab.yuzhouwan.com:asdf2014/yuzhouwan.git (fetch)
+  upstream  git@gitlab.yuzhouwan.com:asdf2014/yuzhouwan.git (push)
+
+# 更新所有的分支
+$ git fetch upstream
+
+# 指定更新某一个分支，这里以 master 分支为例
+$ git fetch upstream master
+
+# 使用 fork 端的 master 分支进行 rebase
+$ git rebase upstream/master
+</code></pre>
+<h2 id="代码风格配置">代码风格配置</h2>
+<pre><code class="language-shell">Intellij Idea
+
+# download: http://www.arminalter.com/public/img/attach/checkstyle/eclipse-java-google-style.xml
+File - Settings - Editor - Code Style - Schema - Manage - Import - Eclipse XML Profile
+File - Settings - Plugins - &quot;CheckStyle-IDEA&quot;
+
+# download: http://www.arminalter.com/public/img/attach/checkstyle/google_checks.xml
+File - Setting - Other Settings - Check Style(+)                        # 如果这里使用的是 带有变量的 xml 文件，需要正确指定对应的 value 值
+File - Settings - Editor - Inspections - Checkstyle real-time scan(√)   # 开启实时 check code style
+
+# 一般的，项目中都会给出 format.xml 文件，如 hadoop(hadoop-format.xml) / druid(druid_intellij_formatting.xml) etc.
+</code></pre>
+<h2 id="换行符">换行符</h2>
+<h3 id="auto-crlf">Auto CRLF</h3>
+<pre><code class="language-shell"># 提交时转换为 LF，检出时转换为 CRLF
+$ git config --global core.autocrlf true
+
+# 提交时转换为 LF，检出时不转换
+$ git config --global core.autocrlf input
+
+# 提交检出均不转换
+$ git config --global core.autocrlf false
+</code></pre>
+<h3 id="safe-crlf">Safe CRLF</h3>
+<pre><code class="language-shell"># 拒绝提交包含混合换行符的文件
+$ git config --global core.safecrlf true
+
+# 允许提交包含混合换行符的文件
+$ git config --global core.safecrlf false
+
+# 提交包含混合换行符的文件时给出警告
+$ git config --global core.safecrlf warn
+</code></pre>
+<h2 id="整合持续集成">整合持续集成</h2>
+<h3 id="travis">Travis</h3>
+<h4 id="travisyml">.travis.yml</h4>
+<pre><code class="language-shell">language:
+  - java
+  - scala
+  - python
+  - groovy
+
+os:
+  - windows
+
+jdk:
+  - oraclejdk8
+
+scala:
+  - 2.11.8
+
+python:
+  - 2.7.12
+
+groovy:
+  - 2.3.11
+
+before_install: sudo echo &quot;MAVEN_OPTS='-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error'&quot; &gt; ~/.mavenrc
+
+script:
+  - mvn clean install -B &amp;&amp; mvn clean -B
+
+env:
+  global:
+    - MAVEN_OPTS: &quot;-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error&quot;
+
+sudo: required
+
+cache:
+  directories:
+    - $HOME/.m2
+</code></pre>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/G0fErugzR/">
+              Git
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/2020-yue-du-shu-dan/">
+            <strong>2020阅读书单</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+      
+
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1582783265049" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> 版权所有
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>
