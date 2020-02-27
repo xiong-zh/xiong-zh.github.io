@@ -2,25 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-02-26T13:26:21.646Z</updated>
+    <updated>2020-02-27T02:38:06.742Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
-    <subtitle>当地一个比较有趣的小法师，最近在在努力学习厉害的魔法。</subtitle>
+    <subtitle>当地一个比较有趣的小法师，最近在努力学习厉害的魔法。</subtitle>
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
-    <entry>
-        <title type="html"><![CDATA[Jupyter NoteBook 的快捷键使用指南]]></title>
-        <id>https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/</id>
-        <link href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">
-        </link>
-        <updated>2020-02-21T03:39:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[2020阅读书单]]></title>
         <id>https://xiong-zh.github.io/2020-yue-du-shu-dan/</id>
@@ -114,6 +103,19 @@ Simple is better than complex.</p>
 <ul>
 <li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
 </ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python面试题全解析2019 版]]></title>
+        <id>https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/</id>
+        <link href="https://xiong-zh.github.io/python-chang-jian-de-170-dao-mian-shi-ti-quan-jie-xi-2019-ban/">
+        </link>
+        <updated>2020-01-20T06:48:56.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
+<p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="1-谈谈对-python-和其他语言的区别">1. 谈谈对 Python 和其他语言的区别</h3>
+<p><strong>答</strong>：Python 是一门语法简洁优美,功能强大无比,应用领域非常广泛,具有强大完备的第三方库，他是一门强类型的可移植、可扩展，可嵌入的解释型编程语言，属于动态语言。</p>
 ]]></content>
     </entry>
 </feed>
