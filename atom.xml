@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-03-02T03:46:43.148Z</updated>
+    <updated>2020-03-02T05:01:37.086Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -19,6 +19,17 @@
         <summary type="html"><![CDATA[<p>介绍了一些Git的使用方法和相关脚本的编写。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>介绍了一些Git的使用方法和相关脚本的编写。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jupyter NoteBook 的快捷键使用指南]]></title>
+        <id>https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/</id>
+        <link href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">
+        </link>
+        <updated>2020-02-21T03:39:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
 ]]></content>
     </entry>
     <entry>
@@ -95,25 +106,6 @@ Simple is better than complex.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
 以梦为马，期待人间。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Django restframework初步使用]]></title>
-        <id>https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/</id>
-        <link href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/">
-        </link>
-        <updated>2020-01-22T08:53:05.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
-<p>10个常用组件如下：</p>
-<ul>
-<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
-<p>10个常用组件如下：</p>
-<ul>
-<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
