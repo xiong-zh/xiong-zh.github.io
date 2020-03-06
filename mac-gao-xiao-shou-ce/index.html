@@ -1,0 +1,1373 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mac高效手册 | ZhangXiong</title>
+<meta name="description" content="当地比较有趣的一类人." />
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1583463661959">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Mac高效手册 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156420077-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>ZhangXiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">文章归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/friends/">友情链接</a>
+        
+      
+        
+          <a href="/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg); height: 80vw;">
+          <h1 class="post-title">Mac高效手册</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">Mac高效手册</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-03-06 10:58:47">2020-03-06</time>
+        <span class="author vcard">
+          17 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
+<!-- more -->
+<h2 id="环境相关">环境相关</h2>
+<h3 id="右键开启-terminal">右键开启 Terminal</h3>
+<p>系统偏好设置 &gt; 键盘 &gt; 快捷键 &gt; 服务，勾选 “新建位于文件夹位置的终端窗口”</p>
+<h3 id="右键创建新文件">右键创建新文件</h3>
+<p>安装 “<a href="https://itunes.apple.com/cn/app/new-file-menu-free/id1066302071">New File Menu</a>“</p>
+<h3 id="管理员权限打开-app">管理员权限打开 APP</h3>
+<pre><code class="language-shell"># 以 Intellij IDEA 为例
+$ cd /Applications
+$ sudo open -a 'IntelliJ IDEA.app'
+</code></pre>
+<h3 id="在命令行中用-finder-打开当前目录">在命令行中用 Finder 打开当前目录</h3>
+<pre><code>$ open .
+</code></pre>
+<h3 id="配置-path-环境变量">配置 PATH 环境变量</h3>
+<pre><code class="language-shell"># 环境变量的加载顺序是 /etc/profile /etc/paths ~/.bash_profile ~/.bash_login ~/.profile ~/.bashrc
+
+$ vim /etc/profile
+  export PATH=$PATH:&lt;PATH&gt;
+
+$ source /etc/profile
+</code></pre>
+<h3 id="查看本机信息">查看本机信息</h3>
+<h4 id="ip">IP</h4>
+<pre><code>$ ifconfig | grep &quot;inet &quot; | grep -v 127.0.0.1
+  inet 8.8.8.8 netmask 0xfffff800 broadcast 8.8.8.8
+</code></pre>
+<h4 id="dns">DNS</h4>
+<pre><code>$ nslookup store.chanjet.com
+$ cat /etc/resolv.conf
+</code></pre>
+<h3 id="轻点触摸板">轻点触摸板</h3>
+<figure data-type="image" tabindex="1"><a href="https://yuzhouwan.com/picture/mac/mac_soft_click_on_touch_board.png"><img src="https://yuzhouwan.com/picture/mac/mac_soft_click_on_touch_board.png" alt="Soft click on mac touch board" loading="lazy"></a></figure>
+<p><a href="https://yuzhouwan.com/picture/mac/mac_soft_click_on_touch_board.png">Soft click on mac touch board</a></p>
+<p>（对 <a href="https://www.apple.com/mac/">Mac</a>™ 的截图）</p>
+<h2 id="java-相关">Java 相关</h2>
+<h3 id="查看-jdk-安装目录">查看 JDK 安装目录</h3>
+<pre><code>$ /usr/libexec/java_home -V
+  Matching Java Virtual Machines (1):
+    1.8.0_171, x86_64:	&quot;Java SE 8&quot;
+    /Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home
+</code></pre>
+<h3 id="多-jdk-版本">多 JDK 版本</h3>
+<pre><code class="language-shell">$ vim ~/.bashrc
+alias /usr/libexec/java_home='echo $JAVA_HOME'
+unalias /usr/libexec/java_home
+
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java12='export JAVA_HOME=$JAVA_12_HOME'
+
+alias /usr/libexec/java_home='echo $JAVA_HOME'
+
+export JAVA_HOME=$JAVA_8_HOME
+export PATH=$PATH:$JAVA_HOME/bin
+$ source ~/.bashrc
+# 默认 JDK8
+$ java -version
+  java version &quot;1.8.0_231&quot;
+  Java(TM) SE Runtime Environment (build 1.8.0_231-b11)
+  Java HotSpot(TM) 64-Bit Server VM (build 25.231-b11, mixed mode)
+$ /usr/libexec/java_home
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+
+# 切换到 JDK12
+$ java12
+$ java -version
+  java version &quot;12.0.2&quot; 2019-07-16
+  Java(TM) SE Runtime Environment (build 12.0.2+10)
+  Java HotSpot(TM) 64-Bit Server VM (build 12.0.2+10, mixed mode, sharing)
+$ /usr/libexec/java_home
+  /Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home
+</code></pre>
+<p>Tips: 更多 Java 实用技巧，详见《<a href="https://yuzhouwan.com/posts/190413/">那些绕不过去的 Java 知识点</a>》</p>
+<h2 id="maven-相关">Maven 相关</h2>
+<h3 id="权限不足导致下载失败">权限不足导致下载失败</h3>
+<h4 id="描述">描述</h4>
+<p>报错无法解析依赖，找不到 <code>xxx.lock</code> 文件</p>
+<h4 id="解决">解决</h4>
+<p>对 Maven 的依赖文件存放目录赋权即可</p>
+<pre><code class="language-shell">$ sudo chown -R benedictjin:wheel /data/maven/repo
+</code></pre>
+<h4 id="补充">补充</h4>
+<p>另外，还可以通过以下一系列命令，统一对目录下的所有文件和文件夹进行权限修改</p>
+<pre><code class="language-shell">$ sudo chown -R benedictjin:wheel *
+$ sudo chmod -R g+rwX .
+$ sudo find . -type d -exec chmod 755 {} \;
+$ sudo find . -type f -exec chmod 644 {} \;
+</code></pre>
+<p>同理，还可以利用这个方法，删除 <code>.DS_Store</code> 文件</p>
+<pre><code class="language-shell"># 查看过滤出来的文件
+$ find . -name '.DS_Store'
+# 删除
+$ find . -name '.DS_Store' -type f -exec rm -f {} \;
+# 再次检查
+$ find . -name '.DS_Store'
+</code></pre>
+<p>Tips: 更多 Maven 实用技巧，详见《<a href="https://yuzhouwan.com/posts/2254/">Maven 高级玩法</a>》</p>
+<h2 id="命令相关">命令相关</h2>
+<h3 id="brew">brew</h3>
+<pre><code class="language-shell"># 使用国内的镜像
+$ cd &quot;$(brew --repo)&quot;
+$ git remote set-url origin git://mirrors.ustc.edu.cn/brew.git
+
+$ cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
+$ git remote set-url origin git://mirrors.ustc.edu.cn/homebrew-core.git
+
+$ brew update
+
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.bash_profile
+$ source ~/.bash_profile
+</code></pre>
+<h3 id="ccat"><a href="https://github.com/jingweno/ccat">ccat</a></h3>
+<p>操作类似 cat 命令，但是高亮了输出</p>
+<pre><code class="language-shell"># 使用 brew 安装
+$ brew install ccat
+
+# 查看最后一次的代码修改
+$ git diff HEAD^ | ccat
+</code></pre>
+<h3 id="fd"><a href="https://github.com/sharkdp/fd">fd</a></h3>
+<p>简化了 find 命令，使用起来更加简单高效，还会自动忽略隐藏目录（如 <code>.git/</code>、<code>.deploy_git/</code> 等）</p>
+<pre><code class="language-shell"># 使用 brew 安装
+$ brew install fd
+
+$ fd xml
+  pom.xml
+  processing/pom.xml
+  server/pom.xml
+  services/pom.xml
+  sql/pom.xml
+  # ...
+</code></pre>
+<h3 id="htop"><a href="https://hisham.hm/htop/">htop</a></h3>
+<p>增强了 top 命令，展示页面更加丰富</p>
+<pre><code class="language-shell"># 使用 brew 安装
+$ brew install htop
+
+$ htop
+</code></pre>
+<h3 id="tldr"><a href="https://github.com/tldr-pages/tldr">tldr</a></h3>
+<p>强化 man 命令，对展示的文档进行了简化，并展示了对应的例子</p>
+<pre><code class="language-shell"># 使用 npm 安装
+$ npm install -g tldr
+
+# 查看 cd 命令的使用文档
+$ tldr cd
+  ✔ Page not found. Updating cache...
+  ✔ Creating index...
+
+    cd
+
+    Change the current working directory.
+
+    - Go to the given directory:
+      cd path/to/directory
+
+    - Go to home directory of current user:
+      cd
+
+    - Go up to the parent of the current directory:
+      cd ..
+
+    - Go to the previously chosen directory:
+      cd -
+</code></pre>
+<h3 id="tree">tree</h3>
+<pre><code class="language-shell"># 使用 brew 安装
+$ brew install tree
+
+# 展示目录结构，这里我们以 ElasticSearch 的数据目录为例
+$ cd $ES_HOME/data
+$ tree -L 5
+  .
+  └── nodes
+      └── 0
+          ├── _state
+          │   ├── global-20.st
+          │   ├── manifest-35.st
+          │   └── node-3.st
+          └── node.lock
+
+  3 directories, 4 files
+</code></pre>
+<h2 id="工具相关">工具相关</h2>
+<h3 id="sublime">Sublime</h3>
+<h4 id="删除重复行">删除重复行</h4>
+<pre><code># ⌥+⌘+F 打开替换模式，并打开正则表达式的开关
+^(.+)$[\r\n](^\1$[\r\n]{0, 1})+
+</code></pre>
+<h3 id="iterm2">iTerm2</h3>
+<h4 id="自动补全只能看到一个字符">自动补全只能看到一个字符</h4>
+<p>如果发现自动提示的命令只能展示出一个字符，则说明 ANSI Colors 里面第一行的 Normal 和 Bright 颜色过于相近</p>
+<h4 id="scp-报错-cannot-change-locale-utf-8">scp 报错 cannot change locale (UTF-8)</h4>
+<p>使用 zsh 替代了 Mac 上原生的 bash 之后，本地化的设置默认是没有配置的，可以通过 <a href="https://yuzhouwan.com/posts/15691/#locale">locale</a> 命令来检查。解决方法也很简单，具体操作如下：</p>
+<pre><code class="language-shell">$ vim ~/.zshrc
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+
+$ source ~/.zshrc
+$ locale
+  LANG=&quot;en_US.UTF-8&quot;
+  LC_COLLATE=&quot;en_US.UTF-8&quot;
+  LC_CTYPE=&quot;en_US.UTF-8&quot;
+  LC_MESSAGES=&quot;en_US.UTF-8&quot;
+  LC_MONETARY=&quot;en_US.UTF-8&quot;
+  LC_NUMERIC=&quot;en_US.UTF-8&quot;
+  LC_TIME=&quot;en_US.UTF-8&quot;
+  LC_ALL=&quot;en_US.UTF-8&quot;
+</code></pre>
+<h4 id="删除-zsh-历史记录">删除 zsh 历史记录</h4>
+<pre><code class="language-shell">$ echo &quot;&quot; &gt; ~/.zsh_history &amp; exec $SHELL -l
+</code></pre>
+<h3 id="intellij-idea">Intellij IDEA</h3>
+<h4 id="debug-启动的时候卡在了-finished-saving-caches">debug 启动的时候，卡在了 Finished, saving caches</h4>
+<pre><code class="language-shell"># 获取 Mac 的 hostname
+$ hostname
+  BenedictJin.local
+
+# 添加到 hosts 文件，即可解决
+$ sudo vim /etc/hosts
+  127.0.0.1       localhost        BenedictJin.local
+</code></pre>
+<h3 id="typroa">Typroa</h3>
+<h4 id="支持-callout">支持 callout</h4>
+<p>首先通过 <code>⌘,</code> 快速打开 Typroa 的控制面板，依次点击 <code>General</code> - <code>Open Theme Folder</code> 按钮，打开 <code>theme</code> 目录，并在该目录下新建 <code>base.user.css</code> 文件，填写如下内容：</p>
+<pre><code class="language-json">div[style^='callout:'] {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 6px !important;
+    border-radius: 3px;
+}
+div[style^='callout:'] h4 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+div[style^='callout:'] p:last-child {
+    margin-bottom: 0;
+}
+div[style^='callout:'] code {
+    border-radius: 3px;
+}
+div[style^='callout:']+div[style^='callout:'] {
+    margin-top: -5px;
+}
+div[style='callout:default'] {
+    border-left-color: #777 !important;
+}
+div[style='callout:default'] h4 {
+    color: #777 !important;
+}
+div[style='callout:primary'] {
+    border-left-color: #428bca !important;
+}
+div[style='callout:primary'] h4 {
+    color: #428bca !important;
+}
+div[style='callout:success'] {
+    border-left-color: #5cb85c !important;
+}
+div[style='callout:success'] h4 {
+    color: #5cb85c !important;
+}
+div[style='callout:danger'] {
+    border-left-color: #d9534f !important;
+}
+div[style='callout:danger'] h4 {
+    color: #d9534f !important;
+}
+div[style='callout:warning'] {
+    border-left-color: #f0ad4e !important;
+}
+div[style^='callout:warning'] h4 {
+    color: #f0ad4e !important;
+}
+div[style^='callout:info'] {
+    border-left-color: #5bc0de !important;
+}
+div[style^='callout:info'] h4 {
+    color: #5bc0de !important;
+}
+</code></pre>
+<p>重启 Typroa 之后，即可使用 callout 功能：</p>
+<pre><code class="language-html">&lt;div style=&quot;callout:default&quot;&gt;default&lt;/div&gt;
+&lt;div style=&quot;callout:primary&quot;&gt;primary&lt;/div&gt;
+&lt;div style=&quot;callout:success&quot;&gt;success&lt;/div&gt;
+&lt;div style=&quot;callout:warning&quot;&gt;warning&lt;/div&gt;
+&lt;div style=&quot;callout:info&quot;&gt;info&lt;/div&gt;
+</code></pre>
+<p>效果如下：</p>
+<figure data-type="image" tabindex="2"><a href="https://yuzhouwan.com/picture/mac/mac_typroa_callout.png"><img src="https://yuzhouwan.com/picture/mac/mac_typroa_callout.png" alt="Markdown Callout in Typroa" loading="lazy"></a></figure>
+<p><a href="https://yuzhouwan.com/picture/mac/mac_typroa_callout.png">Markdown Callout in Typroa</a></p>
+<p>（对 <a href="https://typora.io/">Typroa</a>™ 的截图）</p>
+<h3 id="chrome">Chrome</h3>
+<h4 id="octotree-代码大纲">Octotree 代码大纲</h4>
+<figure data-type="image" tabindex="3"><a href="https://yuzhouwan.com/picture/mac/mac_octotree.png"><img src="https://yuzhouwan.com/picture/mac/mac_octotree.png" alt="Octotree" loading="lazy"></a></figure>
+<p><a href="https://yuzhouwan.com/picture/mac/mac_octotree.png">Octotree</a></p>
+<p>（对 <a href="https://github.com/asdf2014">Github</a>™ 的截图）</p>
+<h4 id="isometric-contributions-可视化">Isometric Contributions 可视化</h4>
+<figure data-type="image" tabindex="4"><a href="https://yuzhouwan.com/picture/mac/mac_asdf2014_on_isometric_contributions.png"><img src="https://yuzhouwan.com/picture/mac/mac_asdf2014_on_isometric_contributions.png" alt="asdf2014 on Isometric Contributions" loading="lazy"></a></figure>
+<p><a href="https://yuzhouwan.com/picture/mac/mac_asdf2014_on_isometric_contributions.png">asdf2014 on Isometric Contributions</a></p>
+<p>（对 <a href="https://github.com/asdf2014">Github</a>™ 的截图）</p>
+<h3 id="asciinema"><a href="https://github.com/asciinema/asciinema">asciinema</a></h3>
+<h4 id="quick-start">Quick Start</h4>
+<pre><code>$ brew install asciinema
+$ asciinema rec
+# 录制成功后，exit 退出即可
+# 支持保存在本地，或发布在 asciinema.org 网站上
+</code></pre>
+<h4 id="鉴权">鉴权</h4>
+<p>如果你担心发布在网上，存在隐私问题。你可以注册 ascinema 的账号，并设置录制内容是否公开（默认为 private）</p>
+<h4 id="示例">示例</h4>
+<pre><code>$ asciinema rec
+$ cd /tmp
+$ vim open.sh
+  open 'https://yuzhouwan.com/'
+$ sh open.sh
+$ exit
+</code></pre>
+<h4 id="转-gif"><a href="https://github.com/asciinema/asciicast2gif">转 gif</a></h4>
+<pre><code>$ brew install imagemagick
+$ brew install gifsicle
+$ npm install --global asciicast2gif
+$ asciicast2gif https://asciinema.org/a/246879.json 246879.gif
+</code></pre>
+<h4 id="效果">效果</h4>
+<figure data-type="image" tabindex="5"><a href="https://asciinema.org/a/246879"><img src="https://asciinema.org/a/246879.svg" alt="Asciinema Example" loading="lazy"></a></figure>
+<p>（利用 <a href="https://asciinema.org/a/246879">Asciinema</a>™ 录制而成）</p>
+<h2 id="快捷键">快捷键</h2>
+<h3 id="mac-键盘符号">Mac 键盘符号</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">键盘符号</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘</td>
+<td style="text-align:left">Command</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧</td>
+<td style="text-align:left">Shift</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥</td>
+<td style="text-align:left">Option</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃</td>
+<td style="text-align:left">Control</td>
+</tr>
+<tr>
+<td style="text-align:left">↩︎</td>
+<td style="text-align:left">Return / Enter</td>
+</tr>
+<tr>
+<td style="text-align:left">⌫</td>
+<td style="text-align:left">Delete</td>
+</tr>
+<tr>
+<td style="text-align:left">⌦</td>
+<td style="text-align:left">向前删除键（Fn + Delete）</td>
+</tr>
+<tr>
+<td style="text-align:left">↑</td>
+<td style="text-align:left">上箭头</td>
+</tr>
+<tr>
+<td style="text-align:left">↓</td>
+<td style="text-align:left">下箭头</td>
+</tr>
+<tr>
+<td style="text-align:left">←</td>
+<td style="text-align:left">左箭头</td>
+</tr>
+<tr>
+<td style="text-align:left">→</td>
+<td style="text-align:left">右箭头</td>
+</tr>
+<tr>
+<td style="text-align:left">⇞</td>
+<td style="text-align:left">Page Up（Fn + ↑）</td>
+</tr>
+<tr>
+<td style="text-align:left">⇟</td>
+<td style="text-align:left">Page Down（Fn + ↓）</td>
+</tr>
+<tr>
+<td style="text-align:left">Fn + ←</td>
+<td style="text-align:left">Home</td>
+</tr>
+<tr>
+<td style="text-align:left">Fn + →</td>
+<td style="text-align:left">End</td>
+</tr>
+<tr>
+<td style="text-align:left">⇥</td>
+<td style="text-align:left">右制表符（Tab 键）</td>
+</tr>
+<tr>
+<td style="text-align:left">⇤</td>
+<td style="text-align:left">左制表符（Shift + Tab）</td>
+</tr>
+<tr>
+<td style="text-align:left">⎋</td>
+<td style="text-align:left">Escape（Esc）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mac-本身相关">Mac 本身相关</h3>
+<h4 id="访问隐藏目录">访问隐藏目录</h4>
+<p>在 Finder 里面同时按 <code>Command + Shift + G</code> 即可输入隐藏目录，如 <code>/usr/bin/java</code></p>
+<h3 id="vim-相关">Vim 相关</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌃F</td>
+<td style="text-align:left">下翻页</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃B</td>
+<td style="text-align:left">上翻页</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃F</td>
+<td style="text-align:left">下翻页</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃B</td>
+<td style="text-align:left">上翻页</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧M</td>
+<td style="text-align:left">将光标移动的该页中部</td>
+</tr>
+<tr>
+<td style="text-align:left">GG</td>
+<td style="text-align:left">回到文件顶部</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧G</td>
+<td style="text-align:left">回到文件底部</td>
+</tr>
+<tr>
+<td style="text-align:left">HJKL</td>
+<td style="text-align:left">移动光标（HL: 左右；JK: 上下）</td>
+</tr>
+</tbody>
+</table>
+<p>Tips: 更多 Vim 实用技巧 和 完整快捷键 详见《<a href="https://yuzhouwan.com/posts/15691">Linux 实战技巧</a>》的 <a href="https://yuzhouwan.com/posts/15691/#vim">vim</a> 和 <a href="https://yuzhouwan.com/posts/15691/#Blog">cheat sheet</a> 部分</p>
+<h3 id="intellij-idea-相关">Intellij Idea 相关</h3>
+<h4 id="editing编辑">Editing（编辑）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌃Space</td>
+<td style="text-align:left">基本的代码补全（补全任何类、方法、变量）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⇧Space</td>
+<td style="text-align:left">智能代码补全（过滤器方法列表和变量的预期类型）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧↩</td>
+<td style="text-align:left">自动结束代码，行末自动添加分号</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘P</td>
+<td style="text-align:left">显示方法的参数信息</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃J</td>
+<td style="text-align:left">快速查看文档</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧F1</td>
+<td style="text-align:left">查看外部文档（在某些代码上会触发打开浏览器显示相关文档）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘+鼠标</td>
+<td style="text-align:left">显示简要信息</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘F1</td>
+<td style="text-align:left">在错误或警告处显示具体描述信息</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘N, ⌃↩</td>
+<td style="text-align:left"><strong>生成代码</strong>（<code>getter</code>、<code>setter</code>、构造函数、<code>hashCode</code> / <code>equals</code> / <code>toString</code>）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃O</td>
+<td style="text-align:left">覆盖方法（重写父类方法）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃I</td>
+<td style="text-align:left">实现方法（实现接口中的方法）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥T</td>
+<td style="text-align:left">包围代码（使用 <code>if..else</code>, <code>try..catch</code>, <code>for</code>, <code>synchronized</code> 等包围选中的代码）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘/</td>
+<td style="text-align:left">注释 / 取消注释与行注释</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥/</td>
+<td style="text-align:left">注释 / 取消注释与块注释</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥↑</td>
+<td style="text-align:left">连续选中代码块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥↓</td>
+<td style="text-align:left">减少当前选中的代码块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⇧Q</td>
+<td style="text-align:left">显示上下文信息</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥↩</td>
+<td style="text-align:left">显示意向动作和快速修复代码</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥L</td>
+<td style="text-align:left">格式化代码</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌥O</td>
+<td style="text-align:left">优化 <code>import</code></td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌥I</td>
+<td style="text-align:left">自动缩进线</td>
+</tr>
+<tr>
+<td style="text-align:left">⇥ / ⇧⇥</td>
+<td style="text-align:left">缩进代码 / 反缩进代码</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘X</td>
+<td style="text-align:left">剪切当前行或选定的块到剪贴板</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘C</td>
+<td style="text-align:left">复制当前行或选定的块到剪贴板</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘V</td>
+<td style="text-align:left">从剪贴板粘贴</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧V</td>
+<td style="text-align:left"><strong>从最近的缓冲区粘贴</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">⌘D</td>
+<td style="text-align:left">复制当前行或选定的块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌫</td>
+<td style="text-align:left">删除当前行或选定的块的行</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⇧J</td>
+<td style="text-align:left">智能的将代码拼接成一行</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘↩</td>
+<td style="text-align:left">智能的拆分拼接的行</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧↩</td>
+<td style="text-align:left">开始新的一行</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧U</td>
+<td style="text-align:left">大小写切换</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧] / ⌘⇧[</td>
+<td style="text-align:left">选择直到代码块结束 / 开始</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥⌦</td>
+<td style="text-align:left">删除到单词的末尾</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥⌫</td>
+<td style="text-align:left">删除到单词的开头</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘+ / ⌘-</td>
+<td style="text-align:left">展开 / 折叠代码块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧+</td>
+<td style="text-align:left">展开所以代码块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧-</td>
+<td style="text-align:left">折叠所有代码块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘W</td>
+<td style="text-align:left">关闭活动的编辑器选项卡</td>
+</tr>
+</tbody>
+</table>
+<h4 id="search-replace查询-替换">Search / Replace（查询 / 替换）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Double ⇧</td>
+<td style="text-align:left">查询任何东西</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘F</td>
+<td style="text-align:left">文件内查找</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘G</td>
+<td style="text-align:left">查找模式下，向下查找</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧G</td>
+<td style="text-align:left">查找模式下，向上查找</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘R</td>
+<td style="text-align:left">文件内替换</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧F</td>
+<td style="text-align:left">全局查找（根据路径）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧R</td>
+<td style="text-align:left">全局替换（根据路径）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧S</td>
+<td style="text-align:left">查询结构（Ultimate Edition 版专用，需要在 Keymap 中设置）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧M</td>
+<td style="text-align:left">替换结构（Ultimate Edition 版专用，需要在 Keymap 中设置）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="usage-search使用查询">Usage Search（使用查询）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌥F7 / ⌘F7</td>
+<td style="text-align:left">在文件中查找用法 / 在类中查找用法</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧F7</td>
+<td style="text-align:left">在文件中突出显示的用法</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥F7</td>
+<td style="text-align:left">显示用法</td>
+</tr>
+</tbody>
+</table>
+<h4 id="compile-and-run编译和运行">Compile and Run（编译和运行）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘F9</td>
+<td style="text-align:left">编译 Project</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧F9</td>
+<td style="text-align:left">编译选择的文件、包或模块</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌥R</td>
+<td style="text-align:left">弹出 Run 的可选择菜单</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌥D</td>
+<td style="text-align:left">弹出 Debug 的可选择菜单</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃R</td>
+<td style="text-align:left">运行</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃D</td>
+<td style="text-align:left">调试</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⇧R, ⌃⇧D</td>
+<td style="text-align:left">从编辑器运行上下文环境配置</td>
+</tr>
+</tbody>
+</table>
+<h4 id="debugging调试">Debugging（调试）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">F8</td>
+<td style="text-align:left">进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</td>
+</tr>
+<tr>
+<td style="text-align:left">F7</td>
+<td style="text-align:left">进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧F7</td>
+<td style="text-align:left">智能步入，断点所在行上有多个方法调用，会弹出进入哪个方法</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧F8</td>
+<td style="text-align:left">跳出</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥F9</td>
+<td style="text-align:left">运行到光标处，如果光标前有其他断点会进入到该断点</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥F8</td>
+<td style="text-align:left">计算表达式（可以更改变量值使其生效）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥R</td>
+<td style="text-align:left">恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘F8</td>
+<td style="text-align:left">切换断点（若光标当前行有断点则取消断点，没有则加上断点）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧F8</td>
+<td style="text-align:left">查看断点信息</td>
+</tr>
+</tbody>
+</table>
+<h4 id="navigation导航">Navigation（导航）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘O</td>
+<td style="text-align:left">查找类文件</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘F12</td>
+<td style="text-align:left">弹出当前文件结构层，可以在弹出的层上直接输入进行筛选（可用于搜索类中的方法）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧O</td>
+<td style="text-align:left">查找所有类型文件、打开文件、打开目录，打开目录需要在输入的内容前面或后面加一个反斜杠 /</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥O</td>
+<td style="text-align:left">前往指定的变量 / 方法</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃← / ⌃→</td>
+<td style="text-align:left">左右切换打开的编辑 tab 页</td>
+</tr>
+<tr>
+<td style="text-align:left">F12</td>
+<td style="text-align:left">返回到前一个工具窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">⎋</td>
+<td style="text-align:left">从工具窗口进入代码文件窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧⎋</td>
+<td style="text-align:left">隐藏当前或最后一个活动的窗口，且光标进入代码文件窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧F4</td>
+<td style="text-align:left">关闭活动 run / messages / find / … 的 tab 页</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘L</td>
+<td style="text-align:left">在当前文件跳转到某一行的指定处</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘E</td>
+<td style="text-align:left">显示最近打开的文件记录列表</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥← / ⌘⌥→</td>
+<td style="text-align:left">退回 / 前进到上一个操作的地方</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧⌫</td>
+<td style="text-align:left">跳转到最后一个编辑的地方</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥F1</td>
+<td style="text-align:left">显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择（如在代码编辑窗口可以选择显示该文件的 Finder）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘B / ⌘</td>
+<td style="text-align:left">鼠标点击 进入光标所在的方法 / 变量的接口或是定义处</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥B</td>
+<td style="text-align:left">跳转到实现处，在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥ Space, ⌘Y</td>
+<td style="text-align:left">快速打开光标所在方法、类的定义</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⇧B</td>
+<td style="text-align:left">跳转到类型声明处</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘U</td>
+<td style="text-align:left">前往当前光标所在方法的父类的方法 / 接口定义</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃↓ / ⌃↑</td>
+<td style="text-align:left">当前光标跳转到当前文件的前一个 / 后一个方法名位置</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘] / ⌘[</td>
+<td style="text-align:left">移动光标到当前所在代码的花括号开始/结束位置</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃H</td>
+<td style="text-align:left">显示当前类的层次结构</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧H</td>
+<td style="text-align:left">显示方法层次结构</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌥H</td>
+<td style="text-align:left">显示调用层次结构</td>
+</tr>
+<tr>
+<td style="text-align:left">F2 / ⇧F2</td>
+<td style="text-align:left">跳转到下一个 / 上一个突出错误或警告的位置</td>
+</tr>
+<tr>
+<td style="text-align:left">F4 / ⌘↓</td>
+<td style="text-align:left">编辑 / 查看代码源</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥ Home</td>
+<td style="text-align:left">显示到当前文件的导航条</td>
+</tr>
+<tr>
+<td style="text-align:left">F3</td>
+<td style="text-align:left">选中文件 / 文件夹 / 代码行，添加 / 取消书签</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥F3</td>
+<td style="text-align:left">选中文件 / 文件夹 / 代码行，使用助记符添加 / 取消书签</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃0…⌃9</td>
+<td style="text-align:left">定位到对应数值的书签位置</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘F3</td>
+<td style="text-align:left">显示所有书签</td>
+</tr>
+</tbody>
+</table>
+<h4 id="refactoring重构">Refactoring（重构）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">F5</td>
+<td style="text-align:left">复制文件到指定目录</td>
+</tr>
+<tr>
+<td style="text-align:left">F6</td>
+<td style="text-align:left">移动文件到指定目录</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌫</td>
+<td style="text-align:left">在文件上为安全删除文件，弹出确认框</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧F6</td>
+<td style="text-align:left">重命名文件</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘F6</td>
+<td style="text-align:left"><strong>更改签名</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥N</td>
+<td style="text-align:left">一致性</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥M</td>
+<td style="text-align:left">将选中的代码提取为方法</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥V</td>
+<td style="text-align:left">提取变量</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥F</td>
+<td style="text-align:left">提取字段</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥C</td>
+<td style="text-align:left">提取常量</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥P</td>
+<td style="text-align:left">提取参数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="vcs版本控制">VCS（版本控制）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘K</td>
+<td style="text-align:left">提交代码到版本控制器</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘T</td>
+<td style="text-align:left">从版本控制器更新代码</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥⇧C</td>
+<td style="text-align:left">查看最近的变更记录</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃C</td>
+<td style="text-align:left">快速弹出版本控制器操作面板</td>
+</tr>
+</tbody>
+</table>
+<h4 id="live-templates动态代码模板">Live Templates（动态代码模板）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘⌥J</td>
+<td style="text-align:left">弹出模板选择窗口，将选定的代码使用动态模板包住</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘J</td>
+<td style="text-align:left">插入自定义动态代码模板</td>
+</tr>
+</tbody>
+</table>
+<h4 id="general通用">General（通用）</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘1…⌘9</td>
+<td style="text-align:left">打开相应编号的工具窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘S</td>
+<td style="text-align:left">保存所有</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥Y</td>
+<td style="text-align:left">同步、刷新</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌘F</td>
+<td style="text-align:left">切换全屏模式</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⇧F12</td>
+<td style="text-align:left">切换最大化编辑器</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥⇧F</td>
+<td style="text-align:left">添加到收藏夹</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥⇧I</td>
+<td style="text-align:left">检查当前文件与当前的配置文件</td>
+</tr>
+<tr>
+<td style="text-align:left">§⌃, ⌃`</td>
+<td style="text-align:left">快速切换当前的 scheme（切换主题、代码样式等）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘,</td>
+<td style="text-align:left">打开 IDEA 系统设置</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘;</td>
+<td style="text-align:left">打开项目结构对话框</td>
+</tr>
+<tr>
+<td style="text-align:left">⇧⌘A</td>
+<td style="text-align:left">查找动作（可设置相关选项）</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⇥</td>
+<td style="text-align:left">编辑窗口标签和工具窗口之间切换（如果在切换的过程加按上 delete，则是关闭对应选中的窗口）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="other">Other</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">⌘⇧8</td>
+<td style="text-align:left">竖编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥⇧U</td>
+<td style="text-align:left">装上 CamelCase 插件之后，切换变量的驼峰法命名</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌘U</td>
+<td style="text-align:left">装上 Translation 插件之后，可以快速翻译</td>
+</tr>
+<tr>
+<td style="text-align:left">⌃⌘O</td>
+<td style="text-align:left">装上 Translation 插件之后，可以翻译并替换</td>
+</tr>
+<tr>
+<td style="text-align:left">⌥S</td>
+<td style="text-align:left">装上 OnlineSearch 插件之后，可以配置为该快捷键</td>
+</tr>
+<tr>
+<td style="text-align:left">⌘⌥⇧/</td>
+<td style="text-align:left">使用 2018.3 EAP 版本时候，开启 JVM Profile 功能</td>
+</tr>
+</tbody>
+</table>
+<h2 id="资源">资源</h2>
+<h3 id="理论">理论</h3>
+<ul>
+<li><a href="https://meta.stackexchange.com/questions/66377/what-is-the-xy-problem">What is the XY problem?</a></li>
+<li><a href="https://mp.weixin.qq.com/s/fhqg1ntQoPYxC-5KDQk3jQ">为了效率，扎克伯格的 26 张 PPT</a></li>
+<li><a href="https://xiaozhuanlan.com/Effective-Mac">Mac 高效开发指南</a></li>
+<li><a href="https://ihtcboy.com/2018/07/15/2018-07-15_%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84macOS%E7%B3%BB%E5%88%97%EF%BC%9A%E7%B2%BE%E9%80%89MacApp/">程序员的 macOS 系列：精选 Mac App</a></li>
+<li><a href="https://leohxj.gitbooks.io/a-programmer-prepares/content/software/mac/index.html">程序员的自我修养 - Mac 篇</a></li>
+</ul>
+<h3 id="软件">软件</h3>
+<h4 id="通用">通用</h4>
+<ul>
+<li><a href="https://www.waitsun.com/">精品 Mac 应用分享</a></li>
+<li><a href="https://www.zhihu.com/topic/19591970/hot">Mac OS X 使用技巧</a></li>
+</ul>
+<h4 id="钉钉">钉钉</h4>
+<ul>
+<li>DingTalk RC: <a href="https://download.alicdn.com/dingtalk-desktop/win_installer/RC/DingTalk_v3.3.4-RC.1.exe">win</a> &amp; <a href="https://download.alicdn.com/dingtalk-desktop/mac_dmg/RC/DingTalk_v3.3.4-RC.1.dmg">mac</a></li>
+</ul>
+<h4 id="iterm2-2">iTerm2</h4>
+<ul>
+<li>
+<p><a href="https://www.jianshu.com/p/405956cdaca6">ITerm2 配置 - 让你的 mac 命令行更加丰富高效</a><br>
+<a href="https://yuzhouwan.com/picture/mac/mac_iterm2.png"><img src="https://yuzhouwan.com/picture/mac/mac_iterm2.png" alt="iTerm2" loading="lazy"></a></p>
+<p><a href="https://yuzhouwan.com/picture/mac/mac_iterm2.png">iTerm2</a></p>
+<p>（对 <a href="https://iterm2.com/">ITerm2</a>™ 的截图）</p>
+</li>
+<li>
+<p><a href="http://bluebiu.com/blog/iterm2-ssh-session-idle.html">iTerm2 中 ssh 保持连接不断开</a></p>
+</li>
+</ul>
+<h4 id="sublime-2">Sublime</h4>
+<ul>
+<li><a href="https://github.com/sb2nov/mac-setup">Installing Development environment on macOS</a></li>
+<li><a href="https://github.com/dzhibas/SublimePrettyJson">Prettify / Minify / Query / Goto / Validate / Lint JSON plugin for Sublime Text 2 &amp; 3</a></li>
+<li><a href="https://www.jianshu.com/p/a50db1f77eb9">Sublime Text：Pretty Json 插件使用技巧</a></li>
+</ul>
+<h3 id="硬件">硬件</h3>
+<ul>
+<li><a href="https://support.apple.com/zh-cn/HT204063">重置 Mac 上的 NVRAM 或 PRAM</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT207513">如何在 Mac 上使用夜览</a></li>
+</ul>
+<h3 id="工具网站">工具网站</h3>
+<ul>
+<li><a href="http://www.bejson.com/">JSON 格式化</a></li>
+<li><a href="http://tool.chinaz.com/Tools/unixtime.aspx">时间戳转换</a></li>
+<li><a href="https://www.debuggex.com/">正则表达式校验</a></li>
+</ul>
+<h3 id="图像">图像</h3>
+<h4 id="素材">素材</h4>
+<ul>
+<li><a href="https://pixabay.com/">Pixabay</a>：免费高质量的图片素材网站</li>
+<li><a href="https://www.pexels.com/">Pexels</a>：每周定量更新，所有的图片都会显示详细的信息</li>
+<li><a href="https://www.splitshire.com/">Splitshire</a>：免费高清摄影图片下载</li>
+<li><a href="http://pngimg.com/">Pngimg</a>：PNG 格式的透明素材图</li>
+<li><a href="https://www.zhihu.com/question/23169054">有哪些好的 PPT 素材网站，推荐下?</a></li>
+</ul>
+<h4 id="图标">图标</h4>
+<ul>
+<li><a href="https://www.iconfont.cn/">Iconfont</a>：阿里巴巴矢量图库</li>
+<li><a href="https://www.easyicon.net/">Easyicon</a></li>
+<li><a href="http://www.iconninja.com/">Iconninja</a></li>
+</ul>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/oDnfDIkBl/">
+              Mac
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
+            <strong>Markdown数学公式语法</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7691fdf5a3780e9bb3a4',
+    clientSecret: 'f4bd6c2287489e6b24a18af94afd54efcd0f55f9',
+    repo: 'xiong-zh.github.io',
+    owner: 'xiong-zh',
+    admin: ['xiong-zh'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+      
+
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1583463661959" alt="ZhangXiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>

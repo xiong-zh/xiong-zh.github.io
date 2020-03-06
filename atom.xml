@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-03-06T02:54:19.495Z</updated>
+    <updated>2020-03-06T03:01:15.146Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
+    <entry>
+        <title type="html"><![CDATA[Mac高效手册]]></title>
+        <id>https://xiong-zh.github.io/mac-gao-xiao-shou-ce/</id>
+        <link href="https://xiong-zh.github.io/mac-gao-xiao-shou-ce/">
+        </link>
+        <updated>2020-03-06T02:58:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Markdown数学公式语法]]></title>
         <id>https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/</id>
@@ -91,25 +102,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
 以梦为马，期待人间。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Django restframework初步使用]]></title>
-        <id>https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/</id>
-        <link href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/">
-        </link>
-        <updated>2020-01-22T08:53:05.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
-<p>10个常用组件如下：</p>
-<ul>
-<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
-<p>10个常用组件如下：</p>
-<ul>
-<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
