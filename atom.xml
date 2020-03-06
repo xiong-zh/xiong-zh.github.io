@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>ZhangXiong</title>
-    <updated>2020-03-05T14:32:50.220Z</updated>
+    <updated>2020-03-06T02:53:38.443Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZhangXiong</rights>
+    <entry>
+        <title type="html"><![CDATA[Markdown数学公式语法]]></title>
+        <id>https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/</id>
+        <link href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
+        </link>
+        <updated>2020-03-06T02:45:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>markdown支持完整LaTex数学公式语法</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>markdown支持完整LaTex数学公式语法</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Git高级玩法]]></title>
         <id>https://xiong-zh.github.io/git-gao-ji-wan-fa/</id>
@@ -19,17 +30,6 @@
         <summary type="html"><![CDATA[<p>介绍了一些Git的使用方法和相关脚本的编写。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>介绍了一些Git的使用方法和相关脚本的编写。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Jupyter NoteBook 的快捷键使用指南]]></title>
-        <id>https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/</id>
-        <link href="https://xiong-zh.github.io/jupyter-notebook-de-kuai-jie-jian-shi-yong-zhi-nan/">
-        </link>
-        <updated>2020-02-21T03:39:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Jupyter Notebook 有两种键盘输入模式。即命令模式和编辑模式，这与 <a href="http://www.vim.org/">Vim</a>有些类似。在编辑模式下，可以往单元中键入代码或文本，此时单元格被绿色的框线包围，且命令模式下的快捷键不生效。</p>
 ]]></content>
     </entry>
     <entry>
@@ -44,21 +44,6 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Python之禅]]></title>
-        <id>https://xiong-zh.github.io/python-zhi-shan/</id>
-        <link href="https://xiong-zh.github.io/python-zhi-shan/">
-        </link>
-        <updated>2020-02-12T04:33:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>Beautiful is better than ugly.<br>
-Explicit is better than implicit.<br>
-Simple is better than complex.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Beautiful is better than ugly.<br>
-Explicit is better than implicit.<br>
-Simple is better than complex.</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Python全栈工程师核心面试300问深入解析]]></title>
         <id>https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/</id>
         <link href="https://xiong-zh.github.io/python-quan-zhan-gong-cheng-shi-he-xin-mian-shi-300-wen-shen-ru-jie-xi/">
@@ -70,7 +55,7 @@ Simple is better than complex.</p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[乌合之众]]></title>
+        <title type="html"><![CDATA[阅读-乌合之众]]></title>
         <id>https://xiong-zh.github.io/wu-he-zhi-zhong/</id>
         <link href="https://xiong-zh.github.io/wu-he-zhi-zhong/">
         </link>
@@ -106,6 +91,25 @@ Simple is better than complex.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
 以梦为马，期待人间。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django restframework初步使用]]></title>
+        <id>https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/</id>
+        <link href="https://xiong-zh.github.io/django-restframework-chu-bu-shi-yong/">
+        </link>
+        <updated>2020-01-22T08:53:05.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="django-rest-framework">Django REST framework</h2>
+<p>10个常用组件如下：</p>
+<ul>
+<li>权限组件；- 路由组件；视图组件；分页组件；解析器组件；渲染器组件； 版本组件; 认证组件；访问频率限制组件； 序列化组件；</li>
+</ul>
 ]]></content>
     </entry>
 </feed>
