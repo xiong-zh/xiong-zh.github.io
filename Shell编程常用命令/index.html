@@ -3,15 +3,10 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shell编程常用命令 | ZhangXiong</title>
-<meta name="description" content="道阻且长，行则将至。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1584512023985">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1584890607630">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Shell编程常用命令 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -25,67 +20,128 @@
 </script>
 
 
+    <meta name="description" content="Shell简介
+Shell自身是一个用C语言编写的程序，是用户来使用Unix或Linux的桥梁，用户的大部分工作都需要通过Shell来完成。只有熟练使用shell，才能熟练掌握linux。
+可以说：Shell既是一种命令语言，又是一种程序设..." />
+    <meta name="keywords" content="Linux,Shell" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="site-nav has-cover">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>ZhangXiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://xiong-zh.github.io">
+  <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1584890607630" alt="">
+  </a>
+  <h1 class="site-title">
+    ZhangXiong
+  </h1>
+  <p class="site-description">
+    道阻且长，行则将至。
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/">回到首页</a>
-        
+        <a href="/" class="menu">
+          回到首页
+        </a>
       
-        
-          <a href="/archives">文章归档</a>
-        
+    
       
-        
-          <a href="/tags">所有标签</a>
-        
+        <a href="/archives" class="menu">
+          文章归档
+        </a>
       
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
+    
       
-        
-          <a href="/friends/">友情链接</a>
-        
+        <a href="/tags" class="menu">
+          所有标签
+        </a>
       
-        
-          <a href="/about">关于</a>
-        
+    
       
-    </nav>
+        <a href="/documents/" class="menu" target="_blank">
+          后端图谱
+        </a>
+      
+    
+      
+        <a href="/friends/" class="menu">
+          友情链接
+        </a>
+      
+    
+      
+        <a href="/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/xiong-zh" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/imzhangxiong" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/zhangxiongblog" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
   </div>
 </div>
-    </div>
-    <article role="main" class="hentry has-cover">
-      
-        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/04.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/04.jpg); height: 80vw;">
-          <h1 class="post-title">Shell编程常用命令</h1>
-        </div>
-      
-      <h1 class="entry-title" itemprop="headline">Shell编程常用命令</h1>
-      <div class="entry-meta">
-        <time class="updated" datetime="2019-08-10 16:27:28">2019-08-10</time>
-        <span class="author vcard">
-          14 min read
-        </span>
-      </div>
-      <div class="post-content yue">
-        <h3 id="shell简介">Shell简介</h3>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Shell编程常用命令
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-10
+              </span>
+              <span>
+                14 min read
+              </span>
+              
+                <a href="https://xiong-zh.github.io/Gah7pxU-rM/" class="post-tag">
+                  # Linux
+                </a>
+              
+                <a href="https://xiong-zh.github.io/p0ASXc3D0A/" class="post-tag">
+                  # Shell
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://picture.zhangxiong.net/images/blog_picture/cover/04.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="shell简介">Shell简介</h3>
 <p>Shell自身是一个用C语言编写的程序，是用户来使用Unix或Linux的桥梁，用户的大部分工作都需要通过Shell来完成。只有熟练使用shell，才能熟练掌握linux。<br>
 可以说：Shell既是一种命令语言，又是一种程序设计语言。<br>
 Shell虽然不是Unix/Linux系统内核的一部分，但它调用了系统核心的大部分功能来执行程序、建立文件并以并行的方式来协调各个程序的运行。<br>
@@ -755,45 +811,71 @@ arguments 使用空格分隔，不用逗号。
 <p>$* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号(&quot; &quot;)包含时，都以&quot;$1&quot; &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">&quot;</mi><mo>…</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">2&quot; … &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">&quot;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">&quot;</span></span></span></span>n&quot; 的形式输出所有参数。<br>
 但是当它们被双引号(&quot; &quot;)包含时，&quot;$*&quot; 会将所有的参数作为一个整体，以&quot;$1 $2 … <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi mathvariant="normal">&quot;</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">式</mi><mi mathvariant="normal">输</mi><mi mathvariant="normal">出</mi><mi mathvariant="normal">所</mi><mi mathvariant="normal">有</mi><mi mathvariant="normal">参</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">；</mi><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">n&quot;的形式输出所有参数；&quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord">&quot;</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">式</span><span class="mord cjk_fallback">输</span><span class="mord cjk_fallback">出</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">参</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">；</span><span class="mord">&quot;</span></span></span></span>@&quot; 会将各个参数分开，以&quot;$1&quot; &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">&quot;</mi><mo>…</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">2&quot; … &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">&quot;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">&quot;</span></span></span></span>n&quot; 的形式输出所有参数。</p>
 
-      </div>
-      <div class="entry-block">
-        <div class="entry-tags">
-          
-            <a href="https://xiong-zh.github.io/Gah7pxU-rM/">
-              Linux
-            </a>
-          
-            <a href="https://xiong-zh.github.io/p0ASXc3D0A/">
-              Shell
-            </a>
-          
-        </div>
-      </div>
-    </article>
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>前一篇</h3>
-          <a href="https://xiong-zh.github.io/Redis/">
-            <strong>Redis</strong>
-          </a>
-        </div>
-      </section>
-    
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>后一篇</h3>
-          <a href="https://xiong-zh.github.io/Linux 基础知识/">
-            <strong>Linux 基础知识</strong>
-          </a>
-        </div>
-      </section>
-    
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#shell%E7%AE%80%E4%BB%8B">Shell简介</a></li>
+<li><a href="#shell%E7%AE%80%E4%BB%8B-2">Shell简介</a></li>
+<li><a href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6">转义字符</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2">变量替换</a></li>
+<li><a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%97%E8%A1%A8">算术运算符列表</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%97%E8%A1%A8">关系运算符列表</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%97%E8%A1%A8">文件测试运算符列表</a></li>
+<li><a href="#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97%E7%AC%A6%E5%88%97%E8%A1%A8">布尔运算符列表</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F%E5%88%97%E8%A1%A8">特殊变量列表</a></li>
+<li><a href="#%E6%95%B0%E5%80%BC%E6%B5%8B%E8%AF%95">数值测试</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E6%B5%8B%E8%AF%95">文件测试</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0">函数</a></li>
+<li><a href="#%E9%87%8D%E5%AE%9A%E5%90%91">重定向</a></li>
+<li><a href="#%E5%85%A8%E9%83%A8%E5%8F%AF%E7%94%A8%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91%E5%91%BD%E4%BB%A4%E5%88%97%E8%A1%A8">全部可用的重定向命令列表</a></li>
+<li><a href="#devnull-%E6%96%87%E4%BB%B6">/dev/null 文件</a></li>
+<li><a href="#shell%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB">Shell文件包含</a></li>
+<li><a href="#%E5%8D%95%E5%BC%95%E5%8F%B7">单引号</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6">获取字符串长度：</a></li>
+<li><a href="#%E6%8F%90%E5%8F%96%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2">提取子字符串</a></li>
+<li><a href="#if">if</a></li>
+<li><a href="#if-else">if else</a></li>
+<li><a href="#if-else-if-else">if else-if else</a></li>
+<li><a href="#for-while">for while</a></li>
+<li><a href="#while">while</a></li>
+<li><a href="#until">until</a></li>
+<li><a href="#case">case</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%8F%98%E9%87%8F">删除变量</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E7%BB%93%E6%9E%9C%E9%87%8D%E5%AE%9A%E5%90%91%E8%87%B3%E6%96%87%E4%BB%B6">显示结果重定向至文件</a></li>
+<li><a href="#%E5%8E%9F%E6%A0%B7%E8%BE%93%E5%87%BA%E5%AD%97%E7%AC%A6%E4%B8%B2">原样输出字符串</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C">显示命令执行结果</a></li>
+<li><a href="#printf-%E5%91%BD%E4%BB%A4">printf 命令</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0">命令行参数</a></li>
+<li><a href="#%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB">$* 和 $@ 的区别</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    
-      
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://xiong-zh.github.io/Linux 基础知识/">
+              <h3 class="post-title">
+                Linux 基础知识
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -814,62 +896,60 @@ arguments 使用空格分隔，不用逗号。
 
 </script>
 
-      
+          
 
-      
-    
+          
+        
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1584512023985" alt="ZhangXiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
+        <div class="site-footer">
+  <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
     </div>
-    <p class="footer__sosumi">
-      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
+    <script>
+      hljs.initHighlightingOnLoad()
 
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>

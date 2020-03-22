@@ -3,15 +3,10 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python基础梳理1 | ZhangXiong</title>
-<meta name="description" content="道阻且长，行则将至。" />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1584512023985">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1584890607630">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Python基础梳理1 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -25,67 +20,128 @@
 </script>
 
 
+    <meta name="description" content="
+注释：该篇文章来自网络，非原创，版权归原作者所有，侵删。
+
+
+1.到底什么是Python？你可以在回答中与其他技术进行对比（据说是某面试题）。
+答案：下面是一些关键点：
+Python是一种解释型语言。这就是说，与C语言和C的衍生语言不同，..." />
+    <meta name="keywords" content="Python" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="site-nav has-cover">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>ZhangXiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://xiong-zh.github.io">
+  <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1584890607630" alt="">
+  </a>
+  <h1 class="site-title">
+    ZhangXiong
+  </h1>
+  <p class="site-description">
+    道阻且长，行则将至。
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/">回到首页</a>
-        
+        <a href="/" class="menu">
+          回到首页
+        </a>
       
-        
-          <a href="/archives">文章归档</a>
-        
+    
       
-        
-          <a href="/tags">所有标签</a>
-        
+        <a href="/archives" class="menu">
+          文章归档
+        </a>
       
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
+    
       
-        
-          <a href="/friends/">友情链接</a>
-        
+        <a href="/tags" class="menu">
+          所有标签
+        </a>
       
-        
-          <a href="/about">关于</a>
-        
+    
       
-    </nav>
+        <a href="/documents/" class="menu" target="_blank">
+          后端图谱
+        </a>
+      
+    
+      
+        <a href="/friends/" class="menu">
+          友情链接
+        </a>
+      
+    
+      
+        <a href="/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/xiong-zh" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/imzhangxiong" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/zhangxiongblog" target="_blank">
+          <i class="ri-weibo-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
+          <i class="ri-facebook-line"></i>
+        </a>
+      
+    
   </div>
 </div>
-    </div>
-    <article role="main" class="hentry has-cover">
-      
-        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/07.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/07.jpg); height: 80vw;">
-          <h1 class="post-title">Python基础梳理1</h1>
-        </div>
-      
-      <h1 class="entry-title" itemprop="headline">Python基础梳理1</h1>
-      <div class="entry-meta">
-        <time class="updated" datetime="2019-07-29 23:00:50">2019-07-29</time>
-        <span class="author vcard">
-          34 min read
-        </span>
-      </div>
-      <div class="post-content yue">
-        <blockquote>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Python基础梳理1
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-07-29
+              </span>
+              <span>
+                34 min read
+              </span>
+              
+                <a href="https://xiong-zh.github.io/yaI-h-rVLi/" class="post-tag">
+                  # Python
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://picture.zhangxiong.net/images/blog_picture/cover/07.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
 <p>注释：该篇文章来自网络，非原创，版权归原作者所有，侵删。</p>
 </blockquote>
 <!--more-->
@@ -748,41 +804,28 @@ None
 <p>s6 = ‘I realy like“python”!’</p>
 <p>这就是单引号和双引号都可以表示字符串的原因了</p>
 
-      </div>
-      <div class="entry-block">
-        <div class="entry-tags">
-          
-            <a href="https://xiong-zh.github.io/yaI-h-rVLi/">
-              Python
-            </a>
-          
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
-    </article>
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>前一篇</h3>
-          <a href="https://xiong-zh.github.io/Python基础梳理2/">
-            <strong>Python基础梳理2</strong>
-          </a>
-        </div>
-      </section>
-    
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>后一篇</h3>
-          <a href="https://xiong-zh.github.io/Python参考书籍/">
-            <strong>Python参考书籍</strong>
-          </a>
-        </div>
-      </section>
-    
 
-    
-      
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://xiong-zh.github.io/Python参考书籍/">
+              <h3 class="post-title">
+                Python参考书籍
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -803,62 +846,60 @@ None
 
 </script>
 
-      
+          
 
-      
-    
+          
+        
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1584512023985" alt="ZhangXiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
+        <div class="site-footer">
+  <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
+  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
     </div>
-    <p class="footer__sosumi">
-      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
+    <script>
+      hljs.initHighlightingOnLoad()
 
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>
