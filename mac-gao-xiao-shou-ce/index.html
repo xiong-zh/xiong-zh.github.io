@@ -1,13 +1,19 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
+<meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
 <title>Mac高效手册 | ZhangXiong</title>
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1584928643299">
-<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Mac高效手册 | ZhangXiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1584951883776">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css" type='text/css' media='all'>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -20,125 +26,230 @@
 </script>
 
 
-    <meta name="description" content="如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。
-
-环境相关
-右键开启 Terminal..." />
-    <meta name="keywords" content="Mac" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://xiong-zh.github.io">
-  <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1584928643299" alt="">
-  </a>
-  <h1 class="site-title">
-    ZhangXiong
-  </h1>
-  <p class="site-description">
-    道阻且长，行则将至。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          文章归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/friends/" class="menu">
-          友情链接
-        </a>
-      
-    
-      
-        <a href="/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/xiong-zh" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
-    
-      
-        <a href="https://twitter.com/imzhangxiong" target="_blank">
-          <i class="ri-twitter-line"></i>
-        </a>
-      
-    
-      
-        <a href="https://weibo.com/zhangxiongblog" target="_blank">
-          <i class="ri-weibo-line"></i>
-        </a>
-      
-    
-      
-        <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
-          <i class="ri-zhihu-line"></i>
-        </a>
-      
-    
-      
-        <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
-          <i class="ri-facebook-line"></i>
-        </a>
-      
-    
-  </div>
-</div>
-
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              Mac高效手册
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-03-06
-              </span>
-              <span>
-                17 min read
-              </span>
-              
-                <a href="https://xiong-zh.github.io/oDnfDIkBl/" class="post-tag">
-                  # Mac
-                </a>
-              
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/oDnfDIkBl/">Mac</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/VUPKuk0fY/">Markdown</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/G0fErugzR/">Git</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/Xe2UrlUwt/">阅读</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/yaI-h-rVLi/">Python</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/NhIPBnAep/">碎碎念</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://xiong-zh.github.io/opJrPL36c/">Django</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
             </div>
-            
-              <img class="post-feature-image" src="http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg" alt="">
-            
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
+            <ul class="social-media-icons">
+                
+                    
+                        <li>
+                            <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                                <i class="fab fa-github" title="github"></i>
+                                <span class="screen-reader-text">github</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.facebook.com/xiong.zh.397" data-animate-hover="pulse" class="facebook" target="_blank">
+                                <i class="fab fa-facebook" title="facebook"></i>
+                                <span class="screen-reader-text">facebook</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://xiong-zh.github.io">  ZhangXiong </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">道阻且长，行则将至。</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">回到首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">文章归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">所有标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/documents/" target="_blank">后端图谱</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/friends/">友情链接</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/about">关于</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg">
+          </div>
+        
+
+        <div class="entry-meta">
+          <span class="date">· 2020-03-06 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://xiong-zh.github.io" title="" rel="author"> <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</a>
+          </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://xiong-zh.github.io/oDnfDIkBl/">Mac</a>
+                </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>Mac高效手册</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
 <!-- more -->
 <h2 id="环境相关">环境相关</h2>
 <h3 id="右键开启-terminal">右键开启 Terminal</h3>
@@ -1319,162 +1430,141 @@ $ asciicast2gif https://asciinema.org/a/246879.json 246879.gif
 <li><a href="http://www.iconninja.com/">Iconninja</a></li>
 </ul>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3">环境相关</a>
-<ul>
-<li><a href="#%E5%8F%B3%E9%94%AE%E5%BC%80%E5%90%AF-terminal">右键开启 Terminal</a></li>
-<li><a href="#%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E4%BB%B6">右键创建新文件</a></li>
-<li><a href="#%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90%E6%89%93%E5%BC%80-app">管理员权限打开 APP</a></li>
-<li><a href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8-finder-%E6%89%93%E5%BC%80%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95">在命令行中用 Finder 打开当前目录</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE-path-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置 PATH 环境变量</a></li>
-<li><a href="#%E6%9F%A5%E7%9C%8B%E6%9C%AC%E6%9C%BA%E4%BF%A1%E6%81%AF">查看本机信息</a>
-<ul>
-<li><a href="#ip">IP</a></li>
-<li><a href="#dns">DNS</a></li>
-</ul>
-</li>
-<li><a href="#%E8%BD%BB%E7%82%B9%E8%A7%A6%E6%91%B8%E6%9D%BF">轻点触摸板</a></li>
-</ul>
-</li>
-<li><a href="#java-%E7%9B%B8%E5%85%B3">Java 相关</a>
-<ul>
-<li><a href="#%E6%9F%A5%E7%9C%8B-jdk-%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">查看 JDK 安装目录</a></li>
-<li><a href="#%E5%A4%9A-jdk-%E7%89%88%E6%9C%AC">多 JDK 版本</a></li>
-</ul>
-</li>
-<li><a href="#maven-%E7%9B%B8%E5%85%B3">Maven 相关</a>
-<ul>
-<li><a href="#%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E5%AF%BC%E8%87%B4%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5">权限不足导致下载失败</a>
-<ul>
-<li><a href="#%E6%8F%8F%E8%BF%B0">描述</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3">解决</a></li>
-<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%91%BD%E4%BB%A4%E7%9B%B8%E5%85%B3">命令相关</a>
-<ul>
-<li><a href="#brew">brew</a></li>
-<li><a href="#ccat">ccat</a></li>
-<li><a href="#fd">fd</a></li>
-<li><a href="#htop">htop</a></li>
-<li><a href="#tldr">tldr</a></li>
-<li><a href="#tree">tree</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B7%A5%E5%85%B7%E7%9B%B8%E5%85%B3">工具相关</a>
-<ul>
-<li><a href="#sublime">Sublime</a>
-<ul>
-<li><a href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%A1%8C">删除重复行</a></li>
-</ul>
-</li>
-<li><a href="#iterm2">iTerm2</a>
-<ul>
-<li><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%8F%AA%E8%83%BD%E7%9C%8B%E5%88%B0%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6">自动补全只能看到一个字符</a></li>
-<li><a href="#scp-%E6%8A%A5%E9%94%99-cannot-change-locale-utf-8">scp 报错 cannot change locale (UTF-8)</a></li>
-<li><a href="#%E5%88%A0%E9%99%A4-zsh-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">删除 zsh 历史记录</a></li>
-</ul>
-</li>
-<li><a href="#intellij-idea">Intellij IDEA</a>
-<ul>
-<li><a href="#debug-%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E5%80%99%E5%8D%A1%E5%9C%A8%E4%BA%86-finished-saving-caches">debug 启动的时候，卡在了 Finished, saving caches</a></li>
-</ul>
-</li>
-<li><a href="#typroa">Typroa</a>
-<ul>
-<li><a href="#%E6%94%AF%E6%8C%81-callout">支持 callout</a></li>
-</ul>
-</li>
-<li><a href="#chrome">Chrome</a>
-<ul>
-<li><a href="#octotree-%E4%BB%A3%E7%A0%81%E5%A4%A7%E7%BA%B2">Octotree 代码大纲</a></li>
-<li><a href="#isometric-contributions-%E5%8F%AF%E8%A7%86%E5%8C%96">Isometric Contributions 可视化</a></li>
-</ul>
-</li>
-<li><a href="#asciinema">asciinema</a>
-<ul>
-<li><a href="#quick-start">Quick Start</a></li>
-<li><a href="#%E9%89%B4%E6%9D%83">鉴权</a></li>
-<li><a href="#%E7%A4%BA%E4%BE%8B">示例</a></li>
-<li><a href="#%E8%BD%AC-gif">转 gif</a></li>
-<li><a href="#%E6%95%88%E6%9E%9C">效果</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a>
-<ul>
-<li><a href="#mac-%E9%94%AE%E7%9B%98%E7%AC%A6%E5%8F%B7">Mac 键盘符号</a></li>
-<li><a href="#mac-%E6%9C%AC%E8%BA%AB%E7%9B%B8%E5%85%B3">Mac 本身相关</a>
-<ul>
-<li><a href="#%E8%AE%BF%E9%97%AE%E9%9A%90%E8%97%8F%E7%9B%AE%E5%BD%95">访问隐藏目录</a></li>
-</ul>
-</li>
-<li><a href="#vim-%E7%9B%B8%E5%85%B3">Vim 相关</a></li>
-<li><a href="#intellij-idea-%E7%9B%B8%E5%85%B3">Intellij Idea 相关</a>
-<ul>
-<li><a href="#editing%E7%BC%96%E8%BE%91">Editing（编辑）</a></li>
-<li><a href="#search-replace%E6%9F%A5%E8%AF%A2-%E6%9B%BF%E6%8D%A2">Search / Replace（查询 / 替换）</a></li>
-<li><a href="#usage-search%E4%BD%BF%E7%94%A8%E6%9F%A5%E8%AF%A2">Usage Search（使用查询）</a></li>
-<li><a href="#compile-and-run%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C">Compile and Run（编译和运行）</a></li>
-<li><a href="#debugging%E8%B0%83%E8%AF%95">Debugging（调试）</a></li>
-<li><a href="#navigation%E5%AF%BC%E8%88%AA">Navigation（导航）</a></li>
-<li><a href="#refactoring%E9%87%8D%E6%9E%84">Refactoring（重构）</a></li>
-<li><a href="#vcs%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">VCS（版本控制）</a></li>
-<li><a href="#live-templates%E5%8A%A8%E6%80%81%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF">Live Templates（动态代码模板）</a></li>
-<li><a href="#general%E9%80%9A%E7%94%A8">General（通用）</a></li>
-<li><a href="#other">Other</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E8%B5%84%E6%BA%90">资源</a>
-<ul>
-<li><a href="#%E7%90%86%E8%AE%BA">理论</a></li>
-<li><a href="#%E8%BD%AF%E4%BB%B6">软件</a>
-<ul>
-<li><a href="#%E9%80%9A%E7%94%A8">通用</a></li>
-<li><a href="#%E9%92%89%E9%92%89">钉钉</a></li>
-<li><a href="#iterm2-2">iTerm2</a></li>
-<li><a href="#sublime-2">Sublime</a></li>
-</ul>
-</li>
-<li><a href="#%E7%A1%AC%E4%BB%B6">硬件</a></li>
-<li><a href="#%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99">工具网站</a></li>
-<li><a href="#%E5%9B%BE%E5%83%8F">图像</a>
-<ul>
-<li><a href="#%E7%B4%A0%E6%9D%90">素材</a></li>
-<li><a href="#%E5%9B%BE%E6%A0%87">图标</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
-        </div>
-
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
-              <h3 class="post-title">
-                Markdown数学公式语法
-              </h3>
-            </a>
+            </article>
           </div>
-        
-
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://xiong-zh.github.io/oDnfDIkBl/" title="View all posts in Mac">Mac</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/VUPKuk0fY/" title="View all posts in Markdown">Markdown</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/G0fErugzR/" title="View all posts in Git">Git</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/Xe2UrlUwt/" title="View all posts in 阅读">阅读</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/yaI-h-rVLi/" title="View all posts in Python">Python</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/NhIPBnAep/" title="View all posts in 碎碎念">碎碎念</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/opJrPL36c/" title="View all posts in Django">Django</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/NkK7F-WfX/" title="View all posts in 面试">面试</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/3e5ZUh7gT8/" title="View all posts in Flask">Flask</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/eaRCztKoZ/" title="View all posts in Sublime">Sublime</a>
+                    
+                    
+                    
+                  <a href="https://xiong-zh.github.io/RKbXlPuzuF/" title="View all posts in Scrapy">Scrapy</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://xiong-zh.github.io/images/avatar.png?v=1584951883776" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://xiong-zh.github.io'>ZhangXiong</a> </span>
+            </div>
+            <div class="bio">
+              <p>道阻且长,行则将至.</p>
+              
+                
+                  <a class="github" target="_blank"
+                     href="https://github.com/xiong-zh">
+                    <i class="fab fa-github" title="github"></i>
+                  </a>
+                
+              
+                
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/imzhangxiong">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
+                
+              
+                
+                  <a class="weibo" target="_blank"
+                     href="https://weibo.com/zhangxiongblog">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/yisyxi">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
+                
+              
+                
+                  <a class="facebook" target="_blank"
+                     href="https://www.facebook.com/xiong.zh.397">
+                    <i class="fab fa-facebook" title="facebook"></i>
+                  </a>
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">下一篇->Markdown数学公式语法</a>
+              </div>
+            </nav>
+          
+      </div>
+      <section id="comments" class="comments">
         
           
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -1490,7 +1580,7 @@ $ asciicast2gif https://asciinema.org/a/246879.json 246879.gif
     repo: 'xiong-zh.github.io',
     owner: 'xiong-zh',
     admin: ['xiong-zh'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    id: location.pathname,      // Ensure uniqueness and length less than 50
     distractionFreeMode: false  // Facebook-like distraction free mode
   })
 
@@ -1502,56 +1592,86 @@ $ asciicast2gif https://asciinema.org/a/246879.json 246879.gif
 
           
         
-
-        <div class="site-footer">
-  <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-  <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
+      </section>
     </div>
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://xiong-zh.github.io"> ZhangXiong </a>
+    </h1>
+    <p class="site-description">道阻且长，行则将至。</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+                <li>
+                    <a href="https://github.com/xiong-zh" data-animate-hover="pulse" class="github" target="_blank">
+                        <i class="fab fa-github" title="github"></i>
+                        <span class="screen-reader-text">github</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://twitter.com/imzhangxiong" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://weibo.com/zhangxiongblog" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/yisyxi" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.facebook.com/xiong.zh.397" data-animate-hover="pulse" class="facebook" target="_blank">
+                        <i class="fab fa-facebook" title="facebook"></i>
+                        <span class="screen-reader-text">facebook</span>
+                    </a>
+                </li>
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://xiong-zh.github.io/media/scripts/lib/production.min.js"></script>
 
-    <script>
-      hljs.initHighlightingOnLoad()
-
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
-
-    </script>
-  </body>
+</div>
+</body>
 </html>
+
