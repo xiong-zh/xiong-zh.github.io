@@ -1903,21 +1903,21 @@ mark {
       .navigation a,
       .footer-rss,
       .item .item-image {
-        background-color: #0eb0c9;
+        background-color: #45b787;
       }
 
       .item:hover h2,
       .prev-post a:hover, .post-archives a:hover {
-        color: #0eb0c9;
+        color: #45b787;
       }
 
       .tags .tag:hover {
-        border-color: #0eb0c9;
+        border-color: #45b787;
       }
 
       .post-content a:hover {
-        color: #0eb0c9;
-        border-color: #0eb0c9;
+        color: #45b787;
+        border-color: #45b787;
       }
       
     
