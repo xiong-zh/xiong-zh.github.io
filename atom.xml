@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
     <title>为那些没来得及的告别</title>
-    <updated>2020-04-03T16:41:42.800Z</updated>
+    <updated>2020-04-04T04:34:02.730Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 为那些没来得及的告别</rights>
+    <entry>
+        <title type="html"><![CDATA[此刻，默哀]]></title>
+        <id>https://xiong-zh.github.io/ci-ke-mo-ai/</id>
+        <link href="https://xiong-zh.github.io/ci-ke-mo-ai/">
+        </link>
+        <updated>2020-04-04T04:28:32.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>在这个春天，想念你们<br>
+愿花飨逝者，春暖斯人，逝者安息，生者奋发</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>在这个春天，想念你们<br>
+愿花飨逝者，春暖斯人，逝者安息，生者奋发</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mac高效手册]]></title>
         <id>https://xiong-zh.github.io/mac-gao-xiao-shou-ce/</id>
@@ -89,19 +102,6 @@
         <content type="html"><![CDATA[<ul>
 <li>文章来自商院高静老师，在这个肺炎肆掠的时节，感觉写出了荆楚大地对疫病的决心和信心，相信在不久的时间，疫情一定能得到抑制，武汉恢复成昔日繁华的武汉，武汉加油！，中国加油！</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[碎碎念-新年大吉]]></title>
-        <id>https://xiong-zh.github.io/xin-nian-da-ji/</id>
-        <link href="https://xiong-zh.github.io/xin-nian-da-ji/">
-        </link>
-        <updated>2020-01-24T16:00:01.000Z</updated>
-        <summary type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
-以梦为马，期待人间。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>岁岁年年，深情未减，<br>
-以梦为马，期待人间。</p>
 ]]></content>
     </entry>
 </feed>
