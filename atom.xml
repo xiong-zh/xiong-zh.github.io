@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiong-zh.github.io</id>
-    <title>为那些没来得及的告别</title>
-    <updated>2020-04-04T04:35:03.247Z</updated>
+    <title>zhangxiong</title>
+    <updated>2020-04-06T02:44:38.175Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiong-zh.github.io"/>
     <link rel="self" href="https://xiong-zh.github.io/atom.xml"/>
-    <subtitle>缅怀同胞，逝者安息，生者向前</subtitle>
+    <subtitle>道阻且长,行则将至.</subtitle>
     <logo>https://xiong-zh.github.io/images/avatar.png</logo>
     <icon>https://xiong-zh.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 为那些没来得及的告别</rights>
+    <rights>All rights reserved 2020, zhangxiong</rights>
     <entry>
         <title type="html"><![CDATA[此刻，默哀]]></title>
         <id>https://xiong-zh.github.io/ci-ke-mo-ai/</id>
