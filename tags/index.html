@@ -1,247 +1,208 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>zhangxiong</title>
-<meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1586265895687">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1586506560028">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<script src="media/scripts/index.js"></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-156420077-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>zhangxiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            zhangxiong
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
     </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">回到首页</a>
-        
-      
-        
-          <a href="/archives">文章归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
-        
-      
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
-      
-        
-          <a href="/friends/">友情链接</a>
-        
-      
-        
-          <a href="/about">关于</a>
-        
-      
-    </nav>
-  </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 目前共计 18 个标签</h1>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            回到首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            文章归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            所有标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/documents/" class="menu gt-a-link" target="_blank">
+                            后端图谱
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends/" class="menu gt-a-link">
+                            友情链接
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
         </div>
-      </div>
     </div>
-    <div class="main">
-      <div class="inner">
-        <div class="tags">
-          
-            <a class="tag" href="https://xiong-zh.github.io/oDnfDIkBl/">
-              <div class="tag-name">Mac</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/VUPKuk0fY/">
-              <div class="tag-name">Markdown</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/G0fErugzR/">
-              <div class="tag-name">Git</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/Xe2UrlUwt/">
-              <div class="tag-name">阅读</div>
-              <div class="tag-count">7</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/yaI-h-rVLi/">
-              <div class="tag-name">Python</div>
-              <div class="tag-count">12</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/NhIPBnAep/">
-              <div class="tag-name">碎碎念</div>
-              <div class="tag-count">13</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/opJrPL36c/">
-              <div class="tag-name">Django</div>
-              <div class="tag-count">10</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/NkK7F-WfX/">
-              <div class="tag-name">面试</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/3e5ZUh7gT8/">
-              <div class="tag-name">Flask</div>
-              <div class="tag-count">4</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/eaRCztKoZ/">
-              <div class="tag-name">Sublime</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/RKbXlPuzuF/">
-              <div class="tag-name">Scrapy</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/Gah7pxU-rM/">
-              <div class="tag-name">Linux</div>
-              <div class="tag-count">3</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/L-mexE1Ckv/">
-              <div class="tag-name">算法</div>
-              <div class="tag-count">3</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/JGoq_olm9I/">
-              <div class="tag-name">Redis</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/p0ASXc3D0A/">
-              <div class="tag-name">Shell</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/CSf4pFs3z/">
-              <div class="tag-name">音乐</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/aJT3P20zaN/">
-              <div class="tag-name">C</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://xiong-zh.github.io/icvIAbFdV7k/">
-              <div class="tag-name">计划</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1586265895687" alt="zhangxiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
+</nav>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
+        <div class="tags-container">
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/oDnfDIkBl/">#Mac</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/VUPKuk0fY/">#Markdown</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/G0fErugzR/">#Git</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/Xe2UrlUwt/">#阅读</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/yaI-h-rVLi/">#Python</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/NhIPBnAep/">#碎碎念</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/opJrPL36c/">#Django</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/NkK7F-WfX/">#面试</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/3e5ZUh7gT8/">#Flask</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/eaRCztKoZ/">#Sublime</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/RKbXlPuzuF/">#Scrapy</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/Gah7pxU-rM/">#Linux</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/L-mexE1Ckv/">#算法</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/JGoq_olm9I/">#Redis</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/p0ASXc3D0A/">#Shell</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/CSf4pFs3z/">#音乐</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/aJT3P20zaN/">#C</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://xiong-zh.github.io/icvIAbFdV7k/">#计划</a>
+            
+        </div>
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">道阻且长,行则将至.</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/xiong-zh" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://twitter.com/imzhangxiong" target="_blank">
+                    <i class="fab fa-twitter gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://weibo.com/zhangxiongblog" target="_blank">
+                    <i class="fab fa-weibo gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://www.zhihu.com/people/yisyxi" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+                <a href="https://www.facebook.com/xiong.zh.397" target="_blank">
+                    <i class="fab fa-facebook gt-c-content-color-first"></i>
+                </a>
+            
+        
+    </div>
+    <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved. | <a href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
 <script>
-  Prism.highlightAll()
+    hljs.initHighlightingOnLoad()
 </script>
 
-  </body>
+    </div>
+</div>
+</body>
 </html>
