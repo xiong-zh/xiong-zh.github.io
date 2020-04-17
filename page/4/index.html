@@ -4,15 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>zhangxiong</title>
 <meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1586522805189">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587112893691">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -27,237 +26,432 @@
 
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>zhangxiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://xiong-zh.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1587112893691" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">zhangxiong</h1>
       </div>
-    </button>
-    <nav class="info_nav">
       
-        
-          <a href="/">回到首页</a>
-        
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            道阻且长,行则将至.
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/xiong-zh" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/imzhangxiong" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-twitter-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://weibo.com/zhangxiongblog" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-weibo-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://www.zhihu.com/people/yisyxi" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-zhihu-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://www.facebook.com/xiong.zh.397" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-facebook-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://www.instagram.com/imzhangxiong/" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-instagram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
       
-        
-          <a href="/archives">文章归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
-        
-      
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
-      
-        
-          <a href="/friends/">友情链接</a>
-        
-      
-        
-          <a href="/about">关于</a>
-        
-      
-    </nav>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
-          
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/051.jpg" href="https://xiong-zh.github.io/Scrapy框架的使用之Item-Pipeline用法/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/051.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/Scrapy框架的使用之Item-Pipeline用法/">
-        <div class="item-meta">
-          <time datetime="2020-01-15 12:09:15">2020-01-15</time>
-        </div>
-        <h2>Scrapy框架的使用之Item Pipeline用法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/052.jpg" href="https://xiong-zh.github.io/Python为什么现在这么火/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/052.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/Python为什么现在这么火/">
-        <div class="item-meta">
-          <time datetime="2020-01-15 11:56:05">2020-01-15</time>
-        </div>
-        <h2>Python为什么现在这么火</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/053.jpg" href="https://xiong-zh.github.io/Python基础知识总结/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/053.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/Python基础知识总结/">
-        <div class="item-meta">
-          <time datetime="2020-01-15 11:50:31">2020-01-15</time>
-        </div>
-        <h2>Python基础知识总结</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/054.jpg" href="https://xiong-zh.github.io/常用Linux命令/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/054.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/常用Linux命令/">
-        <div class="item-meta">
-          <time datetime="2020-01-14 23:38:21">2020-01-14</time>
-        </div>
-        <h2>常用Linux命令</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/055.jpg" href="https://xiong-zh.github.io/推荐一些Flask资源/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/055.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/推荐一些Flask资源/">
-        <div class="item-meta">
-          <time datetime="2020-01-14 21:07:35">2020-01-14</time>
-        </div>
-        <h2>推荐一些Flask资源</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/057.jpg" href="https://xiong-zh.github.io/Flask对邮件文件上传下载视图函数的处理/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/057.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/Flask对邮件文件上传下载视图函数的处理/">
-        <div class="item-meta">
-          <time datetime="2020-01-11 22:29:03">2020-01-11</time>
-        </div>
-        <h2>Flask对时间 邮件 文件 视图函数的处理</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/059.jpg" href="https://xiong-zh.github.io/Python开发环境配置/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/059.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/Python开发环境配置/">
-        <div class="item-meta">
-          <time datetime="2020-01-10 22:29:03">2020-01-10</time>
-        </div>
-        <h2>Python开发环境配置</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/061.jpg" href="https://xiong-zh.github.io/Python用list实现堆栈和队列/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/061.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/Python用list实现堆栈和队列/">
-        <div class="item-meta">
-          <time datetime="2020-01-10 12:04:14">2020-01-10</time>
-        </div>
-        <h2>Python用list实现堆栈和队列</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/062.jpg" href="https://xiong-zh.github.io/列表元组字典集合的区别/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/062.jpg');"></a>
-      
-      <a class="item-main" href="https://xiong-zh.github.io/列表元组字典集合的区别/">
-        <div class="item-meta">
-          <time datetime="2020-01-08 13:14:59">2020-01-08</time>
-        </div>
-        <h2>列表元组字典集合的区别</h2>
-      </a>
-    </div>
-  
-</div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://xiong-zh.github.io/page/3/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://xiong-zh.github.io/page/5/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
-      </div>
-    </div>
-
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1586522805189" alt="zhangxiong">
-    </a>
-    <div class="footer__social">
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
       
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
+        <a href="/" class="menu" style="animation-delay: 0s">
+          回到首页
+        </a>
       
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
+    
       
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          文章归档
+        </a>
       
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
+    
       
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          所有标签
+        </a>
       
-        
+    
       
-        
+        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
+          后端图谱
+        </a>
       
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
+    
       
-        
+        <a href="/friends/" class="menu" style="animation-delay: 0.8s">
+          友情链接
+        </a>
       
-        
+    
       
-    </div>
-    <p class="footer__sosumi">
-      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+        <a href="/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
   </div>
-</footer>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700"><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</div>
+    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="remixicon-article-line"></i>
+          最新文章
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/Scrapy框架的使用之Item-Pipeline用法/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/051.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/Scrapy框架的使用之Item-Pipeline用法/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Scrapy框架的使用之Item Pipeline用法</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Item Pipeline 的调用发生在 Spider 产生 Item 之后。当 Spider 解析完 Response 之后，Item 就会传递到 Item Pipeline，被定义的 Item Pipeline 组件会顺次调用，完成一连串的处理过程，比如数据清洗、存储等。<br>
+Item Pipeline 的主要功能有如下 4 点。</p>
+<ul>
+<li>清理 HTML 数据。</li>
+<li>验证爬取数据，检查爬取字段。</li>
+<li>查重并丢弃重复内容。</li>
+<li>将爬取结果保存到数据库。</li>
+</ul>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-15 / 4 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/Python为什么现在这么火/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/052.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/Python为什么现在这么火/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Python为什么现在这么火</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>几年前 <code>Python</code> 在国内还只是一门小众语言，但从 <code>2011</code> 开始到现在，<code>Python</code> 的百度搜索指数翻了 <code>10</code> 倍，从下图看得出 <code>Python</code> 在国内的流行度已经直逼 <code>Java</code>，大有赶超之势。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-15 / 7 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/Python基础知识总结/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/053.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/Python基础知识总结/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Python基础知识总结</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Python 的火热度怕是大家已经早已感受到了，很多程序员将 Python 作为了他的第二语言，如果你至今还未接触任何和 Python 相关的知识，那么今天我带给你的这篇文章可以让你快速了解 Python 语法，上手做东西了。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-15 / 20 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/常用Linux命令/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/054.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/常用Linux命令/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">常用Linux命令</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>超全整理！Linux shell及常用36类命令汇总</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-14 / 9 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/推荐一些Flask资源/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/055.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/推荐一些Flask资源/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">推荐一些Flask资源</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Flask 是 Python 中最流行的 Web 框架之一，以小巧、灵活、可扩展性强著称，相比 Django，它给了开发者最大限度的自由，给大家安利几个 Flask 学习资源.</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-14 / 3 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/Flask对邮件文件上传下载视图函数的处理/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/057.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/Flask对邮件文件上传下载视图函数的处理/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Flask对时间 邮件 文件 视图函数的处理</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Flask对时间、邮件、文件上传下载、视图函数的处理</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-11 / 9 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/Python开发环境配置/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/059.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/Python开发环境配置/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Python开发环境配置</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Python 2和Python 3之间存在着较大的差异，并且，由于各种原因导致了Python 2和Python 3的长期共存。在实际工作过程中，我们可能会同时用到Python 2和Python 3，因此，也需要经常在Python 2和Python 3之间进行来回切换。这就需要对python的版本进行管理，除此之外还需要对不同的软件包进行管理。大部分情况下，对于开源的库我们使用最新版本即可。但是，有时候可能需要对相同的Python版本，在不同的项目中使用不同版本的软件包。</p>
+<p>在这里，我们要使用两个工具：pyenv和virtualenv。前者用于管理不同的Python版本，后者用于管理不同的工作环境。有了这两个工具，Python相关的版本问题将不再是问题。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-10 / 10 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/Python用list实现堆栈和队列/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/061.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/Python用list实现堆栈和队列/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Python用list实现堆栈和队列</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Python 中可以用 list 来模拟栈和队列：</p>
+<ul>
+<li><strong>栈（stack）</strong>: 只能在一端进行数据操作，遵循后进先出（LIFO）原则</li>
+<li><strong>队列（queue）</strong>: 可以在两端进行数据操作，遵循先进先出（FIFO）原则，出队列的一端称为队首，入队列的一端称为队尾</li>
+</ul>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-10 / 5 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
+    
+      <a href="https://xiong-zh.github.io/列表元组字典集合的区别/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/062.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://xiong-zh.github.io/列表元组字典集合的区别/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">列表元组字典集合的区别</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>列表 元组 字典 集合的区别是python面试中最常见的一个问题。这个问题虽然很基础，但确实能反映出面试者的基础水平</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-01-08 / 5 min read</div>
+    </div>
+  </section>
+
+        <div class="read-more">
+          
+            <a href="https://xiong-zh.github.io/page/5/" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">
+              阅读更多
+              <i class="remixicon-arrow-right-line"></i>
+            </a>
+          
+        </div>
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
+  
+    <a href="https://xiong-zh.github.io/page/3/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://xiong-zh.github.io/page/5/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
 <script>
-  Prism.highlightAll()
-</script>
 
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
   </body>
 </html>

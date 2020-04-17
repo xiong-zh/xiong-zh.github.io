@@ -2,17 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Git高级玩法 | zhangxiong</title>
+<title>zhangxiong</title>
 <meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1586522805189">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587112893691">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Git高级玩法 | zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -27,65 +26,254 @@
 
   </head>
   <body>
-    <div class="site-nav has-cover">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>zhangxiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://xiong-zh.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1587112893691" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">zhangxiong</h1>
       </div>
-    </button>
-    <nav class="info_nav">
       
-        
-          <a href="/">回到首页</a>
-        
-      
-        
-          <a href="/archives">文章归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
-        
-      
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
-      
-        
-          <a href="/friends/">友情链接</a>
-        
-      
-        
-          <a href="/about">关于</a>
-        
-      
-    </nav>
-  </div>
-</div>
-    </div>
-    <article role="main" class="hentry has-cover">
-      
-        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/spring/01.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/spring/01.jpg); height: 80vw;">
-          <h1 class="post-title">Git高级玩法</h1>
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#git-blame">Git Blame</a></li>
+<li><a href="#git-branch">Git Branch</a></li>
+<li><a href="#git-cache">Git Cache</a></li>
+<li><a href="#git-cherry-pick">Git Cherry-pick</a></li>
+<li><a href="#git-checkout">Git Checkout</a>
+<ul>
+<li><a href="#checkout-%E7%9A%84%E5%90%8C%E6%97%B6%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84-branch">checkout 的同时，创建新的 branch</a></li>
+<li><a href="#%E6%92%A4%E9%94%80%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9">撤销某个文件的修改</a></li>
+</ul>
+</li>
+<li><a href="#git-config">Git Config</a></li>
+<li><a href="#git-commit">Git Commit</a>
+<ul>
+<li><a href="#allow-empty">Allow Empty</a></li>
+<li><a href="#commit-merge">Commit Merge</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C">常规操作</a></li>
+<li><a href="#%E8%B8%A9%E5%88%B0%E7%9A%84%E5%9D%91">踩到的坑</a>
+<ul>
+<li><a href="#failed-to-push-some-refs">Failed to push some refs</a>
+<ul>
+<li><a href="#%E6%8F%8F%E8%BF%B0">描述</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3">解决</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#commit-remove">Commit Remove</a></li>
+<li><a href="#commit-change">Commit Change</a>
+<ul>
+<li><a href="#%E5%8F%AA%E4%BF%AE%E6%94%B9%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4">只修改最后一次提交</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%E7%9A%84%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF">修改之前的提交信息</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E7%9A%84%E6%97%A5%E6%9C%9F">修改提交的日期</a></li>
+</ul>
+</li>
+<li><a href="#reset-into-specific-commit">Reset into Specific Commit</a></li>
+<li><a href="#squash-commits-into-a-single-commit">Squash Commits into a Single Commit</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C-2">常规操作</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a>
+<ul>
+<li><a href="#%E5%9B%9E%E6%BB%9A">回滚</a></li>
+<li><a href="#%E5%9B%9E%E6%BB%9A%E4%B8%8A%E4%B8%80%E6%AC%A1%E6%93%8D%E4%BD%9C">回滚上一次操作</a></li>
+<li><a href="#%E6%8C%87%E5%AE%9A-commit-number">指定 commit number</a></li>
+<li><a href="#%E5%90%88%E5%B9%B6-branch-%E6%94%B9%E5%8A%A8%E5%88%B0-master-%E4%B8%AD">合并 branch 改动到 master 中</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#git-diff">Git Diff</a>
+<ul>
+<li><a href="#git-diff-two-commits">Git diff two commits</a></li>
+<li><a href="#git-diff-two-branchs">Git diff two branchs</a></li>
+</ul>
+</li>
+<li><a href="#git-fetch">Git Fetch</a>
+<ul>
+<li><a href="#normal">Normal</a></li>
+<li><a href="#fetch-all-tags">Fetch all tags</a></li>
+</ul>
+</li>
+<li><a href="#git-merge">Git Merge</a></li>
+<li><a href="#git-apply">Git Apply</a></li>
+<li><a href="#git-reflog">Git Reflog</a>
+<ul>
+<li><a href="#%E6%81%A2%E5%A4%8D-git-reset-hard">恢复 <code>git reset --hard</code></a></li>
+</ul>
+</li>
+<li><a href="#git-remote">Git Remote</a>
+<ul>
+<li><a href="#change-remote-url">Change remote url</a></li>
+<li><a href="#pull-specific-tag-from-remote">Pull specific tag from remote</a></li>
+<li><a href="#%E5%90%8C%E6%97%B6-push-%E5%88%B0%E5%A4%9A%E4%B8%AA%E4%BB%93%E5%BA%93">同时 push 到多个仓库</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">删除远程仓库</a></li>
+</ul>
+</li>
+<li><a href="#git-reset">Git Reset</a>
+<ul>
+<li><a href="#%E5%9B%9E%E9%80%80%E6%9F%90%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9">回退某一个文件的修改</a></li>
+</ul>
+</li>
+<li><a href="#git-revert">Git Revert</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E6%9F%90%E4%B8%80%E4%B8%AA-commit-%E7%9B%B8%E5%8F%8D%E7%9A%84-patch">创建某一个 commit 相反的 patch</a></li>
+</ul>
+</li>
+<li><a href="#git-rm">Git Rm</a>
+<ul>
+<li><a href="#%E6%B8%85%E7%90%86%E7%BC%93%E5%AD%98">清理缓存</a>
+<ul>
+<li><a href="#%E6%8F%8F%E8%BF%B0-2">描述</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3-2">解决</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#git-stash">Git Stash</a></li>
+<li><a href="#git-tag">Git Tag</a>
+<ul>
+<li><a href="#create-tag">Create tag</a></li>
+<li><a href="#submit-tag">Submit tag</a></li>
+<li><a href="#pull-with-specific-tag">Pull with specific tag</a></li>
+<li><a href="#delete-tag">Delete tag</a></li>
+</ul>
+</li>
+<li><a href="#git-%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%87%E6%8D%A2%E4%B8%BA-notepad">Git 编辑器切换为 Notepad++</a></li>
+<li><a href="#git-%E4%BB%A3%E7%90%86">Git 代理</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AE">通过命令设置</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE">通过配置文件设置</a></li>
+<li><a href="#%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91">踩过的坑</a>
+<ul>
+<li><a href="#ssl_error_syscall-in-connection-to-gitcodingnet443">SSL_ERROR_SYSCALL in connection to git.coding.net:443</a>
+<ul>
+<li><a href="#%E6%8F%8F%E8%BF%B0-3">描述</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3-3">解决</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#git-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81">Git 中文乱码</a></li>
+<li><a href="#github-%E5%8A%A0%E9%80%9F">Github 加速</a></li>
+<li><a href="#patch">Patch</a></li>
+<li><a href="#ssh-%E5%85%8D%E5%AF%86">SSH 免密</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C-3">常规操作</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BB%A3%E7%90%86%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81-github-gitlab-coding-%E7%9A%84%E5%85%8D%E5%AF%86%E6%93%8D%E4%BD%9C">如何在代理环境下，同时支持 github / gitlab / coding 的免密操作</a>
+<ul>
+<li><a href="#%E5%9C%BA%E6%99%AF%E4%BB%8B%E7%BB%8D">场景介绍</a></li>
+<li><a href="#pac-%E9%85%8D%E7%BD%AE">PAC 配置</a></li>
+<li><a href="#ssh-%E9%85%8D%E7%BD%AE">SSH 配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BF%9D%E6%8C%81%E4%BB%8E-fork-%E7%AB%AF%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81">保持从 fork 端更新代码</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E9%85%8D%E7%BD%AE">代码风格配置</a></li>
+<li><a href="#%E6%8D%A2%E8%A1%8C%E7%AC%A6">换行符</a>
+<ul>
+<li><a href="#auto-crlf">Auto CRLF</a></li>
+<li><a href="#safe-crlf">Safe CRLF</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B4%E5%90%88%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90">整合持续集成</a>
+<ul>
+<li><a href="#travis">Travis</a>
+<ul>
+<li><a href="#travisyml">.travis.yml</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
         </div>
       
-      <h1 class="entry-title" itemprop="headline">Git高级玩法</h1>
-      <div class="entry-meta">
-        <time class="updated" datetime="2020-02-27 13:58:20">2020-02-27</time>
-        <span class="author vcard">
-          20 min read
-        </span>
-      </div>
-      <div class="post-content yue">
-        <p>介绍了一些Git的使用方法和相关脚本的编写。</p>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          回到首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          文章归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          所有标签
+        </a>
+      
+    
+      
+        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
+          后端图谱
+        </a>
+      
+    
+      
+        <a href="/friends/" class="menu" style="animation-delay: 0.8s">
+          友情链接
+        </a>
+      
+    
+      
+        <a href="/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700"><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</div>
+    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Git高级玩法</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-02-27 / 20 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://picture.zhangxiong.net/images/blog_picture/spring/01.jpg" alt="">
+        
+        <div class="post-content yue">
+          <p>介绍了一些Git的使用方法和相关脚本的编写。</p>
 <!-- more -->
 <h2 id="git-blame">Git Blame</h2>
 <pre><code class="language-shell"># 查看文件中，每一行的修改人和最后改动时间
@@ -766,41 +954,42 @@ cache:
     - $HOME/.m2
 </code></pre>
 
-      </div>
-      <div class="entry-block">
-        <div class="entry-tags">
-          
-            <a href="https://xiong-zh.github.io/G0fErugzR/">
-              Git
-            </a>
-          
         </div>
-      </div>
-    </article>
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>前一篇</h3>
-          <a href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
-            <strong>Markdown数学公式语法</strong>
-          </a>
-        </div>
-      </section>
-    
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>后一篇</h3>
-          <a href="https://xiong-zh.github.io/2020-yue-du-shu-dan/">
-            <strong>2020阅读书单</strong>
-          </a>
-        </div>
-      </section>
-    
 
-    
-      
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/G0fErugzR/">
+            <span class="flex-auto">Git</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  Markdown数学公式语法
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://xiong-zh.github.io/2020-yue-du-shu-dan/">
+                <h3 class="post-title">
+                  2020阅读书单
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -821,62 +1010,112 @@ cache:
 
 </script>
 
-      
+          
 
-      
-    
+          
+        
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1586522805189" alt="zhangxiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
+      </div>
     </div>
-    <p class="footer__sosumi">
-      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
+    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
 <script>
-  Prism.highlightAll()
-</script>
 
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
   </body>
 </html>

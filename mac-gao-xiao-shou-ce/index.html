@@ -2,17 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mac高效手册 | zhangxiong</title>
+<title>zhangxiong</title>
 <meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1586522805189">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587112893691">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Mac高效手册 | zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -27,65 +26,226 @@
 
   </head>
   <body>
-    <div class="site-nav has-cover">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://xiong-zh.github.io">
-        <span>zhangxiong</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://xiong-zh.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1587112893691" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">zhangxiong</h1>
       </div>
-    </button>
-    <nav class="info_nav">
       
-        
-          <a href="/">回到首页</a>
-        
-      
-        
-          <a href="/archives">文章归档</a>
-        
-      
-        
-          <a href="/tags">所有标签</a>
-        
-      
-        
-          <a href="/documents/" target="_blank">后端图谱</a>
-        
-      
-        
-          <a href="/friends/">友情链接</a>
-        
-      
-        
-          <a href="/about">关于</a>
-        
-      
-    </nav>
-  </div>
-</div>
-    </div>
-    <article role="main" class="hentry has-cover">
-      
-        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg); height: 80vw;">
-          <h1 class="post-title">Mac高效手册</h1>
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E7%9B%B8%E5%85%B3">环境相关</a>
+<ul>
+<li><a href="#%E5%8F%B3%E9%94%AE%E5%BC%80%E5%90%AF-terminal">右键开启 Terminal</a></li>
+<li><a href="#%E5%8F%B3%E9%94%AE%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E4%BB%B6">右键创建新文件</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90%E6%89%93%E5%BC%80-app">管理员权限打开 APP</a></li>
+<li><a href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%94%A8-finder-%E6%89%93%E5%BC%80%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95">在命令行中用 Finder 打开当前目录</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE-path-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置 PATH 环境变量</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E6%9C%AC%E6%9C%BA%E4%BF%A1%E6%81%AF">查看本机信息</a>
+<ul>
+<li><a href="#ip">IP</a></li>
+<li><a href="#dns">DNS</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BD%BB%E7%82%B9%E8%A7%A6%E6%91%B8%E6%9D%BF">轻点触摸板</a></li>
+</ul>
+</li>
+<li><a href="#java-%E7%9B%B8%E5%85%B3">Java 相关</a>
+<ul>
+<li><a href="#%E6%9F%A5%E7%9C%8B-jdk-%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">查看 JDK 安装目录</a></li>
+<li><a href="#%E5%A4%9A-jdk-%E7%89%88%E6%9C%AC">多 JDK 版本</a></li>
+</ul>
+</li>
+<li><a href="#maven-%E7%9B%B8%E5%85%B3">Maven 相关</a>
+<ul>
+<li><a href="#%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E5%AF%BC%E8%87%B4%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5">权限不足导致下载失败</a>
+<ul>
+<li><a href="#%E6%8F%8F%E8%BF%B0">描述</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3">解决</a></li>
+<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E7%9B%B8%E5%85%B3">命令相关</a>
+<ul>
+<li><a href="#brew">brew</a></li>
+<li><a href="#ccat">ccat</a></li>
+<li><a href="#fd">fd</a></li>
+<li><a href="#htop">htop</a></li>
+<li><a href="#tldr">tldr</a></li>
+<li><a href="#tree">tree</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%A5%E5%85%B7%E7%9B%B8%E5%85%B3">工具相关</a>
+<ul>
+<li><a href="#sublime">Sublime</a>
+<ul>
+<li><a href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%A1%8C">删除重复行</a></li>
+</ul>
+</li>
+<li><a href="#iterm2">iTerm2</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%8F%AA%E8%83%BD%E7%9C%8B%E5%88%B0%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6">自动补全只能看到一个字符</a></li>
+<li><a href="#scp-%E6%8A%A5%E9%94%99-cannot-change-locale-utf-8">scp 报错 cannot change locale (UTF-8)</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4-zsh-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">删除 zsh 历史记录</a></li>
+</ul>
+</li>
+<li><a href="#intellij-idea">Intellij IDEA</a>
+<ul>
+<li><a href="#debug-%E5%90%AF%E5%8A%A8%E7%9A%84%E6%97%B6%E5%80%99%E5%8D%A1%E5%9C%A8%E4%BA%86-finished-saving-caches">debug 启动的时候，卡在了 Finished, saving caches</a></li>
+</ul>
+</li>
+<li><a href="#typroa">Typroa</a>
+<ul>
+<li><a href="#%E6%94%AF%E6%8C%81-callout">支持 callout</a></li>
+</ul>
+</li>
+<li><a href="#chrome">Chrome</a>
+<ul>
+<li><a href="#octotree-%E4%BB%A3%E7%A0%81%E5%A4%A7%E7%BA%B2">Octotree 代码大纲</a></li>
+<li><a href="#isometric-contributions-%E5%8F%AF%E8%A7%86%E5%8C%96">Isometric Contributions 可视化</a></li>
+</ul>
+</li>
+<li><a href="#asciinema">asciinema</a>
+<ul>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#%E9%89%B4%E6%9D%83">鉴权</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B">示例</a></li>
+<li><a href="#%E8%BD%AC-gif">转 gif</a></li>
+<li><a href="#%E6%95%88%E6%9E%9C">效果</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a>
+<ul>
+<li><a href="#mac-%E9%94%AE%E7%9B%98%E7%AC%A6%E5%8F%B7">Mac 键盘符号</a></li>
+<li><a href="#mac-%E6%9C%AC%E8%BA%AB%E7%9B%B8%E5%85%B3">Mac 本身相关</a>
+<ul>
+<li><a href="#%E8%AE%BF%E9%97%AE%E9%9A%90%E8%97%8F%E7%9B%AE%E5%BD%95">访问隐藏目录</a></li>
+</ul>
+</li>
+<li><a href="#vim-%E7%9B%B8%E5%85%B3">Vim 相关</a></li>
+<li><a href="#intellij-idea-%E7%9B%B8%E5%85%B3">Intellij Idea 相关</a>
+<ul>
+<li><a href="#editing%E7%BC%96%E8%BE%91">Editing（编辑）</a></li>
+<li><a href="#search-replace%E6%9F%A5%E8%AF%A2-%E6%9B%BF%E6%8D%A2">Search / Replace（查询 / 替换）</a></li>
+<li><a href="#usage-search%E4%BD%BF%E7%94%A8%E6%9F%A5%E8%AF%A2">Usage Search（使用查询）</a></li>
+<li><a href="#compile-and-run%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C">Compile and Run（编译和运行）</a></li>
+<li><a href="#debugging%E8%B0%83%E8%AF%95">Debugging（调试）</a></li>
+<li><a href="#navigation%E5%AF%BC%E8%88%AA">Navigation（导航）</a></li>
+<li><a href="#refactoring%E9%87%8D%E6%9E%84">Refactoring（重构）</a></li>
+<li><a href="#vcs%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">VCS（版本控制）</a></li>
+<li><a href="#live-templates%E5%8A%A8%E6%80%81%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF">Live Templates（动态代码模板）</a></li>
+<li><a href="#general%E9%80%9A%E7%94%A8">General（通用）</a></li>
+<li><a href="#other">Other</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%B5%84%E6%BA%90">资源</a>
+<ul>
+<li><a href="#%E7%90%86%E8%AE%BA">理论</a></li>
+<li><a href="#%E8%BD%AF%E4%BB%B6">软件</a>
+<ul>
+<li><a href="#%E9%80%9A%E7%94%A8">通用</a></li>
+<li><a href="#%E9%92%89%E9%92%89">钉钉</a></li>
+<li><a href="#iterm2-2">iTerm2</a></li>
+<li><a href="#sublime-2">Sublime</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A1%AC%E4%BB%B6">硬件</a></li>
+<li><a href="#%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99">工具网站</a></li>
+<li><a href="#%E5%9B%BE%E5%83%8F">图像</a>
+<ul>
+<li><a href="#%E7%B4%A0%E6%9D%90">素材</a></li>
+<li><a href="#%E5%9B%BE%E6%A0%87">图标</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
         </div>
       
-      <h1 class="entry-title" itemprop="headline">Mac高效手册</h1>
-      <div class="entry-meta">
-        <time class="updated" datetime="2020-03-06 10:58:47">2020-03-06</time>
-        <span class="author vcard">
-          17 min read
-        </span>
-      </div>
-      <div class="post-content yue">
-        <p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          回到首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          文章归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          所有标签
+        </a>
+      
+    
+      
+        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
+          后端图谱
+        </a>
+      
+    
+      
+        <a href="/friends/" class="menu" style="animation-delay: 0.8s">
+          友情链接
+        </a>
+      
+    
+      
+        <a href="/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700"><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</div>
+    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Mac高效手册</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-03-06 / 17 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://picture.zhangxiong.net/images/blog_picture/spring/08.jpg" alt="">
+        
+        <div class="post-content yue">
+          <p>如何将 Mac 这个生产工具的效能发挥到极致呢（如何省出一个小长假）？本文将从 Mac 的基础环境配置、Java、Maven、高级命令、工具、快捷键和预先整理相关资源等方面，来阐述如何提升工作效率的。</p>
 <!-- more -->
 <h2 id="环境相关">环境相关</h2>
 <h3 id="右键开启-terminal">右键开启 Terminal</h3>
@@ -1266,41 +1426,42 @@ $ asciicast2gif https://asciinema.org/a/246879.json 246879.gif
 <li><a href="http://www.iconninja.com/">Iconninja</a></li>
 </ul>
 
-      </div>
-      <div class="entry-block">
-        <div class="entry-tags">
-          
-            <a href="https://xiong-zh.github.io/oDnfDIkBl/">
-              Mac
-            </a>
-          
         </div>
-      </div>
-    </article>
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>前一篇</h3>
-          <a href="https://xiong-zh.github.io/ci-ke-mo-ai/">
-            <strong>此刻，默哀</strong>
-          </a>
-        </div>
-      </section>
-    
-    
-      <section class="post-section prev-post">
-        <div class="inner">
-          <h3>后一篇</h3>
-          <a href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
-            <strong>Markdown数学公式语法</strong>
-          </a>
-        </div>
-      </section>
-    
 
-    
-      
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/oDnfDIkBl/">
+            <span class="flex-auto">Mac</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://xiong-zh.github.io/ci-ke-mo-ai/">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  此刻，默哀
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://xiong-zh.github.io/markdown-shu-xue-gong-shi-yu-fa/">
+                <h3 class="post-title">
+                  Markdown数学公式语法
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -1321,62 +1482,112 @@ $ asciicast2gif https://asciinema.org/a/246879.json 246879.gif
 
 </script>
 
-      
+          
 
-      
-    
+          
+        
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://xiong-zh.github.io">
-      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1586522805189" alt="zhangxiong">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
-        
-      
-        
-          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
-        
-      
-        
-          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
-        
-      
-        
-      
-        
-      
+      </div>
     </div>
-    <p class="footer__sosumi">
-      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
-    </p>
-    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://xiong-zh.github.io/media/prism.js"></script>
+    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
 <script>
-  Prism.highlightAll()
-</script>
 
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
   </body>
 </html>
