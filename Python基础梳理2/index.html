@@ -2,16 +2,17 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>zhangxiong</title>
+<title>Python基础梳理2 | zhangxiong</title>
 <meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587112893691">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587213753574">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Python基础梳理2 | zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -26,182 +27,65 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://xiong-zh.github.io">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1587112893691" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">zhangxiong</h1>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>zhangxiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
-          </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li><a href="#python%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7">Python语言特性</a>
-<ul>
-<li><a href="#1-python%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">1 Python的函数参数传递</a></li>
-<li><a href="#2-python%E4%B8%AD%E7%9A%84%E5%85%83%E7%B1%BBmetaclass">2 Python中的元类(metaclass)</a></li>
-<li><a href="#3-staticmethod%E5%92%8Cclassmethod">3 @staticmethod和@classmethod</a></li>
-<li><a href="#4-%E7%B1%BB%E5%8F%98%E9%87%8F%E5%92%8C%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F">4 类变量和实例变量</a></li>
-<li><a href="#5-python%E8%87%AA%E7%9C%81">5 Python自省</a></li>
-<li><a href="#6-%E5%AD%97%E5%85%B8%E6%8E%A8%E5%AF%BC%E5%BC%8F">6 字典推导式</a></li>
-<li><a href="#7-python%E4%B8%AD%E5%8D%95%E4%B8%8B%E5%88%92%E7%BA%BF%E5%92%8C%E5%8F%8C%E4%B8%8B%E5%88%92%E7%BA%BF">7 Python中单下划线和双下划线</a></li>
-<li><a href="#8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%92%8Cformat">8 字符串格式化:%和.format</a></li>
-<li><a href="#9-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">9 迭代器和生成器</a></li>
-<li><a href="#10-args-and-kwargs">10 <code>*args</code> and <code>**kwargs</code></a></li>
-<li><a href="#11-python%E4%B8%AD%E9%87%8D%E8%BD%BD">11 Python中重载</a></li>
-<li><a href="#12-%E6%96%B0%E5%BC%8F%E7%B1%BB%E5%92%8C%E6%97%A7%E5%BC%8F%E7%B1%BB">12 新式类和旧式类</a></li>
-<li><a href="#13-__new__%E5%92%8C__init__%E7%9A%84%E5%8C%BA%E5%88%AB">13 <code>__new__</code>和<code>__init__</code>的区别</a></li>
-<li><a href="#14-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F">14 单例模式</a>
-<ul>
-<li><a href="#1-%E4%BD%BF%E7%94%A8__new__%E6%96%B9%E6%B3%95">1 使用<code>__new__</code>方法</a></li>
-<li><a href="#2-%E5%85%B1%E4%BA%AB%E5%B1%9E%E6%80%A7">2 共享属性</a></li>
-<li><a href="#3-%E8%A3%85%E9%A5%B0%E5%99%A8%E7%89%88%E6%9C%AC">3 装饰器版本</a></li>
-<li><a href="#4-import%E6%96%B9%E6%B3%95">4 import方法</a></li>
-</ul>
-</li>
-<li><a href="#15-python%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F">15 Python中的作用域</a></li>
-<li><a href="#16-gil%E7%BA%BF%E7%A8%8B%E5%85%A8%E5%B1%80%E9%94%81">16 GIL线程全局锁</a></li>
-<li><a href="#17-%E5%8D%8F%E7%A8%8B">17 协程</a></li>
-<li><a href="#18-%E9%97%AD%E5%8C%85">18 闭包</a></li>
-<li><a href="#19-lambda%E5%87%BD%E6%95%B0">19 lambda函数</a></li>
-<li><a href="#20-python%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B">20 Python函数式编程</a></li>
-<li><a href="#21-python%E9%87%8C%E7%9A%84%E6%8B%B7%E8%B4%9D">21 Python里的拷贝</a></li>
-<li><a href="#22-python%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6">22 Python垃圾回收机制</a>
-<ul>
-<li><a href="#1-%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0">1 引用计数</a></li>
-<li><a href="#2-%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E6%9C%BA%E5%88%B6">2 标记-清除机制</a></li>
-<li><a href="#3-%E5%88%86%E4%BB%A3%E6%8A%80%E6%9C%AF">3 分代技术</a></li>
-</ul>
-</li>
-<li><a href="#23-readreadline%E5%92%8Creadlines">23 read,readline和readlines</a></li>
-<li><a href="#24-range-and-xrange">24 range and xrange</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
-<ul>
-<li><a href="#1-%E4%BA%8B%E5%8A%A1">1 事务</a></li>
-<li><a href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95">2 数据库索引</a></li>
-<li><a href="#3-redis%E5%8E%9F%E7%90%86">3 Redis原理</a>
-<ul>
-<li><a href="#redis%E6%98%AF%E4%BB%80%E4%B9%88">Redis是什么？</a></li>
-<li><a href="#redis%E6%95%B0%E6%8D%AE%E5%BA%93">Redis数据库</a></li>
-<li><a href="#redis%E7%BC%BA%E7%82%B9">Redis缺点</a></li>
-</ul>
-</li>
-<li><a href="#4-%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81">4 乐观锁和悲观锁</a></li>
-<li><a href="#5-mvcc">5 MVCC</a>
-<ul>
-<li><a href="#mysql">MySQL</a></li>
-</ul>
-</li>
-<li><a href="#6-myisam%E5%92%8Cinnodb">6 MyISAM和InnoDB</a></li>
-</ul>
-</li>
-<li><a href="#%E7%BD%91%E7%BB%9C">网络</a>
-<ul>
-<li><a href="#1-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B">1 三次握手</a></li>
-<li><a href="#2-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B">2 四次挥手</a></li>
-<li><a href="#3-arp%E5%8D%8F%E8%AE%AE">3 ARP协议</a></li>
-<li><a href="#4-urllib%E5%92%8Curllib2%E7%9A%84%E5%8C%BA%E5%88%AB">4 urllib和urllib2的区别</a></li>
-<li><a href="#5-post%E5%92%8Cget">5 Post和Get</a></li>
-<li><a href="#6-cookie%E5%92%8Csession">6 Cookie和Session</a></li>
-<li><a href="#7-apache%E5%92%8Cnginx%E7%9A%84%E5%8C%BA%E5%88%AB">7 apache和nginx的区别</a></li>
-<li><a href="#8-%E7%BD%91%E7%AB%99%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%9D%E5%AD%98">8 网站用户密码保存</a></li>
-<li><a href="#9-http%E5%92%8Chttps">9 HTTP和HTTPS</a></li>
-<li><a href="#10-xsrf%E5%92%8Cxss">10 XSRF和XSS</a></li>
-<li><a href="#11-%E5%B9%82%E7%AD%89-idempotence">11 幂等 Idempotence</a></li>
-<li><a href="#12-restful%E6%9E%B6%E6%9E%84soaprpc">12 RESTful架构(SOAP,RPC)</a></li>
-<li><a href="#13-soap">13 SOAP</a></li>
-<li><a href="#14-rpc">14 RPC</a></li>
-<li><a href="#15-cgi%E5%92%8Cwsgi">15 CGI和WSGI</a></li>
-<li><a href="#16-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB">16 中间人攻击</a></li>
-<li><a href="#17-c10k%E9%97%AE%E9%A2%98">17 c10k问题</a></li>
-<li><a href="#18-socket">18 socket</a></li>
-<li><a href="#19-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98">19 浏览器缓存</a></li>
-<li><a href="#20-http10%E5%92%8Chttp11">20 HTTP1.0和HTTP1.1</a></li>
-<li><a href="#21-ajax">21 Ajax</a></li>
-</ul>
-</li>
-<li><a href="#nix">*NIX</a>
-<ul>
-<li><a href="#unix%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8Fipc">unix进程间通信方式(IPC)</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
+        
+          <a href="/">回到首页</a>
+        
       
+        
+          <a href="/archives">文章归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/friends/">友情链接</a>
+        
+      
+        
+          <a href="/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
     </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
+    <article role="main" class="hentry has-cover">
       
-        <a href="/" class="menu" style="animation-delay: 0s">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          文章归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/friends/" class="menu" style="animation-delay: 0.8s">
-          友情链接
-        </a>
-      
-    
-      
-        <a href="/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700"><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</div>
-    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Python基础梳理2</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2019-08-07 / 40 min read
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/06.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/06.jpg); height: 80vw;">
+          <h1 class="post-title">Python基础梳理2</h1>
         </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://picture.zhangxiong.net/images/blog_picture/cover/06.jpg" alt="">
-        
-        <div class="post-content yue">
-          <h1 id="python语言特性">Python语言特性</h1>
+      
+      <h1 class="entry-title" itemprop="headline">Python基础梳理2</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2019-08-07 14:43:14">2019-08-07</time>
+        <span class="author vcard">
+          40 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <h1 id="python语言特性">Python语言特性</h1>
 <!--more-->
 <h2 id="1-python的函数参数传递">1 Python的函数参数传递</h2>
 <p>看两个例子:</p>
@@ -908,42 +792,41 @@ PATCH方法出现的较晚，它在2010年的RFC 5789标准中被定义。PATCH�
 <li>套接口（Socket）：更为一般的进程间通信机制，可用于不同机器之间的进程间通信。起初是由Unix系统的BSD分支开发出来的，但现在一般可以移植到其它类Unix系统上：Linux和System V的变种都支持套接字。</li>
 </ol>
 
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/yaI-h-rVLi/">
+              Python
+            </a>
+          
         </div>
-
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/yaI-h-rVLi/">
-            <span class="flex-auto">Python</span>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/Linux 基础知识/">
+            <strong>Linux 基础知识</strong>
           </a>
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://xiong-zh.github.io/Linux 基础知识/">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  Linux 基础知识
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://xiong-zh.github.io/Python基础梳理1/">
-                <h3 class="post-title">
-                  Python基础梳理1
-                  <i class="remixicon-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
-          
         </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/Python基础梳理1/">
+            <strong>Python基础梳理1</strong>
+          </a>
+        </div>
+      </section>
+    
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -964,112 +847,62 @@ PATCH方法出现的较晚，它在2010年的RFC 5789标准中被定义。PATCH�
 
 </script>
 
-          
+      
 
-          
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1587213753574" alt="zhangxiong">
+    </a>
+    <div class="footer__social">
+      
         
-
-      </div>
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
     </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>

@@ -2,16 +2,17 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>zhangxiong</title>
+<title>Git常用命令 | zhangxiong</title>
 <meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587112893691">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587213753574">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Git常用命令 | zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -26,129 +27,65 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://xiong-zh.github.io">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1587112893691" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">zhangxiong</h1>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>zhangxiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
-          </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1%E5%AE%89%E8%A3%85git">1.安装Git</a></li>
-<li><a href="#2%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E7%94%A8%E6%88%B7name%E5%92%8Ce-mail">2.配置全局用户Name和E-mail</a></li>
-<li><a href="#3%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93">3.初始化仓库</a></li>
-<li><a href="#4%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%88%B0git%E4%BB%93%E5%BA%93">4.添加文件到Git仓库</a></li>
-<li><a href="#5%E6%8F%90%E4%BA%A4%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0git%E4%BB%93%E5%BA%93">5.提交添加的文件到Git仓库</a></li>
-<li><a href="#6%E6%9F%A5%E7%9C%8B%E4%BB%93%E5%BA%93%E5%BD%93%E5%89%8D%E7%9A%84%E7%8A%B6%E6%80%81">6.查看仓库当前的状态</a></li>
-<li><a href="#7%E6%AF%94%E8%BE%83%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9">7.比较当前文件的修改</a></li>
-<li><a href="#8%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95">8.查看历史提交记录</a></li>
-<li><a href="#9%E5%9B%9E%E9%80%80%E7%89%88%E6%9C%AC">9.回退版本</a></li>
-<li><a href="#10%E6%9F%A5%E7%9C%8B%E6%93%8D%E4%BD%9C%E7%9A%84%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95">10.查看操作的历史命令记录</a></li>
-<li><a href="#11diff%E6%96%87%E4%BB%B6">11.diff文件</a></li>
-<li><a href="#12%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9">12.丢弃工作区的修改</a></li>
-<li><a href="#13%E4%B8%A2%E5%BC%83%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E6%96%87%E4%BB%B6">13.丢弃暂存区的文件</a></li>
-<li><a href="#14%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6">14.删除文件</a></li>
-<li><a href="#15%E5%88%9B%E5%BB%BAssh-key">15.创建SSH key</a></li>
-<li><a href="#16%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%8D%8F%E4%BD%9C">16.与远程仓库协作</a></li>
-<li><a href="#17%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">17.推送到远程仓库</a></li>
-<li><a href="#18%E5%85%8B%E9%9A%86%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E5%BA%93">18.克隆一个远程库</a></li>
-<li><a href="#19git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86">19.Git分支管理</a></li>
-<li><a href="#20%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E7%9A%84%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">20.查看提交的历史记录</a></li>
-<li><a href="#21%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF">21.合并分支</a></li>
-<li><a href="#22%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E7%8E%B0%E5%9C%BA">22.保存工作现场</a></li>
-<li><a href="#23%E4%B8%A2%E5%BC%83%E4%B8%80%E4%B8%AA%E6%B2%A1%E6%9C%89%E8%A2%AB%E5%90%88%E5%B9%B6%E8%BF%87%E7%9A%84%E5%88%86%E6%94%AF">23.丢弃一个没有被合并过的分支</a></li>
-<li><a href="#24%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E5%BA%93%E7%9A%84%E4%BF%A1%E6%81%AF">24.查看远程库的信息</a></li>
-<li><a href="#25%E6%8E%A8%E9%80%81%E5%88%86%E6%94%AF">25.推送分支</a></li>
-<li><a href="#26%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF">26.创建本地分支</a></li>
-<li><a href="#27%E6%8C%87%E5%AE%9A%E6%9C%AC%E5%9C%B0branch1%E5%88%86%E6%94%AF%E4%B8%8E%E8%BF%9C%E7%A8%8Boriginbranch1%E5%88%86%E6%94%AF%E7%9A%84%E9%93%BE%E6%8E%A5">27.指定本地branch1分支与远程origin/branch1分支的链接</a></li>
-<li><a href="#28%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE">28.创建标签</a></li>
-<li><a href="#29%E8%87%AA%E5%AE%9A%E4%B9%89git%E8%AE%BE%E7%BD%AE">29.自定义Git设置</a></li>
-<li><a href="#30%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E8%A7%84%E5%88%99">30.忽略文件规则</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
+        
+          <a href="/">回到首页</a>
+        
       
+        
+          <a href="/archives">文章归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/friends/">友情链接</a>
+        
+      
+        
+          <a href="/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
     </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
+    <article role="main" class="hentry has-cover">
       
-        <a href="/" class="menu" style="animation-delay: 0s">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          文章归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/friends/" class="menu" style="animation-delay: 0.8s">
-          友情链接
-        </a>
-      
-    
-      
-        <a href="/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700"><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</div>
-    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Git常用命令</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2020-01-15 / 14 min read
+        <div class="entry-cover js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/049.jpg" data-width="900" data-height="423" style="background-image:url(http://picture.zhangxiong.net/images/blog_picture/cover/049.jpg); height: 80vw;">
+          <h1 class="post-title">Git常用命令</h1>
         </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://picture.zhangxiong.net/images/blog_picture/cover/049.jpg" alt="">
-        
-        <div class="post-content yue">
-          <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
+      
+      <h1 class="entry-title" itemprop="headline">Git常用命令</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2020-01-15 19:27:36">2020-01-15</time>
+        <span class="author vcard">
+          14 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂。</p>
 <!-- more -->
 <p>此文只是对Git有一定基础的人当记忆使用，比较简略，初级学员强烈推荐廖雪峰老师的Git系列教程，通俗易懂，<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">戳此处即可开始学习</a></p>
 <h3 id="1安装git">1.安装Git</h3>
@@ -485,42 +422,41 @@ $ git config --global user.email &quot;email@example.com&quot;
 <figure data-type="image" tabindex="1"><img src="https://user-gold-cdn.xitu.io/2018/1/4/160c049ccf1e2bd9?imageslim" alt="这里写图片描述" loading="lazy"></figure>
 <p>好了，基本差不多了，其实常用的命令也就那么几个，如果使用多了，就熟练了，相信git给我们工作效率及工作上的提升...</p>
 
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://xiong-zh.github.io/G0fErugzR/">
+              Git
+            </a>
+          
         </div>
-
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://xiong-zh.github.io/G0fErugzR/">
-            <span class="flex-auto">Git</span>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://xiong-zh.github.io/sublime使用总结/">
+            <strong>sublime使用总结</strong>
           </a>
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://xiong-zh.github.io/sublime使用总结/">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  sublime使用总结
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://xiong-zh.github.io/Python爬取不确定页数网页/">
-                <h3 class="post-title">
-                  Python爬取不确定页数网页
-                  <i class="remixicon-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
-          
         </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://xiong-zh.github.io/Python爬取不确定页数网页/">
+            <strong>Python爬取不确定页数网页</strong>
+          </a>
+        </div>
+      </section>
+    
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    
+      
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -541,112 +477,62 @@ $ git config --global user.email &quot;email@example.com&quot;
 
 </script>
 
-          
+      
 
-          
+      
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1587213753574" alt="zhangxiong">
+    </a>
+    <div class="footer__social">
+      
         
-
-      </div>
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
     </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>

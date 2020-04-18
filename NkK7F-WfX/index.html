@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>zhangxiong</title>
 <meta name="description" content="道阻且长,行则将至." />
-<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587112893691">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://xiong-zh.github.io/favicon.ico?v=1587213753574">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://xiong-zh.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="zhangxiong - Atom Feed" href="https://xiong-zh.github.io/atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156420077-1"></script>
@@ -26,258 +27,130 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://xiong-zh.github.io">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://xiong-zh.github.io/images/avatar.png?v=1587112893691" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">zhangxiong</h1>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://xiong-zh.github.io">
+        <span>zhangxiong</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            道阻且长,行则将至.
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/xiong-zh" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-                <a href="https://twitter.com/imzhangxiong" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-twitter-line"></i>
-                </a>
-              
-            
-              
-                <a href="https://weibo.com/zhangxiongblog" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-weibo-line"></i>
-                </a>
-              
-            
-              
-                <a href="https://www.zhihu.com/people/yisyxi" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-                <a href="https://www.facebook.com/xiong.zh.397" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-facebook-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.instagram.com/imzhangxiong/" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-instagram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          回到首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          文章归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          所有标签
-        </a>
-      
-    
-      
-        <a href="/documents/" class="menu" style="animation-delay: 0.6000000000000001s" target="_blank">
-          后端图谱
-        </a>
-      
-    
-      
-        <a href="/friends/" class="menu" style="animation-delay: 0.8s">
-          友情链接
-        </a>
-      
-    
-      
-        <a href="/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700"><a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.</div>
-    <a class="rss" href="https://xiong-zh.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> 面试
-        </h2>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://xiong-zh.github.io/Python 110面试题归纳/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'http://picture.zhangxiong.net/images/blog_picture/cover/061.jpg'">
+          <a href="/">回到首页</a>
+        
+      
+        
+          <a href="/archives">文章归档</a>
+        
+      
+        
+          <a href="/tags">所有标签</a>
+        
+      
+        
+          <a href="/documents/" target="_blank">后端图谱</a>
+        
+      
+        
+          <a href="/friends/">友情链接</a>
+        
+      
+        
+          <a href="/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 面试</h1>
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://xiong-zh.github.io/Python 110面试题归纳/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Python面试题归纳</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>提高 python 运行效率的方法：<br>
-1、使用生成器，因为可以节约大量内存<br>
-2、循环代码优化，避免过多重复代码的执行<br>
-3、核心模块用Cython  PyPy等，提高效率<br>
-4、多进程、多线程、协程<br>
-5、多个if elif条件判断，可以把最有可能先发生的条件放到前面写，这样可以减少程序判断的次数，提高效率</p>
-
       </div>
-      <div class="text-gray-400 text-sm font-light">2020-01-20 / 37 min read</div>
     </div>
-  </section>
-
-        <div class="pagination-container animated fadeIn">
+    <div class="main">
+      <div class="inner">
+        <div class="items">
   
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="http://picture.zhangxiong.net/images/blog_picture/cover/061.jpg" href="https://xiong-zh.github.io/Python 110面试题归纳/" style="background-image:url('http://picture.zhangxiong.net/images/blog_picture/cover/061.jpg');"></a>
+      
+      <a class="item-main" href="https://xiong-zh.github.io/Python 110面试题归纳/">
+        <div class="item-meta">
+          <time datetime="2020-01-20 13:14:59">2020-01-20</time>
+        </div>
+        <h2>Python面试题归纳</h2>
+      </a>
+    </div>
   
 </div>
 
+        <div class="navigation">
+  
+  
+</div>
       </div>
     </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://xiong-zh.github.io">
+      <img class="avatar" src="https://xiong-zh.github.io/images/avatar.png?v=1587213753574" alt="zhangxiong">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/xiong-zh" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+          <a href="https://twitter.com/imzhangxiong" target="_blank"><i class="remixicon-twitter-line"></i></a>
+        
+      
+        
+          <a href="https://weibo.com/zhangxiongblog" target="_blank"><i class="remixicon-weibo-line"></i></a>
+        
+      
+        
+          <a href="https://www.zhihu.com/people/yisyxi" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+          <a href="https://www.facebook.com/xiong.zh.397" target="_blank"><i class="remixicon-facebook-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.instagram.com/imzhangxiong/" target="_blank"><i class="remixicon-instagram-line"></i></a>
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      <a href="http://beian.miit.gov.cn/" target="_blank">滇ICP备20001109号</a> | Copyright © 2020 <a href="https://zhangxiong.net/" target="_blank">｜zhangxiong </a> All Right Reserved.
+    </p>
+    <a class="footer-rss" href="https://xiong-zh.github.io/atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://xiong-zh.github.io/media/prism.js"></script>  
+<script src="https://xiong-zh.github.io/media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>
